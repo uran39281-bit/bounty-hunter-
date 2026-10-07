@@ -22,7 +22,16 @@ def main():
     parser.add_argument('--scratchpad-receive', action='store_true')
     parser.add_argument('--trace-ee-threads', action='store_true')
     parser.add_argument('--allow-zero-priority', action='store_true')
+    parser.add_argument('--boot-cdvdfsv', action='store_true')
+    parser.add_argument('--cdvd-compat', action='store_true')
+    parser.add_argument('--separate-callback-stacks', action='store_true')
+    parser.add_argument('--seconds', type=int, default=5)
+    parser.add_argument('--capture-frame', type=Path)
     args = parser.parse_args()
+    if not 1 <= args.seconds <= 60:
+        parser.error('--seconds must be 1..60')
+    if args.boot_cdvdfsv and not args.boot_sifcmd:
+        parser.error('--boot-cdvdfsv requires --boot-sifcmd')
     env = os.environ.copy()
     env.pop('PS2X_STOP_INVALID_MEMCPY', None)
     env.pop('PS2X_PRECOPY_RAM_DUMP', None)
@@ -35,6 +44,20 @@ def main():
     env.pop('PS2X_SPR_RECVN', None)
     env.pop('PS2X_EE_THREAD_TRACE', None)
     env.pop('PS2X_EE_ZERO_PRIORITY', None)
+    env.pop('PS2X_LOAD_BOOT_CDVDFSV', None)
+    env.pop('PS2X_CDVD_COMPAT', None)
+    env.pop('PS2X_CALLBACK_HEAP_STACKS', None)
+    env.pop('PS2X_CAPTURE_FRAME', None)
+    if args.capture_frame:
+        if args.capture_frame.exists():
+            parser.error('Choose a fresh frame output path')
+        env['PS2X_CAPTURE_FRAME'] = str(args.capture_frame.resolve())
+    if args.separate_callback_stacks:
+        env['PS2X_CALLBACK_HEAP_STACKS'] = '1'
+    if args.cdvd_compat:
+        env['PS2X_CDVD_COMPAT'] = '1'
+    if args.boot_cdvdfsv:
+        env['PS2X_LOAD_BOOT_CDVDFSV'] = '1'
     if args.allow_zero_priority:
         env['PS2X_EE_ZERO_PRIORITY'] = '1'
     if args.trace_ee_threads:
@@ -59,17 +82,22 @@ def main():
             env['PS2X_PRECOPY_RAM_DUMP'] = str(args.dump_ram.resolve())
     timed_out = False
     try:
-        r = subprocess.run([str(args.runner.resolve()), str((args.disc / 'SLUS_204.20').resolve())],
-                           capture_output=True, text=True, timeout=15, env=env)
+        r = subprocess.run([str(args.runner.resolve()), str((args.disc / 'SLUS_204.20').resolve()), str(args.seconds)],
+                           capture_output=True, text=True, timeout=args.seconds+10, env=env)
         stdout, stderr, returncode = r.stdout, r.stderr, r.returncode
     except subprocess.TimeoutExpired as e:
         timed_out = True
         def decode(x): return x.decode(errors='replace') if isinstance(x, bytes) else (x or '')
         stdout, stderr, returncode = decode(e.stdout), decode(e.stderr), None
     report = {'returncode': returncode, 'timeout': timed_out,
+              'deadline_seconds': args.seconds,
+              'captured_frame_exists': bool(args.capture_frame and args.capture_frame.is_file()),
               'stop_before_invalid_copy': args.stop_invalid_copy,
               'reuse_file_descriptors': args.reuse_file_descriptors,
               'partial_sifcmd_boot_probe': args.boot_sifcmd,
+              'partial_cdvdfsv_boot_probe': args.boot_cdvdfsv,
+              'cdvd_compat_enabled': args.cdvd_compat,
+              'callback_heap_stacks_enabled': args.separate_callback_stacks,
               'iop_snapshot_enabled': args.inspect_iop,
               'spu2_adma_timing_enabled': args.adma_timing,
               'iop_import_trace_enabled': args.trace_iop_imports,

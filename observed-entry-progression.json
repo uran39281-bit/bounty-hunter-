@@ -1,0 +1,14 @@
+[
+  {
+    "report": "cdvd-auto-entry-04.json",
+    "entries": [
+      "0x265780",
+      "0x29e7f0",
+      "0x301fa0",
+      "0x31b980"
+    ],
+    "next_missing": null,
+    "captured_frame": false,
+    "returncode": 0
+  }
+]

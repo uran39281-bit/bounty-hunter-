@@ -1,0 +1,149 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008HEADLESS_START entry=0x100008 deadline_seconds=5 graphics_tested=false audio_tested=false
+[SifInitRpc] Initialized[SIF module] load-emulated id=3 ref=1 path="cdrom0:\IRX\SIO2MAN.IRX;1"
+[SIF module] load-emulated id=4 ref=1 path="cdrom0:\IRX\PADMAN.IRX;1"
+[SIF module] load-emulated id=5 ref=1 path="cdrom0:\IRX\LIBSD.IRX;1"
+[SIF module] load-emulated id=6 ref=1 path="cdrom0:\IRX\STREAM.IRX;1"
+[SIF module] load-emulated id=7 ref=1 path="cdrom0:\IRX\CRI_ADXI.IRX;1"
+[sceDmaSend] ch=0x1000d400 madr=0x4077c0 qwc=0x400 tadr=0x4077c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4037c0 qwc=0x400 tadr=0x4037c0 chcr=0x181
+EE_REGISTERS s0=1 a0=0 gp=3963376
+GRAPHICS_ACTIVITY packed_packets=0 image_uploads=0 recent_draws=0 presentation_frame=0 width=0 height=0
+IOP_DIAGNOSTIC IOP_SIF_INITIALIZED 1
+IOP_DIAGNOSTIC IOP_MODULE id=1 name=SIFCMD.IRX;1 base=65536 size=14080
+IOP_DIAGNOSTIC IOP_MODULE id=2 name=CDVDFSV.IRX;1 base=79616 size=70144
+IOP_DIAGNOSTIC IOP_MODULE id=3 name=SIO2MAN.IRX;1 base=149760 size=4096
+IOP_DIAGNOSTIC IOP_MODULE id=4 name=PADMAN.IRX;1 base=153856 size=40192
+IOP_DIAGNOSTIC IOP_MODULE id=5 name=LIBSD.IRX;1 base=194048 size=23040
+IOP_DIAGNOSTIC IOP_MODULE id=6 name=STREAM.IRX;1 base=217088 size=82176
+IOP_DIAGNOSTIC IOP_MODULE id=7 name=CRI_ADXI.IRX;1 base=299264 size=110848
+IOP_DIAGNOSTIC IOP_THREAD id=1 pc=99784 entry=80308 state=6 waitId=1 priority=80 module=CDVDFSV.IRX;1 import=none ra=99784 a0=1 a1=4 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=2 pc=100108 entry=99920 state=3 waitId=0 priority=81 module=CDVDFSV.IRX;1 import=none ra=100108 a0=105352 a1=2147485075 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=3 pc=100276 entry=100136 state=3 waitId=0 priority=81 module=CDVDFSV.IRX;1 import=none ra=100276 a0=105328 a1=2147485077 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=4 pc=150724 entry=150684 state=6 waitId=2 priority=16 module=SIO2MAN.IRX;1 import=none ra=150724 a0=2 a1=16725 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=5 pc=184860 entry=184728 state=3 waitId=0 priority=46 module=PADMAN.IRX;1 import=none ra=184860 a0=193588 a1=2147483904 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=6 pc=185056 entry=184924 state=3 waitId=0 priority=46 module=PADMAN.IRX;1 import=none ra=185056 a0=193812 a1=2147483905 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=7 pc=241892 entry=241800 state=3 waitId=0 priority=30 module=STREAM.IRX;1 import=none ra=241892 a0=1257396 a1=74565 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=8 pc=299444 entry=299388 state=4 waitId=0 priority=39 module=CRI_ADXI.IRX;1 import=none ra=299444 a0=0 a1=1 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=9 pc=300760 entry=300628 state=3 waitId=0 priority=49 module=CRI_ADXI.IRX;1 import=none ra=300760 a0=1261656 a1=2097152000 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=10 pc=322540 entry=330032 state=1 waitId=0 priority=39 module=CRI_ADXI.IRX;1 import=none ra=325380 a0=375502 a1=0 v0=39
+IOP_DIAGNOSTIC IOP_TRACE DMA_COMPLETED irq=36 count=369
+IOP_DIAGNOSTIC IOP_TRACE DMA_START irq=36 bcr=2097168 chcr=513 admas=1 count=370
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:47 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:50 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:84 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT dmacman:33 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT dmacman:34 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:17 count=8340
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:18 count=8340
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:4 count=5
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:5 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:6 count=5
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:7 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:9 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:18 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:20 count=369
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:26 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:4 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:5 count=6
+IOP_DIAGNOSTIC IOP_TRACE IMPORT loadcore:12 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT loadcore:5 count=937
+IOP_DIAGNOSTIC IOP_TRACE IMPORT loadcore:6 count=5
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:14 count=6
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:17 count=9
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:19 count=7
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:22 count=6
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:27 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:29 count=6
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:5 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:7 count=464
+IOP_DIAGNOSTIC IOP_TRACE IMPORT stdio:4 count=6
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:12 count=1475
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:14 count=1497
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:17 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:29 count=11
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:20 count=7
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:4 count=10
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:41 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:6 count=10
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thevent:10 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thevent:4 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thevent:8 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thsemap:4 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thsemap:7 count=369
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thsemap:8 count=369
+IOP_DIAGNOSTIC IOP_TRACE IMPORT vblank:5 count=237
+IOP_DIAGNOSTIC IOP_TRACE SEMA_CREATE current=1 max=64
+IOP_DIAGNOSTIC IOP_TRACE SEMA_CREATE current=0 max=1
+IOP_DIAGNOSTIC IOP_RPC_SID 74565
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485077
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485079
+IOP_DIAGNOSTIC IOP_RPC_SID 2097152000
+IOP_DIAGNOSTIC IOP_RPC_SID 2147483905
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485075
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485082
+IOP_DIAGNOSTIC IOP_RPC_SID 2147483904
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485074
+IOP_STOP loaded_modules=7 threads=10 rpc_servers=9 instructions=12669028
+HEADLESS_STOP ee_cycles=1189517118 threads=4
+THREAD id=1 pc=0x0 ra=0x0 sp=0x1ffffb0 status=5 wait=0
+THREAD id=2 pc=0x24af90 ra=0x0 sp=0x367980 status=1 wait=0
+THREAD id=3 pc=0x24fb90 ra=0x24fb88 sp=0x3698f0 status=0 wait=0
+THREAD id=4 pc=0x18f688 ra=0x24b2d0 sp=0x36b950 status=3 wait=1
+[ps2xIOP] [IOP] loaded IRX id=1 entry=0x100d0 base=0x10000 start=0
+BOOT_SIFCMD handled=1 id=1 start=0
+[ps2xIOP] [IOP] loaded IRX id=2 entry=0x137d8 base=0x13700 start=2
+BOOT_CDVDFSV handled=1 id=2 start=2
+[ps2xIOP] [IOP printf] cdvd driver module version 0.1.1 (C)SCEI
+
+VFS_OPEN fd=3 path=cdrom0:\CDROM.TXT;1
+VFS_CLOSE fd=3 result=0
+[ps2xIOP] [IOP] loaded IRX id=3 entry=0x24f34 base=0x24900 start=0
+[ps2xIOP] [IOP] loaded IRX id=4 entry=0x28b24 base=0x25900 start=0
+[ps2xIOP] [IOP] loaded IRX id=5 entry=0x2f6b0 base=0x2f600 start=0
+[ps2xIOP] [IOP printf]  Exit MultiStream V5 Thread Load 
+
+[ps2xIOP] [IOP] loaded IRX id=6 entry=0x414e8 base=0x35000 start=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\FONTDATA.TXT;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\IMPACT.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\IMPACT0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\ARIAL.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\ARIAL0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\AURABSH.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\AURABSH0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\COURIER.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\COURIER0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+[ps2xIOP] [IOP printf] CRI ADX Driver Ver.8.01(%s %s)
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : Thread Priority=%d
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : SPU CORE Number=%d
+
+[ps2xIOP] [IOP] loaded IRX id=7 entry=0x491bc base=0x49100 start=0
+[ps2xIOP] [IOP printf] CRI ADX Driver : sceSdInit(SD_INIT_COLD) call.
+
+EE_CREATE_THREAD entry=2404240 stack=3565952 size=4096 priority=0 result=2
+EE_CREATE_THREAD entry=2404408 stack=3574144 size=4096 priority=0 result=3
+EE_CREATE_THREAD entry=2404552 stack=3578240 size=8192 priority=0 result=4
+[ps2xIOP] [IOP CDVD search] path=\DATA\VIDEO\01TRAILR.SFD;1 found=0
+[ps2xIOP] [IOP CDVD search] path=\DATA\VIDEO\01TRAILR.SFD;1 found=0
+EE_RETURN_ZERO id=1 dispatch=2374708 ra=0 v0=1
+BEFORE_DEADLINE id=1 pc=0x0 ra=0x0 status=5 wait=0
+BEFORE_DEADLINE id=2 pc=0x24af90 ra=0x0 status=4 wait=0
+BEFORE_DEADLINE id=3 pc=0x18f6d8 ra=0x24b38c status=0 wait=0
+BEFORE_DEADLINE id=4 pc=0x18f688 ra=0x24b2d0 status=3 wait=1
+HEADLESS_DEADLINE requesting stop

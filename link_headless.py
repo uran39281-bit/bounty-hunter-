@@ -18,6 +18,7 @@ def main():
     parser.add_argument('--constructors', action='store_true')
     parser.add_argument('--source', type=Path, help='Alternative diagnostic or functional-test main')
     parser.add_argument('--output', type=Path, help='Override executable output path')
+    parser.add_argument('--leaf-entries', type=Path, help='Locally generated exact leaf translations')
     args = parser.parse_args()
     repo, build = args.repo.resolve(), args.build.resolve()
     root = Path(__file__).resolve().parent
@@ -82,8 +83,17 @@ def main():
                         '-I', str(repo / 'ps2xIOP/include'),
                         '-c', str(ctor_unity), '-o', str(ctor_object)], check=True)
         tokens.insert(tokens.index('-o'), str(ctor_object))
+    if args.leaf_entries:
+        leaf_object = root / 'observed-leaf-entries.o'
+        subprocess.run(['g++', '-std=c++20', '-O0', '-msse4.1', '-mavx2',
+                        '-I', str(repo / 'ps2xRuntime/include'),
+                        '-I', str(repo / 'ps2xRuntime/src/lib/Kernel'),
+                        '-I', str(repo / 'ps2xIOP/include'),
+                        '-c', str(args.leaf_entries.resolve()), '-o', str(leaf_object)], check=True)
+        tokens.insert(tokens.index('-o'), str(leaf_object))
     diagnostic = root / 'headless-main.o'
     subprocess.run(['g++', '-std=c++20', '-O0', '-msse4.1', '-mavx2',
+                    *(['-DBOUNTY_OBSERVED_LEAF_ENTRIES'] if args.leaf_entries else []),
                     '-I', str(repo / 'ps2xRuntime/include'),
                     '-I', str(repo / 'ps2xRuntime/src/lib'),
                     '-I', str(repo / 'ps2xRuntime/src/lib/Kernel'),

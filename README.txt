@@ -1,4 +1,13 @@
 LATEST CHECKPOINT — 7 October 2026
+CDVD SearchFile RPC 0x80000597 now registers through supplied CDVDFSV code.
+Implemented actual FSV read buffer/layer-zero search and separated callback
+stacks from the main thread stack. Four observed code entries now translate
+exactly or expose existing native instructions. The 60-second run loads menu
+bundles and reaches render routines, but records no draws or visible frame.
+No Android APK or S24 test. See README.md and cdvd-investigation-result.json.
+The notes below retain historical checkpoints and resolved blockers.
+
+LATEST CHECKPOINT — 7 October 2026
 DTX RPC registration now passes using actual CRI_ADXI execution. Added opt-in
 SPU2 AutoDMA completion cadence, actual scratchpad DMA receive, and priority-0
 EE worker creation. Latest startup: four EE threads, four RPC services; next

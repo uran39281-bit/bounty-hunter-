@@ -1,0 +1,33 @@
+MODULE name=SIFCMD.irx id=1 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+MODULE name=CDVDFSV.irx id=2 start=2
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=CDVDFSV.irx base=79616 size=70144
+IOP_THREAD id=1 pc=99784 entry=80308 state=6 waitId=1 priority=80 module=CDVDFSV.irx import=none ra=99784 a0=1 a1=4 v0=0
+IOP_THREAD id=2 pc=100108 entry=99920 state=3 waitId=0 priority=81 module=CDVDFSV.irx import=none ra=100108 a0=105352 a1=2147485075 v0=0
+IOP_THREAD id=3 pc=100276 entry=100136 state=3 waitId=0 priority=81 module=CDVDFSV.irx import=none ra=100276 a0=105328 a1=2147485077 v0=0
+IOP_RPC_SID 2147485077
+IOP_RPC_SID 2147485079
+IOP_RPC_SID 2147485075
+IOP_RPC_SID 2147485082
+IOP_RPC_SID 2147485074
+FINAL instructions=903
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=CDVDFSV.irx base=79616 size=70144
+IOP_THREAD id=1 pc=99784 entry=80308 state=6 waitId=1 priority=80 module=CDVDFSV.irx import=none ra=99784 a0=1 a1=4 v0=0
+IOP_THREAD id=2 pc=100108 entry=99920 state=3 waitId=0 priority=81 module=CDVDFSV.irx import=none ra=100108 a0=105352 a1=2147485075 v0=0
+IOP_THREAD id=3 pc=100276 entry=100136 state=3 waitId=0 priority=81 module=CDVDFSV.irx import=none ra=100276 a0=105328 a1=2147485077 v0=0
+IOP_RPC_SID 2147485077
+IOP_RPC_SID 2147485079
+IOP_RPC_SID 2147485075
+IOP_RPC_SID 2147485082
+IOP_RPC_SID 2147485074
+[IOP] loaded IRX id=1 entry=0x100d0 base=0x10000 start=0
+[IOP] unhandled import cdvdman:47 version=0x101 pc=0x18ef0
+[IOP] loaded IRX id=2 entry=0x137d8 base=0x13700 start=2
+[IOP printf] cdvd driver module version 0.1.1 (C)SCEI
+
+DTX_REGISTERED 0

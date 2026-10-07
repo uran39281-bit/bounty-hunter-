@@ -775,5 +775,373 @@
       }
     ],
     "latest_status": "DTX service registers; three EE workers created; next wait RPC 0x80000597; no frame/APK"
+  },
+  "cdvd_checkpoint": {
+    "date": "2026-10-07",
+    "base_commit": "f43e8230cddc64d931720c363c3977cde87ce6d8",
+    "latest_result": "cdvd-investigation-result.json",
+    "status": "Real CDVD service registered; callback stack corruption fixed; menu assets loaded; no visible frame or Android APK",
+    "files": [
+      {
+        "path": ".gitignore",
+        "bytes": 608,
+        "sha256": "d66f2de6d0dd2a0fa553f994b5965f09f070796e288d94aebf66ef29ecc4e617"
+      },
+      {
+        "path": "README.md",
+        "bytes": 8742,
+        "sha256": "f76348caff048e23efe89747d901db3f88728c27b7bce9e2875ef163eacdddb3"
+      },
+      {
+        "path": "README.txt",
+        "bytes": 13779,
+        "sha256": "293f9e3946fd0206b3b9290148a85103eaf92e3a5eed38170c0a81f3da357caa"
+      },
+      {
+        "path": "advance_observed_entries.py",
+        "bytes": 2710,
+        "sha256": "882b92679f27f3d128fe14a242979f3250779b3f3c54f3fdb55114992958fcb6"
+      },
+      {
+        "path": "cdvd-auto-entry-04-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-auto-entry-04.json",
+        "bytes": 10732,
+        "sha256": "6d909b53452ba2059f527b4c1e674e17b93b2fa5e5677810a78cc5581a707182"
+      },
+      {
+        "path": "cdvd-auto-entry-04.log",
+        "bytes": 9785,
+        "sha256": "4f1e536efb5fb03079c316b0f0655081c498906271a563f8d879db833acc2435"
+      },
+      {
+        "path": "cdvd-callback-native-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-callback-regression-build.log",
+        "bytes": 116,
+        "sha256": "33aafe700d763895591cf2f81f05195ead108e1f256386338e7df9f8d6f11389"
+      },
+      {
+        "path": "cdvd-callback-regression.log",
+        "bytes": 149,
+        "sha256": "06fa8a542afb528bcbb512db973a262a28f066e6101def2b001dd26f673281e6"
+      },
+      {
+        "path": "cdvd-callback-runtime-build.log",
+        "bytes": 255,
+        "sha256": "851867bfe007fdfdf8855449a700cf9eee25cee4b022caaceb20141486dacfcd"
+      },
+      {
+        "path": "cdvd-callback-startup-result.json",
+        "bytes": 11013,
+        "sha256": "0316c9a99dba1bc86382f4102c22dc65955219ad1b41eb642e14a02306b2561f"
+      },
+      {
+        "path": "cdvd-callback-startup-result.log",
+        "bytes": 10149,
+        "sha256": "0912669e8537e14dbe52c0c2864df028a0e66238fda9a2b329bad88e398ef747"
+      },
+      {
+        "path": "cdvd-confirmed-startup-result.json",
+        "bytes": 9501,
+        "sha256": "6a526c0413fe3a390ba77f56d3884585eb468cacef94e5f6b17b0c06544309d8"
+      },
+      {
+        "path": "cdvd-confirmed-startup-result.log",
+        "bytes": 8679,
+        "sha256": "e03798a582136a4d448d4c04e28cc5255d8c9acd216832b3baa2de9e0f56e2cd"
+      },
+      {
+        "path": "cdvd-entry-native-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-entry-startup-result.json",
+        "bytes": 12352,
+        "sha256": "f6123fcfc9d99f61c034cc176fe183785568d6ce712e46609120dbb6f71d5686"
+      },
+      {
+        "path": "cdvd-entry-startup-result.log",
+        "bytes": 11379,
+        "sha256": "483aa88dfeaf1bf17a2890edcabfc10b51c5e8e6a554572d970e55921a8bfa64"
+      },
+      {
+        "path": "cdvd-exit-trace-build.log",
+        "bytes": 262,
+        "sha256": "b4c165017817d6e910d5f48dddeaf5f92d58c5229c93c9d5090e487e36cd06dc"
+      },
+      {
+        "path": "cdvd-exit-trace-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-final-startup-result.json",
+        "bytes": 9555,
+        "sha256": "ee25cad41a5a15d47fc9253a1313655df6f53b0cd8a23014c4e49664ad8393b2"
+      },
+      {
+        "path": "cdvd-final-startup-result.log",
+        "bytes": 8732,
+        "sha256": "f854b861e0f7f9eb806274d8837b5b3c428b3c46a5fe1e381253bbdb964ddfe7"
+      },
+      {
+        "path": "cdvd-front-end-60s.json",
+        "bytes": 12376,
+        "sha256": "4c9357e144bc2eb145c791d60a3350a831ca2dfbd81769a07c6f2b824d761605"
+      },
+      {
+        "path": "cdvd-front-end-60s.log",
+        "bytes": 11373,
+        "sha256": "cabc2f0bd3ca064b7925922e96927c1282b4960ad3d8de3cf4a2fbd07354425f"
+      },
+      {
+        "path": "cdvd-import-native-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-import-runtime-build.log",
+        "bytes": 169,
+        "sha256": "b47ef2959bb54d62ab300c0a86cb45aa28eb6b81ae981e7121cf2f97866a5c16"
+      },
+      {
+        "path": "cdvd-import-startup-result.json",
+        "bytes": 9501,
+        "sha256": "672bbeb3f3866f15ecf3801fdcbece73987ce0fd80a6e01159358d32341f6aab"
+      },
+      {
+        "path": "cdvd-import-startup-result.log",
+        "bytes": 8679,
+        "sha256": "3f8e92d45a2a879b51585223dc14a88c294593ed6c609898e92aef753983b9ef"
+      },
+      {
+        "path": "cdvd-investigation-result.json",
+        "bytes": 3480,
+        "sha256": "2e8f81c8f183c5a2ef410b17e65c2d23f5aba18d2e07afe939468e33315cf1a9"
+      },
+      {
+        "path": "cdvd-iop-enabled-tests.log",
+        "bytes": 563,
+        "sha256": "eabcb1d72d580e5bab6b04aadfc6d9b93c1d74254f3106e04a55f4890c516da3"
+      },
+      {
+        "path": "cdvd-iop-tests-build.log",
+        "bytes": 563,
+        "sha256": "2ab9ec55dc0826dd73b040387704c1040c650d434c9c532fddcb0d0fcc303a01"
+      },
+      {
+        "path": "cdvd-iop-tests.log",
+        "bytes": 563,
+        "sha256": "eabcb1d72d580e5bab6b04aadfc6d9b93c1d74254f3106e04a55f4890c516da3"
+      },
+      {
+        "path": "cdvd-isolated-boot.log",
+        "bytes": 1701,
+        "sha256": "ff90fca750d8db1548f2deacee51d3618c69c7a14d37d3a2fd85eab107e1b951"
+      },
+      {
+        "path": "cdvd-leaf-native-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-leaf-regression.log",
+        "bytes": 126,
+        "sha256": "39579723a3cb8e4aaac26cec1c62e99cf9b62098aa4bdfa172e38813a055a225"
+      },
+      {
+        "path": "cdvd-leaf-startup-result.json",
+        "bytes": 10581,
+        "sha256": "c36f7aaf2c848a4acc108dcaf7ea68bd4160f7d365638c36dc8c3774c96bc8ff"
+      },
+      {
+        "path": "cdvd-leaf-startup-result.log",
+        "bytes": 9695,
+        "sha256": "c7189815590a8bd537368b652411fedcda707d8954dd9b4e4c61408567f3f8d4"
+      },
+      {
+        "path": "cdvd-long-native-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-long-startup-result.json",
+        "bytes": 12154,
+        "sha256": "cb03ce37f6f2d15105f26a599856731074e11a4690cfd9b1a071ce701024590d"
+      },
+      {
+        "path": "cdvd-long-startup-result.log",
+        "bytes": 11195,
+        "sha256": "0d66ce6f01a1de71a4c8281db60420e3e63f091da08c61cc8f473fd782c650c3"
+      },
+      {
+        "path": "cdvd-native-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-observed-entry-progression.log",
+        "bytes": 163,
+        "sha256": "dfd7edd97de7b6882da947e862e713a4ad70f42a498a04d946122abf5b6e4279"
+      },
+      {
+        "path": "cdvd-probe-reproduction.log",
+        "bytes": 751,
+        "sha256": "8aa85d04b9e9c83f85111fbe618a53ee3a433b2001d8d66479623dbcc2e4c988"
+      },
+      {
+        "path": "cdvd-regression-build.log",
+        "bytes": 3790,
+        "sha256": "990f0b663e25d1f3171d90aed47f335f9b7308d56ef917af5f122ef629b3a62b"
+      },
+      {
+        "path": "cdvd-regression.log",
+        "bytes": 145,
+        "sha256": "a38dc06cfc8f7b687ea4f95986ce0dc246a5c773fafd503430ac997e51ecb1e8"
+      },
+      {
+        "path": "cdvd-return-trace-build.log",
+        "bytes": 262,
+        "sha256": "b4c165017817d6e910d5f48dddeaf5f92d58c5229c93c9d5090e487e36cd06dc"
+      },
+      {
+        "path": "cdvd-return-trace-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-runtime-build.log",
+        "bytes": 260,
+        "sha256": "c1cb05305f856c4d297258919e3587562383eac0fb7c65bb5370f5ad08a92c66"
+      },
+      {
+        "path": "cdvd-startup-result.json",
+        "bytes": 8539,
+        "sha256": "f374f3e1580e89f31a509ceb61941686c8d2c253710a556158c92da56115cc22"
+      },
+      {
+        "path": "cdvd-startup-result.log",
+        "bytes": 7820,
+        "sha256": "c3708a41292177281ae1007798876cca0a717a9d8801af574d19bdcad1ad71c5"
+      },
+      {
+        "path": "cdvd-third-entry-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "cdvd-third-entry-result.json",
+        "bytes": 13482,
+        "sha256": "41a4a1534718cd89ea6a32bfdadedd15dc90a15286fecc225061b000f7d48b65"
+      },
+      {
+        "path": "cdvd-third-entry-result.log",
+        "bytes": 12486,
+        "sha256": "5e3bf347bdbf586e89063c1df8612ff20a9c322695506f1d7aaae724f2418d4a"
+      },
+      {
+        "path": "experiment.json",
+        "bytes": 7530,
+        "sha256": "28de8c38c48244b5bb3f5e5f07f71a97ee2d147c0909abf39e23741c5e626d03"
+      },
+      {
+        "path": "generate_leaf_entries.py",
+        "bytes": 5891,
+        "sha256": "3a19fcf922619cdf286adbcd83e4dbd05857bb7b23ea7fd24dc09d4693fa4c0e"
+      },
+      {
+        "path": "headless_startup.cpp",
+        "bytes": 5993,
+        "sha256": "72ffc1608f28d852b7ac2e1ad449bf5b4cd2e5a33e82a772c0aad00ff52dc223"
+      },
+      {
+        "path": "install_boot_cdvdfsv_probe.py",
+        "bytes": 1421,
+        "sha256": "fa2120bd5022add65fd52f22d9098780f1d21a460e0cff9be2da9b16460bd1e8"
+      },
+      {
+        "path": "install_callback_heap_stacks.py",
+        "bytes": 1359,
+        "sha256": "463b09561c23fa26239399ae753629fc00784a0511d68b87596e5a8461dcbedc"
+      },
+      {
+        "path": "install_cdvd_imports.py",
+        "bytes": 2353,
+        "sha256": "23410f0fdcb6f0183777d689cb49c2187e782b33ae45b318e396507484ed89ef"
+      },
+      {
+        "path": "install_ee_exit_probe.py",
+        "bytes": 1242,
+        "sha256": "017c54c2c16d253092e4e3f66e45f79a5740634d0234ad5919567a37c7166111"
+      },
+      {
+        "path": "install_ee_return_probe.py",
+        "bytes": 1508,
+        "sha256": "cdb497e2412c82f2965e579a1107f45d47d0f2291abcfe5d425455337aa717d7"
+      },
+      {
+        "path": "link_headless.py",
+        "bytes": 5960,
+        "sha256": "18f2fb7a0686bdcea3c8ec39608e64f5bbbbc9ff11d1fadd56aa10e0c3f45c5c"
+      },
+      {
+        "path": "observed-entry-progression.json",
+        "bytes": 223,
+        "sha256": "935a6a97bc0b80f3af489e82f1e2c44e0f2403a257c9abf9b92063a1cdc55922"
+      },
+      {
+        "path": "observed-leaf-entries.json",
+        "bytes": 1213,
+        "sha256": "91a921950903eaffcbe99877dd8964544a1a2b8e6ae272613b566a567dca0f7f"
+      },
+      {
+        "path": "probe-installation-check.json",
+        "bytes": 2903,
+        "sha256": "26cfb6f477b2ebf42aa5b5a05655ac5ced803593451bf4900dc3356ba40b927f"
+      },
+      {
+        "path": "run_startup.py",
+        "bytes": 5640,
+        "sha256": "1c96a57ad2b7001375f20035a290432d54e9f51ea2fa810773d9af6aa5765bf0"
+      },
+      {
+        "path": "runtime-experiment.patch",
+        "bytes": 24712,
+        "sha256": "fae69e71ea033d7095e0f76a9e520795176e78204fa83127706995e6c2cd8819"
+      },
+      {
+        "path": "stage_assets.py",
+        "bytes": 2825,
+        "sha256": "ecf0941c35b78f451c8ddd1dae3ff986499df24359fc62bc2ba3e75a86f9681c"
+      },
+      {
+        "path": "test_callback_heap_stacks.cpp",
+        "bytes": 2073,
+        "sha256": "8ac003a29474cdd8147acc1b5d33a5e7753fa6ad878800f946930cc30ed880b0"
+      },
+      {
+        "path": "test_cdvd_imports.cpp",
+        "bytes": 4920,
+        "sha256": "3b2b66ccf0f4cee1c8a6bec81645395e7b1aeb92f8121cb36f743643c9454945"
+      },
+      {
+        "path": "test_leaf_translation.py",
+        "bytes": 2035,
+        "sha256": "a9b87ffbbe6ee6494e7034526834bc5aebde11fbdf4b4f02061c19d16a8fa5aa"
+      },
+      {
+        "path": "verify_runtime_probes.py",
+        "bytes": 3765,
+        "sha256": "25bbfc59e951eb66a8f94ff42d135bf1e3a804adcd13e51b1c0f2fd2f953ae21"
+      }
+    ]
   }
 }

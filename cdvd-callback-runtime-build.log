@@ -1,0 +1,6 @@
+[ 21%] Built target glfw
+[ 46%] Built target ps2_iop
+[ 53%] Built target raylib
+[ 53%] Building CXX object ps2xRuntime/CMakeFiles/ps2_runtime.dir/src/lib/ps2_runtime.cpp.o
+[ 53%] Linking CXX static library libps2_runtime.a
+[100%] Built target ps2_runtime

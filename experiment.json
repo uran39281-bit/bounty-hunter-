@@ -73,9 +73,9 @@
   "constructor_entries": 114,
   "candidate_callback_entry_hints": 617,
   "corrected_native_evaluation_seconds": 5,
-  "native_wait_pc": "0x18afe8",
-  "native_wait_rpc_sid": "0x80000597",
-  "native_wait_description": "sceSifBindRpc retry after DTX initialization and three EE workers; required real system RPC service not registered",
+  "native_wait_pc": "0x3499dc",
+  "native_wait_rpc_sid": null,
+  "native_wait_description": "60-second bounded startup reaches front-end render routines; graphics submission unresolved, no captured frame",
   "corrected_real_iop_modules_loaded": [
     "SIO2MAN.IRX",
     "PADMAN.IRX",
@@ -83,9 +83,9 @@
     "STREAM.IRX",
     "CRI_ADXI.IRX"
   ],
-  "corrected_iop_rpc_server_count": 4,
-  "corrected_iop_thread_count": 7,
-  "corrected_iop_interpreter_instructions": 1161144,
+  "corrected_iop_rpc_server_count": 10,
+  "corrected_iop_thread_count": 12,
+  "corrected_iop_interpreter_instructions": 9562367,
   "native_execution_engine": "Generated EE C++ on x86-64; real supplied IRX modules in upstream IOP interpreter; PS2 hardware compatibility runtime",
   "checkpoint_includes_desktop_binaries": false,
   "corrected_translation": {
@@ -138,7 +138,7 @@
     "bundles_crc_validated": true,
     "bundles_files": 84,
     "bundles_bytes": 218929584,
-    "native_startup_result": "Descriptor reuse passes invalid copy; new timing/SPR/priority fixes pass DTX and create three workers. Next wait: RPC SID 0x80000597; no drawing.",
+    "native_startup_result": "DTX/CDVD RPC services register; callback stacks separated and four native entries exposed; main-menu bundles and front-end render routines reached, no frame.",
     "memory_copy_caller": "0x1de9b0 (copy return PC 0x1dea64)",
     "baseline_bad_source": "0xdd84c010",
     "baseline_bad_size": "0x8f0e8e40",
@@ -146,18 +146,18 @@
     "upstream_iop_suites_passed": 4,
     "vfs_reuse_regression_passed": true,
     "patch_installation_reproduced_exactly": true,
-    "latest_execution_result": "dtx-priority-startup-result.json",
+    "latest_execution_result": "cdvd-front-end-60s.json",
     "android_apk_produced": false,
     "title_screen_observed": false
   },
-  "current_runtime_patches": "Opt-in VFS descriptors, SIFCMD boot, SPU2 AutoDMA cadence, actual SPR receive, priority-zero EE workers and read-only diagnostic probes; twelve runtime files reproduced exactly.",
+  "current_runtime_patches": "Opt-in descriptor reuse, supplied SIFCMD/CDVDFSV partial boot, SPU2 cadence, real SPR receive, priority-zero EE workers, CDVD imports, allocated callback stacks, and read-only diagnostics; fourteen runtime source files reproduce exactly.",
   "current_native_compilers": "GCC 13 plus Clang 18 for four large unity objects; O0/SSE4.1/AVX2. Clang objects omit GCC PCH and native debug information.",
   "previous_dtx_wait": {
     "native_wait_pc": "0x2579a8",
     "native_wait_rpc_sid": "0x7d000000",
     "native_wait_description": "DTX_Init sceSifBindRpc retry; client server pointer remains unset; underlying runtime/IOP cause unresolved"
   },
-  "latest_execution_result": "dtx-priority-startup-result.json",
+  "latest_execution_result": "cdvd-front-end-60s.json",
   "dtx_service_registered": true,
   "ee_worker_threads_created": 3,
   "first_game_frame_observed": false,
@@ -172,6 +172,18 @@
     "scratchpad receive data/wrap/completion",
     "EE priority zero"
   ],
-  "patch_source_files_reproduced": 12,
-  "latest_ee_threads": 4
+  "patch_source_files_reproduced": 14,
+  "latest_ee_threads": 1,
+  "previous_cdvd_wait": {
+    "native_wait_pc": "0x18afe8",
+    "native_wait_rpc_sid": "0x80000597",
+    "native_wait_description": "sceSifBindRpc retry after DTX initialization and three EE workers; required real system RPC service not registered"
+  },
+  "cdvd_search_service_registered": true,
+  "observed_native_entries": [
+    "0x265780",
+    "0x29e7f0",
+    "0x301fa0",
+    "0x31b980"
+  ]
 }

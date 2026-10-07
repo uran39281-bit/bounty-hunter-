@@ -1,0 +1,39 @@
+test_cdvd_imports.cpp: In function ‘int main(int, char**)’:
+test_cdvd_imports.cpp:64:21: warning: ignoring return value of ‘bool ps2x::iop::detail::IopCdvd::dispatchImport(uint16_t, ps2x::iop::detail::IopCpuState&)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   64 |  cdvd.dispatchImport(47,cpu);require(cpu.gpr[2]==buffer,"shared buffer not stable");
+      |  ~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from test_cdvd_imports.cpp:5:
+../../PS2Recomp/ps2xIOP/src/emulator/imports/iop_cdvd.h:36:28: note: declared here
+   36 |         [[nodiscard]] bool dispatchImport(uint16_t ordinal, IopCpuState &cpu);
+      |                            ^~~~~~~~~~~~~~
+test_cdvd_imports.cpp:65:63: warning: ignoring return value of ‘bool ps2x::iop::detail::IopMemory::writeRam(uint32_t, const void*, size_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   65 |  const char path[]="cdrom0:\\data\\test.bin;1";memory.writeRam(0x2480,path,sizeof(path));
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from test_cdvd_imports.cpp:4:
+../../PS2Recomp/ps2xIOP/src/emulator/core/iop_memory.h:52:28: note: declared here
+   52 |         [[nodiscard]] bool writeRam(uint32_t address, const void *source, size_t size);
+      |                            ^~~~~~~~
+test_cdvd_imports.cpp:71:46: warning: ignoring return value of ‘bool ps2x::iop::detail::IopMemory::readRam(uint32_t, void*, size_t) const’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   71 |  std::array<uint8_t,32>a{},b{};memory.readRam(0x2400,a.data(),a.size());
+      |                                ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../../PS2Recomp/ps2xIOP/src/emulator/core/iop_memory.h:51:28: note: declared here
+   51 |         [[nodiscard]] bool readRam(uint32_t address, void *destination, size_t size) const;
+      |                            ^~~~~~~
+test_cdvd_imports.cpp:72:39: warning: ignoring return value of ‘bool ps2x::iop::detail::IopCdvd::dispatchImport(uint16_t, ps2x::iop::detail::IopCpuState&)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   72 |  cpu.gpr[4]=0x2500;cdvd.dispatchImport(10,cpu);memory.readRam(0x2500,b.data(),b.size());
+      |                    ~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../PS2Recomp/ps2xIOP/src/emulator/imports/iop_cdvd.h:36:28: note: declared here
+   36 |         [[nodiscard]] bool dispatchImport(uint16_t ordinal, IopCpuState &cpu);
+      |                            ^~~~~~~~~~~~~~
+test_cdvd_imports.cpp:72:62: warning: ignoring return value of ‘bool ps2x::iop::detail::IopMemory::readRam(uint32_t, void*, size_t) const’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   72 |  cpu.gpr[4]=0x2500;cdvd.dispatchImport(10,cpu);memory.readRam(0x2500,b.data(),b.size());
+      |                                                ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../../PS2Recomp/ps2xIOP/src/emulator/core/iop_memory.h:51:28: note: declared here
+   51 |         [[nodiscard]] bool readRam(uint32_t address, void *destination, size_t size) const;
+      |                            ^~~~~~~
+test_cdvd_imports.cpp:75:69: warning: ignoring return value of ‘bool ps2x::iop::detail::IopMemory::writeRam(uint32_t, const void*, size_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   75 |  const char missing[]="cdrom0:\\DATA\\MISSING.BIN;1";memory.writeRam(0x2480,missing,sizeof(missing));
+      |                                                      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../PS2Recomp/ps2xIOP/src/emulator/core/iop_memory.h:52:28: note: declared here
+   52 |         [[nodiscard]] bool writeRam(uint32_t address, const void *source, size_t size);
+      |                            ^~~~~~~~

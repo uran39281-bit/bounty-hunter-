@@ -1,0 +1,107 @@
+{
+  "goal": "Fix RPC 0x80000597 and attempt first native game frame",
+  "rpc_service": "CDVD SearchFile",
+  "rpc_sid": "0x80000597",
+  "real_service_registered": true,
+  "DTX_registered": true,
+  "changes": [
+    "Execute supplied CDVDFSV IRX after SIFCMD at real IOP reset (opt-in partial boot)",
+    "Support actual shared FSV read buffer and real layer-zero host-file lookup; missing files still fail",
+    "Separate real allocated callback stacks from the main thread stack",
+    "Add exact native translations/entry labels for four observed original code addresses"
+  ],
+  "native_entries": [
+    {
+      "address": "0x265780",
+      "bytes": 8,
+      "shape": "JR RA; ADDIU from zero"
+    },
+    {
+      "address": "0x29e7f0",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_0029E710_0x29e710.cpp",
+      "source_sha256": "1dc7deed93aa87d5966e15fde1bbb39aa78c159211777c95730a412a45abbaae"
+    },
+    {
+      "address": "0x301fa0",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_00301F90_0x301f90.cpp",
+      "source_sha256": "81b336fbba3e8faa94c6cf6c2f89bd301d61ea14bff272b74ec0d600107ce8ed"
+    },
+    {
+      "address": "0x31b980",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_0031B8D0_0x31b8d0.cpp",
+      "source_sha256": "08ff6f0191c2cfb6ae35b642d58c1e916affe315c5932b476a0b12bf12dba34b"
+    }
+  ],
+  "original_executable_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+  "original_instructions_changed": false,
+  "native_progress": [
+    "FECOMMON.ZAP",
+    "FESTART.ZAP",
+    "STARTUP.BIN",
+    "MM_ANI_2.VFX",
+    "MM_ANI_4.VFX",
+    "FETEX.ZAP",
+    "Memory-card module startup",
+    "Front-end render routines"
+  ],
+  "latest_report": "cdvd-front-end-60s.json",
+  "latest_deadline_seconds": 60,
+  "latest_iop": {
+    "loaded_modules": 9,
+    "threads": 12,
+    "rpc_servers": 10,
+    "instructions": 9562367
+  },
+  "latest_ee": {
+    "threads": 1,
+    "pc": "0x3499dc",
+    "status": "Running at deadline; no longer RPC bind retry"
+  },
+  "graphics_activity": {
+    "packed_packets": 0,
+    "image_uploads": 0,
+    "recent_draws": 0,
+    "presentation_frames": 0,
+    "dma_starts": 178,
+    "gif_copies": 2,
+    "gs_writes": 0,
+    "vif_writes": 4
+  },
+  "first_game_frame_observed": false,
+  "frame_capture_exists": false,
+  "title_screen_verified": false,
+  "audio_output_tested": false,
+  "android_apk_built": false,
+  "s24_tested": false,
+  "known_missing_file": "DATA/VIDEO/01TRAILR.SFD",
+  "missing_file_is_only_blocker": false,
+  "remaining_known_asset_gaps": [
+    "CHEWIE",
+    "SOUND",
+    "VIDEO"
+  ],
+  "tests": {
+    "new_regressions_passed": 3,
+    "upstream_iop_suites_passed": 4,
+    "upstream_iop_enabled_suites_passed": 4,
+    "runtime_source_files_exactly_reproduced": 14
+  },
+  "evidence": [
+    "cdvd-startup-result.json",
+    "cdvd-final-startup-result.json",
+    "cdvd-callback-startup-result.json",
+    "cdvd-long-startup-result.json",
+    "cdvd-third-entry-result.json",
+    "cdvd-front-end-60s.json",
+    "cdvd-regression.log",
+    "cdvd-callback-regression.log",
+    "cdvd-leaf-regression.log",
+    "cdvd-iop-tests.log",
+    "cdvd-iop-enabled-tests.log",
+    "probe-installation-check.json"
+  ],
+  "next_step": "Trace the native front-end graphics/VIF/GIF submission path; verify actual draws and a visible frame before Android packaging."
+}

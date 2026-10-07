@@ -9,33 +9,35 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 7 October 2026
 
-- The real `CRI_ADXI.IRX` module now registers DTX RPC service `0x7d000000`.
-  Native startup passes its previous wait at `0x2579a8`.
-- Streaming-audio DMA completed much too quickly and kept the priority-39
-  audio worker running ahead of the priority-49 RPC thread. The opt-in
-  AutoDMA completion cadence gives that RPC thread time to initialize.
-- Added scratchpad normal receive through the runtime's existing DMA engine.
-  Its regression verifies actual 16 KB data, wrapping and completion registers.
-- The game's three EE workers were rejected because they inherit priority 0
-  from the main thread. Opt-in support creates the real threads at that
-  priority, as used by PS2SDK's own thread initialization.
-- Latest bounded startup has four EE threads and four actual IOP RPC servers.
-  It reaches another `sceSifBindRpc` retry for SID `0x80000597`, around
-  `0x18afe8`/`0x18b008`. The first game frame is still blocked.
-- All three new regressions pass. All four upstream IOP suites pass with
-  AutoDMA timing disabled and enabled. Installers and the alternative patch
-  reproduce all twelve modified runtime source files exactly.
+- The supplied `CDVDFSV.IRX` now boots after SIFCMD and registers the real
+  disc-search RPC service `0x80000597`. DTX remains registered. Native startup
+  starts with nine actual RPC services and seven real loaded modules; the
+  60-second run later loads memory-card modules too.
+- Added opt-in support for its two missing CDVD imports: a real shared read
+  buffer and layer-zero file lookup through the existing host-backed ISO.
+  Files that are absent still fail; other disc layers remain unsupported.
+- RPC callback stacks overlapped the main thread's top-of-RAM stack. Separately
+  allocated callback stacks preserve its saved return address and let startup
+  continue beyond the previous PC-zero failure.
+- Four observed code entries now have exact native translations or entry labels
+  exposed in existing translated instruction bodies. Every instruction is
+  checked against the unchanged supplied ELF; no game instructions are patched.
+- Startup reaches main-menu assets: `FECOMMON.ZAP`, `FESTART.ZAP`, `STARTUP.BIN`,
+  `MM_ANI_2.VFX` and `MM_ANI_4.VFX`. The first visible game frame remains unverified.
+- CDVD file/sector, callback-stack and native-leaf regressions pass. All four
+  upstream IOP suites pass with the new imports disabled and enabled.
+  Installers and the alternative patch reproduce fourteen runtime files exactly.
 
-Earlier descriptor reuse and partial DATA/BUNDLES integration remain required:
-657 supplied files total 248,577,426 bytes. CHEWIE, SOUND and VIDEO are still
-missing; complete disc assets are unverified.
+The supplied DATA/BUNDLES contains 657 files totaling 248,577,426 bytes.
+`DATA/VIDEO/01TRAILR.SFD` is requested and missing; the game proceeds to the
+front end with the current fixes. CHEWIE, SOUND and VIDEO remain incomplete.
+Missing assets may cause later failures, and full-disc completeness is unverified.
 
-The headless diagnostic reports zero packed graphics packets, image uploads,
-recent draws and presentation frames. No visible frame, sound output,
-controls, gameplay, FPS, Android binary or S24 test is established. Diagnostic
-exit zero only means the bounded runner returned. AutoDMA timing is a coarse
-interrupt-cadence model; it does not implement SPU2 audio output or prove full
-hardware accuracy. Other DMA receive channels remain unimplemented.
+No visible title screen, sound output, controls, gameplay, FPS, Android binary
+or S24 test is established. Diagnostic exit zero only means the bounded runner
+returned. AutoDMA timing remains a coarse interrupt-cadence model; it does not
+implement SPU2 audio output or prove full hardware accuracy. CDVDFSV boot is
+still a partial IOP boot, and other DMA receive channels remain unimplemented.
 
 ## Reproduce
 
@@ -67,6 +69,11 @@ python3 install_spu2_adma_timing.py /path/to/PS2Recomp
 python3 install_scratchpad_receive.py /path/to/PS2Recomp
 python3 install_ee_thread_probe.py /path/to/PS2Recomp
 python3 install_ee_zero_priority.py /path/to/PS2Recomp
+python3 install_boot_cdvdfsv_probe.py /path/to/PS2Recomp
+python3 install_cdvd_imports.py /path/to/PS2Recomp
+python3 install_ee_exit_probe.py /path/to/PS2Recomp
+python3 install_ee_return_probe.py /path/to/PS2Recomp
+python3 install_callback_heap_stacks.py /path/to/PS2Recomp
 python3 verify_runtime_probes.py /path/to/PS2Recomp
 python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --disc /path/to/disc
 ```
@@ -77,16 +84,17 @@ python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip 
 ```sh
 cmake -S /path/to/PS2Recomp -B /path/to/runtime-build -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG="-O0 -msse4.1 -mavx2" -DPS2X_BUILD_RECOMP=OFF -DPS2X_BUILD_ANALYZER=OFF -DPS2X_BUILD_TEST=OFF -DPS2X_BUILD_STUDIO=OFF -DPS2X_ENABLE_DEBUG_UI=OFF -DPS2X_ENABLE_FFMPEG=OFF -DPS2X_ENABLE_AGRESSIVE_LOGS=OFF -DPS2X_ENABLE_IOP_RPC_TRACE=OFF
 cmake --build /path/to/runtime-build --target ps2EntryRunner -j3
-python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build
-python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority
+python3 generate_leaf_entries.py original/SLUS_204.20 --entry 0x265780 --entry 0x29e7f0 --entry 0x301fa0 --entry 0x31b980 --generated-directory corrected-output
+python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build --leaf-entries leaf-output/observed_leaf_entries.cpp
+python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority --boot-cdvdfsv --cdvd-compat --separate-callback-stacks --seconds 60 --capture-frame first-game-frame.ppm
 ```
 
 Omit `--reuse-file-descriptors` to reproduce the original invalid-copy failure.
 Omit `--adma-timing` to reproduce the DTX wait after descriptor reuse; with
 cadence alone, startup stops at the former `sceDmaRecvN` stub. SIFCMD execution
-is a partial boot probe. Trace flags only add diagnostics. Each compatibility
+is a partial boot probe. CDVDFSV runs supplied IRX code and requires the SIFCMD probe. Trace flags only add diagnostics. Each compatibility
 change defaults off. RPC servers register through actual supplied IRX code.
-The original executable remains unchanged. `runtime-experiment.patch` is an alternative
+The original executable remains unchanged. Frame capture writes only after real draw activity; it does not generate a placeholder image. `runtime-experiment.patch` is an alternative
 to the installers; apply one route, not both.
 
 For an interrupted GCC build, `compile_large_unit.py BUILD --compiler
@@ -95,23 +103,34 @@ It does not produce an Android binary. Finish the CMake build before linking.
 
 ## Evidence and next work
 
-See `dtx-investigation-result.json`, `dtx-final-baseline.json`,
-`dtx-final-cadence-only.json`, `dtx-ee-thread-startup-result.json`, and
-`dtx-priority-startup-result.json`. The `dtx-*-tests.log` files retain checks;
-`probe-installation-check.json` records reproducibility and source hashes.
-Earlier asset and invalid-copy evidence remains available.
+See `cdvd-investigation-result.json`, `cdvd-startup-result.json`,
+`cdvd-final-startup-result.json`, `cdvd-callback-startup-result.json`,
+`cdvd-long-startup-result.json`, `cdvd-third-entry-result.json`, and the latest
+`cdvd-front-end-60s.json`. `observed-leaf-entries.json` records exact observed entry
+translation and source hashes. Earlier DTX and asset evidence is retained.
 
-Next: trace the RPC bind for `0x80000597` and boot the required real IOP
-system service, then retry startup with graphics counters enabled. Faithful
-IOP boot, audio hardware, asset completeness and visible rendering still need
-work before an Android SDK/NDK build and actual S24 testing.
+`cdvd-regression.log`, `cdvd-callback-regression.log`,
+`cdvd-leaf-regression.log`, the IOP suite logs, and
+`probe-installation-check.json` retain validation. Generated game C++, raw
+memory captures, original modules/assets and large native binaries remain local.
 
-Primary implementation references used in this investigation:
+The latest 60-second run ends in front-end rendering routines around
+`0x3499dc`, with 178 DMA starts, two GIF copies, four VIF writes, zero GS
+writes, zero draws and no presentation frame. Menu assets have loaded, but
+this is not evidence of a working visible title screen.
 
+Next: continue front-end startup and trace graphics submission until a real
+visible frame can be verified. Missing assets, audio hardware and controller
+input also need work before an Android SDK/NDK build and S24 testing.
+
+Primary implementation references:
+
+- [PS2SDK CDVD RPC identifiers](https://github.com/ps2dev/ps2sdk/blob/master/ee/rpc/cdvd/src/libcdvd.c)
+- [PS2SDK CDVD import numbers](https://github.com/ps2dev/ps2sdk/blob/master/iop/cdvd/cdvdman/include/cdvdman.h)
+- [PS2SDK CDVD read buffer](https://github.com/ps2dev/ps2sdk/blob/master/iop/cdvd/cdvdman/src/cdvdman.c)
 - [PS2SDK LIBSD block DMA](https://github.com/ps2dev/ps2sdk/blob/master/iop/sound/libsd/src/block.c)
 - [PCSX2 SPU2 DMA](https://github.com/PCSX2/pcsx2/blob/master/pcsx2/SPU2/Dma.cpp)
 - [PS2SDK priority-zero thread creation](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/src/thread.c)
-- [Play! EE thread creation](https://github.com/jpd002/Play-/blob/master/Source/ee/PS2OS.cpp)
 - [PS2SDK SIFCMD startup](https://github.com/ps2dev/ps2sdk/blob/master/iop/system/sifcmd/src/sifcmd.c)
 
 Upstream PS2Recomp's license is included in `PS2Recomp-LICENSE.txt`.

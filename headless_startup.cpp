@@ -8,18 +8,28 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
+#include <fstream>
+#include <cstdlib>
 
 namespace ps2_stubs { void resetSifState(); }
+#ifdef BOUNTY_OBSERVED_LEAF_ENTRIES
+void registerObservedLeafEntries(PS2Runtime &runtime);
+#endif
 
 int main(int argc, char **argv) {
-    if (argc != 2) {
-        std::cerr << "Usage: headless_startup path/to/SLUS_204.20\n";
+    if (argc != 2 && argc != 3) {
+        std::cerr << "Usage: headless_startup path/to/SLUS_204.20 [seconds]\n";
         return 2;
     }
+    const int seconds = argc == 3 ? std::stoi(argv[2]) : 5;
+    if (seconds < 1 || seconds > 60) return 2;
     PS2Runtime runtime;
     runtime.setMissingFunctionPolicy(PS2Runtime::MissingFunctionPolicy::Stop);
     if (!runtime.memory().initialize() || !runtime.syncCoreSubsystems() ||
         !runtime.loadELF(argv[1])) return 1;
+    #ifdef BOUNTY_OBSERVED_LEAF_ENTRIES
+    registerObservedLeafEntries(runtime);
+    #endif
     ps2_stubs::resetSifState();
     ps2_stubs::resetAudioStubState();
     ps2_stubs::resetMpegStubState();
@@ -30,10 +40,10 @@ int main(int argc, char **argv) {
     runtime.cpu().r[29] = _mm_set_epi64x(0, PS2_RAM_SIZE - 0x10u);
     runtime.eeScheduler().reset(ram, runtime.cpu());
     std::cout << "HEADLESS_START entry=0x" << std::hex << runtime.cpu().pc
-              << std::dec << " deadline_seconds=5 graphics_tested=false audio_tested=false\n"
+              << std::dec << " deadline_seconds=" << seconds << " graphics_tested=false audio_tested=false\n"
               << std::flush;
     std::jthread timer([&](std::stop_token stop) {
-        auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(5);
+        auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(seconds);
         while (!stop.stop_requested() && std::chrono::steady_clock::now() < deadline) {
             std::this_thread::sleep_for(std::chrono::milliseconds(17));
             // The actual scheduler already provides its VBlank events.
@@ -72,6 +82,23 @@ int main(int argc, char **argv) {
               << " presentation_frame=" << graphics.hasHostPresentationFrame
               << " width=" << graphics.hostPresentationWidth
               << " height=" << graphics.hostPresentationHeight << '\n';
+    std::cout << "MEMORY_GRAPHICS_ACTIVITY dma_starts=" << runtime.memory().dmaStartCount()
+              << " gif_copies=" << runtime.memory().gifCopyCount()
+              << " gs_writes=" << runtime.memory().gsWriteCount()
+              << " vif_writes=" << runtime.memory().vifWriteCount() << '\n';
+    if (recentDraws > 0 && std::getenv("PS2X_CAPTURE_FRAME")) {
+        runtime.gs().latchHostPresentationFrame();
+        std::vector<uint8_t> pixels;
+        uint32_t width=0, height=0;
+        if (runtime.gs().copyLatchedHostPresentationFrame(pixels, width, height) &&
+            pixels.size() == static_cast<size_t>(width)*height*4u) {
+            std::ofstream file(std::getenv("PS2X_CAPTURE_FRAME"), std::ios::binary);
+            file << "P6\n" << width << ' ' << height << "\n255\n";
+            for (size_t offset=0; offset<pixels.size(); offset+=4u)
+                file.write(reinterpret_cast<const char*>(pixels.data()+offset), 3);
+            std::cout << "CAPTURED_GS_FRAME width=" << width << " height=" << height << '\n';
+        }
+    }
     const auto iop = runtime.iopDebugSnapshot();
     for (const auto &row : iop.diagnostics)
         std::cout << "IOP_DIAGNOSTIC " << row << '\n';

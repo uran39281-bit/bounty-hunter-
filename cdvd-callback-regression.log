@@ -1,0 +1,1 @@
+PASS: baseline return-address overlap, separate allocated callback stacks, alignment, main/heap canaries intact, zero/exhausted allocation rejection

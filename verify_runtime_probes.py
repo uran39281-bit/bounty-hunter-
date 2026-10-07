@@ -13,8 +13,8 @@ INSTALLERS = [
     'install_memcpy_probe.py', 'install_vfs_probe.py', 'install_boot_sifcmd_probe.py',
     'install_iop_snapshot_probe.py', 'install_iop_execution_probe.py',
     'install_iop_import_trace.py', 'install_spu2_adma_timing.py',
-    'install_scratchpad_receive.py', 'install_ee_thread_probe.py',
-    'install_ee_zero_priority.py',
+    'install_scratchpad_receive.py', 'install_boot_cdvdfsv_probe.py', 'install_ee_thread_probe.py',
+    'install_ee_zero_priority.py', 'install_cdvd_imports.py', 'install_ee_exit_probe.py', 'install_ee_return_probe.py', 'install_callback_heap_stacks.py',
 ]
 
 
@@ -36,6 +36,7 @@ def main():
         'ps2xIOP/src/emulator/iop_emulator.cpp', 'ps2xIOP/src/iop_subsystem.cpp',
         'ps2xIOP/src/emulator/core/iop_memory.cpp', 'ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp',
         'ps2xRuntime/src/lib/Kernel/Syscalls/Thread.cpp', 'ps2xRuntime/src/lib/Kernel/EeScheduler.cpp',
+        'ps2xIOP/src/emulator/imports/iop_cdvd.cpp', 'ps2xRuntime/src/lib/ps2_runtime.cpp',
     ]
     if sorted(paths)!=sorted(expected): raise ValueError('Unexpected modified runtime file list')
     with tempfile.TemporaryDirectory(prefix='bounty-probes-') as tmp:

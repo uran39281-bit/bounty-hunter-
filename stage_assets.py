@@ -27,12 +27,13 @@ def main():
         if dst.exists() and dst.read_bytes() != src.read_bytes():
             raise ValueError(f'Existing IRX differs: {src.name}')
         shutil.copy2(src, dst)
-    boot = args.disc / 'BOOT/SIFCMD.IRX'
-    boot.parent.mkdir(parents=True, exist_ok=True)
-    src = root / 'iop-system-modules/SIFCMD.irx'
-    if boot.exists() and boot.read_bytes() != src.read_bytes():
-        raise ValueError('Existing SIFCMD boot module differs')
-    shutil.copy2(src, boot)
+    for module in ['SIFCMD', 'CDVDFSV']:
+        boot = args.disc / f'BOOT/{module}.IRX'
+        boot.parent.mkdir(parents=True, exist_ok=True)
+        src = root / f'iop-system-modules/{module}.irx'
+        if boot.exists() and boot.read_bytes() != src.read_bytes():
+            raise ValueError(f'Existing {module} boot module differs')
+        shutil.copy2(src, boot)
     for name, archive in [('data', args.data), ('bundles', args.bundles)]:
         subprocess.run([sys.executable, str(root / 'inspect_data.py'), str(archive),
                         '--destination', str(args.disc / 'DATA'), '--report',

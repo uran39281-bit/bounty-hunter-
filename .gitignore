@@ -42,3 +42,7 @@ test-scratchpad-receive
 test-ee-zero-priority
 test-spu2-adma
 probe-audio-boot
+
+leaf-output/
+test-cdvd-imports
+test-callback-heap-stacks
