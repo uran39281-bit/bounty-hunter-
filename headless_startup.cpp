@@ -1,5 +1,5 @@
 // Bounded startup diagnostic using real runtime/scheduler interfaces.
-// No window, audio device, rendered frames, or simulated success responses.
+// No window, audio device, or simulated success responses; capture real GS draws.
 #include "ps2_runtime.h"
 #include "runtime/ee_scheduler.h"
 #include "runtime/gs/gs_frontend.h"
@@ -30,6 +30,8 @@ int main(int argc, char **argv) {
     #ifdef BOUNTY_OBSERVED_LEAF_ENTRIES
     registerObservedLeafEntries(runtime);
     #endif
+    // GS history defaults to paused; observe real draws before capture.
+    runtime.gs().setDebugHistoryPaused(false);
     ps2_stubs::resetSifState();
     ps2_stubs::resetAudioStubState();
     ps2_stubs::resetMpegStubState();
@@ -86,6 +88,45 @@ int main(int argc, char **argv) {
               << " gif_copies=" << runtime.memory().gifCopyCount()
               << " gs_writes=" << runtime.memory().gsWriteCount()
               << " vif_writes=" << runtime.memory().vifWriteCount() << '\n';
+    if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE")) {
+        const auto history = runtime.gs().getDebugHistory();
+        size_t tags=0, transfers=0, drawSamples=0;
+        for (const auto &event : history) {
+            if (event.kind == GSDebugEventKind::GifTag) {
+                if (++tags <= 16) std::cout << "BOOT_GS_TAG seq=" << event.seq
+                    << " nloop=" << event.gifNloop << " flg=" << unsigned(event.gifFlg)
+                    << " nreg=" << unsigned(event.gifNreg) << " bytes=" << event.gifSizeBytes << '\n';
+            }
+            if (event.kind == GSDebugEventKind::Draw && ++drawSamples <= 12)
+                std::cout << "BOOT_GS_DRAW seq=" << event.seq << " fbp=" << event.frame.fbp
+                    << " fbw=" << event.frame.fbw << " psm=" << unsigned(event.frame.psm)
+                    << " texture_base=" << event.tex0.tbp0 << " texture_bw=" << unsigned(event.tex0.tbw)
+                    << " texture_psm=" << unsigned(event.tex0.psm)
+                    << " texture_tw=" << unsigned(event.tex0.tw) << " texture_th=" << unsigned(event.tex0.th)
+                    << " x=" << event.xMin << ',' << event.xMax << " y=" << event.yMin << ',' << event.yMax << '\n';
+            if (event.kind == GSDebugEventKind::Transfer) ++transfers;
+        }
+        std::cout << "BOOT_GS_HISTORY entries=" << history.size() << " tags=" << tags
+                  << " transfers=" << transfers << " paused=" << runtime.gs().isDebugHistoryPaused()
+                  << " prim=" << unsigned(graphics.prim.type)
+                  << " copied_pixels=" << graphics.transferCopiedPixels << '\n';
+
+        const uint32_t gp = static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[28]));
+        std::cout << "BOOT_GRAPHICS_STATE cop0_count=" << runtime.cpu().cop0_count
+                  << " vsync_tick=" << runtime.memory().gs().vsyncTick.load()
+                  << " current=" << runtime.memory().read32(gp-0x38fcu)
+                  << " requested=" << runtime.memory().read32(gp-0x38f8u)
+                  << " buffer=0x" << std::hex << runtime.memory().read32(0x454918u)
+                  << " end=0x" << runtime.memory().read32(0x45491cu)
+                  << " pmode=0x" << runtime.memory().gs().pmode
+                  << " dispfb1=0x" << runtime.memory().gs().dispfb1
+                  << " display1=0x" << runtime.memory().gs().display1
+                  << " dispfb2=0x" << runtime.memory().gs().dispfb2
+                  << " display2=0x" << runtime.memory().gs().display2
+                  << " vif_chcr=0x" << runtime.memory().readIORegister(0x10009000u)
+                  << " d_ctrl=0x" << runtime.memory().readIORegister(0x1000e000u)
+                  << std::dec << '\n';
+    }
     if (recentDraws > 0 && std::getenv("PS2X_CAPTURE_FRAME")) {
         runtime.gs().latchHostPresentationFrame();
         std::vector<uint8_t> pixels;

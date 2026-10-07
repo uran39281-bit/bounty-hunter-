@@ -1,0 +1,357 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008HEADLESS_START entry=0x100008 deadline_seconds=60 graphics_tested=false audio_tested=false
+[SifInitRpc] Initialized[SIF module] load-emulated id=3 ref=1 path="cdrom0:\IRX\SIO2MAN.IRX;1"
+[SIF module] load-emulated id=4 ref=1 path="cdrom0:\IRX\PADMAN.IRX;1"
+[SIF module] load-emulated id=5 ref=1 path="cdrom0:\IRX\LIBSD.IRX;1"
+[SIF module] load-emulated id=6 ref=1 path="cdrom0:\IRX\STREAM.IRX;1"
+[SIF module] load-emulated id=7 ref=1 path="cdrom0:\IRX\CRI_ADXI.IRX;1"
+[sceDmaSend] ch=0x1000d400 madr=0x4077c0 qwc=0x400 tadr=0x4077c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4037c0 qwc=0x400 tadr=0x4037c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4077c0 qwc=0x400 tadr=0x4077c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4037c0 qwc=0x400 tadr=0x4037c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4077c0 qwc=0x400 tadr=0x4077c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4037c0 qwc=0x400 tadr=0x4037c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4077c0 qwc=0x400 tadr=0x4077c0 chcr=0x181
+[sceDmaSend] ch=0x1000d400 madr=0x4037c0 qwc=0x400 tadr=0x4037c0 chcr=0x181
+[SIF module] load-emulated id=8 ref=1 path="cdrom0:\IRX\MCMAN.IRX;1"
+[SIF module] load-emulated id=9 ref=1 path="cdrom0:\IRX\MCSERV.IRX;1"
+[MC] GetInfo port=0 type=2 free=8192 format=1 result=0[MC] Sync cmd=1 result=0[MC] GetInfo port=1 type=2 free=8192 format=1 result=0[MC] Sync cmd=1 result=0EE_REGISTERS s0=9001624 a0=86 gp=3963376
+GRAPHICS_ACTIVITY packed_packets=0 image_uploads=0 recent_draws=0 presentation_frame=0 width=0 height=0
+MEMORY_GRAPHICS_ACTIVITY dma_starts=118 gif_copies=2 gs_writes=0 vif_writes=4
+BOOT_GS_HISTORY entries=0 tags=0 transfers=0 paused=1 prim=6 copied_pixels=65536
+BOOT_GRAPHICS_STATE cop0_count=840568771 vsync_tick=171 current=170 requested=170 buffer=0x774600 end=0x775d50 pmode=0x8063 dispfb1=0x80000001400 display1=0x1bd9ff0183227c vif_chcr=0x70000005 d_ctrl=0x1
+IOP_DIAGNOSTIC IOP_SIF_INITIALIZED 1
+IOP_DIAGNOSTIC IOP_MODULE id=1 name=SIFCMD.IRX;1 base=65536 size=14080
+IOP_DIAGNOSTIC IOP_MODULE id=2 name=CDVDFSV.IRX;1 base=79616 size=70144
+IOP_DIAGNOSTIC IOP_MODULE id=3 name=SIO2MAN.IRX;1 base=149760 size=4096
+IOP_DIAGNOSTIC IOP_MODULE id=4 name=PADMAN.IRX;1 base=153856 size=40192
+IOP_DIAGNOSTIC IOP_MODULE id=5 name=LIBSD.IRX;1 base=194048 size=23040
+IOP_DIAGNOSTIC IOP_MODULE id=6 name=STREAM.IRX;1 base=217088 size=82176
+IOP_DIAGNOSTIC IOP_MODULE id=7 name=CRI_ADXI.IRX;1 base=299264 size=110848
+IOP_DIAGNOSTIC IOP_MODULE id=8 name=MCMAN.IRX;1 base=410112 size=160256
+IOP_DIAGNOSTIC IOP_MODULE id=9 name=MCSERV.IRX;1 base=570368 size=14336
+IOP_DIAGNOSTIC IOP_THREAD id=1 pc=99784 entry=80308 state=6 waitId=1 priority=80 module=CDVDFSV.IRX;1 import=none ra=99784 a0=1 a1=4 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=2 pc=100108 entry=99920 state=3 waitId=0 priority=81 module=CDVDFSV.IRX;1 import=none ra=100108 a0=105352 a1=2147485075 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=3 pc=100276 entry=100136 state=3 waitId=0 priority=81 module=CDVDFSV.IRX;1 import=none ra=100276 a0=105328 a1=2147485077 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=4 pc=150724 entry=150684 state=6 waitId=2 priority=16 module=SIO2MAN.IRX;1 import=none ra=150724 a0=2 a1=16725 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=5 pc=184860 entry=184728 state=3 waitId=0 priority=46 module=PADMAN.IRX;1 import=none ra=184860 a0=193588 a1=2147483904 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=6 pc=185056 entry=184924 state=3 waitId=0 priority=46 module=PADMAN.IRX;1 import=none ra=185056 a0=193812 a1=2147483905 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=7 pc=241892 entry=241800 state=3 waitId=0 priority=30 module=STREAM.IRX;1 import=none ra=241892 a0=1257396 a1=74565 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=8 pc=299444 entry=299388 state=4 waitId=0 priority=39 module=CRI_ADXI.IRX;1 import=none ra=299444 a0=1 a1=0 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=9 pc=300760 entry=300628 state=3 waitId=0 priority=49 module=CRI_ADXI.IRX;1 import=none ra=300760 a0=1261656 a1=2097152000 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=10 pc=330072 entry=330032 state=5 waitId=2 priority=39 module=CRI_ADXI.IRX;1 import=none ra=330072 a0=2 a1=1 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=11 pc=228336 entry=228300 state=4 waitId=0 priority=48 module=STREAM.IRX;1 import=none ra=228336 a0=0 a1=0 v0=0
+IOP_DIAGNOSTIC IOP_THREAD id=12 pc=571180 entry=571032 state=3 waitId=0 priority=104 module=MCSERV.IRX;1 import=none ra=571180 a0=584448 a1=2147484672 v0=0
+IOP_DIAGNOSTIC IOP_TRACE DMA_COMPLETED irq=36 count=250
+IOP_DIAGNOSTIC IOP_TRACE DMA_START irq=36 bcr=2097168 chcr=513 admas=1 count=251
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:37 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:47 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:50 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT cdvdman:84 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT dmacman:33 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT dmacman:34 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:17 count=4224
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:18 count=4224
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:4 count=5
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:5 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:6 count=5
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:7 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT intrman:9 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT ioman:20 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT ioman:21 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:11 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:18 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:19 count=4
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:20 count=254
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:23 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:25 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:26 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:4 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:5 count=18
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:6 count=192
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:7 count=12
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:8 count=8
+IOP_DIAGNOSTIC IOP_TRACE IMPORT libsd:9 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT loadcore:12 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT loadcore:5 count=8
+IOP_DIAGNOSTIC IOP_TRACE IMPORT loadcore:6 count=7
+IOP_DIAGNOSTIC IOP_TRACE IMPORT modload:13 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT secrman:4 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT secrman:5 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:14 count=7
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:17 count=10
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:19 count=8
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifcmd:22 count=7
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:27 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:29 count=7
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:5 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sifman:7 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT stdio:4 count=6
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:12 count=1000
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:14 count=1035
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:17 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysclib:29 count=11
+IOP_DIAGNOSTIC IOP_TRACE IMPORT sysmem:4 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:20 count=8
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:4 count=12
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:41 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thbase:6 count=12
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thevent:10 count=2
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thevent:4 count=3
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thevent:8 count=1
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thsemap:4 count=4
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thsemap:7 count=250
+IOP_DIAGNOSTIC IOP_TRACE IMPORT thsemap:8 count=251
+IOP_DIAGNOSTIC IOP_TRACE IMPORT vblank:5 count=320
+IOP_DIAGNOSTIC IOP_TRACE SEMA_CREATE current=1 max=64
+IOP_DIAGNOSTIC IOP_TRACE SEMA_CREATE current=0 max=1
+IOP_DIAGNOSTIC IOP_TRACE SEMA_CREATE current=1 max=1
+IOP_DIAGNOSTIC IOP_TRACE SEMA_CREATE current=1 max=1
+IOP_DIAGNOSTIC IOP_RPC_SID 74565
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485077
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485079
+IOP_DIAGNOSTIC IOP_RPC_SID 2147484672
+IOP_DIAGNOSTIC IOP_RPC_SID 2097152000
+IOP_DIAGNOSTIC IOP_RPC_SID 2147483905
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485075
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485082
+IOP_DIAGNOSTIC IOP_RPC_SID 2147483904
+IOP_DIAGNOSTIC IOP_RPC_SID 2147485074
+IOP_STOP loaded_modules=9 threads=12 rpc_servers=10 instructions=8067395
+HEADLESS_STOP ee_cycles=840568771 threads=1
+THREAD id=1 pc=0x1d9e5c ra=0x1da094 sp=0x1fffb00 status=0 wait=0
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x197cc0 a0=0x0 buffer=0x0 end=0x0 surface=0x0 current=0 requested=0 count=2705600 hit=1
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x197cc8 a0=0x2 buffer=0x0 end=0x0 surface=0x0 current=0 requested=0 count=2705608 hit=2
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x1001a0 a0=0x0 buffer=0x0 end=0x0 surface=0x0 current=0 requested=0 count=2705856 hit=3
+[ps2xIOP] [IOP] loaded IRX id=1 entry=0x100d0 base=0x10000 start=0
+BOOT_SIFCMD handled=1 id=1 start=0
+[ps2xIOP] [IOP] loaded IRX id=2 entry=0x137d8 base=0x13700 start=2
+BOOT_CDVDFSV handled=1 id=2 start=2
+BOOT_GRAPHICS_DMA channel=0x1000a000 chcr=0x101 madr=0x7745f0 tadr=0x0 qwc=8 hit=1
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x1df6e4 a0=0x0 buffer=0x0 end=0x0 surface=0x455900 current=0 requested=0 count=3609296 hit=4
+[ps2xIOP] [IOP printf] cdvd driver module version 0.1.1 (C)SCEI
+
+VFS_OPEN fd=3 path=cdrom0:\CDROM.TXT;1
+VFS_CLOSE fd=3 result=0
+[ps2xIOP] [IOP] loaded IRX id=3 entry=0x24f34 base=0x24900 start=0
+[ps2xIOP] [IOP] loaded IRX id=4 entry=0x28b24 base=0x25900 start=0
+[ps2xIOP] [IOP] loaded IRX id=5 entry=0x2f6b0 base=0x2f600 start=0
+[ps2xIOP] [IOP printf]  Exit MultiStream V5 Thread Load 
+
+[ps2xIOP] [IOP] loaded IRX id=6 entry=0x414e8 base=0x35000 start=0
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x349d88 a0=0x39dc0a buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4936723 hit=1
+BOOT_GRAPHICS_CALL target=0x334540 source=0x349d94 a0=0x39dc0a buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4936731 hit=1
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334568 a0=0x1 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4936739 hit=1
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x334578 a0=0x0 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4936747 hit=5
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334760 a0=0x1000000 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4936755 hit=2
+BOOT_GRAPHICS_DMA channel=0x1000a000 chcr=0x101 madr=0x8776a0 tadr=0x0 qwc=8 hit=2
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x341f68 a0=0x39d949 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937131 hit=2
+BOOT_GRAPHICS_CALL target=0x334540 source=0x341f74 a0=0x39d949 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937139 hit=2
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334568 a0=0x2 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937147 hit=3
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x334578 a0=0x0 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937155 hit=6
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334760 a0=0x1000000 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937163 hit=4
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x341f68 a0=0x39d949 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937251 hit=3
+BOOT_GRAPHICS_CALL target=0x334540 source=0x341f74 a0=0x39d949 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937259 hit=3
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334568 a0=0x3 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937267 hit=5
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x334578 a0=0x0 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937275 hit=7
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334760 a0=0x1000000 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937283 hit=6
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x347230 a0=0x39db4a buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937411 hit=4
+BOOT_GRAPHICS_CALL target=0x334540 source=0x34723c a0=0x39db4a buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937419 hit=4
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334568 a0=0x4 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937427 hit=7
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x334578 a0=0x0 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937435 hit=8
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x334760 a0=0x1000000 buffer=0x774600 end=0x774600 surface=0x455900 current=0 requested=0 count=4937443 hit=8
+BOOT_GRAPHICS_CALL target=0x347410 source=0x349fcc a0=0x2 buffer=0x774600 end=0x774600 surface=0x455900 current=2 requested=0 count=14745947 hit=1
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33fa34 a0=0x1 buffer=0x774600 end=0x774600 surface=0x455900 current=2 requested=0 count=14746715 hit=1
+BOOT_GRAPHICS_CALL target=0x349790 source=0x34a01c a0=0x3bf720 buffer=0x774600 end=0x7747e0 surface=0x455900 current=2 requested=0 count=14748411 hit=1
+BOOT_GRAPHICS_CALL target=0x334540 source=0x3498ec a0=0x39dba8 buffer=0x774600 end=0x7747e0 surface=0x455900 current=2 requested=0 count=14749675 hit=5
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x3499b4 a0=0x1fffe10 buffer=0x774600 end=0x774910 surface=0x455900 current=3 requested=3 count=19661259 hit=1
+BOOT_GRAPHICS_CALL target=0x347410 source=0x3499bc a0=0x1fffe10 buffer=0x774600 end=0x774910 surface=0x455900 current=3 requested=3 count=19661267 hit=2
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x3499c4 a0=0x0 buffer=0x774600 end=0x774910 surface=0x455900 current=3 requested=3 count=19661275 hit=2
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x3499d4 a0=0x39db80 buffer=0x774600 end=0x774a40 surface=0x455900 current=3 requested=3 count=19662315 hit=5
+BOOT_GRAPHICS_CALL target=0x334540 source=0x3422b4 a0=0x39d97e buffer=0x774600 end=0x774a60 surface=0x455900 current=3 requested=3 count=19662339 hit=6
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=3
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=3036 hit=1
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=3032 hit=2
+BOOT_GRAPHICS_VIF opcode=19 imm=0 num=0 remaining=3028 hit=3
+BOOT_GRAPHICS_VIF opcode=80 imm=27 num=0 remaining=3024 hit=4
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=2588 hit=5
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=2584 hit=6
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=2580 hit=7
+BOOT_GRAPHICS_VIF opcode=80 imm=42 num=0 remaining=2576 hit=8
+BOOT_GRAPHICS_VIF opcode=19 imm=0 num=0 remaining=1900 hit=9
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=1896 hit=10
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=1892 hit=11
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1888 hit=12
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=1628 hit=13
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=1624 hit=14
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=1620 hit=15
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1616 hit=16
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=300 hit=17
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=296 hit=18
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=292 hit=19
+BOOT_GRAPHICS_VIF opcode=80 imm=17 num=0 remaining=288 hit=20
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=12 hit=21
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=8 hit=22
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=4 hit=23
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=0 hit=24
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33fa34 a0=0x1 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=3 requested=3 count=19662475 hit=3
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x349ae0 a0=0x39dbb6 buffer=0x7f4600 end=0x7f4660 surface=0x455900 current=3 requested=3 count=19662643 hit=6
+BOOT_GRAPHICS_CALL target=0x334540 source=0x3422b4 a0=0x39d97e buffer=0x7f4600 end=0x7f4680 surface=0x455900 current=3 requested=3 count=19662667 hit=7
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=4
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=764 hit=25
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=760 hit=26
+BOOT_GRAPHICS_VIF opcode=19 imm=0 num=0 remaining=756 hit=27
+BOOT_GRAPHICS_VIF opcode=80 imm=3 num=0 remaining=752 hit=28
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=700 hit=29
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=696 hit=30
+BOOT_GRAPHICS_VIF opcode=0 imm=0 num=0 remaining=692 hit=31
+BOOT_GRAPHICS_VIF opcode=80 imm=42 num=0 remaining=688 hit=32
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5728 a0=0x1 buffer=0x774600 end=0x774600 surface=0x455900 current=3 requested=4 count=19662707 hit=2
+BOOT_GRAPHICS_CALL target=0x334540 source=0x3498ec a0=0x39dba8 buffer=0x774600 end=0x774600 surface=0x455900 current=3 requested=4 count=19662731 hit=8
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x3499b4 a0=0x1fffec0 buffer=0x774600 end=0x774730 surface=0x455900 current=4 requested=4 count=24576555 hit=2
+BOOT_GRAPHICS_CALL target=0x347410 source=0x3499bc a0=0x1fffec0 buffer=0x774600 end=0x774730 surface=0x455900 current=4 requested=4 count=24576563 hit=3
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x3499c4 a0=0x0 buffer=0x774600 end=0x774730 surface=0x455900 current=4 requested=4 count=24576571 hit=4
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x3499d4 a0=0x39db80 buffer=0x774600 end=0x774860 surface=0x455900 current=4 requested=4 count=24577611 hit=7
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=5
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1888 hit=40
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1616 hit=44
+BOOT_GRAPHICS_VIF opcode=80 imm=17 num=0 remaining=288 hit=48
+VFS_OPEN fd=3 path=cdrom0:\DATA\CHEWIE\CS1014A.SYM;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\CHEWIE\CS1014A.CSP;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\FONTDATA.TXT;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\IMPACT.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\IMPACT0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\ARIAL.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\ARIAL0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\AURABSH.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\AURABSH0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\COURIER.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\COURIER0.R2T;1
+VFS_CLOSE fd=3 result=0
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x349704 a0=0x1ffff30 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=4 count=52282003 hit=3
+BOOT_GRAPHICS_CALL target=0x347410 source=0x34970c a0=0x1ffff30 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=4 count=52282011 hit=4
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x34971c a0=0x39db80 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=4 count=52282019 hit=8
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=6
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=56
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=60
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33e37c a0=0x1 buffer=0x774600 end=0x774600 surface=0x455900 current=9 requested=4 count=52283971 hit=5
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33e37c a0=0x1 buffer=0x774600 end=0x774970 surface=0x455900 current=9 requested=4 count=52288347 hit=6
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=7
+BOOT_GRAPHICS_VIF opcode=80 imm=17 num=0 remaining=34368 hit=68
+BOOT_GRAPHICS_VIF opcode=80 imm=10 num=0 remaining=34080 hit=72
+BOOT_GRAPHICS_VIF opcode=80 imm=6 num=0 remaining=33904 hit=76
+BOOT_GRAPHICS_VIF opcode=80 imm=6 num=0 remaining=33712 hit=84
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x349704 a0=0x1ffff30 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=10 count=52292043 hit=4
+BOOT_GRAPHICS_CALL target=0x347410 source=0x34970c a0=0x1ffff30 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=10 count=52292051 hit=5
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=8
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=108
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=112
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33fa34 a0=0x1 buffer=0x774600 end=0x774600 surface=0x455900 current=9 requested=10 count=52777339 hit=7
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=9
+BOOT_GRAPHICS_VIF opcode=80 imm=18 num=0 remaining=992 hit=120
+BOOT_GRAPHICS_VIF opcode=80 imm=42 num=0 remaining=688 hit=124
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x349704 a0=0x1ffff40 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=10 count=52778603 hit=5
+BOOT_GRAPHICS_CALL target=0x347410 source=0x34970c a0=0x1ffff40 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=10 count=52778611 hit=6
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=10
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=132
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=136
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33fa34 a0=0x1 buffer=0x774600 end=0x774600 surface=0x455900 current=9 requested=10 count=52778755 hit=8
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=11
+BOOT_GRAPHICS_VIF opcode=80 imm=18 num=0 remaining=992 hit=144
+BOOT_GRAPHICS_VIF opcode=80 imm=42 num=0 remaining=688 hit=148
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x349704 a0=0x1ffff40 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=10 count=52780019 hit=6
+BOOT_GRAPHICS_CALL target=0x347410 source=0x34970c a0=0x1ffff40 buffer=0x7f4600 end=0x7f4730 surface=0x455900 current=9 requested=10 count=52780027 hit=7
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=12
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=156
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=160
+BOOT_GRAPHICS_CALL target=0x33fda0 source=0x349724 a0=0x7f4600 buffer=0x774600 end=0x774600 surface=0x455900 current=9 requested=10 count=52780091 hit=64
+[ps2xIOP] [IOP printf] CRI ADX Driver Ver.8.01(%s %s)
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : Thread Priority=%d
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : SPU CORE Number=%d
+
+[ps2xIOP] [IOP] loaded IRX id=7 entry=0x491bc base=0x49100 start=0
+[ps2xIOP] [IOP printf] CRI ADX Driver : sceSdInit(SD_INIT_COLD) call.
+
+EE_CREATE_THREAD entry=2404240 stack=3565952 size=4096 priority=0 result=2
+EE_CREATE_THREAD entry=2404408 stack=3574144 size=4096 priority=0 result=3
+EE_CREATE_THREAD entry=2404552 stack=3578240 size=8192 priority=0 result=4
+[ps2xIOP] [IOP CDVD search] path=\DATA\VIDEO\01TRAILR.SFD;1 found=0
+[ps2xIOP] [IOP CDVD search] path=\DATA\VIDEO\01TRAILR.SFD;1 found=0
+EE_THREAD_EXIT id=4 pc=1635752 ra=0 a0=3676100
+EE_THREAD_EXIT id=3 pc=1635752 ra=0 a0=3676088
+EE_THREAD_EXIT id=2 pc=1635752 ra=0 a0=0
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x349704 a0=0x1ffff10 buffer=0x774600 end=0x774880 surface=0x455900 current=12 requested=10 count=68789963 hit=7
+BOOT_GRAPHICS_CALL target=0x347410 source=0x34970c a0=0x1ffff10 buffer=0x774600 end=0x774880 surface=0x455900 current=12 requested=10 count=68789971 hit=8
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=13
+BOOT_GRAPHICS_VIF opcode=80 imm=18 num=0 remaining=2592 hit=168
+BOOT_GRAPHICS_VIF opcode=80 imm=42 num=0 remaining=2288 hit=172
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=176
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=180
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+BOOT_GRAPHICS_CALL target=0x347a00 source=0x349704 a0=0x1fffed0 buffer=0x7f4600 end=0x7f4880 surface=0x455900 current=13 requested=10 count=69739331 hit=8
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=14
+BOOT_GRAPHICS_VIF opcode=80 imm=18 num=0 remaining=2592 hit=188
+BOOT_GRAPHICS_VIF opcode=80 imm=42 num=0 remaining=2288 hit=192
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=196
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=200
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=15
+BOOT_GRAPHICS_VIF opcode=80 imm=17 num=0 remaining=34368 hit=208
+BOOT_GRAPHICS_VIF opcode=80 imm=10 num=0 remaining=34080 hit=212
+BOOT_GRAPHICS_VIF opcode=80 imm=6 num=0 remaining=33904 hit=216
+BOOT_GRAPHICS_VIF opcode=80 imm=6 num=0 remaining=33712 hit=224
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=16
+BOOT_GRAPHICS_VIF opcode=80 imm=16 num=0 remaining=1600 hit=248
+BOOT_GRAPHICS_VIF opcode=80 imm=82 num=0 remaining=1328 hit=252
+VFS_OPEN fd=3 path=cdrom0:\DATA\BUNDLES\FRONTEND\FECOMMON.ZAP;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\BUNDLES\FRONTEND\FESTART.ZAP;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FRONTEND\STARTUP.BIN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FRONTEND\MAINMENU\MM_ANI_2.VFX;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FRONTEND\MAINMENU\MM_ANI_4.VFX;1
+VFS_CLOSE fd=3 result=0
+[ps2xIOP] [IOP] loaded IRX id=8 entry=0x64378 base=0x64200 start=2
+[ps2xIOP] [IOP] loaded IRX id=9 entry=0x8b458 base=0x8b400 start=2
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=17
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5b70 a0=0x2 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=109 requested=110 count=544170859 hit=3
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=18
+VFS_OPEN fd=3 path=cdrom0:\DATA\BUNDLES\FRONTEND\FETEX.ZAP;1
+VFS_CLOSE fd=3 result=0
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=19
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5b70 a0=0x2 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=128 requested=129 count=636643147 hit=4
+BOOT_GRAPHICS_CALL target=0x18f9e0 source=0x334578 a0=0x0 buffer=0x7f4600 end=0x7f4890 surface=0x455900 current=129 requested=129 count=638990083 hit=64
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=20
+BOOT_GRAPHICS_CALL target=0x3423c0 source=0x33e37c a0=0x1 buffer=0x774600 end=0x77b480 surface=0x455900 current=129 requested=129 count=639203779 hit=64
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=21
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5b70 a0=0x2 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=129 requested=130 count=639346723 hit=5
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=22
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x774600 qwc=0 hit=23
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5b70 a0=0x2 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=130 requested=131 count=644262235 hit=6
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=24
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5b70 a0=0x2 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=131 requested=132 count=649177539 hit=7
+BOOT_GRAPHICS_CALL target=0x349790 source=0x2a5b70 a0=0x2 buffer=0x7f4600 end=0x7f4600 surface=0x455900 current=132 requested=133 count=654092875 hit=8
+BOOT_GRAPHICS_CALL target=0x334540 source=0x3422b4 a0=0x39d97e buffer=0x7f4600 end=0x7f4890 surface=0x455900 current=139 requested=139 count=688143067 hit=64
+BOOT_GRAPHICS_CALL target=0x3420f0 source=0x349ae0 a0=0x39dbb6 buffer=0x774600 end=0x780390 surface=0x455900 current=149 requested=149 count=737653275 hit=64
+BOOT_GRAPHICS_DMA channel=0x10009000 chcr=0x105 madr=0x0 tadr=0x7f4600 qwc=0 hit=64
+BEFORE_DEADLINE id=1 pc=0x349924 ra=0x3498fc status=0 wait=0
+HEADLESS_DEADLINE requesting stop

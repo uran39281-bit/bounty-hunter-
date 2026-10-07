@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--separate-callback-stacks', action='store_true')
     parser.add_argument('--seconds', type=int, default=5)
     parser.add_argument('--capture-frame', type=Path)
+    parser.add_argument('--advance-cop0-count', action='store_true')
+    parser.add_argument('--trace-boot-graphics', action='store_true')
     args = parser.parse_args()
     if not 1 <= args.seconds <= 60:
         parser.error('--seconds must be 1..60')
@@ -48,6 +50,12 @@ def main():
     env.pop('PS2X_CDVD_COMPAT', None)
     env.pop('PS2X_CALLBACK_HEAP_STACKS', None)
     env.pop('PS2X_CAPTURE_FRAME', None)
+    env.pop('PS2X_COP0_COUNT', None)
+    env.pop('PS2X_BOOT_GRAPHICS_TRACE', None)
+    if args.advance_cop0_count:
+        env['PS2X_COP0_COUNT'] = '1'
+    if args.trace_boot_graphics:
+        env['PS2X_BOOT_GRAPHICS_TRACE'] = '1'
     if args.capture_frame:
         if args.capture_frame.exists():
             parser.error('Choose a fresh frame output path')
@@ -91,6 +99,8 @@ def main():
         stdout, stderr, returncode = decode(e.stdout), decode(e.stderr), None
     report = {'returncode': returncode, 'timeout': timed_out,
               'deadline_seconds': args.seconds,
+              'cop0_count_enabled': args.advance_cop0_count,
+              'boot_graphics_trace_enabled': args.trace_boot_graphics,
               'captured_frame_exists': bool(args.capture_frame and args.capture_frame.is_file()),
               'stop_before_invalid_copy': args.stop_invalid_copy,
               'reuse_file_descriptors': args.reuse_file_descriptors,

@@ -1,0 +1,1 @@
+PASS: opt-out baseline, idle/active cadence, guest Count writes, 32-bit wrap, dormant thread and interrupt-context sharing

@@ -17,7 +17,10 @@
     "install_cdvd_imports.py",
     "install_ee_exit_probe.py",
     "install_ee_return_probe.py",
-    "install_callback_heap_stacks.py"
+    "install_callback_heap_stacks.py",
+    "install_cop0_count.py",
+    "install_boot_graphics_trace.py",
+    "install_graphics_dma_trace.py"
   ],
   "files": [
     {
@@ -50,7 +53,7 @@
     },
     {
       "source": "ps2xRuntime/src/lib/Kernel/EeScheduler.cpp",
-      "sha256": "3617ee5599760ea4d5226c160094eda11ad0239518e734331d3196616d5a7b0f"
+      "sha256": "3d3c0c83cfd1b72266a7dc0c5f1a8cd21dc7e3155dd1877a0813faf65e6e1616"
     },
     {
       "source": "ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp",
@@ -69,12 +72,20 @@
       "sha256": "dd3f9249eaf9c3f5842f4bbd4e270789bd230816a53d1fd1339d924a0aee0c2b"
     },
     {
+      "source": "ps2xRuntime/src/lib/ps2_memory.cpp",
+      "sha256": "01fe06572757efa29c56a12260f1bdd3593ebde995b03a2770aea0072bde2c71"
+    },
+    {
       "source": "ps2xRuntime/src/lib/ps2_runtime.cpp",
-      "sha256": "a85bdfe33af64fc816aae6b9981b6e43819684a3da3d67fe70ed1541bf3c8fd5"
+      "sha256": "0eef53a1c00c2cff034532e8f318cae111a7156597ef92ea57e71a1166dfaf60"
     },
     {
       "source": "ps2xRuntime/src/lib/ps2_vfs.cpp",
       "sha256": "24223f507a4bcbb05bfb7c7effcbdedd9ec8c6afc62159a6415f2923f32a4099"
+    },
+    {
+      "source": "ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp",
+      "sha256": "5bfc921c748b3b7bb7885c875d30fb3609fa485641abf207a32f3e7380684d8d"
     }
   ]
 }

@@ -1,3 +1,14 @@
+BOOT-SCREEN CAPTURE — 7 October 2026
+First actual game pixels captured: 640x446 Bounty Hunter logo/background and
+copyright text. Two 60-second runs reproduce a tiled, clipped and distorted
+image. The correct full title/boot sequence remains unverified. No Android APK,
+audio/control validation or S24 test. Enabled paused GS history for real draw
+capture; added opt-in shared COP0 Count and read-only graphics diagnostics.
+COP0 regression and sixteen-file installer/patch reproduction pass.
+See boot-screen-result.json, boot-screen-layout-60s.json and README.md.
+The following records are historical and their zero-draw counters were not
+reliable absence-of-rendering evidence because GS history was paused.
+
 CHEWIE asset update — 7 October 2026
 Validated and staged all four CHEWIE files (543,943 bytes). Combined assets:
 661 files, 249,121,369 bytes. SOUND and VIDEO remain missing. A 20-second smoke test

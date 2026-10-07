@@ -46,3 +46,9 @@ probe-audio-boot
 leaf-output/
 test-cdvd-imports
 test-callback-heap-stacks
+
+# Original rendered game pixels and local Count regression binary
+boot-screen-*.ppm
+boot-screen-*.png
+test-cop0-count
+Bounty-Hunter-Boot-Screen.png

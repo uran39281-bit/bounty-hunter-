@@ -272,7 +272,7 @@ index b498155..c575f66 100644
          {
              snapshot.diagnostics.push_back(m_impl->lastError);
 diff --git a/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp b/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp
-index c5e31c4..f28b42b 100644
+index c5e31c4..c02eae0 100644
 --- a/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp
 +++ b/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp
 @@ -1,3 +1,5 @@
@@ -296,7 +296,32 @@ index c5e31c4..f28b42b 100644
              m_guestExecuting.store(false, std::memory_order_release);
              m_insideInterrupt = false;
          }
-@@ -423,7 +432,10 @@ void EeScheduler::setupCurrentThread(uint32_t stack, uint32_t stackSize, uint32_
+@@ -392,6 +401,24 @@ void EeScheduler::accountCycles(uint32_t cycles) noexcept
+ {
+     const uint64_t elapsed = std::max<uint64_t>(1u, cycles);
+     m_eeCycle += elapsed;
++    // BOUNTY_COP0_COUNT: one shared hardware counter, including IRQ contexts.
++    // Only scheduler-accounted cycles are used; no host-time success shortcut.
++    if (std::getenv("PS2X_COP0_COUNT"))
++    {
++        R5900Context *active = currentContext();
++        const uint32_t previous = active ? active->cop0_count : m_runtime.m_cpuContext.cop0_count;
++        const uint32_t count = previous + static_cast<uint32_t>(elapsed);
++        m_runtime.m_cpuContext.cop0_count = count;
++        for (auto &[id, item] : m_threads)
++        {
++            (void)id;
++            item.context.cop0_count = count;
++            for (auto &invocation : item.invocations)
++                invocation.context.cop0_count = count;
++        }
++        for (auto &invocation : m_pendingInvocations)
++            invocation.context.cop0_count = count;
++    }
+     m_pendingEeTimerInterrupts |= m_runtime.memory().advanceEeTimers(elapsed);
+     m_runtime.advanceIopEeCycles(elapsed);
+     if (m_pendingEeTimerInterrupts != 0u)
+@@ -423,7 +450,10 @@ void EeScheduler::setupCurrentThread(uint32_t stack, uint32_t stackSize, uint32_
  int EeScheduler::createThread(const EeThreadCreateParams &params)
  {
      assertExecutor();
@@ -308,7 +333,16 @@ index c5e31c4..f28b42b 100644
      {
          return KE_ILLEGAL_PRIORITY;
      }
-@@ -514,6 +526,11 @@ int EeScheduler::startThread(int id, uint32_t arg, const R5900Context &caller, b
+@@ -491,6 +521,8 @@ int EeScheduler::startThread(int id, uint32_t arg, const R5900Context &caller, b
+ 
+     target->context = R5900Context{};
+     target->context.pc = target->entry;
++    // BOUNTY_COP0_NEW_CONTEXT: kernel context creation does not reset hardware Count.
++    if (std::getenv("PS2X_COP0_COUNT")) target->context.cop0_count = caller.cop0_count;
+     target->arg = arg;
+     target->suspendCount = 0;
+     target->wakeupCount = 0;
+@@ -514,6 +546,11 @@ int EeScheduler::startThread(int id, uint32_t arg, const R5900Context &caller, b
      GuestThread *exiting = currentThread();
      assert(exiting != nullptr);
      const int id = exiting->id;
@@ -320,6 +354,39 @@ index c5e31c4..f28b42b 100644
      const uint32_t ownedStack = deleteThreadRecord && exiting->ownsStack ? exiting->stack : 0u;
      makeDormant(*exiting);
      m_currentThreadId = 0;
+@@ -1101,6 +1138,11 @@ int EeScheduler::cancelAlarm(int id)
+ void EeScheduler::queueInvocation(GuestInvocation invocation)
+ {
+     assertExecutor();
++    if (std::getenv("PS2X_COP0_COUNT"))
++    {
++        R5900Context *active = currentContext();
++        invocation.context.cop0_count = active ? active->cop0_count : m_runtime.m_cpuContext.cop0_count;
++    }
+     invocation.sequence = ++m_invocationSequence;
+     m_pendingInvocations.push_back(std::move(invocation));
+     m_checkpointPending.store(true, std::memory_order_release);
+@@ -1115,6 +1157,11 @@ void EeScheduler::queueInvocation(GuestInvocation invocation)
+     {
+         SET_GPR_U32(&invocation.context, 29, invocationStackTop());
+     }
++    if (std::getenv("PS2X_COP0_COUNT"))
++    {
++        R5900Context *active = currentContext();
++        invocation.context.cop0_count = active ? active->cop0_count : m_runtime.m_cpuContext.cop0_count;
++    }
+     invocation.sequence = ++m_invocationSequence;
+     owner->invocations.push_back(std::move(invocation));
+     publishSnapshot();
+@@ -1129,6 +1176,8 @@ void EeScheduler::queueInvocation(GuestInvocation invocation)
+     assert(!invocations.empty());
+     for (auto it = invocations.rbegin(); it != invocations.rend(); ++it)
+     {
++        if (std::getenv("PS2X_COP0_COUNT"))
++            it->context.cop0_count = owner->activeContext().cop0_count;
+         if (getRegU32(&it->context, 29) == 0u)
+         {
+             SET_GPR_U32(&it->context, 29, invocationStackTop());
 diff --git a/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp b/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp
 index b32e44a..887fcdd 100644
 --- a/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp
@@ -472,8 +539,37 @@ index 5110ee2..bcf8797 100644
      }
  
      void DeleteThread(uint8_t *rdram, R5900Context *ctx, PS2Runtime *runtime)
+diff --git a/ps2xRuntime/src/lib/ps2_memory.cpp b/ps2xRuntime/src/lib/ps2_memory.cpp
+index 37b6a4d..ea4f1bc 100644
+--- a/ps2xRuntime/src/lib/ps2_memory.cpp
++++ b/ps2xRuntime/src/lib/ps2_memory.cpp
+@@ -1,3 +1,5 @@
++#include <iostream>
++#include <cstdlib>
+ #include "runtime/ps2_memory.h"
+ #include "runtime/ps2_address.h"
+ #include "runtime/gs/gs_frontend.h"
+@@ -1305,6 +1307,18 @@ bool PS2Memory::writeIORegister(uint32_t address, uint32_t value)
+             const uint32_t madr = m_ioRegisters[channelBase + 0x10];
+             const uint32_t qwc = m_ioRegisters[channelBase + 0x20];
+             m_dmaStartCount.fetch_add(1, std::memory_order_relaxed);
++            // BOUNTY_DMA_GRAPHICS_TRACE: decoded register metadata only.
++            if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE") &&
++                (channelBase == 0x10009000u || channelBase == 0x1000a000u))
++            {
++                static thread_local uint32_t graphicsStarts = 0;
++                const uint32_t hit = ++graphicsStarts;
++                if (hit <= 24u || hit == 64u || hit == 1024u)
++                    std::cerr << "BOOT_GRAPHICS_DMA channel=0x" << std::hex << channelBase
++                              << " chcr=0x" << value << " madr=0x" << madr
++                              << " tadr=0x" << m_ioRegisters[channelBase+0x30u]
++                              << std::dec << " qwc=" << qwc << " hit=" << hit << '\n';
++            }
+ 
+             if (tryProcessScratchpadDma(channelBase, value))
+             {
 diff --git a/ps2xRuntime/src/lib/ps2_runtime.cpp b/ps2xRuntime/src/lib/ps2_runtime.cpp
-index 45cb9d2..a4d5f55 100644
+index 45cb9d2..29f2a0e 100644
 --- a/ps2xRuntime/src/lib/ps2_runtime.cpp
 +++ b/ps2xRuntime/src/lib/ps2_runtime.cpp
 @@ -1,3 +1,4 @@
@@ -481,7 +577,40 @@ index 45cb9d2..a4d5f55 100644
  #include "ps2_runtime.h"
  #include "ps2_log.h"
  #include "ps2_stubs.h"
-@@ -1989,6 +1990,12 @@ uint32_t PS2Runtime::reserveAsyncCallbackStack(uint32_t size, uint32_t alignment
+@@ -1351,6 +1352,32 @@ bool PS2Runtime::dispatchGuestBranch(uint8_t *rdram,
+                                      const char *debugName)
+ {
+     ctx->pc = targetPc;
++    // BOUNTY_BOOT_GRAPHICS_TRACE: no guest writes or injected packets.
++    if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE") &&
++        (targetPc == 0x349790u || targetPc == 0x3420f0u ||
++         targetPc == 0x3423c0u || targetPc == 0x334540u ||
++         targetPc == 0x18f9e0u || targetPc == 0x347a00u ||
++         targetPc == 0x347410u || targetPc == 0x33fda0u))
++    {
++        static thread_local std::unordered_map<uint32_t, uint32_t> counts;
++        const uint32_t hit = ++counts[targetPc];
++        if (hit <= 8u || hit == 64u || hit == 1024u)
++        {
++            const uint32_t gp = static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[28]));
++            auto word = [&](uint32_t address) -> uint32_t {
++                return address <= PS2_RAM_SIZE - 4u ? m_memory.read32(address) : 0u;
++            };
++            std::cerr << "BOOT_GRAPHICS_CALL target=0x" << std::hex << targetPc
++                      << " source=0x" << sourcePc << " a0=0x"
++                      << static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[4]))
++                      << " buffer=0x" << word(0x454918u)
++                      << " end=0x" << word(0x45491cu)
++                      << " surface=0x" << word(gp-0x3a20u)
++                      << std::dec << " current=" << word(gp-0x38fcu)
++                      << " requested=" << word(gp-0x38f8u)
++                      << " count=" << ctx->cop0_count << " hit=" << hit << '\n';
++        }
++    }
+     const bool isCall = (kind == GuestBranchKind::DirectCall || kind == GuestBranchKind::IndirectCall);
+ 
+     // Every inter-function transfer is also a deterministic EE safe point.
+@@ -1989,6 +2016,12 @@ uint32_t PS2Runtime::reserveAsyncCallbackStack(uint32_t size, uint32_t alignment
          return 0u;
      }
  
@@ -544,3 +673,30 @@ index aff25e6..ea9b3aa 100644
  }
  
  int64_t PS2Vfs::read(int32_t descriptor, void *destination, size_t size)
+diff --git a/ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp b/ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp
+index b02c7ca..7b58f7b 100644
+--- a/ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp
++++ b/ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp
+@@ -1,3 +1,5 @@
++#include <iostream>
++#include <cstdlib>
+ // Based on Blackline Interactive implementation
+ #include "runtime/ps2_memory.h"
+ #include <cstring>
+@@ -341,6 +343,16 @@ void PS2Memory::processVIF1Data(const uint8_t *data, uint32_t sizeBytes)
+         const bool irq = (cmd & 0x80000000u) != 0u;
+ 
+         // Track most-recent command for VIFn_CODE emulation.
++        // BOUNTY_VIF_GRAPHICS_TRACE: no packet alteration or replay.
++        if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE"))
++        {
++            static thread_local uint32_t commands = 0;
++            const uint32_t hit = ++commands;
++            if (hit <= 32u || (opcode == VIF_DIRECT && hit <= 256u))
++                std::cerr << "BOOT_GRAPHICS_VIF opcode=" << uint32_t(opcode)
++                          << " imm=" << imm << " num=" << uint32_t(num)
++                          << " remaining=" << sizeBytes-pos << " hit=" << hit << '\n';
++        }
+         vif1_regs.code = cmd;
+         vif1_regs.num = num;
+         if (irq)

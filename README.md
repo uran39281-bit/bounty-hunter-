@@ -9,6 +9,19 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 7 October 2026
 
+- **First real game frame captured:** a 640×446 Bounty Hunter logo/background
+  with copyright text, visibly tiled and distorted. Two 60-second runs reproduce
+  the result. This is not a verified correct title screen or Android build.
+- Fixed the runner's capture gate: GS history defaults to paused and must be
+  enabled before counting actual draws. The latest capture has 456 recent Draw
+  events; zero specialized fast-path counters did not imply zero GS work.
+- Added opt-in scheduler-cycle COP0 Count accounting with shared thread/IRQ
+  state, guest-write preservation and 32-bit wrap. The regression passes.
+  See `boot-screen-result.json` and `boot-screen-layout-60s.json`. Game pixels
+  are retained in the private project checkpoint and separate preview image.
+
+Previous completed startup fixes and asset integration:
+
 - The supplied `CDVDFSV.IRX` now boots after SIFCMD and registers the real
   disc-search RPC service `0x80000597`. DTX remains registered. Native startup
   starts with nine actual RPC services and seven real loaded modules; the
@@ -23,22 +36,22 @@ reports. Supply the original executable, IRX modules and game assets locally.
   exposed in existing translated instruction bodies. Every instruction is
   checked against the unchanged supplied ELF; no game instructions are patched.
 - Startup reaches main-menu assets: `FECOMMON.ZAP`, `FESTART.ZAP`, `STARTUP.BIN`,
-  `MM_ANI_2.VFX` and `MM_ANI_4.VFX`. The first visible game frame remains unverified.
+  `MM_ANI_2.VFX` and `MM_ANI_4.VFX`. These loaded assets precede the new distorted logo capture.
 - CDVD file/sector, callback-stack and native-leaf regressions pass. All four
   upstream IOP suites pass with the new imports disabled and enabled.
-  Installers and the alternative patch reproduce fourteen runtime files exactly.
+  Installers and the alternative patch reproduce sixteen runtime files exactly.
 
 The supplied DATA/BUNDLES/CHEWIE contains 661 files totaling 249,121,369 bytes.
 CHEWIE.zip passes CRC validation and adds all four supplied files (543,943 bytes).
 A 20-second post-staging smoke test opens `CS1014A.SYM`, `CS1014A.CSP` and
 `FECOMMON.ZAP` without an exception; it captures no frame. See
-`chewie-integration-result.json` and `chewie-startup-result.json`. The 60-second
-result above predates this asset addition.
+`chewie-integration-result.json` and `chewie-startup-result.json`. The prior CDVD 60-second
+result predates this asset addition; new boot-screen runs include CHEWIE.
 `DATA/VIDEO/01TRAILR.SFD` is requested and missing; the game proceeds to the
 front end with the current fixes. SOUND and VIDEO remain incomplete.
 Missing assets may cause later failures, and full-disc completeness is unverified.
 
-No visible title screen, sound output, controls, gameplay, FPS, Android binary
+Correct title-screen rendering, sound output, controls, gameplay, FPS, Android binary
 or S24 test is established. Diagnostic exit zero only means the bounded runner
 returned. AutoDMA timing remains a coarse interrupt-cadence model; it does not
 implement SPU2 audio output or prove full hardware accuracy. CDVDFSV boot is
@@ -79,6 +92,9 @@ python3 install_cdvd_imports.py /path/to/PS2Recomp
 python3 install_ee_exit_probe.py /path/to/PS2Recomp
 python3 install_ee_return_probe.py /path/to/PS2Recomp
 python3 install_callback_heap_stacks.py /path/to/PS2Recomp
+python3 install_cop0_count.py /path/to/PS2Recomp
+python3 install_boot_graphics_trace.py /path/to/PS2Recomp
+python3 install_graphics_dma_trace.py /path/to/PS2Recomp
 python3 verify_runtime_probes.py /path/to/PS2Recomp
 python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --extra-assets /path/to/CHEWIE.zip --disc /path/to/disc
 ```
@@ -94,7 +110,7 @@ cmake -S /path/to/PS2Recomp -B /path/to/runtime-build -DCMAKE_C_COMPILER=clang -
 cmake --build /path/to/runtime-build --target ps2EntryRunner -j3
 python3 generate_leaf_entries.py original/SLUS_204.20 --entry 0x265780 --entry 0x29e7f0 --entry 0x301fa0 --entry 0x31b980 --generated-directory corrected-output
 python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build --leaf-entries leaf-output/observed_leaf_entries.cpp
-python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority --boot-cdvdfsv --cdvd-compat --separate-callback-stacks --seconds 60 --capture-frame first-game-frame.ppm
+python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority --boot-cdvdfsv --cdvd-compat --separate-callback-stacks --advance-cop0-count --trace-boot-graphics --seconds 60 --capture-frame first-game-frame.ppm
 ```
 
 Omit `--reuse-file-descriptors` to reproduce the original invalid-copy failure.
@@ -122,14 +138,25 @@ translation and source hashes. Earlier DTX and asset evidence is retained.
 `probe-installation-check.json` retain validation. Generated game C++, raw
 memory captures, original modules/assets and large native binaries remain local.
 
-The latest 60-second run ends in front-end rendering routines around
-`0x3499dc`, with 178 DMA starts, two GIF copies, four VIF writes, zero GS
-writes, zero draws and no presentation frame. Menu assets have loaded, but
-this is not evidence of a working visible title screen.
+The previous zero-draw reports used paused GS debug history. That counter could
+not establish absence of drawing. Likewise, `packed_packets` and `image_uploads`
+count specialized fast paths, and `gs_writes` covers a direct IO-write path;
+zero values do not establish absence of generic GIF processing or GS setup.
+The new runner enables GS history before startup and captures only after it
+observes actual Draw events. No placeholder or synthetic game image is used.
 
-Next: continue front-end startup and trace graphics submission until a real
-visible frame can be verified. Missing assets, audio hardware and controller
-input also need work before an Android SDK/NDK build and S24 testing.
+`--advance-cop0-count` advances the hardware counter from existing scheduler
+cycle charges, shares it across threads and interrupt contexts, and preserves
+native guest writes and 32-bit wrap. It defaults off. Charges remain coarse;
+this does not implement instruction-accurate timing or COP0 Compare interrupts.
+Read-only graphics traces show original game calls, DMA/VIF metadata, decoded
+GIF tags and draw-state metadata. They do not alter or replay game packets.
+The first preliminary clock report used incorrect graphics-buffer addresses;
+the shared-clock and later reports use the corrected original addresses.
+
+Next: correct the tiled/distorted logo and text in the real captured frame,
+then validate the opening screen sequence, missing assets, audio and controller
+input before an Android SDK/NDK build and S24 testing.
 
 Primary implementation references:
 
@@ -142,3 +169,5 @@ Primary implementation references:
 - [PS2SDK SIFCMD startup](https://github.com/ps2dev/ps2sdk/blob/master/iop/system/sifcmd/src/sifcmd.c)
 
 Upstream PS2Recomp's license is included in `PS2Recomp-LICENSE.txt`.
+
+- [PCSX2 EE COP0 Count cycle accounting](https://github.com/PCSX2/pcsx2/blob/master/pcsx2/R5900.cpp)

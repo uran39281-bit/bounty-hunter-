@@ -153,29 +153,32 @@
     "chewie_crc_validated": true,
     "chewie_archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224"
   },
-  "current_runtime_patches": "Opt-in descriptor reuse, supplied SIFCMD/CDVDFSV partial boot, SPU2 cadence, real SPR receive, priority-zero EE workers, CDVD imports, allocated callback stacks, and read-only diagnostics; fourteen runtime source files reproduce exactly.",
+  "current_runtime_patches": "Previous opt-in startup fixes, shared COP0 Count, and read-only graphics diagnostics; sixteen modified runtime files reproduce exactly.",
   "current_native_compilers": "GCC 13 plus Clang 18 for four large unity objects; O0/SSE4.1/AVX2. Clang objects omit GCC PCH and native debug information.",
   "previous_dtx_wait": {
     "native_wait_pc": "0x2579a8",
     "native_wait_rpc_sid": "0x7d000000",
     "native_wait_description": "DTX_Init sceSifBindRpc retry; client server pointer remains unset; underlying runtime/IOP cause unresolved"
   },
-  "latest_execution_result": "cdvd-front-end-60s.json",
+  "latest_execution_result": "boot-screen-layout-60s.json",
   "dtx_service_registered": true,
   "ee_worker_threads_created": 3,
-  "first_game_frame_observed": false,
+  "first_game_frame_observed": true,
   "latest_graphics_activity": {
-    "packed_packets": 0,
-    "image_uploads": 0,
-    "recent_draws": 0,
-    "presentation_frame": false
+    "fast_path_packed_packets": 0,
+    "fast_path_image_uploads": 0,
+    "recent_draws": 456,
+    "real_frame_captured": true,
+    "width": 640,
+    "height": 446,
+    "correct_rendering_verified": false
   },
   "new_regressions_passed": [
     "SPU2 AutoDMA timing",
     "scratchpad receive data/wrap/completion",
     "EE priority zero"
   ],
-  "patch_source_files_reproduced": 14,
+  "patch_source_files_reproduced": 16,
   "latest_ee_threads": 1,
   "previous_cdvd_wait": {
     "native_wait_pc": "0x18afe8",
@@ -214,5 +217,55 @@
     "first_game_frame_observed": false,
     "android_apk_built": false,
     "full_disc_completeness_verified": false
+  },
+  "title_screen_observed": false,
+  "boot_screen_result": {
+    "date": "2026-10-07",
+    "request": "Try loading the boot screen first",
+    "startup_report": "boot-screen-layout-60s.json",
+    "prior_successful_capture": "boot-screen-capture-60s.json",
+    "native_ee_startup_seconds": 60,
+    "returncode": 0,
+    "timeout": false,
+    "first_real_game_frame_observed": true,
+    "complete_title_screen_verified": false,
+    "rendering_correctness_verified": false,
+    "observed_content": "Bounty Hunter logo fragments/background and copyright text; tiled, clipped and distorted",
+    "frame_width": 640,
+    "frame_height": 446,
+    "distinct_rgb_colors": 22409,
+    "recent_real_draw_events": 456,
+    "gs_history_enabled": true,
+    "frame_png": "Bounty-Hunter-Boot-Screen.png",
+    "frame_sha256": "012b4bab38475c19fdad4c45b56d34eeadd0757458ad0f40c9c6544017a41c35",
+    "frame_publicly_uploaded": false,
+    "native_instructions_changed": false,
+    "original_elf_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+    "fixes": [
+      "Opt-in COP0 Count accounting from scheduler cycles, shared across guest threads and new interrupt contexts",
+      "Enable previously paused GS debug history before capture",
+      "Bounded read-only original-game-call, DMA, VIF, GIF-tag and draw-state traces"
+    ],
+    "counter_corrections": [
+      "Zero fast-path packed_packets/image_uploads does not mean zero generic GS work",
+      "Zero gs_writes does not include all privileged-register paths",
+      "Earlier recent_draws was unavailable because GS history defaulted to paused"
+    ],
+    "preliminary_clock_report_limitations": [
+      "IRQ/new context Count sharing was corrected in later runs",
+      "First clock trace used incorrect graphics-buffer addresses; later traces use 0x454918/0x45491c"
+    ],
+    "regressions_passed": [
+      "COP0 Count opt-out, cycle cadence, guest writes, 32-bit wrap, thread and IRQ sharing",
+      "16 modified runtime source files reproduced exactly by installers and alternative patch",
+      "Python source syntax checks"
+    ],
+    "timing_limitations": "Coarse scheduler-accounted cycles; instruction timing and COP0 Compare interrupt behavior remain incomplete",
+    "remaining_blocker": "GS rendering distortion: trace texture upload/addressing and framebuffer selection against actual packets before changing behavior",
+    "next_work": "Correct tiled logo and text; verify boot sequence; continue missing assets/audio/input work",
+    "android_apk_built": false,
+    "s24_tested": false,
+    "audio_verified": false,
+    "controls_verified": false
   }
 }

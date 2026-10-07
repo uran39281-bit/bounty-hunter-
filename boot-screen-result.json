@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-07",
+  "request": "Try loading the boot screen first",
+  "startup_report": "boot-screen-layout-60s.json",
+  "prior_successful_capture": "boot-screen-capture-60s.json",
+  "native_ee_startup_seconds": 60,
+  "returncode": 0,
+  "timeout": false,
+  "first_real_game_frame_observed": true,
+  "complete_title_screen_verified": false,
+  "rendering_correctness_verified": false,
+  "observed_content": "Bounty Hunter logo fragments/background and copyright text; tiled, clipped and distorted",
+  "frame_width": 640,
+  "frame_height": 446,
+  "distinct_rgb_colors": 22409,
+  "recent_real_draw_events": 456,
+  "gs_history_enabled": true,
+  "frame_png": "Bounty-Hunter-Boot-Screen.png",
+  "frame_sha256": "012b4bab38475c19fdad4c45b56d34eeadd0757458ad0f40c9c6544017a41c35",
+  "frame_publicly_uploaded": false,
+  "native_instructions_changed": false,
+  "original_elf_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+  "fixes": [
+    "Opt-in COP0 Count accounting from scheduler cycles, shared across guest threads and new interrupt contexts",
+    "Enable previously paused GS debug history before capture",
+    "Bounded read-only original-game-call, DMA, VIF, GIF-tag and draw-state traces"
+  ],
+  "counter_corrections": [
+    "Zero fast-path packed_packets/image_uploads does not mean zero generic GS work",
+    "Zero gs_writes does not include all privileged-register paths",
+    "Earlier recent_draws was unavailable because GS history defaulted to paused"
+  ],
+  "preliminary_clock_report_limitations": [
+    "IRQ/new context Count sharing was corrected in later runs",
+    "First clock trace used incorrect graphics-buffer addresses; later traces use 0x454918/0x45491c"
+  ],
+  "regressions_passed": [
+    "COP0 Count opt-out, cycle cadence, guest writes, 32-bit wrap, thread and IRQ sharing",
+    "16 modified runtime source files reproduced exactly by installers and alternative patch",
+    "Python source syntax checks"
+  ],
+  "timing_limitations": "Coarse scheduler-accounted cycles; instruction timing and COP0 Compare interrupt behavior remain incomplete",
+  "remaining_blocker": "GS rendering distortion: trace texture upload/addressing and framebuffer selection against actual packets before changing behavior",
+  "next_work": "Correct tiled logo and text; verify boot sequence; continue missing assets/audio/input work",
+  "android_apk_built": false,
+  "s24_tested": false,
+  "audio_verified": false,
+  "controls_verified": false
+}

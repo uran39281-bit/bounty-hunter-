@@ -497,7 +497,7 @@
     "Compiled objects, native executables and temporary linker outputs",
     "Raw RAM snapshots and build caches"
   ],
-  "latest_status": "DTX service registers; three EE workers created; next wait RPC 0x80000597; no frame/APK",
+  "latest_status": "First actual 640x446 game logo frame captured; visible tiling/distortion; no Android APK",
   "dtx_checkpoint": {
     "base_commit": "b1c67ac9aa0e63bfb012a1bb2c74ccd47b21a442",
     "files": [
@@ -1207,6 +1207,234 @@
         "path": "stage_assets.py",
         "bytes": 3189,
         "sha256": "1d54455563d26200db5143c08c58ec66f32f3289565f74cb498816da565283cc"
+      }
+    ]
+  },
+  "boot_screen_checkpoint": {
+    "base_commit": "abc3a3ea855ddef08b9de6db04634f7d04caf8bb",
+    "first_real_frame": true,
+    "rendering_correctness_verified": false,
+    "runtime_source_files_reproduced": 16,
+    "files": [
+      {
+        "path": ".gitignore",
+        "bytes": 757,
+        "sha256": "243b48e8f8d22a07d774e3c08515235171b20b4871223d4d31b68d6a49c01db3"
+      },
+      {
+        "path": "README.md",
+        "bytes": 11288,
+        "sha256": "78f0d6272daf97692d755725b4eade6a867ca67f36dca38d97bd8faad5f1cf59"
+      },
+      {
+        "path": "README.txt",
+        "bytes": 14849,
+        "sha256": "b68c05dc82cfdd159c742b1d402526d8e8f57e2472bf4e76a864fa51d2e2472c"
+      },
+      {
+        "path": "boot-screen-baseline-60s.json",
+        "bytes": 12540,
+        "sha256": "f32e77eecf19a9972087f1274e10d3b03e9bba7019da92345a6eab2a59bc6049"
+      },
+      {
+        "path": "boot-screen-baseline-60s.log",
+        "bytes": 11527,
+        "sha256": "f4bf9a1d624771c5e2adafc3bb6fdfb4d2e67d447ea566719c8b574c3eb1b1e9"
+      },
+      {
+        "path": "boot-screen-baseline-run.log",
+        "bytes": 673,
+        "sha256": "29f0f061ffa609038a2dae7e88acdc14961d01c1a94782bacf14c5c53bfd7414"
+      },
+      {
+        "path": "boot-screen-capture-60s.json",
+        "bytes": 30469,
+        "sha256": "849a50461cede3a00d27ba48be08bc35e5a8fc7c8f148c549fcb6d8a5b87c8ad"
+      },
+      {
+        "path": "boot-screen-capture-60s.log",
+        "bytes": 29210,
+        "sha256": "754ffbe2af6561da840b1b6692757f37ddb252167847f38419be00d9be4a8916"
+      },
+      {
+        "path": "boot-screen-capture-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "boot-screen-capture-run.log",
+        "bytes": 741,
+        "sha256": "344574b63340ac42c16e3dd7622f6ae5da7781de7e6960812af6e084026346e5"
+      },
+      {
+        "path": "boot-screen-clock-60s.json",
+        "bytes": 22146,
+        "sha256": "1ed6b69c213c5064171ca33d82ee9b440045bb55db0ec84ce718125ac5dbc8b0"
+      },
+      {
+        "path": "boot-screen-clock-60s.log",
+        "bytes": 20996,
+        "sha256": "ebba75a3915d173982c6879abef72bb8f8faaef6ac66b149d519edbc4428e28d"
+      },
+      {
+        "path": "boot-screen-clock-build.log",
+        "bytes": 354,
+        "sha256": "9e376afc0b772a6e3628172e81dd0c6c80086f3a5b5e511aba52255b8a23a0bb"
+      },
+      {
+        "path": "boot-screen-clock-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "boot-screen-clock-run.log",
+        "bytes": 742,
+        "sha256": "8afef8492d01693f34932d41e12b6f81ae92a73020379958d3fc9235af1b6660"
+      },
+      {
+        "path": "boot-screen-count-regression-build.log",
+        "bytes": 106,
+        "sha256": "cd83b59cbb67674e747cd48cf585619b7753dfcc233b3f941807486f6c6aa356"
+      },
+      {
+        "path": "boot-screen-count-regression.log",
+        "bytes": 123,
+        "sha256": "b499a2ee7917a91b1a6e694f7003a4872e25d1c5fbf9f8455ec10f12d36a83b2"
+      },
+      {
+        "path": "boot-screen-graphics-60s.json",
+        "bytes": 29457,
+        "sha256": "97b9d0e22a4e29daf6dcf72843f0066addf0a32f503336d31d50bce4374b9610"
+      },
+      {
+        "path": "boot-screen-graphics-60s.log",
+        "bytes": 28215,
+        "sha256": "f0e0995dd5df9f75150d8fb27a67a17ca37b561bf6ce90697c9393ab78af3a62"
+      },
+      {
+        "path": "boot-screen-graphics-build.log",
+        "bytes": 254,
+        "sha256": "3121bbe082df0fda53f2d94d90e6801e5e6649513a6fbd054f724ab557d94c93"
+      },
+      {
+        "path": "boot-screen-graphics-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "boot-screen-graphics-run.log",
+        "bytes": 742,
+        "sha256": "8afef8492d01693f34932d41e12b6f81ae92a73020379958d3fc9235af1b6660"
+      },
+      {
+        "path": "boot-screen-history-60s.json",
+        "bytes": 29532,
+        "sha256": "78ac4c59c60e3db235338e8961a20cdc2fb100bcdedfe141496e8f43cc361c7e"
+      },
+      {
+        "path": "boot-screen-history-60s.log",
+        "bytes": 28289,
+        "sha256": "edcb7c470292ef0966ee657e86074ab08be9bd5d183cf3d43649c47d1cd2dd22"
+      },
+      {
+        "path": "boot-screen-history-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "boot-screen-history-run.log",
+        "bytes": 742,
+        "sha256": "8afef8492d01693f34932d41e12b6f81ae92a73020379958d3fc9235af1b6660"
+      },
+      {
+        "path": "boot-screen-layout-60s.json",
+        "bytes": 32296,
+        "sha256": "6059a28e8fb51d1073f6875677c05d98a9e5b78f51be0150c7c18408373e17f9"
+      },
+      {
+        "path": "boot-screen-layout-60s.log",
+        "bytes": 31025,
+        "sha256": "6d744446bae11466f78111f36785005fd072c57206aa60269919427fa5444a55"
+      },
+      {
+        "path": "boot-screen-layout-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "boot-screen-layout-run.log",
+        "bytes": 741,
+        "sha256": "344574b63340ac42c16e3dd7622f6ae5da7781de7e6960812af6e084026346e5"
+      },
+      {
+        "path": "boot-screen-probe-reproduction.log",
+        "bytes": 907,
+        "sha256": "f1f34365803534c77007d0d4362ca3f02d58584360a332ce6fb70079d0cc3c96"
+      },
+      {
+        "path": "boot-screen-result.json",
+        "bytes": 2478,
+        "sha256": "fed6b0f3e23c044b29980f61bb6abf354f392a040624363039b773ee5b68f0ca"
+      },
+      {
+        "path": "boot-screen-shared-clock-build.log",
+        "bytes": 354,
+        "sha256": "9e376afc0b772a6e3628172e81dd0c6c80086f3a5b5e511aba52255b8a23a0bb"
+      },
+      {
+        "path": "boot-screen-vif-build.log",
+        "bytes": 264,
+        "sha256": "50b0b53c1e8c796babd5eff0ed3aa7fd305d3616d6315531e81ab0cd8a970b7f"
+      },
+      {
+        "path": "experiment.json",
+        "bytes": 11144,
+        "sha256": "561010cb8bdd8ed2d7a80d683cf61f5ed5826ca561f5e3c7af6f2fc14a4b2f61"
+      },
+      {
+        "path": "headless_startup.cpp",
+        "bytes": 8840,
+        "sha256": "69dbdae159d72af5490d79f52543a454ae7debbeb4d141cb13625f3adb680659"
+      },
+      {
+        "path": "install_boot_graphics_trace.py",
+        "bytes": 2336,
+        "sha256": "3d59639ea637967a96571b1a36ed5a10b372362679b85ac094b89d54c3118b16"
+      },
+      {
+        "path": "install_cop0_count.py",
+        "bytes": 3055,
+        "sha256": "40e7be75593a42054760a7556f00bd6d83825b4c6655e43dad78b5681f98b084"
+      },
+      {
+        "path": "install_graphics_dma_trace.py",
+        "bytes": 2504,
+        "sha256": "2f06628d0c8805ff0837d5289d7c6b24882df360fb33924ea112d53a5d4a3444"
+      },
+      {
+        "path": "probe-installation-check.json",
+        "bytes": 3317,
+        "sha256": "8765f32a6f87ad01789807ce83611d661e370adeaf0d8b8e8731ad76505d935b"
+      },
+      {
+        "path": "run_startup.py",
+        "bytes": 6142,
+        "sha256": "c5e74c356e7c074205f611a61c562e7d0166781d8a7ff8a0cf997c496891d077"
+      },
+      {
+        "path": "runtime-experiment.patch",
+        "bytes": 32363,
+        "sha256": "d0f3db98296b502408a10117db9da5cfe21046fdf8a9b4a27a1eb2c4e39e9221"
+      },
+      {
+        "path": "test_cop0_count.cpp",
+        "bytes": 2772,
+        "sha256": "ca85013a907ebd61220c32eef9ee0c5436dd809352f9bb8137c2d3487d32f33e"
+      },
+      {
+        "path": "verify_runtime_probes.py",
+        "bytes": 3955,
+        "sha256": "6a1c7e966ab1fa86b7f591a297ad263ae2910a1a57c7c5f9495fe624491108fa"
       }
     ]
   }
