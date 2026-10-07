@@ -5,6 +5,8 @@
 #include "runtime/gs/gs_frontend.h"
 #include "Kernel/Stubs/Audio.h"
 #include "Kernel/Stubs/MPEG.h"
+#include "Kernel/Stubs/Pad.h"
+#include "menu_input_script.h"
 #include <chrono>
 #include <iostream>
 #include <thread>
@@ -22,7 +24,7 @@ int main(int argc, char **argv) {
         return 2;
     }
     const int seconds = argc == 3 ? std::stoi(argv[2]) : 5;
-    if (seconds < 1 || seconds > 120) return 2;
+    if (seconds < 1 || seconds > 600) return 2;
     PS2Runtime runtime;
     runtime.setMissingFunctionPolicy(PS2Runtime::MissingFunctionPolicy::Stop);
     if (!runtime.memory().initialize() || !runtime.syncCoreSubsystems() ||
@@ -35,6 +37,8 @@ int main(int argc, char **argv) {
     ps2_stubs::resetSifState();
     ps2_stubs::resetAudioStubState();
     ps2_stubs::resetMpegStubState();
+    const bool scriptInput=std::getenv("PS2X_SCRIPT_MENU_INPUT")!=nullptr;
+    if (scriptInput) ps2_stubs::setPadOverrideState(0xffffu,128,128,128,128);
     auto *ram = runtime.memory().getRDRAM();
     runtime.initializeEeKernelState(ram);
     runtime.cpu().r[4] = _mm_setzero_si128();
@@ -46,8 +50,19 @@ int main(int argc, char **argv) {
               << std::flush;
     std::jthread timer([&](std::stop_token stop) {
         auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(seconds);
+        uint16_t lastButtons=0xffffu;
         while (!stop.stop_requested() && std::chrono::steady_clock::now() < deadline) {
             std::this_thread::sleep_for(std::chrono::milliseconds(17));
+            if (scriptInput) {
+                const auto reads=ps2_stubs::getPadDebugSnapshot().ports[0][0].readCount;
+                const uint16_t buttons=menuScriptButtons(reads);
+                if (buttons!=lastButtons) {
+                    ps2_stubs::setPadOverrideState(buttons,128,128,128,128);
+                    std::cerr << "SCRIPTED_PAD_INPUT reads=" << reads << " buttons=0x"
+                              << std::hex << buttons << std::dec << '\n';
+                    lastButtons=buttons;
+                }
+            }
             // The actual scheduler already provides its VBlank events.
         }
         if (!stop.stop_requested()) {
@@ -71,6 +86,28 @@ int main(int argc, char **argv) {
     }
     timer.request_stop();
     timer.join();
+    const auto pads = ps2_stubs::getPadDebugSnapshot();
+    if (scriptInput) ps2_stubs::clearPadOverrideState();
+    for (unsigned port=0; port<ps2_stubs::kPadDebugPortCount; ++port) {
+        const auto &pad = pads.ports[port][0];
+        std::cout << "PAD_ACTIVITY port=" << port << " open=" << pad.open
+                  << " reads=" << pad.readCount << " ok=" << pad.lastReadOk
+                  << " override=" << pad.lastUsedOverride << " backend=" << pad.lastUsedBackend
+                  << " buttons=0x" << std::hex << pad.lastButtons << std::dec << '\n';
+    }
+    if (std::getenv("PS2X_FRONTEND_TRACE")) {
+        const uint32_t gp=static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[28]));
+        if (gp>=0x6650u && gp<PS2_RAM_SIZE) {
+            const uint32_t front=runtime.memory().read32(gp-0x3b18u);
+            const uint32_t object=runtime.memory().read32(front+4u);
+            const uint32_t menu=runtime.memory().read32(object+0x18u);
+            std::cout << "FRONTEND_STATE state=" << unsigned(runtime.memory().read8(gp-0x6650u))
+                      << " mode=" << unsigned(runtime.memory().read8(gp-0x3b00u))
+                      << " menu_id=0x" << std::hex << runtime.memory().read32(menu+4u)
+                      << " logical_buttons=0x" << runtime.memory().read32(0x3f0634u)
+                      << std::dec << '\n';
+        }
+    }
     std::cout << "EE_REGISTERS s0=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[16]))
               << " a0=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[4]))
               << " gp=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[28])) << '\n';

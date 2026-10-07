@@ -9,6 +9,30 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 7 October 2026
 
+- Added Android touch controls for Start, Cross, Circle and directions, merging
+  touch presses with physical controller buttons. Host layout/press/release
+  tests exercise the actual runtime Pad API; the Android-only source passes a
+  host compiler syntax check. These checks do **not** prove Android operation.
+- A 300-second run with no input performs 379 reads on each controller port;
+  a separate 300-second scripted-input run delivers Start/Cross/Down/Circle
+  through that same API. Both return without an exception and capture only the
+  title logo. Menu text and working menu navigation remain unresolved.
+- A further 180-second trace confirms the original native menu handler receives
+  Start, Cross, Down and Circle. Its current menu ID remains `0x10f`; the
+  unchanged native handler returns zero immediately for that ID. The next
+  blocker is the title-to-menu transition/text path, not pad delivery. See
+  `frontend-events-fixed-180s.json` and `frontend-result.json`.
+- Added bounded native front-end/event traces, Android boot settings and
+  staging of the four exact observed native entries. Host presentation now
+  respects the opt-in completed native display-copy latch.
+- APK build preflight is blocked: Gradle, SDK platform 34, NDK
+  28.2.13676358 and SDK CMake 3.22.1 are missing. **No APK was produced.**
+  See `ANDROID.md`, `android-build-preflight.json` and `frontend-result.json`.
+  The current twenty changed runtime files reproduce exactly through the
+  installers and alternative patch (`frontend-installation-check.json`).
+
+The following logo result remains the latest visible rendering milestone:
+
 - **Readable title logo captured:** the native run now selects `start_01`
   through `start_05`, giving five distinct background panels instead of the
   repeated logo fragment. The 640×446 capture contains the readable Star Wars
@@ -106,10 +130,12 @@ python3 install_ee_return_probe.py /path/to/PS2Recomp
 python3 install_callback_heap_stacks.py /path/to/PS2Recomp
 python3 install_cop0_count.py /path/to/PS2Recomp
 python3 install_boot_graphics_trace.py /path/to/PS2Recomp
+python3 install_frontend_trace.py /path/to/PS2Recomp
 python3 install_graphics_dma_trace.py /path/to/PS2Recomp
 python3 install_gs_batch_trace.py /path/to/PS2Recomp
 python3 install_ee_valist.py /path/to/PS2Recomp
 python3 install_present_capture.py /path/to/PS2Recomp
+python3 install_android_touch.py /path/to/PS2Recomp
 python3 verify_runtime_probes.py /path/to/PS2Recomp
 python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --extra-assets /path/to/CHEWIE.zip --disc /path/to/disc
 ```

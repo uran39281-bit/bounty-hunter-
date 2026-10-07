@@ -692,6 +692,87 @@ index 5658928..d7842e4 100644
          recordDrawDebugEventUnlocked(needed);
      }
  
+diff --git a/ps2xRuntime/src/lib/ps2_android_runtime.cpp b/ps2xRuntime/src/lib/ps2_android_runtime.cpp
+index 40e3dea..e635787 100644
+--- a/ps2xRuntime/src/lib/ps2_android_runtime.cpp
++++ b/ps2xRuntime/src/lib/ps2_android_runtime.cpp
+@@ -1,3 +1,74 @@
+-// TODO: on-screen touch joystick / button overlay.
++// BOUNTY_ANDROID_TOUCH: generated from author-owned control sources.
++#include <algorithm>
++#include <array>
++#include <cstdint>
++
++namespace bounty_touch {
++struct Button { float x, y; uint16_t mask; const char *label; };
++inline constexpr std::array<Button, 7> buttons = {{
++    {0.14f,0.60f,0x0010u,"UP"}, {0.07f,0.75f,0x0080u,"LEFT"},
++    {0.21f,0.75f,0x0020u,"RIGHT"}, {0.14f,0.90f,0x0040u,"DOWN"},
++    {0.50f,0.90f,0x0008u,"START"}, {0.86f,0.83f,0x4000u,"X"},
++    {0.94f,0.64f,0x2000u,"O"}
++}};
++inline float radius(float width, float height) { return std::min(width,height)*0.072f; }
++inline uint16_t maskAt(float x, float y, float width, float height) {
++    if (!(width>0 && height>0)) return 0u;
++    const float r=radius(width,height);
++    uint16_t result=0;
++    for (const auto &b : buttons) {
++        const float dx=x-b.x*width,dy=y-b.y*height;
++        if (dx*dx+dy*dy<=r*r) result|=b.mask;
++    }
++    return result;
++}
++inline uint16_t merge(uint16_t physicalActiveLow, uint16_t touchPressed) {
++    return static_cast<uint16_t>(physicalActiveLow & ~touchPressed);
++}
++}
++
++// Host UI thread samples touch and physical input; mutex-backed Pad API delivers it.
+ #if defined(__ANDROID__)
+-#endif // __ANDROID__
++#include "ps2_host_backend.h"
++#include "runtime/ps2_pad.h"
++#include "Kernel/Stubs/Pad.h"
++#include <cstdlib>
++
++namespace bounty_android {
++void configureRuntime() {
++    // Same opt-in boot compatibility settings exercised by the native diagnostic.
++    for (const char *flag : {"PS2X_VFS_REUSE_DESCRIPTORS","PS2X_STOP_INVALID_MEMCPY",
++         "PS2X_LOAD_BOOT_SIFCMD","PS2X_SPU2_ADMA_TIMING","PS2X_SPR_RECVN",
++         "PS2X_EE_ZERO_PRIORITY","PS2X_LOAD_BOOT_CDVDFSV","PS2X_CDVD_COMPAT",
++         "PS2X_CALLBACK_HEAP_STACKS","PS2X_COP0_COUNT","PS2X_EE_VA64",
++         "PS2X_CAPTURE_ON_PRESENT"}) setenv(flag,"1",1);
++}
++void updatePad() {
++    uint8_t data[32]{};
++    PSPadBackend backend;
++    backend.readState(0,0,data,sizeof(data));
++    uint16_t pressed=0;
++    const float width=GetScreenWidth(),height=GetScreenHeight();
++    for (int i=0;i<GetTouchPointCount();++i) {
++        const Vector2 point=GetTouchPosition(i);
++        pressed|=bounty_touch::maskAt(point.x,point.y,width,height);
++    }
++    const uint16_t physical=static_cast<uint16_t>(data[2] | (data[3]<<8));
++    ps2_stubs::setPadOverrideState(bounty_touch::merge(physical,pressed),data[6],data[7],data[4],data[5]);
++}
++void drawControls() {
++    const float width=GetScreenWidth(),height=GetScreenHeight();
++    const float r=bounty_touch::radius(width,height);
++    const unsigned font=static_cast<unsigned>(std::max(12.0f,height*0.028f));
++    const auto pad=ps2_stubs::getPadDebugSnapshot();
++    for (const auto &b : bounty_touch::buttons) {
++        const int x=static_cast<int>(b.x*width),y=static_cast<int>(b.y*height);
++        const bool down=(pad.overrideButtons & b.mask)==0;
++        DrawCircle(x,y,r,down?Color{90,150,210,170}:Color{25,35,50,135});
++        DrawCircleLines(x,y,r,Color{200,210,220,190});
++        DrawText(b.label,x-MeasureText(b.label,font)/2,y-font/2,font,Color{240,245,250,220});
++    }
++}
++void releasePad() { ps2_stubs::clearPadOverrideState(); }
++}
++#endif
 diff --git a/ps2xRuntime/src/lib/ps2_memory.cpp b/ps2xRuntime/src/lib/ps2_memory.cpp
 index 37b6a4d..ea4f1bc 100644
 --- a/ps2xRuntime/src/lib/ps2_memory.cpp
@@ -722,7 +803,7 @@ index 37b6a4d..ea4f1bc 100644
              if (tryProcessScratchpadDma(channelBase, value))
              {
 diff --git a/ps2xRuntime/src/lib/ps2_runtime.cpp b/ps2xRuntime/src/lib/ps2_runtime.cpp
-index 45cb9d2..29f2a0e 100644
+index 45cb9d2..bddb3c9 100644
 --- a/ps2xRuntime/src/lib/ps2_runtime.cpp
 +++ b/ps2xRuntime/src/lib/ps2_runtime.cpp
 @@ -1,3 +1,4 @@
@@ -730,10 +811,56 @@ index 45cb9d2..29f2a0e 100644
  #include "ps2_runtime.h"
  #include "ps2_log.h"
  #include "ps2_stubs.h"
-@@ -1351,6 +1352,32 @@ bool PS2Runtime::dispatchGuestBranch(uint8_t *rdram,
+@@ -387,10 +388,12 @@ static void UploadFrame(Texture2D &tex, PS2Runtime *rt, uint32_t &outWidth, uint
+     static std::vector<uint8_t> s_uploadBuffer(DEFAULT_FB_SIZE, 0u);
+ 
+     const uint64_t currentTick = rt->eeScheduler().currentVSyncTick();
+-    const bool needsLatch = !s_hasLatchedInitialFrame || currentTick != s_lastPresentationTick;
++    // BOUNTY_NATIVE_PRESENT_UPLOAD: retain the completed native display copy.
++    const bool nativeCopy = std::getenv("PS2X_CAPTURE_ON_PRESENT") != nullptr;
++    const bool needsLatch = nativeCopy || !s_hasLatchedInitialFrame || currentTick != s_lastPresentationTick;
+     if (needsLatch)
+     {
+-        rt->gs().latchHostPresentationFrame();
++        if (!nativeCopy) rt->gs().latchHostPresentationFrame();
+         s_lastPresentationTick = currentTick;
+         s_hasLatchedInitialFrame = true;
+     }
+@@ -1351,6 +1354,63 @@ bool PS2Runtime::dispatchGuestBranch(uint8_t *rdram,
                                       const char *debugName)
  {
      ctx->pc = targetPc;
++    // BOUNTY_FRONTEND_TRACE: observe original calls; no guest-state changes.
++    if (std::getenv("PS2X_FRONTEND_TRACE") &&
++        (sourcePc == 0x2a5ab0u || sourcePc == 0x2a5ae0u || sourcePc == 0x2a5b50u ||
++         sourcePc == 0x3113c0u || sourcePc == 0x311400u ||
++         (sourcePc >= 0x31bbb0u && sourcePc < 0x31bf00u) ||
++         targetPc == 0x31f280u || targetPc == 0x31ec00u ||
++         targetPc == 0x1baf70u || targetPc == 0x199290u ||
++         targetPc == 0x199310u || targetPc == 0x198f40u))
++    {
++        static thread_local std::unordered_map<uint32_t, uint32_t> hits;
++        const uint32_t hit = ++hits[sourcePc];
++        if (hit <= 3u || hit == 64u || hit == 128u || hit == 256u || hit == 512u)
++        {
++            const uint32_t gp = static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[28]));
++            auto word = [&](uint32_t a) { return (a & 3u)==0u && a <= PS2_RAM_SIZE - 4u ? m_memory.read32(a) : 0u; };
++            const uint32_t front = word(gp-0x3b18u);
++            const uint32_t object=word(front+4u);
++            const uint32_t a1=static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[5]));
++            std::cerr << "FRONTEND_CALL target=0x" << std::hex << targetPc
++                      << " source=0x" << sourcePc << " a0=0x"
++                      << static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[4]))
++                      << " a1=0x" << a1 << " event=0x" << word(a1+4u)
++                      << " front=0x" << front << " object=0x" << object
++                      << " menu_id=0x" << word(word(object+0x18u)+4u)
++                      << " logical_buttons=0x" << word(0x3f0634u)
++                      << " elapsed_bits=0x" << word(gp-0x3ae8u)
++                      << std::dec << " state=" << unsigned(m_memory.read8(gp-0x6650u))
++                      << " mode=" << unsigned(m_memory.read8(gp-0x3b00u))
++                      << " delta=" << ctx->f[12] << " hit=" << hit << '\n';
++        }
++    }
 +    // BOUNTY_BOOT_GRAPHICS_TRACE: no guest writes or injected packets.
 +    if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE") &&
 +        (targetPc == 0x349790u || targetPc == 0x3420f0u ||
@@ -763,7 +890,7 @@ index 45cb9d2..29f2a0e 100644
      const bool isCall = (kind == GuestBranchKind::DirectCall || kind == GuestBranchKind::IndirectCall);
  
      // Every inter-function transfer is also a deterministic EE safe point.
-@@ -1989,6 +2016,12 @@ uint32_t PS2Runtime::reserveAsyncCallbackStack(uint32_t size, uint32_t alignment
+@@ -1989,6 +2049,12 @@ uint32_t PS2Runtime::reserveAsyncCallbackStack(uint32_t size, uint32_t alignment
          return 0u;
      }
  
@@ -776,6 +903,48 @@ index 45cb9d2..29f2a0e 100644
      std::lock_guard<std::mutex> lock(m_asyncCallbackStackMutex);
      uint32_t top = m_asyncCallbackStackTop;
      if (top > PS2_RAM_SIZE)
+@@ -2339,6 +2405,11 @@ void PS2Runtime::HandleIntegerOverflow(R5900Context *ctx)
+     raiseCop0Exception(ctx, EXCEPTION_INTEGER_OVERFLOW);
+ }
+ 
++// BOUNTY_ANDROID_TOUCH
++#if defined(__ANDROID__)
++namespace bounty_android { void updatePad(); void drawControls(); void releasePad(); }
++#endif
++
+ void PS2Runtime::run()
+ {
+     m_stopRequested.store(false, std::memory_order_relaxed);
+@@ -2422,6 +2493,9 @@ void PS2Runtime::run()
+         });
+         uint32_t presentWidth = FB_WIDTH;
+         uint32_t presentHeight = DEFAULT_DISPLAY_HEIGHT;
++#if defined(__ANDROID__)
++        bounty_android::updatePad();
++#endif
+         UploadFrame(frameTex, this, presentWidth, presentHeight);
+ 
+         BeginDrawing();
+@@ -2440,6 +2514,9 @@ void PS2Runtime::run()
+             dstWidth,
+             dstHeight};
+         DrawTexturePro(frameTex, srcRect, dstRect, Vector2{0.0f, 0.0f}, 0.0f, WHITE);
++#if defined(__ANDROID__)
++        bounty_android::drawControls();
++#endif
+         if (m_debugUiInitialized && m_debugUiDrawCallback)
+         {
+             m_debugUiDrawCallback(*this, m_debugUiUserData);
+@@ -2455,6 +2532,9 @@ void PS2Runtime::run()
+     }
+ 
+     requestStop();
++#if defined(__ANDROID__)
++    bounty_android::releasePad();
++#endif
+     if (gameThread.joinable())
+     {
+         gameThread.join();
 diff --git a/ps2xRuntime/src/lib/ps2_vfs.cpp b/ps2xRuntime/src/lib/ps2_vfs.cpp
 index aff25e6..ea9b3aa 100644
 --- a/ps2xRuntime/src/lib/ps2_vfs.cpp
@@ -853,3 +1022,36 @@ index b02c7ca..7b58f7b 100644
          vif1_regs.code = cmd;
          vif1_regs.num = num;
          if (irq)
+diff --git a/ps2xRuntime/src/main.cpp b/ps2xRuntime/src/main.cpp
+index 563bcbd..1b78e49 100644
+--- a/ps2xRuntime/src/main.cpp
++++ b/ps2xRuntime/src/main.cpp
+@@ -164,10 +164,17 @@ namespace
+     }
+ }
+ 
++// BOUNTY_ANDROID_BOOT
++#if defined(__ANDROID__)
++namespace bounty_android { void configureRuntime(); }
++void registerObservedLeafEntries(PS2Runtime &runtime);
++#endif
++
+ int main(int argc, char *argv[])
+ {
+ #if defined(__ANDROID__)
+     redirectStdioToLogcat();
++    bounty_android::configureRuntime();
+ #endif
+     setupTerminateLogger();
+ 
+@@ -226,6 +233,10 @@ int main(int argc, char *argv[])
+             return 1;
+         }
+ 
++#if defined(__ANDROID__)
++        runtime.setMissingFunctionPolicy(PS2Runtime::MissingFunctionPolicy::Stop);
++        registerObservedLeafEntries(runtime);
++#endif
+         runtime.run();
+ 
+ #ifdef _DEBUG

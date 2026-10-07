@@ -15,7 +15,7 @@ INSTALLERS = [
     'install_iop_import_trace.py', 'install_spu2_adma_timing.py',
     'install_scratchpad_receive.py', 'install_boot_cdvdfsv_probe.py', 'install_ee_thread_probe.py',
     'install_ee_zero_priority.py', 'install_cdvd_imports.py', 'install_ee_exit_probe.py', 'install_ee_return_probe.py', 'install_callback_heap_stacks.py',
-    'install_cop0_count.py', 'install_boot_graphics_trace.py', 'install_graphics_dma_trace.py', 'install_gs_batch_trace.py', 'install_ee_valist.py', 'install_present_capture.py',
+    'install_cop0_count.py', 'install_boot_graphics_trace.py', 'install_frontend_trace.py', 'install_graphics_dma_trace.py', 'install_gs_batch_trace.py', 'install_ee_valist.py', 'install_present_capture.py', 'install_android_touch.py',
 ]
 
 
@@ -38,7 +38,7 @@ def main():
         'ps2xIOP/src/emulator/core/iop_memory.cpp', 'ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp',
         'ps2xRuntime/src/lib/Kernel/Syscalls/Thread.cpp', 'ps2xRuntime/src/lib/Kernel/EeScheduler.cpp',
         'ps2xIOP/src/emulator/imports/iop_cdvd.cpp', 'ps2xRuntime/src/lib/ps2_runtime.cpp',
-        'ps2xRuntime/src/lib/ps2_memory.cpp', 'ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp', 'ps2xRuntime/src/lib/gs/gs_frontend.cpp', 'ps2xRuntime/src/lib/Kernel/Stubs/Helpers/Support.h',
+        'ps2xRuntime/src/lib/ps2_memory.cpp', 'ps2xRuntime/src/lib/ps2_vif1_interpreter.cpp', 'ps2xRuntime/src/lib/gs/gs_frontend.cpp', 'ps2xRuntime/src/lib/Kernel/Stubs/Helpers/Support.h', 'ps2xRuntime/src/lib/ps2_android_runtime.cpp', 'ps2xRuntime/src/main.cpp',
     ]
     if sorted(paths)!=sorted(expected): raise ValueError('Unexpected modified runtime file list')
     with tempfile.TemporaryDirectory(prefix='bounty-probes-') as tmp:

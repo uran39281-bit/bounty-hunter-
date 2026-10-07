@@ -1,3 +1,13 @@
+MENU INPUT WORK — 7 October 2026
+Added Android menu touch controls, physical-controller merge, native event
+traces and private native-entry staging. Host Pad press/release tests pass.
+Two 300-second native runs still show the logo without menu text; scripted
+buttons reach the Pad API but usable menu navigation is not established.
+Twenty runtime files reproduce exactly through installers and patch.
+The APK build is blocked by missing Gradle, SDK/NDK and SDK CMake. No APK or
+S24 validation. See frontend-result.json, ANDROID.md and README.md.
+The following notes describe historical checkpoints.
+
 LOGO FORMAT FIX — 7 October 2026
 The native run now formats start_01 through start_05 correctly. Its completed
 640x446 display copy contains a readable Star Wars Bounty Hunter title logo.

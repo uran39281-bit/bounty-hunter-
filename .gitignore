@@ -60,3 +60,10 @@ distortion-*.png
 *.vram
 *.r2t
 test-ee-valist
+
+# Private native menu captures, local tests and Android syntax object
+frontend-*.ppm*
+frontend-*.png
+headless-frontend-*
+test-menu-controls
+android-touch-host-check.o

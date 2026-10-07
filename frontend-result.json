@@ -1,0 +1,116 @@
+{
+  "status": "native title logo; menu text/navigation unresolved; no Android APK",
+  "android_touch_source_implemented": true,
+  "menu_controls_host_test_passed": true,
+  "android_source_host_syntax_check_passed": true,
+  "android_ndk_compile_passed": false,
+  "menu_text_visible": false,
+  "menu_navigation_verified": false,
+  "android_apk_built": false,
+  "s24_tested": false,
+  "test_log": "frontend-controls-test.log",
+  "android_preflight": "android-build-preflight.json",
+  "installer_reproduction": "frontend-installation-check.json",
+  "runs": [
+    {
+      "report": "frontend-baseline-300s.json",
+      "seconds": 300,
+      "returncode": 0,
+      "timeout": false,
+      "script_input": false,
+      "pads": [
+        {
+          "port": 0,
+          "reads": 379,
+          "read_ok": true,
+          "override": false,
+          "last_buttons": "ffff"
+        },
+        {
+          "port": 1,
+          "reads": 379,
+          "read_ok": true,
+          "override": false,
+          "last_buttons": "ffff"
+        }
+      ],
+      "display_copies_logged_at_least": 384,
+      "script_transitions": 0,
+      "private_capture_sha256": "284b4bc6abc44049b0120f6321c8ae7d5bb63187aa24ea217bb543223f4ec2c5",
+      "observed_image": "Readable title logo; blank lower-left region; no menu text"
+    },
+    {
+      "report": "frontend-input-300s.json",
+      "seconds": 300,
+      "returncode": 0,
+      "timeout": false,
+      "script_input": true,
+      "pads": [
+        {
+          "port": 0,
+          "reads": 289,
+          "read_ok": true,
+          "override": true,
+          "last_buttons": "bfff"
+        },
+        {
+          "port": 1,
+          "reads": 289,
+          "read_ok": true,
+          "override": true,
+          "last_buttons": "bfff"
+        }
+      ],
+      "display_copies_logged_at_least": 288,
+      "script_transitions": 11,
+      "private_capture_sha256": "284b4bc6abc44049b0120f6321c8ae7d5bb63187aa24ea217bb543223f4ec2c5",
+      "observed_image": "Readable title logo; blank lower-left region; no menu text"
+    }
+  ],
+  "same_capture_pixels": true,
+  "interpretation": "Input delivery is confirmed through real scePadRead and the original native menu handler. Font files load and front-end time advances. Usable menu navigation and native text drawing are not established.",
+  "discarded_trace_attempt": {
+    "report": "frontend-events-180s.json",
+    "reason": "Read-only diagnostic attempted a word read of integer argument 1; unaligned read at 0x5. Trace now rejects unaligned metadata addresses; this was a diagnostic defect, not a native game failure."
+  },
+  "native_menu_handler_reached": true,
+  "event_trace": {
+    "report": "frontend-events-fixed-180s.json",
+    "seconds": 180,
+    "returncode": 0,
+    "timeout": false,
+    "events": [
+      {
+        "source_pc": "3110a0",
+        "original_a1": "1e",
+        "menu_id": "10f"
+      },
+      {
+        "source_pc": "310fb0",
+        "original_a1": "1c",
+        "menu_id": "10f"
+      },
+      {
+        "source_pc": "310f74",
+        "original_a1": "19",
+        "menu_id": "10f"
+      },
+      {
+        "source_pc": "311028",
+        "original_a1": "1b",
+        "menu_id": "10f"
+      },
+      {
+        "source_pc": "3110a0",
+        "original_a1": "1e",
+        "menu_id": "10f"
+      }
+    ],
+    "final_state": [
+      "FRONTEND_STATE state=2 mode=3 menu_id=0x10f logical_buttons=0x1"
+    ],
+    "captured_text_visible": false,
+    "private_capture_sha256": "5920debd92a856fb66e12c8fb97cda30f6edc8e6c10fdcd891a5711674f4a248"
+  },
+  "next_blocker": "Original input handler at 0x31f280 immediately returns zero while current menu ID is 0x10f. Start/Cross/Down/Circle arrive there, but the title-to-menu transition and native text drawing remain unresolved."
+}

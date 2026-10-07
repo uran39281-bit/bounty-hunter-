@@ -32,12 +32,20 @@ def main():
     parser.add_argument('--ee-va64', action='store_true')
     parser.add_argument('--capture-on-present', action='store_true')
     parser.add_argument('--dump-graphics-memory', action='store_true')
+    parser.add_argument('--trace-frontend', action='store_true')
+    parser.add_argument('--script-menu-input', action='store_true', help='Test-only repeating Start/Cross/Down/Circle pulses through the real Pad API')
     args = parser.parse_args()
-    if not 1 <= args.seconds <= 120:
-        parser.error('--seconds must be 1..120')
+    if not 1 <= args.seconds <= 600:
+        parser.error('--seconds must be 1..600')
     if args.boot_cdvdfsv and not args.boot_sifcmd:
         parser.error('--boot-cdvdfsv requires --boot-sifcmd')
     env = os.environ.copy()
+    env.pop('PS2X_FRONTEND_TRACE', None)
+    if args.trace_frontend:
+        env['PS2X_FRONTEND_TRACE'] = '1'
+    env.pop('PS2X_SCRIPT_MENU_INPUT', None)
+    if args.script_menu_input:
+        env['PS2X_SCRIPT_MENU_INPUT'] = '1'
     env.pop('PS2X_STOP_INVALID_MEMCPY', None)
     env.pop('PS2X_PRECOPY_RAM_DUMP', None)
     env.pop('PS2X_VFS_REUSE_DESCRIPTORS', None)
@@ -115,6 +123,8 @@ def main():
         stdout, stderr, returncode = decode(e.stdout), decode(e.stderr), None
     report = {'returncode': returncode, 'timeout': timed_out,
               'deadline_seconds': args.seconds,
+              'frontend_trace_enabled': args.trace_frontend,
+              'scripted_menu_input_enabled': args.script_menu_input,
               'cop0_count_enabled': args.advance_cop0_count,
               'ee_va64_enabled': args.ee_va64,
               'capture_on_native_display_copy': args.capture_on_present,
