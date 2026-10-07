@@ -1,0 +1,3297 @@
+{
+  "files": 657,
+  "bytes": 248577426,
+  "missing_known_folders": [
+    "CHEWIE",
+    "SOUND",
+    "VIDEO"
+  ],
+  "full_disc_completeness_verified": false,
+  "entries": [
+    {
+      "path": "DATA/ALLOCS/A1.PLC",
+      "bytes": 323,
+      "sha256": "c7b101678ffa0a3499b66709cb3b7c0850929481a32f042ecebb1b7465630f2a"
+    },
+    {
+      "path": "DATA/ALLOCS/A2.PLC",
+      "bytes": 324,
+      "sha256": "84e2514508cc52afd494d951089e9daaa27ec24a1111bf830e2d3ccc750c6870"
+    },
+    {
+      "path": "DATA/ALLOCS/A3.PLC",
+      "bytes": 326,
+      "sha256": "03266ea6cd1f99e2ddbca8323563c235cc4f6d17aaaf1b5e83ddb2173ed76ddb"
+    },
+    {
+      "path": "DATA/ALLOCS/B1.PLC",
+      "bytes": 323,
+      "sha256": "4cb361b308690ee0bc86a59cf43037e131667283e0811f708600b68c630bb42f"
+    },
+    {
+      "path": "DATA/ALLOCS/B1B.PLC",
+      "bytes": 323,
+      "sha256": "bf731c6b4d9aa10ffcfc2396f6701b8b8df1f4d509ca5fdd5b1dad039f1b9bb0"
+    },
+    {
+      "path": "DATA/ALLOCS/B2.PLC",
+      "bytes": 323,
+      "sha256": "34a6a88e46088d4b3648b5527e363514fda37436689c7a53970d330964fc6366"
+    },
+    {
+      "path": "DATA/ALLOCS/B3.PLC",
+      "bytes": 326,
+      "sha256": "7245a9a44631f0bdade408fbfc7850372268fd672b3142f70d2fec8b4dbf7011"
+    },
+    {
+      "path": "DATA/ALLOCS/C1.PLC",
+      "bytes": 325,
+      "sha256": "09d906fa8270076cb3ad129f01f34961bdc7607b483a4b876419cf7136562082"
+    },
+    {
+      "path": "DATA/ALLOCS/C2.PLC",
+      "bytes": 357,
+      "sha256": "dfb7cdbcb9c80f4ee7c6b62a177e55198e51afb301998e6322a8b3c1a891e67b"
+    },
+    {
+      "path": "DATA/ALLOCS/C3.PLC",
+      "bytes": 328,
+      "sha256": "9469b9bf1071be5b81d020288687ccd1bbe490ca160e47f08845c48c5bdbb610"
+    },
+    {
+      "path": "DATA/ALLOCS/D1.PLC",
+      "bytes": 324,
+      "sha256": "d27b48cdf946df7955cb7ec27a4f5907289e05b7c17879660698d2659420798e"
+    },
+    {
+      "path": "DATA/ALLOCS/D1B.PLC",
+      "bytes": 323,
+      "sha256": "963e6b576ebcd9df81a49d0aeac0b26d9eeaae5a84bdd00cffa86710321d2c9d"
+    },
+    {
+      "path": "DATA/ALLOCS/D2.PLC",
+      "bytes": 322,
+      "sha256": "08d76dde5233d767e93d9631e31d06755cc6181a9e6d9c78d51e6d462e6400cc"
+    },
+    {
+      "path": "DATA/ALLOCS/D3.PLC",
+      "bytes": 352,
+      "sha256": "7dc2879ed4244f1f1bbd39b737d326b96e10187ad5264e8ed74f062138ed67f9"
+    },
+    {
+      "path": "DATA/ALLOCS/E1.PLC",
+      "bytes": 351,
+      "sha256": "b4aeee3b1448df2607d2eac69cd029dccf83ff2fcc358ae597eeae7e573de009"
+    },
+    {
+      "path": "DATA/ALLOCS/E2.PLC",
+      "bytes": 353,
+      "sha256": "1088b4c9a2ee7fba97b6ccf62838248f420de8c7c3b4bb4552a43cddc8bb562a"
+    },
+    {
+      "path": "DATA/ALLOCS/E3.PLC",
+      "bytes": 325,
+      "sha256": "c0d78256edac52192ac1b3581eb44b3142b9b3cda9bd1492917df54cc306e9a8"
+    },
+    {
+      "path": "DATA/ALLOCS/F1.PLC",
+      "bytes": 318,
+      "sha256": "125812d576ebfeacdc3aeb684eadb98e49667174e163fc31ec84f98cddcaa5e6"
+    },
+    {
+      "path": "DATA/ALLOCS/F2.PLC",
+      "bytes": 351,
+      "sha256": "4bb5079dc6eb199896904f3b99a0092876a516b34906e0567fee5a54b96068b9"
+    },
+    {
+      "path": "DATA/ALLOCS/F3.PLC",
+      "bytes": 350,
+      "sha256": "2b91b167080ad005e8e5998b95ac4aa0403b9d26cef03e36bcf2fdcd3e2b0a8d"
+    },
+    {
+      "path": "DATA/ALLOCS/F3B.PLC",
+      "bytes": 319,
+      "sha256": "d4e4c68204e7b835048f8a9977ac631146635b7750af07ba327f0e9909b29025"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A1_10.ZAP",
+      "bytes": 231216,
+      "sha256": "d403cbe3b806e2cc254f045fda4ccfe0e4fc6f947ad69dcd000eaf8b82037909"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A1_20.ZAP",
+      "bytes": 50400,
+      "sha256": "7c0e67bb7a9c749c28318a4519d8c32a5e6e5d0793d2aa58de39a8e1d1c76c65"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_10.ZAP",
+      "bytes": 251824,
+      "sha256": "a531bee87a2cb2cf56e4b50d8d30cc395c451c85848bb1e8bab10735827d2883"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_20.ZAP",
+      "bytes": 223584,
+      "sha256": "907af5f49b95d973972e576e1fab51f7817932b497f3a21a18e71e219f44f77a"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_30.ZAP",
+      "bytes": 719552,
+      "sha256": "94600efc3666e354effd09677cf55cec5c214c5340b9901e58ced7af40003f08"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_40.ZAP",
+      "bytes": 59072,
+      "sha256": "b08cba046403cc4d2134843627b8aa1ba5ea4fcdbbfc0cb144b758f7a324a140"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_50.ZAP",
+      "bytes": 65024,
+      "sha256": "4fa2d324ce01eb351268e85ae0436c2efd84615228141e69fd20ebd588f19bb4"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A3_10.ZAP",
+      "bytes": 124224,
+      "sha256": "2e8467cb6d00e790ec77049c139e837b2dc777bf695ccc23ce488567893e604f"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A3_20.ZAP",
+      "bytes": 65456,
+      "sha256": "4842c70fe3b0569d5cc076238f3975d06bcb3d3d2ea9f1e6d1b1379430a9b616"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A3_30.ZAP",
+      "bytes": 367280,
+      "sha256": "53f364f01a1c692ee83542a726fc8b6f5185fc7a7d6d09cc21b8bf0ad778ac25"
+    },
+    {
+      "path": "DATA/BUNDLES/A1.ZAP",
+      "bytes": 9195296,
+      "sha256": "63438a5810b79dfa1bee7febe3f380475a31d4f25e2a4f5392c808986709b7cd"
+    },
+    {
+      "path": "DATA/BUNDLES/A2.ZAP",
+      "bytes": 10365280,
+      "sha256": "9195a76820bb4dccb8c7c42b775b71716d54482d4bfb5ce33bc4b40f4ecf14e9"
+    },
+    {
+      "path": "DATA/BUNDLES/A3.ZAP",
+      "bytes": 9754800,
+      "sha256": "dd235453f0f9ac229ccef61cd669d78fc229716edbea7fb170149e52cecb87c2"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B1_10.ZAP",
+      "bytes": 52224,
+      "sha256": "6a9e61dee371ed6306b21d3946dd99eb049823a6b6d394f88f7c0c7981216417"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B1_20A.ZAP",
+      "bytes": 265632,
+      "sha256": "21158220d03d04dfd1f3bd56ac6f62e46ca49412f634cc5723e79f969d2fc94b"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B1_30.ZAP",
+      "bytes": 230784,
+      "sha256": "e70a25cddc7c4a84f6a047b2b1f88ee8e1e1b6223288acde98f9634e6565b4ac"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_10.ZAP",
+      "bytes": 1537360,
+      "sha256": "b58992b87c20542f21fec65543646e7ee04ed497e59c3f5dc07fcf13d899249c"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_20.ZAP",
+      "bytes": 378864,
+      "sha256": "6bfc965ac2280a887334532813803a5d63bc00422b13cd5ddf9edbc696e77521"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_31.ZAP",
+      "bytes": 60512,
+      "sha256": "0e47738a0846eba029fa53034579167c7af8ec90b0531ca9c3f9b3c8789280a9"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_32.ZAP",
+      "bytes": 380720,
+      "sha256": "22266b36a6e2b56a466976413f13d490e1fa2fbd05c6e75dc12d155fd5a77289"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B3_10.ZAP",
+      "bytes": 119552,
+      "sha256": "9199409e25596965c87359d6111f86fad5f799d2aaa73b97362e5a2db6000dc8"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B3_20.ZAP",
+      "bytes": 1779120,
+      "sha256": "15d752bb133ca34550b8fa8cdf4889d69145920b1bedb2fe331b568525214f97"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B3_30.ZAP",
+      "bytes": 9696,
+      "sha256": "fb29ea59f606edd84969e2a86dee94aa4f174bed18a0d0913332c30538a31686"
+    },
+    {
+      "path": "DATA/BUNDLES/B1.ZAP",
+      "bytes": 10784752,
+      "sha256": "f6d2e42ba4c362820e756da7fc17c14c7031d5f4ef32316d05316f71383eeab2"
+    },
+    {
+      "path": "DATA/BUNDLES/B1B.ZAP",
+      "bytes": 10594416,
+      "sha256": "d02c2756f648b05fe4d5ba7fdeea265d8ab85a957e4f8a5ddb98d24b12ae01ef"
+    },
+    {
+      "path": "DATA/BUNDLES/B2.ZAP",
+      "bytes": 8347344,
+      "sha256": "008cd8d81c785082df897aa7ca5127958765c1447736dacb67c9b1b6b6425be9"
+    },
+    {
+      "path": "DATA/BUNDLES/B3.ZAP",
+      "bytes": 10234704,
+      "sha256": "a1351edaef20a501ede3e6c1dccbc0ce45a796c5066c249fd832279b083c61cf"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C1_10.ZAP",
+      "bytes": 212256,
+      "sha256": "441b4f51f7cf96221387f2d320fd38dd01bbcf161e96f547629a6575e995b0d6"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C1_20.ZAP",
+      "bytes": 1151312,
+      "sha256": "b4c5656e3f2bc8d3c70e3a2e1e6c112bf90064f317f2a79a84b318ca8daec11a"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C1_30.ZAP",
+      "bytes": 614544,
+      "sha256": "746ca168bcdb87bf46657b9736c8223d973231250e267c69668438e42e2c0b83"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C2_10.ZAP",
+      "bytes": 539072,
+      "sha256": "eee5f893bb47cb3dac5b3f0d296c5ae812e07e2fba8964efd3e4f5127629d8a9"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C2_31.ZAP",
+      "bytes": 305856,
+      "sha256": "3d868f7ac5f2761cb136fa699b746ce4777a9b2144206d583c8378ce6277a39f"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C2_40.ZAP",
+      "bytes": 1443200,
+      "sha256": "11b24fdc063820925cb18ea59184264a1e8898197b39ddca093c587894aef706"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C3_10.ZAP",
+      "bytes": 319888,
+      "sha256": "7392e3aad773bfd950b025273887c40d493fdbd521f13679fbc5dbcb9acd5047"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C3_20.ZAP",
+      "bytes": 156768,
+      "sha256": "a0bd40d03ae3a3b6cbcc88aec66c818505f5543f888a84aed6a1228a2485a7cb"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C3_30.ZAP",
+      "bytes": 49504,
+      "sha256": "87970bf492de97c18169f4d0ecd6d69b7b942aa7069c97e815946544b8b23807"
+    },
+    {
+      "path": "DATA/BUNDLES/C1.ZAP",
+      "bytes": 10360416,
+      "sha256": "2b31056d633a7c2cf2707d92884f2d08fa0698f7a99e9d05b1ef263a075f388d"
+    },
+    {
+      "path": "DATA/BUNDLES/C2.ZAP",
+      "bytes": 9699216,
+      "sha256": "77212bf043a7a09e76853e8387b54b41a96d7005a42eb932b91f9f9a3fab584d"
+    },
+    {
+      "path": "DATA/BUNDLES/C3.ZAP",
+      "bytes": 10161968,
+      "sha256": "350c15d3cd16fd22f0529893e419f18d54bffee71118190acb592c15c9096494"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D1_10.ZAP",
+      "bytes": 323200,
+      "sha256": "e3317ddc0bae80eb252b68d547511bc06458fb5fbc596d86577945c0ccaa18f9"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D1_20.ZAP",
+      "bytes": 212352,
+      "sha256": "29192c7bf9c34970a635fee100a218ebeb2b88ee13fbd27f69c26876224065d9"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D2_10.ZAP",
+      "bytes": 422144,
+      "sha256": "3b60fb2dba678b1a3d9dd278107d7af9c022e1ccfec73718f95098eb0182de47"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D2_20.ZAP",
+      "bytes": 129072,
+      "sha256": "ff865afef25ec3c0682ebc2e1af0e94e58810d6b4f9294db79dffd3a58ec4508"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D2_30.ZAP",
+      "bytes": 289776,
+      "sha256": "d30ef18b5a7d275fe087ef0259c1cff41bbfc297f407dcb4a7fd93bda49ab5fc"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D3_10.ZAP",
+      "bytes": 311072,
+      "sha256": "8e45a5e0d60bb71a6a157af034d7b179167f1594ed4b137d64f4424203b8f4e5"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D3_20.ZAP",
+      "bytes": 675392,
+      "sha256": "569209d10181e34593c1fd553e4735369585edb54f61aeda91d1e0678fd364c5"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D3_30.ZAP",
+      "bytes": 231792,
+      "sha256": "4f95387adbc8caada2fc98c089c5642ae617d047ab13252f758d2f09c87e9946"
+    },
+    {
+      "path": "DATA/BUNDLES/D1.ZAP",
+      "bytes": 8251488,
+      "sha256": "439366366d73e4df45f9697c537b9bac833288dcba04b02c26fa2653a23db5c2"
+    },
+    {
+      "path": "DATA/BUNDLES/D1B.ZAP",
+      "bytes": 7755584,
+      "sha256": "7c2fae5f4604954c35b4a872510dab8d24760de263c46ba15ed41c1263f9518c"
+    },
+    {
+      "path": "DATA/BUNDLES/D2.ZAP",
+      "bytes": 9446496,
+      "sha256": "a9589856fc597fece4b9ced941cf3bd1cd330281157b93f15d56099310cd539c"
+    },
+    {
+      "path": "DATA/BUNDLES/D3.ZAP",
+      "bytes": 11580176,
+      "sha256": "28991ed94f91d7eff3f49a9b713b6b9ffddbf8d3ae9047d22a9f600ac8ec319a"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E1_10.ZAP",
+      "bytes": 238992,
+      "sha256": "c8db76db40e9ef100dc7440fa52bba348ffcfce7fcff3c685cdae95b4c72961a"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E1_20.ZAP",
+      "bytes": 737680,
+      "sha256": "534b51e69e251acc592b06226dbf3dea4be6470c9d6324379f3e795adee81432"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E1_30.ZAP",
+      "bytes": 822848,
+      "sha256": "778c9c97fed5c3b8bd920713c5b78db962365795404fc6b5c28a84766cf3fedd"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E2_10.ZAP",
+      "bytes": 309008,
+      "sha256": "f56bb9ab79695d3b2eb37e429db13abf1f4a714a480e5bdb058bfbd8d9fb70a5"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E2_20.ZAP",
+      "bytes": 718464,
+      "sha256": "14721dba34264cbd29b48011e830b0c7624fc73c884cfe4355397ecefbc2f2fb"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_10.ZAP",
+      "bytes": 799360,
+      "sha256": "fd566a8ebcd40fba25cb8ce2211df11bd247297537e735b72f2e13a94f50b8c0"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_20.ZAP",
+      "bytes": 1015584,
+      "sha256": "0754820d5ae1f79dce66b30e0259846c0a62bc8c7ccd060e5670aa9b06e471d7"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_30.ZAP",
+      "bytes": 206992,
+      "sha256": "2b56cfb8c284f87bc5d10359f32bf815ca09d61f86ceb121f9ca0a969dab6b6e"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_40.ZAP",
+      "bytes": 370688,
+      "sha256": "9532ea98da3586f99047ea9ec145aee1f270a1f4406408f55648deaa99f887bd"
+    },
+    {
+      "path": "DATA/BUNDLES/E1.ZAP",
+      "bytes": 10191552,
+      "sha256": "b1ccdb84ddc3a0ec158307444ec6dc8d70e7b56cf02edb565bc370ff6bf71f55"
+    },
+    {
+      "path": "DATA/BUNDLES/E2.ZAP",
+      "bytes": 8331360,
+      "sha256": "acb2a7823e800b72e096eb7a47641ec35f614ffd4a078d53066eb54c5d0c7a7f"
+    },
+    {
+      "path": "DATA/BUNDLES/E3.ZAP",
+      "bytes": 10160272,
+      "sha256": "b9eaa8ac5ce1d745545eb267e517687383e82a3da4001d79382007b1c6bb3f9a"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F1_20.ZAP",
+      "bytes": 1475696,
+      "sha256": "abfc373946df2d8059c1cd83b5571bd0a8476bd9211e3ff204365ab6698d98f1"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F2_20.ZAP",
+      "bytes": 1007072,
+      "sha256": "eae2716492349d77e21f149be40652f0bb88657e9f7cd472aea6503ff8e6418e"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F2_30.ZAP",
+      "bytes": 418064,
+      "sha256": "aaed0f583b58d9df65c63e4febd39d3628890373e3d41ea4958ae02905cc7a44"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F2_31.ZAP",
+      "bytes": 107456,
+      "sha256": "03778612603a703d9a26ebd2a9ab021bf3261defa2fd6ca88737cec662c42c59"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_10.ZAP",
+      "bytes": 13520,
+      "sha256": "26f528833f627cbf368980734a7ebd766d3296578596a1236e051732af982166"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_16.ZAP",
+      "bytes": 738320,
+      "sha256": "5f01d823afd7f6fc71162799fd75317ba51261df141413fc291eafd7c048579c"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_20.ZAP",
+      "bytes": 68992,
+      "sha256": "45ff01090d563f99786535c155423fd8d785ccbf696ee3174713cae3b1b49a36"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_30.ZAP",
+      "bytes": 117632,
+      "sha256": "9dd48719157883980c042f27aabc2c365d3978cedc740881c3a8dba3f0f63e02"
+    },
+    {
+      "path": "DATA/BUNDLES/F1.ZAP",
+      "bytes": 3064768,
+      "sha256": "0a41783800b2fc288d86033e2ee778bc4953331d42bc43b25eb80143fdcc989d"
+    },
+    {
+      "path": "DATA/BUNDLES/F2.ZAP",
+      "bytes": 7521728,
+      "sha256": "a23a1f45ad06f011072dd980624ddfd0ae2dfdc95afa439d5f0e0ab4e100a0a6"
+    },
+    {
+      "path": "DATA/BUNDLES/F3.ZAP",
+      "bytes": 4971312,
+      "sha256": "73f3e58653e250c9133541a8e129c0b5cb60f93b53c5dd07b9066f8752eded91"
+    },
+    {
+      "path": "DATA/BUNDLES/F3B.ZAP",
+      "bytes": 5295824,
+      "sha256": "fe86c1e0b4ddcad8eea34a0714e38ec5fae4abd1dca7a0004a6560005c8662ed"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH1.ZAP",
+      "bytes": 1314336,
+      "sha256": "aa2b5879e2a29c77965fccb40a179a0cddbbec9b479dbcbddb2e5cdede2ff003"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH2.ZAP",
+      "bytes": 1314336,
+      "sha256": "891e6336e3ea557c75d88721133436e05246b09e4705f23b054ac352fd9ae942"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH3.ZAP",
+      "bytes": 1314336,
+      "sha256": "5b530ef6b3d78c78582393592f5194f2ad6706833507dafe8fb6f82ae6b4d76a"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH4.ZAP",
+      "bytes": 1314336,
+      "sha256": "51929f25fa4719e1b81ac52320816234b6aa6354fee2ad32fa39150c446cc835"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH5.ZAP",
+      "bytes": 1314336,
+      "sha256": "0bef5313c35953e5190cc0736e42eb8f7ddce5d23e427480cddb56b6721e3c06"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH6.ZAP",
+      "bytes": 1314336,
+      "sha256": "62fd0ea8040eeb9e27b11c7725ec15d5670f66abb619893a81ddc4a3f8aa0b81"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECOMMON.ZAP",
+      "bytes": 638048,
+      "sha256": "421680fe446d0785af0bac403fc3d7af3cc21dab6ef5df9f847268715c5ff417"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FESTART.ZAP",
+      "bytes": 187088,
+      "sha256": "7f7327ebcca013b3571ac84054759307c68c38809d6fda0e3c8caf8be52edfc2"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FETEX.ZAP",
+      "bytes": 624016,
+      "sha256": "0925995fd24bc088aefc97b64487358903d1d60fb1f995cd3718b763ebf606be"
+    },
+    {
+      "path": "DATA/ICONS/TANGO.ICO",
+      "bytes": 3310,
+      "sha256": "5fcc63f205b69bb6996102afe2f4e24d47e15add25c7bb1cfa61d50969affb71"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/ARIAL.FBN",
+      "bytes": 8681,
+      "sha256": "a528846b80d4f816146421be3c53274554358b03f4290d988ed61267b6000701"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/ARIAL0.R2T",
+      "bytes": 33024,
+      "sha256": "470641acf90b9fe8cd386256254d99922791678e8a26fd34c97880e02c11e6c3"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/ARIAL0.TGA",
+      "bytes": 32850,
+      "sha256": "069c9f38222881af67e0a1079ba7e7d0bcc402277a475d19b46c802b6c7f499f"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/AURABSH.FBN",
+      "bytes": 8213,
+      "sha256": "d8679a7819d13f3bed6353e3e805c9047e26e4c131203eea4a7476dda5f8ae2d"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/AURABSH0.R2T",
+      "bytes": 33024,
+      "sha256": "46082273cf59bec605ba1e89064c18b7e5589eb5ff7993475282b0e7fee22f03"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/AURABSH0.TGA",
+      "bytes": 32850,
+      "sha256": "5bca0422c24a438003110a2bc3086a210fcf0805a907c5752dd623f77199dc83"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/BLADE.FBN",
+      "bytes": 8765,
+      "sha256": "f0e99c78c2c51b04d6c523ac985453fb52d638439e309708867bb32472f705da"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/BLADE0.R2T",
+      "bytes": 33024,
+      "sha256": "44273ccf622728c8a55756ace88622bb567cf4f57881144d9419c19ce8d3b010"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/BLADE0.TGA",
+      "bytes": 32850,
+      "sha256": "83ff95fecd2169ae56009944ccabc214f5dcfbd427c349b1e9d8be1e83da036c"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/COURIER.FBN",
+      "bytes": 8213,
+      "sha256": "570c798db5b866aac58670198dca71f15efa399854975a64bdb9d6cd09bdb583"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/COURIER0.R2T",
+      "bytes": 33024,
+      "sha256": "1e049da71c1508d729fda57ffd755a73e09b1533ce03426597a3bccfab16c5c3"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/COURIER0.TGA",
+      "bytes": 32850,
+      "sha256": "d97118153929f218de6fced279427680fe1147c4e0fe8643f40e4683f790d29e"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/FONTDATA.TXT",
+      "bytes": 4116,
+      "sha256": "6d226500cd95c86f672b9c1e15e2feefc54d776c7f24e8a40e5977c4631a01e0"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/IMPACT.FBN",
+      "bytes": 10133,
+      "sha256": "1cc788d3777a159224dfdedcac8ea18daa152a118fd410395017cf947dc2bc43"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/IMPACT.H",
+      "bytes": 38587,
+      "sha256": "640bda2d1efc2dcb04bb8bb6b5e8674cb587fbffa68cf8a96ca7a049627f11af"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/IMPACT0.R2T",
+      "bytes": 33024,
+      "sha256": "5f6accba76c69743011e609673df67e51a0f60a1d0b1712df654f9460f7e6708"
+    },
+    {
+      "path": "DATA/IFACE/FONTS/IMPACT0.TGA",
+      "bytes": 32850,
+      "sha256": "5f4401b18e05b2697ece70bfd7f8c809a304575c49f31a449f630b796b8ef24a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/LOCK_CRD.R2T",
+      "bytes": 66752,
+      "sha256": "fbd0b89535ff930d188a5bcaf6e153eee059915163d88284f9563c21fb5c61c2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_002.R2T",
+      "bytes": 66752,
+      "sha256": "26e2fa52a70e79ae5964be874a65d440520943260b01ffd8c313768a5e84e02c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_003.R2T",
+      "bytes": 66752,
+      "sha256": "045ae213621059edfb802aaa69ae6c953d706699e8220db8672549cd03d908a2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_004.R2T",
+      "bytes": 66752,
+      "sha256": "9e7c1ab32d3cbed8db2ff98e221670eb982b6429061a3e5c8dd43685d22a7056"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_005.R2T",
+      "bytes": 66752,
+      "sha256": "e5197327ee4f279ae96a5c31ee5c44d5e08d00ac479dd76a08159e10aec05fb3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_006.R2T",
+      "bytes": 66752,
+      "sha256": "659fb2e1c7484d7bfd2689c8e39ac75d977faf03fac2a0f586a491b4a2546bfb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_007.R2T",
+      "bytes": 66752,
+      "sha256": "74e75af9c7687d5b46b83f423c410d995ba9c27125d812b14a889b232e11665a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_008.R2T",
+      "bytes": 66752,
+      "sha256": "453f49ca18ef4313936f76a7f71a5592a437f5f09e8ca80972e4d9532a866c81"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_009.R2T",
+      "bytes": 66752,
+      "sha256": "7f6d64bb2f16487f5ebd5338270adab828cd908ef30555c780b8f2df479bb1b6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_010.R2T",
+      "bytes": 66752,
+      "sha256": "cb81d70728fb061510c7892d9d850e59e55f9e10e209eb62f5db036a004067a4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_011.R2T",
+      "bytes": 66752,
+      "sha256": "340fd9399ecacd135dfaa37eda9fa01ebbee9c93b4d2f820a9c59be664d53a32"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_012.R2T",
+      "bytes": 66752,
+      "sha256": "a8dca0258bd68e165fd38f6c4fb3129951aaec2ea0a46a0d031f58029ee2ef2d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_013.R2T",
+      "bytes": 66752,
+      "sha256": "6834eee51352e4cde7848d585ba7d6545acebd2bec74ae78c9fdf247af5c4f11"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_014.R2T",
+      "bytes": 66752,
+      "sha256": "1091ebc46b0c1dd49ad3317edaa5780a30c51ee14de42b0f0eb0396491f7066a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_015.R2T",
+      "bytes": 66752,
+      "sha256": "659393f070c5ac91fcb31183a85715e02ba17f1501ea52db983c4e98033a1611"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_016.R2T",
+      "bytes": 66752,
+      "sha256": "172e4da4964d5e32e9b0707a991064bac425dcab406fa77c3aa0cfd8f8edc397"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_017.R2T",
+      "bytes": 66752,
+      "sha256": "a96a24fb501071cdb840189c0ba06755e598ae207f895a4d78460be1a26a83f3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_018.R2T",
+      "bytes": 66752,
+      "sha256": "a9960bd0e7b669acb1ebfcabeb0a8785f3330fe954f7a2ed1876665e50a4537d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_019.R2T",
+      "bytes": 66752,
+      "sha256": "1f942bda0179c61b2e7d6d3f892c41004016ada9fddc8da216497d2ae6085cbc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_020.R2T",
+      "bytes": 66752,
+      "sha256": "8262e5cb93a0253793eac60bfd80355eb5a13131e57c1e49b7d20b766fecdf8a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_021.R2T",
+      "bytes": 66752,
+      "sha256": "f1bf33b74b0f9321df944cdcc563177bf7693a0190e207e05299905867a11656"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_022.R2T",
+      "bytes": 66752,
+      "sha256": "66794ffe0d602775bf40a7dadf2c9d1283d5f0c38366d8cf58701b30700c5f0e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_023.R2T",
+      "bytes": 66752,
+      "sha256": "854adbf461b640bface08a37145170ce0d33d0da369bea58afbad08b6a4de92b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_024.R2T",
+      "bytes": 66752,
+      "sha256": "e98f3d3380c1a13ebb47e979ad99e00983a5ecf55f554ca04ac0118c6b384c4b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CARDS/PS2TEX/TC_LEFT.R2T",
+      "bytes": 66752,
+      "sha256": "9ddf9bc9eebe05f06d0445ba774c300b2cbfa2967d7d3d348597f66cfbe80b9e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_001_A.R2T",
+      "bytes": 66752,
+      "sha256": "d2f6a268daedfcfafef8139764f5cd98d0405740b03f342fd5081bb6ce55094d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_001_B.R2T",
+      "bytes": 66752,
+      "sha256": "4fe1edfd084b042092a28eb18d5e6f06565a9252fb0ba1eb7b38faf5b159089f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_001_C.R2T",
+      "bytes": 33984,
+      "sha256": "bbdce291ab1b4d1396ac6e39f1324532bb3e2490c40ac3c5bbc2c43e362c7f00"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_002_A.R2T",
+      "bytes": 66752,
+      "sha256": "ca1756ce21214d9d33ed2a81eb8424a063a8283f5341ca09abddea148c2e9d68"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_002_B.R2T",
+      "bytes": 66752,
+      "sha256": "a94da02747e8d8858c7b383504cd537b69a0e9f43e91c52287ccca4236036099"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_002_C.R2T",
+      "bytes": 1280,
+      "sha256": "5c09f58578d06dbde4f99c9a1131412f2a9cbf33f41c0d2a3907c8e00ea5d156"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_003_A.R2T",
+      "bytes": 66752,
+      "sha256": "af4994b2563213bcc092b074f65392838e6989ae112631aaae79d72b883239a5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_003_B.R2T",
+      "bytes": 66752,
+      "sha256": "005bc57377882cf6f27de2c24fc6ccd07988db05b453de73cbb1ad7528dcfef7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_003_C.R2T",
+      "bytes": 33984,
+      "sha256": "a64b4028b4ae6b3e254f47278450df28946b75c44e37baff7c18a5cd83b92b4a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_004_A.R2T",
+      "bytes": 66752,
+      "sha256": "ee093d1816803e340e015667524d6a7ec444f1ef383d1af8b0065e906570ef8a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_004_B.R2T",
+      "bytes": 66752,
+      "sha256": "e404e0c0637ecefc0c4d0ac2a1d262896d02cb12bd802a0760de8b9ecc1aee12"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_004_C.R2T",
+      "bytes": 33984,
+      "sha256": "b1f1bc81c547e18d2ea0019249bb53b769464f18915e3ecc6fa4106e6abb878a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_005_A.R2T",
+      "bytes": 66752,
+      "sha256": "d09a14bd69ae59bf2b400166da3137162f7dca77bfbb28556d6ac180408f318f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_005_B.R2T",
+      "bytes": 66752,
+      "sha256": "90c0a83d27366362bcd920cf9b07c362a858d4b58d987655ab266231979e5559"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_005_C.R2T",
+      "bytes": 33984,
+      "sha256": "1064ba7973a41d0ad6f1caaf6dae2dee15f3a26116bb1a79b245147947b34a90"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_006_A.R2T",
+      "bytes": 66752,
+      "sha256": "4c4053e437baaac50c4f2b6dff88ed29316db1aa585e87de7c1b6593716f9715"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_006_B.R2T",
+      "bytes": 66752,
+      "sha256": "d81e3f46247f63ead288bbb867c316c306e35f31cd34df56a5c436cfc50767a4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_006_C.R2T",
+      "bytes": 33984,
+      "sha256": "f9a930bf85398eb88e186814ae4f0ca7737cafe4036f0c89572d8dc75b21e46b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_007_A.R2T",
+      "bytes": 66752,
+      "sha256": "5aa5b24065c319ad6f895acf76571205550feb97dad4ec5c12665da4b260c8b4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_007_B.R2T",
+      "bytes": 66752,
+      "sha256": "1d318e29d109347df8bd8543b3a7c9767a036b885baf30b2c03d310d8520b686"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_007_C.R2T",
+      "bytes": 33984,
+      "sha256": "dca42dc1f755a082f16a42e346465907d2efa8c3872933713077400823e2c114"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_008_A.R2T",
+      "bytes": 66752,
+      "sha256": "640e6a4cbb3dfa7c5b63ce631d2fdbce8ee98d0ec68a96699be27904979f5a04"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_008_B.R2T",
+      "bytes": 66752,
+      "sha256": "f913ca48c59d9cbf219714f983e06a95abf7ace36032c5977ee4f1df098f96a1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_008_C.R2T",
+      "bytes": 1280,
+      "sha256": "f48f1c0cf893fa5aa3e47b2fe611c88542c257635e8f5b52534ddc34b2301016"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_009_A.R2T",
+      "bytes": 66752,
+      "sha256": "a647edf3cef68bb913195d1828adeedb84bd838f9e4529797f23bc9bb4ec80e0"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_009_B.R2T",
+      "bytes": 66752,
+      "sha256": "66b0e2421bb95094a676de6c9d64d65eca42f0ef05c7585931043b02d369ab34"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/CB_009_C.R2T",
+      "bytes": 33984,
+      "sha256": "0692169f6a89565af283faa4c42db9536ddbe76b58ed19185eb1921d50393232"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP1/PS2TEX/LOCK_CMC.R2T",
+      "bytes": 66752,
+      "sha256": "8db92c9b596b920b3a92b58146eb82afe9279f1c8f648c3624aee8bbca282d1a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_010_A.R2T",
+      "bytes": 66752,
+      "sha256": "e46047265100887cdce814ca4130ff6a6d74bb85da09060c270195d0bb0074c7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_010_B.R2T",
+      "bytes": 66752,
+      "sha256": "56a7b620da9efe2b14db99879d8c1cad800f96e79d8740a9842764e6392b3b0f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_010_C.R2T",
+      "bytes": 33984,
+      "sha256": "19be2a75ebf87e13508952c9e95df44ff74a90d93764e1140b75e413c98df20e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_011_A.R2T",
+      "bytes": 66752,
+      "sha256": "2652684d6331763c055595896712734fbd48fa0021e0612fd9f3b48747520b96"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_011_B.R2T",
+      "bytes": 66752,
+      "sha256": "817c1d3b3f0e09542c87db5c71144c977b47be645de8642832d8c564c6e91432"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_011_C.R2T",
+      "bytes": 1280,
+      "sha256": "de667bc7a64f005d9853fe230c7a5ac931062ba5a72b7da4087ea06c3e25747c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_012_A.R2T",
+      "bytes": 66752,
+      "sha256": "36f63ce78afa27cae4bb1ddff93d1ee9e3b67b9781ba9d43db652dc1eb546f72"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_012_B.R2T",
+      "bytes": 66752,
+      "sha256": "7f11ad547b10a38103d0d002dc33ccaa1ab6a96f2f7ccaa067ff524bdc20cd91"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_012_C.R2T",
+      "bytes": 33984,
+      "sha256": "26328ac23278ca16cf5fb720e5a13d01eb1cd44843ddab8bc9c3d69f1e30f46c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_013_A.R2T",
+      "bytes": 66752,
+      "sha256": "9e96fb7611589d53abf5bdb899865d8e44d443264b5cca9e1b45068f5ea62463"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_013_B.R2T",
+      "bytes": 66752,
+      "sha256": "8af863f7ab298e6f7e73e5925c824229c4652e856b9f12fd3441bdf715490bbb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_013_C.R2T",
+      "bytes": 33984,
+      "sha256": "cc5b1b21a0ac75ec2011784c39e3d367042141705818f2af981d5295ab0dfc50"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_014_A.R2T",
+      "bytes": 66752,
+      "sha256": "dcbd88c66d91203d6986af567d75495fb23dcf96356f6117128a25321716bc72"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_014_B.R2T",
+      "bytes": 66752,
+      "sha256": "221f4979c9ebb11eae12da7b0256e7dd0c950fbf4826b9ad85e947ac518551a7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_014_C.R2T",
+      "bytes": 33984,
+      "sha256": "a215f7104474decd13e00e5d8ec0734d4d1a846e21f9da6c7d3e6a7646508c4f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_015_A.R2T",
+      "bytes": 66752,
+      "sha256": "4792c0f05ece11a6b4661ada3fd6146c8de38eba2c12e86b754f098aa7c54fc3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_015_B.R2T",
+      "bytes": 66752,
+      "sha256": "cc628e1aabf4c30c566f3031f206f5d5810f8766760ca8dd1bf41f11004ddc6a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_015_C.R2T",
+      "bytes": 33984,
+      "sha256": "cc5b1b21a0ac75ec2011784c39e3d367042141705818f2af981d5295ab0dfc50"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_016_A.R2T",
+      "bytes": 66752,
+      "sha256": "c1ffce18c3f6bf70828d31430a099c75e3c492c6cb27f8eee65a125d0b10a834"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_016_B.R2T",
+      "bytes": 66752,
+      "sha256": "49b18bbbd3277d39f461890089c90e0a05cd2b2ea2dfb86dc94be3484be79120"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_016_C.R2T",
+      "bytes": 33984,
+      "sha256": "b6654ee105d4e31619c0e91306134a94cda582fbe52c4304b43c42d7564ddd77"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_017_A.R2T",
+      "bytes": 66752,
+      "sha256": "3b40247d9dff982de68c21ff19382237dd0eea893e3a1f4e7462800b108d6bae"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_017_B.R2T",
+      "bytes": 66752,
+      "sha256": "f510ea7e934d3e490a604aa4165cbe744f1e9f2a96ab79e4e0d6e5ff179d7cb9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_017_C.R2T",
+      "bytes": 33984,
+      "sha256": "288bf8d42e10e1adc34e15a96d8cd203192179e7772ebca905904f1236b90667"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_018_A.R2T",
+      "bytes": 66752,
+      "sha256": "88dde010c685d1728147f366f271e3297382ce170c030a59d578cc29caf2fb68"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_018_B.R2T",
+      "bytes": 66752,
+      "sha256": "1de99d91a83b92ad060978e9a20f43f6744d4f94cdbe76c18c6eed19d8dbd282"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP2/PS2TEX/CB_018_C.R2T",
+      "bytes": 33984,
+      "sha256": "e6aaa85c448559167b017f5cc2ce7b9268e56e290e7cb32398089d1608a02140"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_019_A.R2T",
+      "bytes": 66752,
+      "sha256": "7382978385905fa1db12a884256a3de90c64f2b3bac2934d991d1a98f20a9de2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_019_B.R2T",
+      "bytes": 66752,
+      "sha256": "f1d20c84978a9c8566ad00758335cc7794b1d4043e141a476dba97be41e26be3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_019_C.R2T",
+      "bytes": 33984,
+      "sha256": "a96a80ec2907a9e1c24583436ef2ffd36fa4db8b179072c7dac6c60e2276c15a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_020_A.R2T",
+      "bytes": 66752,
+      "sha256": "468702fa65a3ded983a190b3b18e15e4b175a4938e38a587c88e05e4eeeaeff5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_020_B.R2T",
+      "bytes": 66752,
+      "sha256": "9759809c7bd59019942edb666230db25a0f9a310576105d53858f66db44c2213"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_020_C.R2T",
+      "bytes": 33984,
+      "sha256": "5eb7af2b93401328f53331ff4002f46fb192838c2cb1f5bd154612f32de94c94"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_021_A.R2T",
+      "bytes": 66752,
+      "sha256": "276a62152214ec4992747d4b48c177b1a11cbb4b2e052453a444ddc231bdb379"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_021_B.R2T",
+      "bytes": 66752,
+      "sha256": "2679da509091f57add8656d83239a64474bb567904b6e87f8b4a68e4f82f995d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_021_C.R2T",
+      "bytes": 33984,
+      "sha256": "51f011675d80b4a8deb5f96aba249b54f5a1fb515b6b908b17049219c9972db2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_022_A.R2T",
+      "bytes": 66752,
+      "sha256": "b67e2b9fd5c73ceb531ef7b3c397c92679cd98b2ed02df1d6197a0329844100a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_022_B.R2T",
+      "bytes": 66752,
+      "sha256": "4d9412a313cd7ad3192aae06c7783d9cf269507fc9d49797cdc949d249e9fcf1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_022_C.R2T",
+      "bytes": 33984,
+      "sha256": "923aaea650f4cc6f91265bf5c32d47cfc417edc0a211b347892b3aeeee23a7f3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_023_A.R2T",
+      "bytes": 66752,
+      "sha256": "a782176e223e47029c1a2227bfbe88f755b36562609daaed3f904c6c9b04ae41"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_023_B.R2T",
+      "bytes": 66752,
+      "sha256": "9ee5b1746d19998bf4dd4a1bc8ba2b9a021e1d607571c9199928e51a35cd4016"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_023_C.R2T",
+      "bytes": 33984,
+      "sha256": "8e13f7d9334892541f676a5be0d93e726ffcde9f976fdd69190a93990d2862f4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_024_A.R2T",
+      "bytes": 66752,
+      "sha256": "05a50ba9a43f23a0c8df6138ef9a2122f7fb4da3ca183d26760ffb2db5f0037c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_024_B.R2T",
+      "bytes": 66752,
+      "sha256": "9c18b935083bacea001cb320a0d33bc0d51bb29ce4e0dd0ae652cabfcdecacbe"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_024_C.R2T",
+      "bytes": 33984,
+      "sha256": "6bb8e051b023d6cd4dddf8e6236db2e287c9bbcddcc848a9e35a9dee1e6b80c9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_025_A.R2T",
+      "bytes": 66752,
+      "sha256": "01c450eb1af234791d5b4f172fd2fa33212a732d043842a86ae8626694029945"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_025_B.R2T",
+      "bytes": 66752,
+      "sha256": "e8b19ca3d9dd7033540873b1389fce6dd47cd513df92ade521b9e1fda15d49b6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_025_C.R2T",
+      "bytes": 33984,
+      "sha256": "aba0e1d104edc1a09cddc33d57e4ceb9e155a4e73aa0e3f951bcd55be3739566"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_026_A.R2T",
+      "bytes": 66752,
+      "sha256": "0f7cc5d8d0d3dbacc32c4fc446d0a7c51d6c92674b0b3a9ca372c546d533da81"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_026_B.R2T",
+      "bytes": 66752,
+      "sha256": "022cdd1d0e1dc7c41f583906942ee5844ddfeb9f585608ecc3b419675c330122"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_026_C.R2T",
+      "bytes": 33984,
+      "sha256": "d80693ff6ef3a2b4ddbe06399ab33ce8f49f42a9db9dbdd49a54f409d870b1e6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_027_A.R2T",
+      "bytes": 66752,
+      "sha256": "d1d1227550681cd2b5e90cd909637f5a0da6f3ca5b2376bf351390c0a64bae7d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_027_B.R2T",
+      "bytes": 66752,
+      "sha256": "0a4154fc2415e40cd9a313ee17daa17d6938b808543924610d3210ea54a85a20"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP3/PS2TEX/CB_027_C.R2T",
+      "bytes": 33984,
+      "sha256": "ab9608c912e22a67eaeacceee84cab0ffbb2f18cf72f6ece62ecef3335ac20b9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_028_A.R2T",
+      "bytes": 66752,
+      "sha256": "14e442ae619fc1b6446c117e7d7cc17c472bcad2e7fa6a8136370e1608b6f053"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_028_B.R2T",
+      "bytes": 66752,
+      "sha256": "ea545362cb01224199e7be1d35edb316b7af7b1b9c6545601c40ff7f930810c5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_028_C.R2T",
+      "bytes": 33984,
+      "sha256": "fb04970793009a6c6e6c872f69b1272c7997f0aa689485e72bd70c504bcadb47"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_029_A.R2T",
+      "bytes": 66752,
+      "sha256": "a3b106e900831e9eaf16091febe71e3d2ac928e2c77033a6b1a71af5605320dd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_029_B.R2T",
+      "bytes": 66752,
+      "sha256": "da7842cf2c9a04969821045de1738b95b5eb3fab928adf2494fc4f0c7a7a7e45"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_029_C.R2T",
+      "bytes": 33984,
+      "sha256": "749d2d48bce383367806e43d1adac11d11e563db0cc2327206248e524e149c77"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_030_A.R2T",
+      "bytes": 66752,
+      "sha256": "f289e6c7a827d0731acdf45522e602d60db36269eeb8b4aa2350e8b628af2772"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_030_B.R2T",
+      "bytes": 66752,
+      "sha256": "4e3c25831222530564962992ed4b696d9463e255d7069cd119de11db88af25e3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_030_C.R2T",
+      "bytes": 33984,
+      "sha256": "cc63a7a0899e6caa4e57fe2b5bf5c61e739ce1b7344c5faf8dc1cb8aba07829c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_031_A.R2T",
+      "bytes": 66752,
+      "sha256": "039bdb739087da33736921661314aaad3f70817e0fa44a2f5750546a0e957399"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_031_B.R2T",
+      "bytes": 66752,
+      "sha256": "5df937951178795c4f92fafffffbcb52a0f6ad512b4028ffa5b2a8fcf429caa2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_031_C.R2T",
+      "bytes": 33984,
+      "sha256": "06b910d41dc62764b97961a20d0cc3918a58ff95aa07eb245b62337c92d65776"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_032_A.R2T",
+      "bytes": 66752,
+      "sha256": "e0c323d4569e132b2ee60ae49f7f32ce1bd334a176ff5799f5a7e7457e7b6e4b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_032_B.R2T",
+      "bytes": 66752,
+      "sha256": "888b3523528222ff8da8fa3ea4eb0d7ee3a632edb7d872e4888e23acf056eaf9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_032_C.R2T",
+      "bytes": 33984,
+      "sha256": "90b0d61933801ed021d7ef247d50cf723f042f18d08e9d51d33d172a012d189c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_033_A.R2T",
+      "bytes": 66752,
+      "sha256": "ca5103601de242e0b0c2401098023b661149691ac84b51a7ab0839ee5ae70b2f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_033_B.R2T",
+      "bytes": 66752,
+      "sha256": "014bdf6e08848b39ee0de94fa098498f517bc77cf34103e9cec06974330239ba"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_033_C.R2T",
+      "bytes": 33984,
+      "sha256": "c6a9c96fef663f8e4fc2b77ae0cea8b1e5a820bee6fd9e94d8063d6c7b2bf864"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_034_A.R2T",
+      "bytes": 66752,
+      "sha256": "ccd4e44536f36cfbc24538dcea98bf0ebae1495f618c8803129959615abebb51"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_034_B.R2T",
+      "bytes": 66752,
+      "sha256": "796668d627b273035e23c60ada9d564042e83b226b96b29bc1bc5f3f3b676e68"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_034_C.R2T",
+      "bytes": 33984,
+      "sha256": "fb04970793009a6c6e6c872f69b1272c7997f0aa689485e72bd70c504bcadb47"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_035_A.R2T",
+      "bytes": 66752,
+      "sha256": "090b9b334721a4a037fec19be208e41fc4b58d91934109eac3a277268d1fbe25"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_035_B.R2T",
+      "bytes": 66752,
+      "sha256": "48ea6860c618ec16aa6aefb1c57333bf610b24ffe46ed4a93d43326bb276c644"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_035_C.R2T",
+      "bytes": 33984,
+      "sha256": "c98e6a91d93f7cc0eebff0b1a50d01151250813d0010f67f74b5c6b3406135f4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_036_A.R2T",
+      "bytes": 66752,
+      "sha256": "eb72ec5840ac12122f8af357c82ba97b3743838cbb239b678058c491e2c08a91"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_036_B.R2T",
+      "bytes": 66752,
+      "sha256": "93200ede09cabc005e74417427c07048f71dc4eb65f2541430efdbaa1a0a59ae"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP4/PS2TEX/CB_036_C.R2T",
+      "bytes": 33984,
+      "sha256": "016fa65950c5a0e04b5b28f6cf8e851b8297a8210b3a1fc03cb498a6763b931f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_037_A.R2T",
+      "bytes": 66752,
+      "sha256": "c7310488158f8c8fd74632065c90daff5fbc8f6e9e8340bee21586111ae21db5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_037_B.R2T",
+      "bytes": 66752,
+      "sha256": "981d8a43158e71915388e21d03d04abb46b97edb4fea1d53c582af3b40a4c1f6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_037_C.R2T",
+      "bytes": 33984,
+      "sha256": "062686dbf145858b9f2090b795ea8c7c91ba86ceb3b63f8769e07468d8968a85"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_038_A.R2T",
+      "bytes": 66752,
+      "sha256": "a88758aa4260939d23837038c580d31bc3329361219d52c62e22e89dd23823eb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_038_B.R2T",
+      "bytes": 66752,
+      "sha256": "6f485020ae203e3049bfebaa8e337c8cbdd9d4a2fec7e1aac63f4fb99d4bdbbb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_038_C.R2T",
+      "bytes": 33984,
+      "sha256": "3c03a0ac548ff04df76b01633070472a6eda6567507e0681a9f69c77574938fa"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_039_A.R2T",
+      "bytes": 66752,
+      "sha256": "d3f68f6b6001c5274734def87b2f61a62fbfe7d7b2d43eb0d2d3523ffeb3c7ea"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_039_B.R2T",
+      "bytes": 66752,
+      "sha256": "40a766e331425815f2ef8e2b464418335dc9ffa8b314b0ad3846195b8ce718ac"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_039_C.R2T",
+      "bytes": 33984,
+      "sha256": "107fa853b9cc0328320dabb44d366e3e486087397b6bec4a85d2da7356a50639"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_040_A.R2T",
+      "bytes": 66752,
+      "sha256": "dd99a3ab18915615f3789319c7f732da4dae717add9b44080afbb871c0ac4d8c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_040_B.R2T",
+      "bytes": 66752,
+      "sha256": "88c2be169859f157bb17248cbd09f363b8088b895e88fc8440588ab784038c98"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_040_C.R2T",
+      "bytes": 33984,
+      "sha256": "b4e770659ca963c1fb6b33a945c68cd5b1e1fa4e71eb4d3bcc06ae7dda2e2dab"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_041_A.R2T",
+      "bytes": 66752,
+      "sha256": "100e7068cbebe9cea4bf9d532bb4b0865447581fe0bf281da8342034162a256d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_041_B.R2T",
+      "bytes": 66752,
+      "sha256": "451646e30f95c6480f4b2fc443582498c23dce216177132548e5634430fa4fd1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_041_C.R2T",
+      "bytes": 33984,
+      "sha256": "0430051b85810dd80ba28d4dcc467d984abdca9ce83f3f76681af4b4451aca98"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_042_A.R2T",
+      "bytes": 66752,
+      "sha256": "483092768d709e3a7c134d908a542b28cc9a828436f2eeedaef56c093601be6f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_042_B.R2T",
+      "bytes": 66752,
+      "sha256": "277e954ea652f50cc31ac02c23284eb001607295d9562834fc941f7f9d82f6dd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_042_C.R2T",
+      "bytes": 33984,
+      "sha256": "308ec50c7b136e8e135ae5b09c393532145eeb4c161d9638a32ff0d8941305c4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_043_A.R2T",
+      "bytes": 66752,
+      "sha256": "885f0d66cc9395703d9fc33a8121abecf2837d07ea5cc62e07f56085adba2753"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_043_B.R2T",
+      "bytes": 66752,
+      "sha256": "19b70efc5d6d610d41cde52143d169be16173de29e30a0a6cad860ae97ce7269"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_043_C.R2T",
+      "bytes": 1280,
+      "sha256": "3d1e6cb15452b393345f7f7e16c489a31cc2bc38fe93e771a23917860a04e792"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_044_A.R2T",
+      "bytes": 66752,
+      "sha256": "91868c537b78f3b5c88587652b6f9ec4da9da78c993feec602b2e7315d70ae3c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_044_B.R2T",
+      "bytes": 66752,
+      "sha256": "cbfaa0ab6563cc9b7d3f5d1a5c5874b1cadd7966c18e6bb446b8d5e6c2a27cea"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_044_C.R2T",
+      "bytes": 33984,
+      "sha256": "42986c295a33eaaaae1232450cbd621b9600bd2fe1c246dafdbdaaf5a7b13f02"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_045_A.R2T",
+      "bytes": 66752,
+      "sha256": "6b2e27da1bc944bdb42b961c76e0dda8c8d162bbfcc47b371fd5fddbf2ffdd74"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_045_B.R2T",
+      "bytes": 66752,
+      "sha256": "7568ceb56eab044ed7454c31b87877483441a4dd77e1c355d007fc208093b936"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP5/PS2TEX/CB_045_C.R2T",
+      "bytes": 33984,
+      "sha256": "7f41e12ce8cc571ef8adb41653698b8fae922e2298f4af91ec8e9b3ad1ac720b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_046_A.R2T",
+      "bytes": 66752,
+      "sha256": "82f75de17a51f3f6bccf557f86cc33781fd351c3cb50a67b39ae0bb01dfeca0f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_046_B.R2T",
+      "bytes": 66752,
+      "sha256": "224fc80d13b87056d55c9dfd6c0cd158d77f4c330564eacd40e777179582d623"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_046_C.R2T",
+      "bytes": 33984,
+      "sha256": "b5d87db8750a6b2c975ae1670f049e12559a3ff8d76d93a6bfe4a05c5ad3fa27"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_047_A.R2T",
+      "bytes": 66752,
+      "sha256": "f92372258d47633d5715139fbfc7aca73da9062c973302c318654dd12f06eddf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_047_B.R2T",
+      "bytes": 66752,
+      "sha256": "6f449212a9e29820096db60f8381d2c98dce146d57b8cdd1ba66a94c3959067e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_047_C.R2T",
+      "bytes": 33984,
+      "sha256": "3903fd5e418fa04f728a42963764bbde39c6a7625c3d9d28c709598c5ae60d81"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_048_A.R2T",
+      "bytes": 66752,
+      "sha256": "0e7582eafa7df9d5abdbdb5bb0ad53ee9e520d5a469d97368d34efaf1d6b2628"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_048_B.R2T",
+      "bytes": 66752,
+      "sha256": "a53f0738ae3691d5a59a2a70412165c891fdd8c72aef635ffe1fa754b361c029"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_048_C.R2T",
+      "bytes": 33984,
+      "sha256": "aa687844de6e6a3e79ad2deb34eaf3f7b65f08d5b501e5531b13f7457b668cfb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_049_A.R2T",
+      "bytes": 66752,
+      "sha256": "c1560af8ab5e89fb5c0bb3e12fd26a5664ea7cb86e04b18307bbcc20db69597d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_049_B.R2T",
+      "bytes": 66752,
+      "sha256": "0dce3877e5455a430d99f5af89db4a031f1fcac9444f96aef02f7e1680ae264d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_049_C.R2T",
+      "bytes": 33984,
+      "sha256": "23a443fc6e7b8480acf9cac1e5219cb2d920dbcc76cd1a3963493c025640d6fb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_050_A.R2T",
+      "bytes": 66752,
+      "sha256": "f667d6b7b16b8603b5311c91d62e5a744141b522d382a3a32060ba4c9e4b4b3e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_050_B.R2T",
+      "bytes": 66752,
+      "sha256": "9280d00e78fd456e088cc78eb9da36fd4c845ca05b4960fd609270fe5a2426e1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_050_C.R2T",
+      "bytes": 33984,
+      "sha256": "2829d6d115d23b41badba4bf50041814c6921dc3102bfd62a212eb701c66fb99"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_051_A.R2T",
+      "bytes": 66752,
+      "sha256": "d5d1ac7ce9186ea78e4dd21a3c45354c151023648a713a80e1928402ebdd0a02"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_051_B.R2T",
+      "bytes": 66752,
+      "sha256": "3c3467dcd26e665cd6b6d82602c67b5d9afcb4daaf2ae6f757b6ada8228e1508"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_051_C.R2T",
+      "bytes": 33984,
+      "sha256": "48b2af3566e5297c1281860663cde71ecef6cc719ea4ef98b8333a9ff19b9e86"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_052_A.R2T",
+      "bytes": 66752,
+      "sha256": "ff14d55e108581adab4987658277e34b28f23eb5b16e4977c8a19f947825b41d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_052_B.R2T",
+      "bytes": 66752,
+      "sha256": "403508dfd7f2b7ad1dab2a73bea1aa6c10e88d4e088a7ddf97e603d1a679e5eb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_052_C.R2T",
+      "bytes": 33984,
+      "sha256": "f7cb7f890c93153c5feb13542f876c08d25b1e18d3b0fc2bb64433a8efbf210e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_053_A.R2T",
+      "bytes": 66752,
+      "sha256": "70acbba25a1ca056f3046af859606f551155abdce35f6ce7c00cf044af18e58a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_053_B.R2T",
+      "bytes": 66752,
+      "sha256": "44827f6af64669596fa582b6cd0efedffa83bd6c317a8fe2a2433c8cb2af4358"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_053_C.R2T",
+      "bytes": 33984,
+      "sha256": "ccbb54bda69248b659fe08181a6280ffc46241c062a06578e487e023d3dd8cea"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_054_A.R2T",
+      "bytes": 66752,
+      "sha256": "6aa41289c74c9efc93bac534aa3a4b35389c9bbd7ef95d6c6c3a9586d6d8b6c7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_054_B.R2T",
+      "bytes": 66752,
+      "sha256": "1d2a29d81e1f62249fbf8221d100446c7900450197f955cc3b94cda1d1fc261f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_054_C.R2T",
+      "bytes": 33984,
+      "sha256": "57cbc2fe638506aa0e4a418f5f6657000a5e8b3639034721242fea9f254d5668"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_055_A.R2T",
+      "bytes": 66752,
+      "sha256": "225d53900ea9b67df2973e45f52e99905fccea027c76c554744007b3ddf1e24b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_055_B.R2T",
+      "bytes": 66752,
+      "sha256": "ca9bbe81dd4e0204614eec409ad3c235280a59e31196af08d173250900c99481"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/GROUP6/PS2TEX/CB_055_C.R2T",
+      "bytes": 33984,
+      "sha256": "eaaad163cda5fc20f5f6d37c01c997888537b7d514d536d3d7b4b2f9deab8f23"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/PS2TEX/CB_CVR_A.R2T",
+      "bytes": 66752,
+      "sha256": "378bb44dca02e86a66c4b5575a0c0143b93d84822e8927f09146f8dca5c5e5d5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/PS2TEX/CB_CVR_B.R2T",
+      "bytes": 66752,
+      "sha256": "accbdae9c0db6d38494dbce6a34acd99dc887a14c567ec87c05e1916a8a9f7f2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/COMIC/PS2TEX/CB_CVR_C.R2T",
+      "bytes": 33984,
+      "sha256": "b3b93be47375852876e2f10df400992bc9881cd857f35435d9ee0f016aa5f9cb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_001_A.R2T",
+      "bytes": 66752,
+      "sha256": "a6d791c8ba98bb681b46fd8c5c7bb479427944c21dab8513d48b194836b02b73"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_001_B.R2T",
+      "bytes": 66752,
+      "sha256": "6c623a5c0b53915529cd737fc7ef3e5132ab027697e5bacde5313bd7c94b7d4a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_001_C.R2T",
+      "bytes": 33984,
+      "sha256": "76034d99db375c9539a23d93849e08e1416a25b79e1385c9a3d3696a4292c7b5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_002_A.R2T",
+      "bytes": 66752,
+      "sha256": "1581ed4970331e9f82348ed49764eee9fbbcf83063102fb44bc56a0b632fae49"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_002_B.R2T",
+      "bytes": 66752,
+      "sha256": "1397c9eadde23e9f9c3e2a9e72b565f787513bc62528ff2f2a25a1273062a18d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_002_C.R2T",
+      "bytes": 33984,
+      "sha256": "e1d5e6be1bc098ce32d0ce010b7069de61d0fae889ea1a4cce1a56a1e236673e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_003_A.R2T",
+      "bytes": 66752,
+      "sha256": "2cb9514edbb5233a4c15eb0107ada7f6606fc339eaa8768a254d3415fb0b0150"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_003_B.R2T",
+      "bytes": 66752,
+      "sha256": "d519eda7f1ca570d8d12b0478beaec75c82ecb0a9a32fac9d6060aa4130e265f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_003_C.R2T",
+      "bytes": 33984,
+      "sha256": "fb68227948b9daaa71400cd644e6605a051707cfeb3aa1d84e8a7aaa24514d45"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_004_A.R2T",
+      "bytes": 66752,
+      "sha256": "837a863ccd5f2400835befcdc3726d28eb6f96d417a0ef43cfca85d07dc04389"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_004_B.R2T",
+      "bytes": 66752,
+      "sha256": "98003ae64affed5cfe60836325e0ae61e9339e4ed7820229fb7c5393197ebf27"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_004_C.R2T",
+      "bytes": 33984,
+      "sha256": "9be8064e263e0015e5f3955d236432369f4951c97fbc0b2d07f12dc877be1b3a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_005_A.R2T",
+      "bytes": 66752,
+      "sha256": "f937928d57b221b911bcb604ed23becf1707608a4885407106e048fac96f9d9d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_005_B.R2T",
+      "bytes": 66752,
+      "sha256": "b999c05335bd53c42f6968ff3f0d28d2194584b449726d8abcb4b4b4194ffe00"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_005_C.R2T",
+      "bytes": 33984,
+      "sha256": "53eb9690bf81ab9b4c03e7fb406eda26b21e5cac44e7e2828ced093ae21eeb68"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_006_A.R2T",
+      "bytes": 66752,
+      "sha256": "b76df4c1bdec29d337ff05c1bd467bc84e55a430e180a5b25215765a4f8831c5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_006_B.R2T",
+      "bytes": 66752,
+      "sha256": "257034b4f1dc8b3b99993efe998b418d04b570adcd9471a9ddcea5714973f90b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_006_C.R2T",
+      "bytes": 33984,
+      "sha256": "7742e0ebb9f37d644e4b98ca359bbe26c22dc18c9dbd282e5ac13cd1b60764b2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_007_A.R2T",
+      "bytes": 66752,
+      "sha256": "521e00a50631c5a4d71b1672e648d4bb22e6ff1007d02f71ddeaebd4b0fb4570"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_007_B.R2T",
+      "bytes": 66752,
+      "sha256": "896578170bd4ecfcc1fbb365ec24c84f445a63540737de6cbe0dcc1f267c3566"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_007_C.R2T",
+      "bytes": 33984,
+      "sha256": "e7c155af378769d97270cf936891482111d8f3484787a39c6f9214c7effffc98"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_008_A.R2T",
+      "bytes": 66752,
+      "sha256": "49c0d22d000b2f65678b95956aa9a9b4b84ce2e79d437f25c0b0c4832b0307fe"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_008_B.R2T",
+      "bytes": 66752,
+      "sha256": "0724dc1b189cb40f99bb444bf668adb49ce7e422c6e2a9b307c700d05842599a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_008_C.R2T",
+      "bytes": 33984,
+      "sha256": "b050f8734115633f851821c4feac6ac122f9a4e03c5801f9258a59a6a9867531"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_009_A.R2T",
+      "bytes": 66752,
+      "sha256": "4a2b3f28c8c1a0932aee8b381397852cd1257090036b261022c9bb20ba54aa6d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_009_B.R2T",
+      "bytes": 66752,
+      "sha256": "713d735b3ddc0d08faf71406510009653a020038132ad240676339f6c76b5799"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/CA_009_C.R2T",
+      "bytes": 33984,
+      "sha256": "f3eea7f8068bd3831d7dba9e3f395724230e54941d9efd2cff5d9e88b3cf143d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP01/PS2TEX/LOCK_ART.R2T",
+      "bytes": 66752,
+      "sha256": "475cb551afea69a30ac45420e3b1ea3a0caa84059a7e29f7945be848d7dbb484"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_010_A.R2T",
+      "bytes": 66752,
+      "sha256": "c3fa46b05248034acf5c743e5d51f1ed84259aa7f49d379792357917dbfde0fb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_010_B.R2T",
+      "bytes": 66752,
+      "sha256": "a983c86395ddf16bd91f8cbf565df89d83447fefc2b24c56023168fed3a1fa4e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_010_C.R2T",
+      "bytes": 33984,
+      "sha256": "642a36ed4e6e51f2b98f642a1d062eddc4ee77a22ccbaa8d3c67c6db9b434f10"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_011_A.R2T",
+      "bytes": 66752,
+      "sha256": "f2f1e16ff6970fa0875616b3ad438ba49c1fee7d5c598387ee3d71138895bd08"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_011_B.R2T",
+      "bytes": 66752,
+      "sha256": "eb28ef527fb59367aa80f1cd350dec3cffbb58d456fd1e2f51e68d078273a989"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_011_C.R2T",
+      "bytes": 33984,
+      "sha256": "31fbb537c8ea27da826493b4c553f6807f1810eeae37467a3f9d622327c9a44f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_012_A.R2T",
+      "bytes": 66752,
+      "sha256": "4386451d3d864070c711dab472f2d1800a9b8aca47dd1bb9694c650574bfd57b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_012_B.R2T",
+      "bytes": 66752,
+      "sha256": "df3e652cbe38b312353538476f306868d2e80568154bf382791b794b4894f7c6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_012_C.R2T",
+      "bytes": 33984,
+      "sha256": "26ba81eb31192c287a61c396b9c909d238819321883e5c1de1c4a97540a82639"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_013_A.R2T",
+      "bytes": 66752,
+      "sha256": "d0e3f812f16ede000d04de885e626d5e0a4bd6b3ef84f0b1018ad60621253622"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_013_B.R2T",
+      "bytes": 66752,
+      "sha256": "6211558f2ef7b0e0d19fa6663f32f57f870209eb8607bbcb618982b5e160156d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_013_C.R2T",
+      "bytes": 33984,
+      "sha256": "56f117681e1a665abb57e2025fc3189d25263ea2398b140a4a882dc88e13e6cf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_014_A.R2T",
+      "bytes": 66752,
+      "sha256": "cc26895433539e23c49a13ba3669c91f7fb46c65af03a0c034528ec216f68495"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_014_B.R2T",
+      "bytes": 66752,
+      "sha256": "fe0410ea4a0e12196202c5cc3adefcacb6b030e8ba63b4551566b9506de98072"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_014_C.R2T",
+      "bytes": 33984,
+      "sha256": "52b5654664a547381798ac4ab920a3ba0411d65f930855a756d6820233648fff"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_015_A.R2T",
+      "bytes": 66752,
+      "sha256": "b9c61c9eb5fbcc3d19c4b8eee8bed4e2339f46741facfdc3ac2639e95e08976b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_015_B.R2T",
+      "bytes": 66752,
+      "sha256": "f4efbf861e1e8346de33ab7ead80ea18948d5523ceb408ceaec3b09f060aeddc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_015_C.R2T",
+      "bytes": 33984,
+      "sha256": "6d9c29500a2cfe48a45ee3f136fc986e7b99f450b0ccbf27ee6c8de27e940a94"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_016_A.R2T",
+      "bytes": 66752,
+      "sha256": "adacf3a385f1a5aca964de61ec445ef6b3d58eb9759689cb0c48ce31b65e7539"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_016_B.R2T",
+      "bytes": 66752,
+      "sha256": "4e8a471c32cc02f3c84fea97ba9e1d1af502102ca24a8be5432df9f141c2b443"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_016_C.R2T",
+      "bytes": 33984,
+      "sha256": "ec5435bbb535e2dbddb2f5eab4b58817f1e175a3fd8142999d25562273b935b7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_017_A.R2T",
+      "bytes": 66752,
+      "sha256": "359c7de2d16e0a71fee4d3e47460ea2c0cdda074277c260a07330c0e819e168b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_017_B.R2T",
+      "bytes": 66752,
+      "sha256": "e0d18289b4441bf60f42f4748bee7695e854711847ec4ec98af673c73b39c0d8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_017_C.R2T",
+      "bytes": 33984,
+      "sha256": "fde97a7c57008f64331dcd22434d2f46d248d4dbf959c947518eef9f41b017c1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_018_A.R2T",
+      "bytes": 66752,
+      "sha256": "08839087e0e9a1d37ce658f67b50630843b7de9a09d816ce2c96079d5337aab3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_018_B.R2T",
+      "bytes": 66752,
+      "sha256": "1721b98c829681f0b5f3d261e2efbd47f31948cb23cc705fc1640c3fde349052"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP02/PS2TEX/CA_018_C.R2T",
+      "bytes": 33984,
+      "sha256": "87e976dfc5a764682a3adc0daacc4d54f91cebd898c8f1f799ea984966c87081"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_019_A.R2T",
+      "bytes": 66752,
+      "sha256": "3d6f62632bd2ba1a00a9e8bbcdc4d3929a9baa0cb69174ae0dcfa2d0886eb374"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_019_B.R2T",
+      "bytes": 66752,
+      "sha256": "8fe17a4ce932589a66e13a885ee88b0a10245957ac4481817c332c254fa098db"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_019_C.R2T",
+      "bytes": 33984,
+      "sha256": "841221ba7b87ffec00a98f45ff8fc83941a572c16a6147ff5ee0b57677ef42ce"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_020_A.R2T",
+      "bytes": 66752,
+      "sha256": "1ff3116f755f10566ed2f672edefc788f5c2d1c852393c1ff98d808ab216fe5c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_020_B.R2T",
+      "bytes": 66752,
+      "sha256": "14a05cbcb269cd295fce75ae39b63d7814658a46c725ccf0e2ee8c16362d3fa8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_020_C.R2T",
+      "bytes": 33984,
+      "sha256": "5950f1d13c37f6ccab03ff599408d6b6c2af5bc8ddb6ae18c21dfac97df69f5e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_021_A.R2T",
+      "bytes": 66752,
+      "sha256": "1513897992b67f71636e54b307ffba3486d22c39ef981b1af90cfc494014b6da"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_021_B.R2T",
+      "bytes": 66752,
+      "sha256": "0ac4fa59551f9efb3276f75541ddc23231bfa30fe0c684a6663b63f3bec17041"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_021_C.R2T",
+      "bytes": 33984,
+      "sha256": "7cb1cd7d7eccd12d6d6f785fe0d2930b73f62389589ef1ca0b6b7169dc83c410"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_022_A.R2T",
+      "bytes": 66752,
+      "sha256": "d014543db56a772fffa520ade0820f66951b0a16c74671d585c29ca06fa05960"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_022_B.R2T",
+      "bytes": 66752,
+      "sha256": "81efc751d5a3fda8e5cf2b73bbfcbb3f1622eddfad2ffe93cc5a75c36cbe0a1a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_022_C.R2T",
+      "bytes": 33984,
+      "sha256": "4f5b28a44f639b180a70ecb00572cb87ac05653333934d9ef994d3bd2a66e8c5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_023_A.R2T",
+      "bytes": 66752,
+      "sha256": "0cc22eb43d83ccab9a9d02a30305b08a1c359f8a0715639513d1942642b0b032"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_023_B.R2T",
+      "bytes": 66752,
+      "sha256": "5dc85b67516d06806bc999a68e43d78e7c68da01445f2f32ee1c3a51a741e464"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_023_C.R2T",
+      "bytes": 33984,
+      "sha256": "fac6524c79c0d6a41e84acac0e39348fe2a1b0213ed2b4303ba1e8aa5a1a8aa3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_024_A.R2T",
+      "bytes": 66752,
+      "sha256": "8f4c5a7880f062c22bc1d682373099af48e939c2237905f10bcb14f2a597eea2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_024_B.R2T",
+      "bytes": 66752,
+      "sha256": "0a8ec48e639d40316127c0a5a58266d2a7cb6ff1b7644454cf05249c4f879df7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_024_C.R2T",
+      "bytes": 33984,
+      "sha256": "1b9149136e343012bd4deb8987757e59b2874034e0257b40ff4681535fb526eb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_025_A.R2T",
+      "bytes": 66752,
+      "sha256": "bac65d66309d5d436ed99afcda48f3a737247d107bbf7ef11d701d9b11bc6357"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_025_B.R2T",
+      "bytes": 66752,
+      "sha256": "f72b745b77273b3f617deaaf4c73df0c8c9c89b2e9565f6a4e01cb6b54a4cd4a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_025_C.R2T",
+      "bytes": 33984,
+      "sha256": "79449eb8fb32938c3718d3d8fea5e9bcb7d7a979da4fe2c8b2302eab6524991d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_026_A.R2T",
+      "bytes": 66752,
+      "sha256": "44729451a78f4e801025a25e7d03ea3b85045342a2b08cd7d8cd1b0fa7e3c8cf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_026_B.R2T",
+      "bytes": 66752,
+      "sha256": "db8bce02213c755301952e151ed1edcfb92d5f8336e2da76f9466cc221810125"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_026_C.R2T",
+      "bytes": 33984,
+      "sha256": "bf5e5d4d5cdd8a8a84abe1c46d16d92897a1a01509b37d7e634c6f2138ede73f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_027_A.R2T",
+      "bytes": 66752,
+      "sha256": "fbabb6f935b65d5d18f82c7da712ff07c6b8b7392220d806014ff3278df20adc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_027_B.R2T",
+      "bytes": 66752,
+      "sha256": "2420f4f8ac18403bc89fdad606d9671cb4e9e7085b4f67fc733c63a15cb81d1c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP03/PS2TEX/CA_027_C.R2T",
+      "bytes": 33984,
+      "sha256": "242beeda3836151e016e97ca260559a3ad6c2f62589acd0f046cd31d66013bb3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_028_A.R2T",
+      "bytes": 66752,
+      "sha256": "3b73dea6be592ac748eb67bb9454e6ae70c77f67c48b54f3a11868a423390a56"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_028_B.R2T",
+      "bytes": 66752,
+      "sha256": "fcc71e62ef7479e82229d9b068572989b8fa2d5ffba2330af5e6c0a978127b05"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_028_C.R2T",
+      "bytes": 1280,
+      "sha256": "858cbc196e147403a5e4a6766302a5138e3e648434efb6b3c9416e6299410e45"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_029_A.R2T",
+      "bytes": 66752,
+      "sha256": "8395cf849c74a3344de7e9834ac25ed5f93f044cf3cc5282061a1665b78097f7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_029_B.R2T",
+      "bytes": 66752,
+      "sha256": "ede10dc436162d4da673534bdf230a24d3f59dbfb57287906750e3bb94ffcfe6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_029_C.R2T",
+      "bytes": 33984,
+      "sha256": "34116c262417cae9d9678f9ca9ffa2ade200eaffd8d4624b54b3174169b4cbc8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_030_A.R2T",
+      "bytes": 66752,
+      "sha256": "c9f1194fc52cb41bcdce397f94b2f6110de09821679c9d38957714373ec9ecdc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_030_B.R2T",
+      "bytes": 66752,
+      "sha256": "dca3f6997db254aaf8d1453f35a68143e1d360b86dec29cfbfbbcf21958f419e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_030_C.R2T",
+      "bytes": 33984,
+      "sha256": "776f16bc9f7c720c8c2e89bac314c2dcc3e159411ef72c1330710bab36940fcd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_031_A.R2T",
+      "bytes": 66752,
+      "sha256": "562f5b282a226c7b5f89bd4f26ada23c004acc7de76363fdf3ab8e7b270aee5f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_031_B.R2T",
+      "bytes": 66752,
+      "sha256": "37f6cb018b736f18832ded6cd82184e0291255e4939821f572aeddd35c69be53"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_031_C.R2T",
+      "bytes": 33984,
+      "sha256": "984ce872abc3c5c56fe2865a3df13e964760db69e727e5de7e2a7e05a2a7a778"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_032_A.R2T",
+      "bytes": 66752,
+      "sha256": "6056b1ad084cb7faed52675007885c9ed16150dbd67f12e04f66a135d4f48e78"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_032_B.R2T",
+      "bytes": 66752,
+      "sha256": "3a3c8e95d7e1f2658957ac2fd4c7f20158f390ac01df51f35e8c7a474d71caae"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_032_C.R2T",
+      "bytes": 33984,
+      "sha256": "d97e5fceb3448e42ba8ddea99ec1601851a33306516e8962e5908fcd1376defc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_033_A.R2T",
+      "bytes": 66752,
+      "sha256": "66214e0d7229f3e4a084a2d2717ad6d9755d75e9999f4aa225a89516f80381ba"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_033_B.R2T",
+      "bytes": 66752,
+      "sha256": "1de5f7daddb44a19eac569eedd0eeddd11dd57dc76e6c503622ca40581132f40"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_033_C.R2T",
+      "bytes": 33984,
+      "sha256": "e95047da34103ae322019971ad959596c454956e2d4cb87da760dfd41fcad984"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_034_A.R2T",
+      "bytes": 66752,
+      "sha256": "f97a899e84b446056337c7136451d10effa3caf51f65c3693006dda923c66833"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_034_B.R2T",
+      "bytes": 66752,
+      "sha256": "c9ecc34200804f0a3732fb4368ecc990fd81fe7b6866bcb6ab9a9f75666a8e89"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_034_C.R2T",
+      "bytes": 1280,
+      "sha256": "d86372f526b2ff234e3731b1079aa4b1fe7016d2b3b5f1ba38ec8e2d0f461a80"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_035_A.R2T",
+      "bytes": 66752,
+      "sha256": "3bb1fcc571bd05e81779d0327e9bb8ec84c332fb707e62ff56096a23332ea6bd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_035_B.R2T",
+      "bytes": 66752,
+      "sha256": "84e3dbaa033db9953e96327fa6675ea5057a8dab7b00b39f05fc342a6b1de8bb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_035_C.R2T",
+      "bytes": 33984,
+      "sha256": "47ee3a134ac42f018fe9c7e3f3fc2ba2e9421af4426a51caea05ceafeda7afa4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_036_A.R2T",
+      "bytes": 66752,
+      "sha256": "9b9a7cd9453b59f40f78bda4efd22ac22f20aaeb0fff61444237afa9e47ba3d1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_036_B.R2T",
+      "bytes": 66752,
+      "sha256": "2a414e18d83f068684354ffb14b1c116404e7f157b7d6068b70e3cac6f8cee55"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP04/PS2TEX/CA_036_C.R2T",
+      "bytes": 33984,
+      "sha256": "921733149b00217da000c4146f8031a9cd773c47cd7ee275d31dff2d02a89479"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_037_A.R2T",
+      "bytes": 66752,
+      "sha256": "746859b66eade0deefd6ad26230bd23be8f6df841ad0a2ed35f305aa03355066"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_037_B.R2T",
+      "bytes": 66752,
+      "sha256": "c89ffa0cc60192b9cbfaf456a57b282ca94ad94f21c648e20f2686dda03e9355"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_037_C.R2T",
+      "bytes": 33984,
+      "sha256": "e5d9d35cd63f6740ff99bf8bac2606aff8038da0b42a7b46862258c5f88a8a65"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_038_A.R2T",
+      "bytes": 66752,
+      "sha256": "dd1d9731bce4869eb2acc8b2403fdca918f2325c0c36339791461f9e660ff746"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_038_B.R2T",
+      "bytes": 66752,
+      "sha256": "385189f1ab50bc4dd25bdc26cc34077d56abec127dd9504bd77094d00c0e9193"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_038_C.R2T",
+      "bytes": 33984,
+      "sha256": "13b6af76191007b705326114cb869d6f3eb46924cd7ea04c09a0b87f9d637963"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_039_A.R2T",
+      "bytes": 66752,
+      "sha256": "6327962193de12c7c7e3e23f80d08868f78fcea84353ced069980ca0b33a96a6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_039_B.R2T",
+      "bytes": 66752,
+      "sha256": "ad90f14821321b824dee04a8c8150c31305126a8e7e5eea6830955002681e129"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_039_C.R2T",
+      "bytes": 33984,
+      "sha256": "989974064f2377d7dd3611ab3826fd7ede76168a6df486253786fa0722e1f454"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_040_A.R2T",
+      "bytes": 66752,
+      "sha256": "95ce2427cb266c8c79977d15c4112690bf2c59c51374db9d2609ea20e154d039"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_040_B.R2T",
+      "bytes": 66752,
+      "sha256": "41cee8026f2ea8a6a53f326ae22d20b2c4c35db731dc343d736e7219054042ce"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_040_C.R2T",
+      "bytes": 33984,
+      "sha256": "cd2b1b9f57b1e445c1e1d74b70384ca1bd21c35af3fab691ebb869c1163c0d06"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_041_A.R2T",
+      "bytes": 66752,
+      "sha256": "e4e129f9f6557e62cedb1649c79fb4541b2678646451f0eebca09163b04de3a4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_041_B.R2T",
+      "bytes": 66752,
+      "sha256": "0fca07b576ce4576d0fb7c729ec21421ee188c7b6bb565f31c5cad0b14105fd5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_041_C.R2T",
+      "bytes": 33984,
+      "sha256": "1ed182e3a20c1be24a8bdd28291ef7330ae9dadcadd910505bd0f34473f1bd95"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_042_A.R2T",
+      "bytes": 66752,
+      "sha256": "d250c3453246fffd4bc41a46bc6f956ee2cd3a56189d7be8c3311572cecf547e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_042_B.R2T",
+      "bytes": 66752,
+      "sha256": "cce98e7e22c5ddec1842d43c7e3d71d3ddb722c0195b77a152c77c154b63a313"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_042_C.R2T",
+      "bytes": 33984,
+      "sha256": "3f5a56d54eef0e8af976f1031cfa96565fc903bb480919e819ce913e48d83a16"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_043_A.R2T",
+      "bytes": 66752,
+      "sha256": "5893481bd1e11f6a78187240f019b9018e43e2edc8b6ad2ad753b2765e1426ba"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_043_B.R2T",
+      "bytes": 66752,
+      "sha256": "21e4f8a72942892a44b7dfdea054a3cd172829b1ddb1876c990a1aa8b459b78b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_043_C.R2T",
+      "bytes": 1280,
+      "sha256": "bff9545593e2b999893fe0170f1113ecf70b53f1bdd48a1b5dababcced13d2a0"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_044_A.R2T",
+      "bytes": 66752,
+      "sha256": "11f3cadf4201f19aeff6824b2955f2f8f3414ef5a052b6a0928d13e797b8453c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_044_B.R2T",
+      "bytes": 66752,
+      "sha256": "a4c28033f37f2d01c00c6c8ea079f46defd6a7bd0fede09543285909e013c7d5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_044_C.R2T",
+      "bytes": 1280,
+      "sha256": "2863a8c2e42a5bfbd25b7ae08774008a6d4135648f215ea052f21aed1c18bee1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_045_A.R2T",
+      "bytes": 66752,
+      "sha256": "c8f74bd8ef8d91f42931c50276d0237d244c7fbf55a08a0227930b19a2d7fb52"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_045_B.R2T",
+      "bytes": 66752,
+      "sha256": "e8dd2afa95705e079290b6ad6e12a1e82cde67c7434e5c2d92c890b18e5cc998"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP05/PS2TEX/CA_045_C.R2T",
+      "bytes": 33984,
+      "sha256": "7682438d2add8c8b27e25444f21c3dd26f5d7f0dda9b5db79713a5ba0de7af16"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_046_A.R2T",
+      "bytes": 66752,
+      "sha256": "79bb9818e79a31d87d5e9e31efe5101b2a8dfc4a6f78dd0a37c3596ece1b811a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_046_B.R2T",
+      "bytes": 66752,
+      "sha256": "de2363d3445032858135998f080b66d20c48a14bbd8ccf29a5aa54ddab586c31"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_046_C.R2T",
+      "bytes": 1280,
+      "sha256": "92aa4e19a8cc340dac7142e669e55d27867ec591b95013c6cb51a391155a9f0d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_047_A.R2T",
+      "bytes": 66752,
+      "sha256": "fb9202afe918a6a01ae4a47c2db0fd3a7e5322357b675de776e63e67d9da451f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_047_B.R2T",
+      "bytes": 66752,
+      "sha256": "a5eaae35a8e8f84f1daa662b7d8ba38c7a7d18953a92cee78782b3eddf4d7606"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_047_C.R2T",
+      "bytes": 33984,
+      "sha256": "b34079d62c4a98b9b8323bbf42d5de17c9bb0d1ec8f879ff020c1d143edddff2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_048_A.R2T",
+      "bytes": 66752,
+      "sha256": "d0d920243c81d09dfbd0c1c67385166c68c15a39afc0ee0236f8948f6f294503"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_048_B.R2T",
+      "bytes": 66752,
+      "sha256": "30a097caa20bb30919cf075e681076a5e8f1ccb861e29ed33acdc58974bc0dde"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_048_C.R2T",
+      "bytes": 33984,
+      "sha256": "eb606905872074be695cf1e20560e686cb229880d876eaac44efec8f4ea6e744"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_049_A.R2T",
+      "bytes": 66752,
+      "sha256": "1dd3540daa2b37271169793bb1527d36b28cbc52b8c15aa358f7e07247b869f9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_049_B.R2T",
+      "bytes": 66752,
+      "sha256": "85f067982079d6f12d4b9d616737f7a1eaffd4e46b3e3b82d2fbabec5ee21839"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_049_C.R2T",
+      "bytes": 33984,
+      "sha256": "ef060da37ed3ba1ca701bedff6bb2887a906a87b26ad1ca3dde6f6a752264e69"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_050_A.R2T",
+      "bytes": 66752,
+      "sha256": "847ed4a06fd58bf736aac37708e06ec30d132133dee1855ce517e4eff2a4ebe3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_050_B.R2T",
+      "bytes": 66752,
+      "sha256": "730abc516b0e230bd0a2512f57e398548e1124448769097c65c9106496ef6f53"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_050_C.R2T",
+      "bytes": 33984,
+      "sha256": "98efb2611aa0f63176664a494ce31a8238fec1669fd3a87094f8ffb6141f7d3d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_051_A.R2T",
+      "bytes": 66752,
+      "sha256": "9e48dd3c7992672e792b6d1b528bb469b0dc731c736762b38786a7f04755fcc4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_051_B.R2T",
+      "bytes": 66752,
+      "sha256": "8a99955f948b73e87dc6c2a29c835a91562ea0de00e4c8e145e42159322611b5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_051_C.R2T",
+      "bytes": 33984,
+      "sha256": "38838cd23bfd335675b409a62fbe2b56a683dcdc093f180920e682a6b9d247bd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_052_A.R2T",
+      "bytes": 66752,
+      "sha256": "24e9c9882761047b4232a7a852de08606bc2597e9e5ef26d332b31d30ca40e11"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_052_B.R2T",
+      "bytes": 66752,
+      "sha256": "4bd82061af054e6d48787920610b99dac9b0068ddaef01f9dfd9319d3aba87a4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_052_C.R2T",
+      "bytes": 33984,
+      "sha256": "9edcce9c31f76038758214452a79b5667ff4081cdd65db6f386222c12e6a2de6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_053_A.R2T",
+      "bytes": 66752,
+      "sha256": "821bffd72c142bde9d03ee2ae31532493a29e574dd23a1041b35053956f04aba"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_053_B.R2T",
+      "bytes": 66752,
+      "sha256": "fd86deecd78ecd94100ec152c00d1172df366d27f38c5f1e6df5a092f20d79a1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_053_C.R2T",
+      "bytes": 33984,
+      "sha256": "e2b699e9b92ae2b61a2a9ec363c5e4710d74fd4c9ef97ac57115eee9189b86ad"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_054_A.R2T",
+      "bytes": 66752,
+      "sha256": "acc50a1bbd7890d0e8557bc9d0feab5266921cd38a134d6e7aa42673b6c0b43c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_054_B.R2T",
+      "bytes": 66752,
+      "sha256": "b6c030eb89f22c211ba5a0afaf41b4d5474e2b730c338401715eef0e1cb3a652"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP06/PS2TEX/CA_054_C.R2T",
+      "bytes": 33984,
+      "sha256": "fcd995c7f0cca10cf9fc859d877adfcc6582e333aab707e2be5b293d9ad72880"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_055_A.R2T",
+      "bytes": 66752,
+      "sha256": "b3c64dcd6128352d0a838fb9b7cac1b4e9dbf46b24b8d0adcbfb5e2d231b493b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_055_B.R2T",
+      "bytes": 66752,
+      "sha256": "58c3bc50d4924985155c11638ece8c99390cad517e376c62287c3ff59f3619e1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_055_C.R2T",
+      "bytes": 33984,
+      "sha256": "1da4e2ffdb74f4568f2b93efd117162b606bbaabdeea10cafe8bab7957a3386f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_056_A.R2T",
+      "bytes": 66752,
+      "sha256": "37e2dfb1bd7ec71d0960cea04b14117a010c23df193cb4cf7356e0c7998feb8b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_056_B.R2T",
+      "bytes": 66752,
+      "sha256": "b37347b28d691ad6b5104841b84855a23a2a8e84a413421c5aac3d7f79817bf0"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_056_C.R2T",
+      "bytes": 33984,
+      "sha256": "88d60aec4baf7f2d9e73cf456ae80d00b7b140d41059c0801d40b858d825561b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_057_A.R2T",
+      "bytes": 66752,
+      "sha256": "d6a38fa6e3741f204a4ddbf3e77d2ce64456666d630a86cb1932c84173a4055d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_057_B.R2T",
+      "bytes": 66752,
+      "sha256": "5ed5997bbdfe6d0ce0df3241f436d98f0c55cc75b2a259d823a2002a20b18ef6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_057_C.R2T",
+      "bytes": 33984,
+      "sha256": "4b35f3909b66b79c141bb4df00f2083371af8c3909624d2f2689f157336b316c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_058_A.R2T",
+      "bytes": 66752,
+      "sha256": "1cf090086b2b868f7d08f5f267de045ad5ca58f978404352b533c7e0cda885f3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_058_B.R2T",
+      "bytes": 66752,
+      "sha256": "e6313935a4f2e34c53b8f667a69798ce66d8208d7e235cdca1309d730d8efd2f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_058_C.R2T",
+      "bytes": 33984,
+      "sha256": "2a33edf083fad67d777e3bbea3c784c03b69a39be8e73a6c382cfab5ee6a05c8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_059_A.R2T",
+      "bytes": 66752,
+      "sha256": "1eeef8ce06019d3a1e031cef0acdc7ec072e98851e69d7adb96fade90bb3c60a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_059_B.R2T",
+      "bytes": 66752,
+      "sha256": "7bc0599994086866fc2444512d046336db2225c27084e1cc9bd19d3e0503142e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_059_C.R2T",
+      "bytes": 33984,
+      "sha256": "e0389177c6344a03f8f5cc8d39d6847c846b8f1f912d7a2a15c06f7ced98c56f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_060_A.R2T",
+      "bytes": 66752,
+      "sha256": "b2ec8710d6332893b1a60c92c36626747c2d3653c4cccf29b42b94c2a95e773f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_060_B.R2T",
+      "bytes": 66752,
+      "sha256": "e38eab3b5986e8445edfdfab79981d8dadc8482fbbf7717d4b174fa6e6f220e1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_060_C.R2T",
+      "bytes": 33984,
+      "sha256": "b17e34a3b234e992451694a694ccf5de36ac182617c7328defaa559f8438c951"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_061_A.R2T",
+      "bytes": 66752,
+      "sha256": "39ec90168439c4271cc1708ed99211a18b84f9fd7ece4a2fa273cac65cc58952"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_061_B.R2T",
+      "bytes": 66752,
+      "sha256": "b30af055aa710726773620df73d0f3a710e48fddf292b0e628818d78b46720c6"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_061_C.R2T",
+      "bytes": 1280,
+      "sha256": "cb79d89b79f885c9cb9ef92e3803c952b4432f444fc4843896714ad2a12fc0bd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_062_A.R2T",
+      "bytes": 66752,
+      "sha256": "faad526c05a407201e21c4d5bedd1fe4ff4a39751bc459c1701ecdc9c121a8cb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_062_B.R2T",
+      "bytes": 66752,
+      "sha256": "0925a2509a3c433c68a3c7b9e89931944e68604b37991af8060bab0785868013"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_062_C.R2T",
+      "bytes": 33984,
+      "sha256": "cb703a458688b9e3b4be527ceb9e5b64c090d72649e9417171225f6e0a7538bc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_063_A.R2T",
+      "bytes": 66752,
+      "sha256": "c29b0adc286091e2e20a0a5ce279460e28b2bf4691ccd7a0f37e4bdb6b90fb6d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_063_B.R2T",
+      "bytes": 66752,
+      "sha256": "b1f22287156d3e53724a79fe0df5eb0ea72c4e2712099a53c349ccdd31fe2afc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP07/PS2TEX/CA_063_C.R2T",
+      "bytes": 33984,
+      "sha256": "e3be691b4d62ecb697db2b52f38099e6b9a28c40b348e892ad04d435509fb1b5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_064_A.R2T",
+      "bytes": 66752,
+      "sha256": "a6745828f8eb4ee2c42fbd3c31e639d03f74705c8a63b7f939225e69527a6abb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_064_B.R2T",
+      "bytes": 66752,
+      "sha256": "123fd1a64fed60e1558813a4b408e8bf00d6f07d4fcb3d2b290e93571a65d751"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_064_C.R2T",
+      "bytes": 33984,
+      "sha256": "6a5a8d43414752486dbc12aebff582b73f9e779187c4160cb44434c43bdf82d4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_065_A.R2T",
+      "bytes": 66752,
+      "sha256": "27737b1aeb65f1bd2e3e3c77c6bc60c32c5ebc89dd578963d1853bec808cf560"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_065_B.R2T",
+      "bytes": 66752,
+      "sha256": "8d02c83d3e4484dc6bb7e4470495cd464ae62d33e021c193dfb49a35c7721a8e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_065_C.R2T",
+      "bytes": 33984,
+      "sha256": "ec59e5483fef010f906e116837fd90bce2d0c03a07ee52107f7e5b97814cbf54"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_066_A.R2T",
+      "bytes": 66752,
+      "sha256": "357fdd82b0df379d062c97aab1790fe34882c72bd311c402cee4684ba6587aac"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_066_B.R2T",
+      "bytes": 66752,
+      "sha256": "d8bb9de6a447f329af0c705d799a84690117c9e5c7f4688a292ab268016008fa"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_066_C.R2T",
+      "bytes": 1280,
+      "sha256": "c7d3d0652cf31b09817285541d661b9f312417f44ff9e304851f92981bce82fc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_067_A.R2T",
+      "bytes": 66752,
+      "sha256": "428ffc6da17784d6d2494fdd533d7e98de736bed88951dfc5ad4986ad153ac7c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_067_B.R2T",
+      "bytes": 66752,
+      "sha256": "b90eca8e35a83fa4e0e71cf27b7867a9f8dedb06f7ae141a32228b84c29742e0"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_067_C.R2T",
+      "bytes": 33984,
+      "sha256": "b18152ed9637237ffdd45216b6abcc201c3acb7956c15824fecd49cf1583fe6d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_068_A.R2T",
+      "bytes": 66752,
+      "sha256": "123b626c01d7288408ee2443d2f0c6a1ffc5eda927b0442c7c41809be1d6b9bf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_068_B.R2T",
+      "bytes": 66752,
+      "sha256": "8e6cfe108e75aa33a4b05bf9ec7da8cc269fbc6dc33f4d4f3f68f97e86dbf0e3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_068_C.R2T",
+      "bytes": 33984,
+      "sha256": "8c30daa39f8778651eb5d0403745e8c503450c828bf370c4d0f2f483d052f45b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_069_A.R2T",
+      "bytes": 66752,
+      "sha256": "1b0061bb5690cc55618ef4e3973f450bdd219049420a9c03fee08dc4326f76fe"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_069_B.R2T",
+      "bytes": 66752,
+      "sha256": "2dc1b342e069d507acb0699145c89936accd2900345284929f7a1b3e8be720f8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_069_C.R2T",
+      "bytes": 33984,
+      "sha256": "8dbebc6b9f329cfd320ccb8e6011317ae0431b18a6a52c785dfec0cfb15c36cf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_070_A.R2T",
+      "bytes": 66752,
+      "sha256": "974a59dd34b469829867d5cad9bffe5f544c70b8d9df4db194886ca0e2e88d40"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_070_B.R2T",
+      "bytes": 66752,
+      "sha256": "392fc48c97b809e36c71ae72b7fb955eeae3c598a58570e9738a7f937b7c2520"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_070_C.R2T",
+      "bytes": 33984,
+      "sha256": "6bc1fca5df341a61ada6f1b2b06b00783f33f1c5e1c0c3257d1bb675cac12163"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_071_A.R2T",
+      "bytes": 66752,
+      "sha256": "541a4ec5372d93527a069934143c3da4473f89674241555eea9cdf40db106cb8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_071_B.R2T",
+      "bytes": 66752,
+      "sha256": "1b70f8570b35ebf59b9e79f5d53abdd6025582cd58b2a65193733ea877d72de9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_071_C.R2T",
+      "bytes": 33984,
+      "sha256": "7b92914c8e243275f3245ede7a254bea7a9c7086a3be2dbff077cd27f3521074"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_072_A.R2T",
+      "bytes": 66752,
+      "sha256": "091e1081a468537927c91538c7f4a97728b960559f6e24c2c4f457536ca39a7f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_072_B.R2T",
+      "bytes": 66752,
+      "sha256": "27f59022c267332e3212b711958615fb5c8a5a6945b0a02ec65f458e12df72d3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP08/PS2TEX/CA_072_C.R2T",
+      "bytes": 33984,
+      "sha256": "3edcb373be9d6ccb51284ca54eafeb4c3773e4c1e8f3249c7940eb24dd24d06a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_073_A.R2T",
+      "bytes": 66752,
+      "sha256": "dadf1793eda9b7773d02059d80286019dc446b30a9b44548d1c6ccc939cab377"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_073_B.R2T",
+      "bytes": 66752,
+      "sha256": "674c0865ec5cd53c11a640c8e85b7c5727c49426605542e5821406f46e1db15c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_073_C.R2T",
+      "bytes": 33984,
+      "sha256": "2535f556e6d4d5d67d85bc4cf33293bf8b16ee6fd99391bb888205b049330b5a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_074_A.R2T",
+      "bytes": 66752,
+      "sha256": "dd43aa7aa05ce344193dfe2077e77f1a0b0669e40114fad305c8b6997494631d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_074_B.R2T",
+      "bytes": 66752,
+      "sha256": "1643593facf1c6e434e3a381f4abb13365a795ef1ba72398106ee864a4c60e97"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_074_C.R2T",
+      "bytes": 1280,
+      "sha256": "b33dd64215ce810003c0913102e9c07e7d830f89bd1e9b61332da7fcfaa7c955"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_075_A.R2T",
+      "bytes": 66752,
+      "sha256": "484a8feef487034584cebd7fd36ec91d2caa5d2e701796382c52258161ec03e3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_075_B.R2T",
+      "bytes": 66752,
+      "sha256": "1e0a4223ef92725c82fde3d0b87463a87ddbb5eaf5a9e42c4332be04cccd216e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_075_C.R2T",
+      "bytes": 1280,
+      "sha256": "afd51a36a3ac0d0750d7e825e9009fc751cddd470ff62b612bc5401027737cb3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_076_A.R2T",
+      "bytes": 66752,
+      "sha256": "0a99fea8898a269d49f6edb7539e222810fcacf97f71d04bacce01a7d0bb4da7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_076_B.R2T",
+      "bytes": 66752,
+      "sha256": "b9e8d520b1eaaf94fd792ebe206953234267a98f51b320ad1f6c30461208f1f5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_076_C.R2T",
+      "bytes": 1280,
+      "sha256": "3b93f33b2c7e4cec49588ec873a8cb5b31c909d94c81cf6fafe3b7755ebda5dd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_077_A.R2T",
+      "bytes": 66752,
+      "sha256": "235ba34a40aa6907cae503e46d5ffb5752772bb545becae359fde0d6ce661688"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_077_B.R2T",
+      "bytes": 66752,
+      "sha256": "ebd1d0a0eda225f7da96bb92d59a9df550c02f0acf7f59ab5a53fd6fab383f86"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_077_C.R2T",
+      "bytes": 1280,
+      "sha256": "80d04806aefd26e8bf44fbcf8b48b6cfce8c67faa3ad749a9a82e96dc15841f5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_078_A.R2T",
+      "bytes": 66752,
+      "sha256": "52f3b053d0b81a319e40448b6394eb38f232f5ded5e0036230f0f8de7db73f59"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_078_B.R2T",
+      "bytes": 66752,
+      "sha256": "c95b4d80c9a7f4921f6ae052567574219b10d051cfa422ecc91e577649a77225"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_078_C.R2T",
+      "bytes": 1280,
+      "sha256": "fb1a099c13e18f681796a6d1c6dba91862699b80620f5b6742f0427630f2bb29"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_079_A.R2T",
+      "bytes": 66752,
+      "sha256": "c701a026b59c90cf3c5399a3105c33ea362585ae2533e0af714c5c0551915369"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_079_B.R2T",
+      "bytes": 66752,
+      "sha256": "12e953416adebcc465f80c03aa9b2fa3e83b0490e4bf0a68e8bd5d8683eecb45"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_079_C.R2T",
+      "bytes": 1280,
+      "sha256": "f6886997340676a383653250fb34c801738dba09877e19aed3a22f0c143a238c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_080_A.R2T",
+      "bytes": 66752,
+      "sha256": "08db0a4050e81dab6dab62f3d10895cb312c730aa1f96ebe2a194bedf6a8a407"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_080_B.R2T",
+      "bytes": 66752,
+      "sha256": "2d9f86d5ea4ba0b437541c8ed017d7d11d1377b56e106ab90d69e97bfbb8af51"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_080_C.R2T",
+      "bytes": 33984,
+      "sha256": "b6d84c560965a373411bd8ea9fb375be1a057265423bc03481528e1c9a7eeb7c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_081_A.R2T",
+      "bytes": 66752,
+      "sha256": "32ee7c2e3e1024802ffa3eeb7d572bfa774d55e75ae19d35e714bca95aa2bb15"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_081_B.R2T",
+      "bytes": 66752,
+      "sha256": "95ae445ac0ddf2e3d3695999d5e652a9c4d3e2a2ed544d7515f0c1e2073743b2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP09/PS2TEX/CA_081_C.R2T",
+      "bytes": 1280,
+      "sha256": "0b8054b44773abe2227c0172ae10f68edb04ed7a3d0ee755a31f65f45d545641"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_082_A.R2T",
+      "bytes": 66752,
+      "sha256": "790ac46cf99c78776e065d93e45bfdccc65b449ba24ebd9cbc598d145970340e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_082_B.R2T",
+      "bytes": 66752,
+      "sha256": "ba544e8259131977ad2adb7a07b9116368411e00faf6198fd23d1611c6f4d6c4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_082_C.R2T",
+      "bytes": 33984,
+      "sha256": "15ac382fcf6158c10f31b02f21901112741e77dcc627e15a3a3733dc4e039471"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_083_A.R2T",
+      "bytes": 66752,
+      "sha256": "1aaf80c82781bd8dfe938148d8d3ef7d5d7c64c03805bfde9c70abf67de2c7f4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_083_B.R2T",
+      "bytes": 66752,
+      "sha256": "7e3a7ac4e9dd6968440a7a58b2433459b948ab02883a97e38b47fb45a07673bf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_083_C.R2T",
+      "bytes": 33984,
+      "sha256": "e4c9faff154832cfb1ebd157a826df188cce40059119d05434eb8f42839938a3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_084_A.R2T",
+      "bytes": 66752,
+      "sha256": "d8194b324f72214b6314b8acc8521db5fa917e0b2074dc7bef1bd650f1788e39"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_084_B.R2T",
+      "bytes": 66752,
+      "sha256": "1e4780d45622d3f6e9461475c2185f39210e2ebc04569dfe2022cded4a0c6c72"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_084_C.R2T",
+      "bytes": 33984,
+      "sha256": "a07b378ffdebf128d8b2885366d00e873134b12a40fc0abee764f29232114a72"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_085_A.R2T",
+      "bytes": 66752,
+      "sha256": "2d43f57e445c801457e1db0dc2dd065c5709bcbae035e7fc3c07d37c5f11385c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_085_B.R2T",
+      "bytes": 66752,
+      "sha256": "dce4b9b697a3b6c91347d0f87bd1bdffe0b40847aec85ed9be7f2d350198f4a8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_085_C.R2T",
+      "bytes": 33984,
+      "sha256": "ea99c24d29b5862cff04221827abaaf88341911c4026a5a439a05131c5abe58d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_086_A.R2T",
+      "bytes": 66752,
+      "sha256": "18d1a7ba8667986425ea4a542f1c2ccca148c4d227ea58f9fd368edef93d1c22"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_086_B.R2T",
+      "bytes": 66752,
+      "sha256": "e134c125ccb2aa2b5dbc70eaba640bffb49bfef17d1811ffd14ee976967fe825"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_086_C.R2T",
+      "bytes": 33984,
+      "sha256": "9e51d3dd73583ae996d77b4c00495cfef3cd5e60500a86e41849ce7e74fcc265"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_087_A.R2T",
+      "bytes": 66752,
+      "sha256": "526a7f9328e5f08541c8d2f0119281b59654bcc173d5fed02047ca3a17c54573"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_087_B.R2T",
+      "bytes": 66752,
+      "sha256": "d918b707f4dcd4389e985cb9a289ec6fc26461b97ae37e8d96e1679ddabd75dc"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_087_C.R2T",
+      "bytes": 33984,
+      "sha256": "bfb9cc7f8c3441df23c8c15e7b2b7a0d1a8647deb58a2679a187f8184958f3e4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_088_A.R2T",
+      "bytes": 66752,
+      "sha256": "aee0d9f006eefd3c0871697be0dcc7ed2ddd93810b62690d0d4a6134cd5ca9b4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_088_B.R2T",
+      "bytes": 66752,
+      "sha256": "8620c3d8d97a0d89bd265e6d91f237e84e82e357f5597787049d7331a0b30987"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_088_C.R2T",
+      "bytes": 33984,
+      "sha256": "42b55cb96309c9b19adc9ba7cb2438fd543bc9840caf7e23b377939ee98f3ae4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_089_A.R2T",
+      "bytes": 66752,
+      "sha256": "62d0a78a8c407690f1fd34392490a2e30d39ae035810c9bbbde0e47eac6f4e17"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_089_B.R2T",
+      "bytes": 66752,
+      "sha256": "3714d8e5bb4737909610afc7283ca0e42526ef7a261225536b6a9664c75b383a"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_089_C.R2T",
+      "bytes": 33984,
+      "sha256": "c12f858271e6932ce3918a5079084ee54d96eff17f77e4565f787294f221ab4f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_090_A.R2T",
+      "bytes": 66752,
+      "sha256": "2034a2b6d519bab6ae6b1eaeea9f56077e84c0cc1e8c46e8aaec96a60ba6b2b7"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_090_B.R2T",
+      "bytes": 66752,
+      "sha256": "65c28887bc77d15c78e67f58dab36d2c17c7bc2ad9db8bad174e57ac073d6846"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP10/PS2TEX/CA_090_C.R2T",
+      "bytes": 33984,
+      "sha256": "638cf00bf72eaed5f85c708806cbc977e7a94bd49f7719cb483f934835dc4cde"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_091_A.R2T",
+      "bytes": 66752,
+      "sha256": "02be4daa9ba763c30a948d4273b4b1a12e6ae6da664af799ab23f16ed85dabda"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_091_B.R2T",
+      "bytes": 66752,
+      "sha256": "c1aed17c08845f42235d328cb3387ac15738fcd1c52e648860e53a9677d78a0b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_091_C.R2T",
+      "bytes": 33984,
+      "sha256": "b0fbff054b76fc59751e66f8da159878d9465e9d4d814d7eb2533c58ce5ef485"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_092_A.R2T",
+      "bytes": 66752,
+      "sha256": "b2a3153e9d2132803d77d039d6078cd96d263bdd64adb7b46dcc526be53c95db"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_092_B.R2T",
+      "bytes": 66752,
+      "sha256": "e3f5ec77eb6430f866579484963cba78e528cd2eff664b00d8c71db20e0f61af"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_092_C.R2T",
+      "bytes": 33984,
+      "sha256": "bb4bf7c91fe2108085dc998faea384e0ecb12017081ad9e8cbff4d6b17e6791d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_093_A.R2T",
+      "bytes": 66752,
+      "sha256": "d7085da2f8df32b0936cd4470ecd8cc99d507fb6f28cf427b7a4cc2c9bf94a7f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_093_B.R2T",
+      "bytes": 66752,
+      "sha256": "74c5980e1a6f196193905b72261710c6f890de3bc9564ba3f4db391454362b00"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_093_C.R2T",
+      "bytes": 33984,
+      "sha256": "b576b5bf25e75a7300f09cc796316fb92536240ddf6f36116fbb75d3a64d129d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_094_A.R2T",
+      "bytes": 66752,
+      "sha256": "dc131cf85fcdce027573e6616f47880ce30b3887c29b15bb17dc36c6648b8a0d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_094_B.R2T",
+      "bytes": 66752,
+      "sha256": "c6f1f4731a1d558bc794be83ca8a333268b76f95ca8a06950aabec3c1d7889ae"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_094_C.R2T",
+      "bytes": 33984,
+      "sha256": "16d740f1807b4726342e5372443b3ecb35df796f3e93aee7cca8eb08b7a86ef8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_095_A.R2T",
+      "bytes": 66752,
+      "sha256": "40c2664f9cd5c0323d16d86a7d98d0a2980d05d85142317801cfcb16fe3f7b46"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_095_B.R2T",
+      "bytes": 66752,
+      "sha256": "154432c348818b9bf11431d28ec77e0fbcdf3347e6335774066654ed8c24aedf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_095_C.R2T",
+      "bytes": 33984,
+      "sha256": "1573e9a9ea7c91d3038c6eef9ccb01a73fcb83daeab46c3e86dfc155286a2615"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_096_A.R2T",
+      "bytes": 66752,
+      "sha256": "d93de1e111c7a412b56d703f121342754bf4329944c96c4efab901f80a4782b1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_096_B.R2T",
+      "bytes": 66752,
+      "sha256": "4274dba9fef08687d85a543569328a1f18b4ba7dcc84b2b52f7cb21eca058b1e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_096_C.R2T",
+      "bytes": 33984,
+      "sha256": "7b81120b8261e78e3a5404b0999e695e9bc5863a3385856e75e1766e866dfcb1"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_097_A.R2T",
+      "bytes": 66752,
+      "sha256": "7e6295a0d1febaa65a19bff9b0732f05af91cd85c9b2ee288e79193996ad775e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_097_B.R2T",
+      "bytes": 66752,
+      "sha256": "cf7ee58b1bb62321f7881dd3e74975bb09d5b90a44327335758bed504491b0b9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_097_C.R2T",
+      "bytes": 33984,
+      "sha256": "091c6f0615984a67e340aa15b9dbc058a65fab269663ac4040afb30acb783807"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_098_A.R2T",
+      "bytes": 66752,
+      "sha256": "0201b794364057ca62010fa0b9da58fe55050bbed452c664379664ba058d2e4d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_098_B.R2T",
+      "bytes": 66752,
+      "sha256": "0515ac8be2f9ddc7427384224a277f47fb37cb975a0969df0f55baf0deb162b8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_098_C.R2T",
+      "bytes": 33984,
+      "sha256": "07495c1993c04dbdbaf6fac6046ec94b7c3ebe26be9c5b43206be31021927fdd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_099_A.R2T",
+      "bytes": 66752,
+      "sha256": "f7e612349c1fd2d4834283fdd678b61079eb0f1adb79766afab3703043f71a3f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_099_B.R2T",
+      "bytes": 66752,
+      "sha256": "c70d311c5aadd898aebd91b600043748f74a525b97733832792bd93b59f38e69"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_099_C.R2T",
+      "bytes": 33984,
+      "sha256": "457b66a0031ba0fe398b64b5fa39554bcf7231229d14e83564f09e737b18412b"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_100_A.R2T",
+      "bytes": 66752,
+      "sha256": "be62310c68c92033910e42072f1afc3fea1899783021c9a4503cfcb9691c9386"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_100_B.R2T",
+      "bytes": 66752,
+      "sha256": "9dbc776469c081788c18bbfdc52db3cf7c5d66e547126e8cc7e5f7d591521369"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP11/PS2TEX/CA_100_C.R2T",
+      "bytes": 33984,
+      "sha256": "90663a4474b617c8c6c1bdaafb2352fbee90dca9932b20f9b2ab801cff3d492d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_101_A.R2T",
+      "bytes": 66752,
+      "sha256": "8fad56b5fc476c06ecf314175fcae9fe50acb530949c7b5c34f1926a82240195"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_101_B.R2T",
+      "bytes": 66752,
+      "sha256": "a6827f862474d0a1bf72fe2cb7ad465783c71338ee910b6eddf92fd6e7db79db"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_101_C.R2T",
+      "bytes": 33984,
+      "sha256": "c1fb39a0abf421ae03a5e1689d18c321323e4ed4702ec0474e5091faf1f1fd58"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_102_A.R2T",
+      "bytes": 66752,
+      "sha256": "749b38a5d62ffb165fca24e9c4fa5cf60fc8120ec5d81f153de1efdd00d0d2d5"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_102_B.R2T",
+      "bytes": 66752,
+      "sha256": "484b0ecdafa48388c1be82377e079496fe242bf8a9eb49d4c492f2cc8600e783"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_102_C.R2T",
+      "bytes": 33984,
+      "sha256": "b28882a2ca00adb1f13e9dac0afc2cbd1ebfa4f2346a113bd1025fce66344bdd"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_103_A.R2T",
+      "bytes": 66752,
+      "sha256": "5e8d5f4316788fce81f3985aeded839c49239db9657d0ecdc08f3dd0985ae415"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_103_B.R2T",
+      "bytes": 66752,
+      "sha256": "9ffa2e3c1f96981451e984bd953a5db1cb4c557db38037d72f02231547e77bcb"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_103_C.R2T",
+      "bytes": 33984,
+      "sha256": "8e6bf494f3ee3d08bedc2fe8a2fe13c41ca0a27ff16f49bf6263147d29cc4aa0"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_104_A.R2T",
+      "bytes": 66752,
+      "sha256": "28927937abd1ad40e206b90841ad526e4995281fde5195d36d404126b2386ba8"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_104_B.R2T",
+      "bytes": 66752,
+      "sha256": "c0b26343896c89f0311b9e7db12eadfb7808b0a9ee45b5b5952bf9b8c97f964d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_104_C.R2T",
+      "bytes": 33984,
+      "sha256": "5e436c948231e081d810bfbc36abc024e6659b9d646d27b9dd983dd2c5932baf"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_105_A.R2T",
+      "bytes": 66752,
+      "sha256": "5b2d622fc7b89a734b14c5494f9cb1842babdeac7565e58a5876e54ff896cbf9"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_105_B.R2T",
+      "bytes": 66752,
+      "sha256": "cf2810144786eed75a30f42bbf234d66dd7cd8f37b3fb61cb82cc241a5eb036c"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_105_C.R2T",
+      "bytes": 33984,
+      "sha256": "c8391045069fd96df2f7b8971d6c3d4f052b800088d83633fc8feb5bfa32de8f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_106_A.R2T",
+      "bytes": 66752,
+      "sha256": "16b39429a052d38c533d7b2fa21b5d1e46eabedeb81227aa4321ff6f1bbc8a52"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_106_B.R2T",
+      "bytes": 66752,
+      "sha256": "e554523c51444025aeac805d0a93b68ad665e7da4a901342f5d1c9830c45e38f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_106_C.R2T",
+      "bytes": 33984,
+      "sha256": "b8df923300965bcf2a5ce5eb400b22b7ae97ba966adda1cc1fc2f08452ef3cd2"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_107_A.R2T",
+      "bytes": 66752,
+      "sha256": "ba347b1ce01713c659c6b9b73c68e8f1db11972c1a48f0b4ea619d40e60f3d8f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_107_B.R2T",
+      "bytes": 66752,
+      "sha256": "9357c08d960b4a42cb4ba0941427398995371cc91703463657c136c9e4809185"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_107_C.R2T",
+      "bytes": 33984,
+      "sha256": "0026dd4aa3bbf8a8a01f60feb93c4862f8877e927580c40d162c733d4e553ac3"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_108_A.R2T",
+      "bytes": 66752,
+      "sha256": "067b4a014c67c1ef138a16d19a7fe61e8696ebc170c60754612f3c0eda190f69"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_108_B.R2T",
+      "bytes": 66752,
+      "sha256": "833a4a67e0357a5ee3d1593a89b52b88a7a0b76f6b67576774f4a4d0e6991375"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_108_C.R2T",
+      "bytes": 33984,
+      "sha256": "349bf4a6059cb020fd3ebbe8dafa0b393941e240c3157ee04cfa7d3800d627da"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_109_A.R2T",
+      "bytes": 66752,
+      "sha256": "a60e916401deb2541b5b3a8b0e50702d8a27fcbef1dcdf2c1ffa1764dd2a2c5d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_109_B.R2T",
+      "bytes": 66752,
+      "sha256": "c1b9a4938465e44e2835cfa9d75d4004487a2041418f7e92f1275131d250ed60"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_109_C.R2T",
+      "bytes": 33984,
+      "sha256": "32167140163d08d7e745a82916bff5ef9861d12957f40c123b386dce2ce9ca1e"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_110_A.R2T",
+      "bytes": 66752,
+      "sha256": "1ba2f9d65d6984d55596fb5bafaeb4e97b4f7240030051df156b1d44864529ea"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_110_B.R2T",
+      "bytes": 66752,
+      "sha256": "15085c9c89d380f6ff9a9ebdf00e4f14e58c72941e36061098fc98b1367f974d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/CONCEPT/GROUP12/PS2TEX/CA_110_C.R2T",
+      "bytes": 33984,
+      "sha256": "e1764814affda26cb0907b1129a66a7ac48c6c779b9406918d8f73fcb907ed64"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/FEDATA.TXT",
+      "bytes": 8868,
+      "sha256": "be3aac0b7ae8fcdd163e3dfff68d1506662b881af1e5b677b2e0cedf551487c4"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/LOADING.BIN",
+      "bytes": 8566,
+      "sha256": "b0e38904900e995d10541da8fccac65db6e55a2df1c0fb0bbe8995124759f9ca"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/MAINMENU/MM_ANI_1.VFX",
+      "bytes": 224,
+      "sha256": "c8c656be124cee5f2cb75349d94bd38f218763b4ee6c7480c118dc38d56cdd42"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/MAINMENU/MM_ANI_2.VFX",
+      "bytes": 176,
+      "sha256": "c3a85a716cac968d423dc0f0e2c3cafc4a68f9439dcc00f9454e0300eec7d21f"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/MAINMENU/MM_ANI_3.VFX",
+      "bytes": 224,
+      "sha256": "d54e0023b1c021e3ef57a1d626cedcb0ece8febf0805cb678e87964963244a52"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/MAINMENU/MM_ANI_4.VFX",
+      "bytes": 176,
+      "sha256": "55b2e8e967427392b1135450eb730034f939547c3515e2b67b9285af7b195a4d"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/MAINMENU.BIN",
+      "bytes": 85586,
+      "sha256": "0501dd1778834b8d56c66e0e89283ace129e9a44dbda9414df482acaa92c6549"
+    },
+    {
+      "path": "DATA/IFACE/FRONTEND/STARTUP.BIN",
+      "bytes": 38110,
+      "sha256": "2a56b1f41fbaab9e4c29db9c28478de9e43fed6bacb82713f3e651d48bcdd90d"
+    },
+    {
+      "path": "DATA/IFACE/TEXTDATA.TBN",
+      "bytes": 62918,
+      "sha256": "1187c60e0793ac1be723aa1e27ae9a9581789c37f8285dd124dd19c759279256"
+    }
+  ]
+}

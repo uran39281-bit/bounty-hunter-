@@ -1,0 +1,25 @@
+{
+  "files": 657,
+  "bytes": 248577426,
+  "missing_known_folders": [
+    "CHEWIE",
+    "SOUND",
+    "VIDEO"
+  ],
+  "full_disc_completeness_verified": false,
+  "data_crc_validated": true,
+  "bundles_crc_validated": true,
+  "bundles_files": 84,
+  "bundles_bytes": 218929584,
+  "native_startup_result": "Descriptor reuse eliminates the captured invalid copy; game loads fonts/text and then waits for DTX RPC SID 0x7d000000. Optional supplied SIFCMD execution initializes SIF but does not remove this wait.",
+  "memory_copy_caller": "0x1de9b0 (copy return PC 0x1dea64)",
+  "baseline_bad_source": "0xdd84c010",
+  "baseline_bad_size": "0x8f0e8e40",
+  "fix_enabled_by": "--reuse-file-descriptors",
+  "upstream_iop_suites_passed": 4,
+  "vfs_reuse_regression_passed": true,
+  "patch_installation_reproduced_exactly": true,
+  "latest_execution_result": "headless-iop-snapshot-result.json",
+  "android_apk_produced": false,
+  "title_screen_observed": false
+}

@@ -1,0 +1,13 @@
+{
+  "returncode": 1,
+  "timeout": false,
+  "stop_before_invalid_copy": true,
+  "reuse_file_descriptors": false,
+  "bundles_present": true,
+  "stdout": "Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)\nRegistered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)\nELF file loaded successfully. Entry point: 0x100008HEADLESS_START entry=0x100008 deadline_seconds=5 graphics_tested=false audio_tested=false\n[SifInitRpc] Initialized[SIF module] load-emulated id=1 ref=1 path=\"cdrom0:\\IRX\\SIO2MAN.IRX;1\"\n[SIF module] load-emulated id=2 ref=1 path=\"cdrom0:\\IRX\\PADMAN.IRX;1\"\n[SIF module] load-emulated id=3 ref=1 path=\"cdrom0:\\IRX\\LIBSD.IRX;1\"\n[SIF module] load-emulated id=4 ref=1 path=\"cdrom0:\\IRX\\STREAM.IRX;1\"\n",
+  "stderr": "VFS_OPEN fd=3 path=cdrom0:\\CDROM.TXT;1\nVFS_CLOSE fd=3 result=0\n[ps2xIOP] [IOP] loaded IRX id=1 entry=0x10634 base=0x10000 start=0\n[ps2xIOP] [IOP] loaded IRX id=2 entry=0x14224 base=0x11000 start=0\n[ps2xIOP] [IOP printf] yet sif hasn't been init\n\n[ps2xIOP] [IOP] loaded IRX id=3 entry=0x1adb0 base=0x1ad00 start=0\n[ps2xIOP] [IOP printf]  Exit MultiStream V5 Thread Load \n\n[ps2xIOP] [IOP] loaded IRX id=4 entry=0x2cbe8 base=0x20700 start=0\nVFS_OPEN fd=4 path=cdrom0:\\DATA\\IFACE\\TEXTDATA.TBN;1\nVFS_CLOSE fd=4 result=0\nVFS_OPEN fd=5 path=cdrom0:\\DATA\\IFACE\\FONTS\\FONTDATA.TXT;1\nVFS_CLOSE fd=5 result=0\nVFS_OPEN fd=6 path=cdrom0:\\DATA\\IFACE\\FONTS\\IMPACT.FBN;1\nVFS_CLOSE fd=6 result=0\nVFS_OPEN fd=7 path=cdrom0:\\DATA\\IFACE\\FONTS\\IMPACT0.R2T;1\nVFS_CLOSE fd=7 result=0\nVFS_OPEN fd=8 path=cdrom0:\\DATA\\IFACE\\FONTS\\ARIAL.FBN;1\nVFS_CLOSE fd=8 result=0\nVFS_OPEN fd=9 path=cdrom0:\\DATA\\IFACE\\FONTS\\ARIAL0.R2T;1\nVFS_CLOSE fd=9 result=0\nVFS_OPEN fd=10 path=cdrom0:\\DATA\\IFACE\\FONTS\\AURABSH.FBN;1\nINVALID_MEMCPY_PRECOPY pc=0x1dea64 ra=0x1dea64 sp=0x1fefa80 dst=0xfbc758 src=0xdd84c010 size=0x8f0e8e40\nREG 0=0x0\nREG 1=0x0\nREG 2=0xdd84c010\nREG 3=0x0\nREG 4=0xfbc758\nREG 5=0xdd84c010\nREG 6=0x8f0e8e40\nREG 7=0xb\nREG 8=0x684cf0\nREG 9=0x9\nREG 10=0x7\nREG 11=0x51c741\nREG 12=0x1fff330\nREG 13=0x361a80\nREG 14=0xcccccccc\nREG 15=0x0\nREG 16=0x8f0e8e40\nREG 17=0x3ef750\nREG 18=0xffff347b\nREG 19=0xc8\nREG 20=0x3ef754\nREG 21=0xfbc758\nREG 22=0x0\nREG 23=0x1\nREG 24=0x1fffbf0\nREG 25=0x1d8be0\nREG 26=0x0\nREG 27=0x0\nREG 28=0x3c79f0\nREG 29=0x1fefa80\nREG 30=0x8f0e8e40\nREG 31=0x1dea64\nHEADLESS_EXCEPTION Invalid memcpy stopped before guest RAM write\n",
+  "game_startup_validated": false,
+  "graphics_tested": false,
+  "audio_tested": false,
+  "android_tested": false
+}

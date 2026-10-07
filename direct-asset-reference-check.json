@@ -1,0 +1,30 @@
+{
+  "references": [
+    {
+      "reference": "DATA/IFACE/TEXTDATA.TBN",
+      "present": true,
+      "actual_path": "DATA/IFACE/TEXTDATA.TBN"
+    },
+    {
+      "reference": "DATA/IFACE/FONTS/FONTDATA.TXT",
+      "present": true,
+      "actual_path": "DATA/IFACE/FONTS/FONTDATA.TXT"
+    },
+    {
+      "reference": "DATA/IFACE/HUD/HUDDATA.TXT",
+      "present": false,
+      "actual_path": null
+    },
+    {
+      "reference": "DATA/IFACE/HUD/MENUDATA.TXT",
+      "present": false,
+      "actual_path": null
+    },
+    {
+      "reference": "DATA/IFACE/FrontEnd/FEDATA.TXT",
+      "present": true,
+      "actual_path": "DATA/IFACE/FRONTEND/FEDATA.TXT"
+    }
+  ],
+  "scope": "Five literal interface paths in the executable; not a full asset manifest."
+}

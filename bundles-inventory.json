@@ -1,0 +1,441 @@
+{
+  "archive_sha256": "f0f7e049107e1b628789f052a8064f72e812088e5acb4ff1f3d8e74cb4e27c94",
+  "archive_bytes": 176625091,
+  "crc_validated": true,
+  "files": 84,
+  "uncompressed_bytes": 218929584,
+  "folders": {
+    "BUNDLES": {
+      "files": 84,
+      "bytes": 218929584
+    }
+  },
+  "missing_top_level_folders": [
+    "CHEWIE",
+    "SOUND",
+    "VIDEO"
+  ],
+  "complete_disc_assets": false,
+  "entries": [
+    {
+      "path": "DATA/BUNDLES/A/A1_10.ZAP",
+      "bytes": 231216,
+      "sha256": "d403cbe3b806e2cc254f045fda4ccfe0e4fc6f947ad69dcd000eaf8b82037909"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A1_20.ZAP",
+      "bytes": 50400,
+      "sha256": "7c0e67bb7a9c749c28318a4519d8c32a5e6e5d0793d2aa58de39a8e1d1c76c65"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_10.ZAP",
+      "bytes": 251824,
+      "sha256": "a531bee87a2cb2cf56e4b50d8d30cc395c451c85848bb1e8bab10735827d2883"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_20.ZAP",
+      "bytes": 223584,
+      "sha256": "907af5f49b95d973972e576e1fab51f7817932b497f3a21a18e71e219f44f77a"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_30.ZAP",
+      "bytes": 719552,
+      "sha256": "94600efc3666e354effd09677cf55cec5c214c5340b9901e58ced7af40003f08"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_40.ZAP",
+      "bytes": 59072,
+      "sha256": "b08cba046403cc4d2134843627b8aa1ba5ea4fcdbbfc0cb144b758f7a324a140"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A2_50.ZAP",
+      "bytes": 65024,
+      "sha256": "4fa2d324ce01eb351268e85ae0436c2efd84615228141e69fd20ebd588f19bb4"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A3_10.ZAP",
+      "bytes": 124224,
+      "sha256": "2e8467cb6d00e790ec77049c139e837b2dc777bf695ccc23ce488567893e604f"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A3_20.ZAP",
+      "bytes": 65456,
+      "sha256": "4842c70fe3b0569d5cc076238f3975d06bcb3d3d2ea9f1e6d1b1379430a9b616"
+    },
+    {
+      "path": "DATA/BUNDLES/A/A3_30.ZAP",
+      "bytes": 367280,
+      "sha256": "53f364f01a1c692ee83542a726fc8b6f5185fc7a7d6d09cc21b8bf0ad778ac25"
+    },
+    {
+      "path": "DATA/BUNDLES/A1.ZAP",
+      "bytes": 9195296,
+      "sha256": "63438a5810b79dfa1bee7febe3f380475a31d4f25e2a4f5392c808986709b7cd"
+    },
+    {
+      "path": "DATA/BUNDLES/A2.ZAP",
+      "bytes": 10365280,
+      "sha256": "9195a76820bb4dccb8c7c42b775b71716d54482d4bfb5ce33bc4b40f4ecf14e9"
+    },
+    {
+      "path": "DATA/BUNDLES/A3.ZAP",
+      "bytes": 9754800,
+      "sha256": "dd235453f0f9ac229ccef61cd669d78fc229716edbea7fb170149e52cecb87c2"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B1_10.ZAP",
+      "bytes": 52224,
+      "sha256": "6a9e61dee371ed6306b21d3946dd99eb049823a6b6d394f88f7c0c7981216417"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B1_20A.ZAP",
+      "bytes": 265632,
+      "sha256": "21158220d03d04dfd1f3bd56ac6f62e46ca49412f634cc5723e79f969d2fc94b"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B1_30.ZAP",
+      "bytes": 230784,
+      "sha256": "e70a25cddc7c4a84f6a047b2b1f88ee8e1e1b6223288acde98f9634e6565b4ac"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_10.ZAP",
+      "bytes": 1537360,
+      "sha256": "b58992b87c20542f21fec65543646e7ee04ed497e59c3f5dc07fcf13d899249c"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_20.ZAP",
+      "bytes": 378864,
+      "sha256": "6bfc965ac2280a887334532813803a5d63bc00422b13cd5ddf9edbc696e77521"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_31.ZAP",
+      "bytes": 60512,
+      "sha256": "0e47738a0846eba029fa53034579167c7af8ec90b0531ca9c3f9b3c8789280a9"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B2_32.ZAP",
+      "bytes": 380720,
+      "sha256": "22266b36a6e2b56a466976413f13d490e1fa2fbd05c6e75dc12d155fd5a77289"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B3_10.ZAP",
+      "bytes": 119552,
+      "sha256": "9199409e25596965c87359d6111f86fad5f799d2aaa73b97362e5a2db6000dc8"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B3_20.ZAP",
+      "bytes": 1779120,
+      "sha256": "15d752bb133ca34550b8fa8cdf4889d69145920b1bedb2fe331b568525214f97"
+    },
+    {
+      "path": "DATA/BUNDLES/B/B3_30.ZAP",
+      "bytes": 9696,
+      "sha256": "fb29ea59f606edd84969e2a86dee94aa4f174bed18a0d0913332c30538a31686"
+    },
+    {
+      "path": "DATA/BUNDLES/B1.ZAP",
+      "bytes": 10784752,
+      "sha256": "f6d2e42ba4c362820e756da7fc17c14c7031d5f4ef32316d05316f71383eeab2"
+    },
+    {
+      "path": "DATA/BUNDLES/B1B.ZAP",
+      "bytes": 10594416,
+      "sha256": "d02c2756f648b05fe4d5ba7fdeea265d8ab85a957e4f8a5ddb98d24b12ae01ef"
+    },
+    {
+      "path": "DATA/BUNDLES/B2.ZAP",
+      "bytes": 8347344,
+      "sha256": "008cd8d81c785082df897aa7ca5127958765c1447736dacb67c9b1b6b6425be9"
+    },
+    {
+      "path": "DATA/BUNDLES/B3.ZAP",
+      "bytes": 10234704,
+      "sha256": "a1351edaef20a501ede3e6c1dccbc0ce45a796c5066c249fd832279b083c61cf"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C1_10.ZAP",
+      "bytes": 212256,
+      "sha256": "441b4f51f7cf96221387f2d320fd38dd01bbcf161e96f547629a6575e995b0d6"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C1_20.ZAP",
+      "bytes": 1151312,
+      "sha256": "b4c5656e3f2bc8d3c70e3a2e1e6c112bf90064f317f2a79a84b318ca8daec11a"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C1_30.ZAP",
+      "bytes": 614544,
+      "sha256": "746ca168bcdb87bf46657b9736c8223d973231250e267c69668438e42e2c0b83"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C2_10.ZAP",
+      "bytes": 539072,
+      "sha256": "eee5f893bb47cb3dac5b3f0d296c5ae812e07e2fba8964efd3e4f5127629d8a9"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C2_31.ZAP",
+      "bytes": 305856,
+      "sha256": "3d868f7ac5f2761cb136fa699b746ce4777a9b2144206d583c8378ce6277a39f"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C2_40.ZAP",
+      "bytes": 1443200,
+      "sha256": "11b24fdc063820925cb18ea59184264a1e8898197b39ddca093c587894aef706"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C3_10.ZAP",
+      "bytes": 319888,
+      "sha256": "7392e3aad773bfd950b025273887c40d493fdbd521f13679fbc5dbcb9acd5047"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C3_20.ZAP",
+      "bytes": 156768,
+      "sha256": "a0bd40d03ae3a3b6cbcc88aec66c818505f5543f888a84aed6a1228a2485a7cb"
+    },
+    {
+      "path": "DATA/BUNDLES/C/C3_30.ZAP",
+      "bytes": 49504,
+      "sha256": "87970bf492de97c18169f4d0ecd6d69b7b942aa7069c97e815946544b8b23807"
+    },
+    {
+      "path": "DATA/BUNDLES/C1.ZAP",
+      "bytes": 10360416,
+      "sha256": "2b31056d633a7c2cf2707d92884f2d08fa0698f7a99e9d05b1ef263a075f388d"
+    },
+    {
+      "path": "DATA/BUNDLES/C2.ZAP",
+      "bytes": 9699216,
+      "sha256": "77212bf043a7a09e76853e8387b54b41a96d7005a42eb932b91f9f9a3fab584d"
+    },
+    {
+      "path": "DATA/BUNDLES/C3.ZAP",
+      "bytes": 10161968,
+      "sha256": "350c15d3cd16fd22f0529893e419f18d54bffee71118190acb592c15c9096494"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D1_10.ZAP",
+      "bytes": 323200,
+      "sha256": "e3317ddc0bae80eb252b68d547511bc06458fb5fbc596d86577945c0ccaa18f9"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D1_20.ZAP",
+      "bytes": 212352,
+      "sha256": "29192c7bf9c34970a635fee100a218ebeb2b88ee13fbd27f69c26876224065d9"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D2_10.ZAP",
+      "bytes": 422144,
+      "sha256": "3b60fb2dba678b1a3d9dd278107d7af9c022e1ccfec73718f95098eb0182de47"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D2_20.ZAP",
+      "bytes": 129072,
+      "sha256": "ff865afef25ec3c0682ebc2e1af0e94e58810d6b4f9294db79dffd3a58ec4508"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D2_30.ZAP",
+      "bytes": 289776,
+      "sha256": "d30ef18b5a7d275fe087ef0259c1cff41bbfc297f407dcb4a7fd93bda49ab5fc"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D3_10.ZAP",
+      "bytes": 311072,
+      "sha256": "8e45a5e0d60bb71a6a157af034d7b179167f1594ed4b137d64f4424203b8f4e5"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D3_20.ZAP",
+      "bytes": 675392,
+      "sha256": "569209d10181e34593c1fd553e4735369585edb54f61aeda91d1e0678fd364c5"
+    },
+    {
+      "path": "DATA/BUNDLES/D/D3_30.ZAP",
+      "bytes": 231792,
+      "sha256": "4f95387adbc8caada2fc98c089c5642ae617d047ab13252f758d2f09c87e9946"
+    },
+    {
+      "path": "DATA/BUNDLES/D1.ZAP",
+      "bytes": 8251488,
+      "sha256": "439366366d73e4df45f9697c537b9bac833288dcba04b02c26fa2653a23db5c2"
+    },
+    {
+      "path": "DATA/BUNDLES/D1B.ZAP",
+      "bytes": 7755584,
+      "sha256": "7c2fae5f4604954c35b4a872510dab8d24760de263c46ba15ed41c1263f9518c"
+    },
+    {
+      "path": "DATA/BUNDLES/D2.ZAP",
+      "bytes": 9446496,
+      "sha256": "a9589856fc597fece4b9ced941cf3bd1cd330281157b93f15d56099310cd539c"
+    },
+    {
+      "path": "DATA/BUNDLES/D3.ZAP",
+      "bytes": 11580176,
+      "sha256": "28991ed94f91d7eff3f49a9b713b6b9ffddbf8d3ae9047d22a9f600ac8ec319a"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E1_10.ZAP",
+      "bytes": 238992,
+      "sha256": "c8db76db40e9ef100dc7440fa52bba348ffcfce7fcff3c685cdae95b4c72961a"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E1_20.ZAP",
+      "bytes": 737680,
+      "sha256": "534b51e69e251acc592b06226dbf3dea4be6470c9d6324379f3e795adee81432"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E1_30.ZAP",
+      "bytes": 822848,
+      "sha256": "778c9c97fed5c3b8bd920713c5b78db962365795404fc6b5c28a84766cf3fedd"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E2_10.ZAP",
+      "bytes": 309008,
+      "sha256": "f56bb9ab79695d3b2eb37e429db13abf1f4a714a480e5bdb058bfbd8d9fb70a5"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E2_20.ZAP",
+      "bytes": 718464,
+      "sha256": "14721dba34264cbd29b48011e830b0c7624fc73c884cfe4355397ecefbc2f2fb"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_10.ZAP",
+      "bytes": 799360,
+      "sha256": "fd566a8ebcd40fba25cb8ce2211df11bd247297537e735b72f2e13a94f50b8c0"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_20.ZAP",
+      "bytes": 1015584,
+      "sha256": "0754820d5ae1f79dce66b30e0259846c0a62bc8c7ccd060e5670aa9b06e471d7"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_30.ZAP",
+      "bytes": 206992,
+      "sha256": "2b56cfb8c284f87bc5d10359f32bf815ca09d61f86ceb121f9ca0a969dab6b6e"
+    },
+    {
+      "path": "DATA/BUNDLES/E/E3_40.ZAP",
+      "bytes": 370688,
+      "sha256": "9532ea98da3586f99047ea9ec145aee1f270a1f4406408f55648deaa99f887bd"
+    },
+    {
+      "path": "DATA/BUNDLES/E1.ZAP",
+      "bytes": 10191552,
+      "sha256": "b1ccdb84ddc3a0ec158307444ec6dc8d70e7b56cf02edb565bc370ff6bf71f55"
+    },
+    {
+      "path": "DATA/BUNDLES/E2.ZAP",
+      "bytes": 8331360,
+      "sha256": "acb2a7823e800b72e096eb7a47641ec35f614ffd4a078d53066eb54c5d0c7a7f"
+    },
+    {
+      "path": "DATA/BUNDLES/E3.ZAP",
+      "bytes": 10160272,
+      "sha256": "b9eaa8ac5ce1d745545eb267e517687383e82a3da4001d79382007b1c6bb3f9a"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F1_20.ZAP",
+      "bytes": 1475696,
+      "sha256": "abfc373946df2d8059c1cd83b5571bd0a8476bd9211e3ff204365ab6698d98f1"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F2_20.ZAP",
+      "bytes": 1007072,
+      "sha256": "eae2716492349d77e21f149be40652f0bb88657e9f7cd472aea6503ff8e6418e"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F2_30.ZAP",
+      "bytes": 418064,
+      "sha256": "aaed0f583b58d9df65c63e4febd39d3628890373e3d41ea4958ae02905cc7a44"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F2_31.ZAP",
+      "bytes": 107456,
+      "sha256": "03778612603a703d9a26ebd2a9ab021bf3261defa2fd6ca88737cec662c42c59"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_10.ZAP",
+      "bytes": 13520,
+      "sha256": "26f528833f627cbf368980734a7ebd766d3296578596a1236e051732af982166"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_16.ZAP",
+      "bytes": 738320,
+      "sha256": "5f01d823afd7f6fc71162799fd75317ba51261df141413fc291eafd7c048579c"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_20.ZAP",
+      "bytes": 68992,
+      "sha256": "45ff01090d563f99786535c155423fd8d785ccbf696ee3174713cae3b1b49a36"
+    },
+    {
+      "path": "DATA/BUNDLES/F/F3_30.ZAP",
+      "bytes": 117632,
+      "sha256": "9dd48719157883980c042f27aabc2c365d3978cedc740881c3a8dba3f0f63e02"
+    },
+    {
+      "path": "DATA/BUNDLES/F1.ZAP",
+      "bytes": 3064768,
+      "sha256": "0a41783800b2fc288d86033e2ee778bc4953331d42bc43b25eb80143fdcc989d"
+    },
+    {
+      "path": "DATA/BUNDLES/F2.ZAP",
+      "bytes": 7521728,
+      "sha256": "a23a1f45ad06f011072dd980624ddfd0ae2dfdc95afa439d5f0e0ab4e100a0a6"
+    },
+    {
+      "path": "DATA/BUNDLES/F3.ZAP",
+      "bytes": 4971312,
+      "sha256": "73f3e58653e250c9133541a8e129c0b5cb60f93b53c5dd07b9066f8752eded91"
+    },
+    {
+      "path": "DATA/BUNDLES/F3B.ZAP",
+      "bytes": 5295824,
+      "sha256": "fe86c1e0b4ddcad8eea34a0714e38ec5fae4abd1dca7a0004a6560005c8662ed"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH1.ZAP",
+      "bytes": 1314336,
+      "sha256": "aa2b5879e2a29c77965fccb40a179a0cddbbec9b479dbcbddb2e5cdede2ff003"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH2.ZAP",
+      "bytes": 1314336,
+      "sha256": "891e6336e3ea557c75d88721133436e05246b09e4705f23b054ac352fd9ae942"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH3.ZAP",
+      "bytes": 1314336,
+      "sha256": "5b530ef6b3d78c78582393592f5194f2ad6706833507dafe8fb6f82ae6b4d76a"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH4.ZAP",
+      "bytes": 1314336,
+      "sha256": "51929f25fa4719e1b81ac52320816234b6aa6354fee2ad32fa39150c446cc835"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH5.ZAP",
+      "bytes": 1314336,
+      "sha256": "0bef5313c35953e5190cc0736e42eb8f7ddce5d23e427480cddb56b6721e3c06"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECH6.ZAP",
+      "bytes": 1314336,
+      "sha256": "62fd0ea8040eeb9e27b11c7725ec15d5670f66abb619893a81ddc4a3f8aa0b81"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FECOMMON.ZAP",
+      "bytes": 638048,
+      "sha256": "421680fe446d0785af0bac403fc3d7af3cc21dab6ef5df9f847268715c5ff417"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FESTART.ZAP",
+      "bytes": 187088,
+      "sha256": "7f7327ebcca013b3571ac84054759307c68c38809d6fda0e3c8caf8be52edfc2"
+    },
+    {
+      "path": "DATA/BUNDLES/FRONTEND/FETEX.ZAP",
+      "bytes": 624016,
+      "sha256": "0925995fd24bc088aefc97b64487358903d1d60fb1f995cd3718b763ebf606be"
+    }
+  ]
+}

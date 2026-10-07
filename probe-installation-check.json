@@ -1,0 +1,37 @@
+{
+  "pinned_source_installation_reproduces_current_patches": true,
+  "files": [
+    {
+      "source": "ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp",
+      "sha256": "41b868d22540e49b73e246afd2a60f86cd66ffca30150fc3c9af96397d323000"
+    },
+    {
+      "source": "ps2xRuntime/src/lib/ps2_vfs.cpp",
+      "sha256": "24223f507a4bcbb05bfb7c7effcbdedd9ec8c6afc62159a6415f2923f32a4099"
+    },
+    {
+      "source": "ps2xRuntime/src/lib/Kernel/Stubs/SIF.cpp",
+      "sha256": "9d240c15c787900a037736245e62e28edbd6ed8f655cb5dd083a6ec06c686c35"
+    },
+    {
+      "source": "ps2xIOP/src/emulator/core/iop_kernel.h",
+      "sha256": "9b603b89c92d3c6ba191b72c5add2df4ae6c656d8efd1fbe37eaf3d12f9e1f7b"
+    },
+    {
+      "source": "ps2xIOP/src/emulator/services/iop_rpc.h",
+      "sha256": "d66e83ada80c06e9bcc2c2cafd0ae69ac60913f47aa00ee2f0a4640fe10c1e64"
+    },
+    {
+      "source": "ps2xIOP/src/emulator/iop_emulator.h",
+      "sha256": "39565594ef77dbd7f63453243b7d019b989f093097d4a0e23408ffd613e72de2"
+    },
+    {
+      "source": "ps2xIOP/src/emulator/iop_emulator.cpp",
+      "sha256": "3ceba533e4afa9828939f44922512f40bbc3f32cc137763b5b46db3c059c219f"
+    },
+    {
+      "source": "ps2xIOP/src/iop_subsystem.cpp",
+      "sha256": "271e0c6681129d19f1a7434daf49e9b8aed59d9bee8f6ea89439ded75b869ac1"
+    }
+  ]
+}
