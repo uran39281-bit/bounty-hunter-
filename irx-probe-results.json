@@ -1,0 +1,223 @@
+[
+  {
+    "module": "CRI_ADXI.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=110848 entry=65724 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=110848 entry=65724 relocations_complete=1\nmodule_id=1 start_result=0 instructions=80 threads=1 rpc_servers=0\n[IOP printf] CRI ADX Driver Ver.8.01(%s %s)\n\n[IOP printf] CRI ADX Driver : Thread Priority=%d\n\n[IOP printf] CRI ADX Driver : SPU CORE Number=%d\n\n[IOP] loaded IRX id=1 entry=0x100bc base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "LECGLUSB.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=5120 entry=65536 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=5120 entry=65536 relocations_complete=1\nmodule_id=1 start_result=0 instructions=63 threads=1 rpc_servers=0\n[IOP] unhandled import usbd:4 version=0x101 pc=0x10158\n[IOP] unhandled import usbd:4 version=0x101 pc=0x10158\n[IOP] loaded IRX id=1 entry=0x10000 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "LIBSD.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=23040 entry=65712 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=23040 entry=65712 relocations_complete=1\nmodule_id=1 start_result=0 instructions=73 threads=0 rpc_servers=0\n[IOP] loaded IRX id=1 entry=0x100b0 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "MCMAN.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=160256 entry=65912 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=160256 entry=65912 relocations_complete=1\nmodule_id=1 start_result=2 instructions=1214 threads=0 rpc_servers=0\n[IOP] loaded IRX id=1 entry=0x10178 base=0x10000 start=2\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "MCSERV.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=14336 entry=65624 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=14336 entry=65624 relocations_complete=1\nmodule_id=1 start_result=2 instructions=45 threads=1 rpc_servers=0\n[IOP] loaded IRX id=1 entry=0x10058 base=0x10000 start=2\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "MSIFRPC.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=9216 entry=65536 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=9216 entry=65536 relocations_complete=1\nmodule_id=1 start_result=0 instructions=16 threads=0 rpc_servers=0\n[IOP printf] Multi-thread available sifrpc module...\n\n[IOP] loaded IRX id=1 entry=0x10000 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "PADMAN.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=40192 entry=78372 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=40192 entry=78372 relocations_complete=1\nmodule_id=1 start_result=0 instructions=93 threads=2 rpc_servers=0\n[IOP] loaded IRX id=1 entry=0x13224 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "PFS.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=40960 entry=76952 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=40960 entry=76952 relocations_complete=1\nmodule_id=1 start_result=0 instructions=417 threads=0 rpc_servers=0\n[IOP printf] pfs: max mount %d, max open %d, %d bufs\n\n[IOP printf] pfs: warning: you may need %d buffers, but I have only %d.\n\n[IOP printf] pfs: version %04x driver start.\n\n[IOP] loaded IRX id=1 entry=0x12c98 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "PPPOE.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=13312 entry=74628 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=13312 entry=74628 relocations_complete=1\nmodule_id=1 start_result=0 instructions=282 threads=1 rpc_servers=0\n[IOP] unhandled import netdev:6 version=0x101 pc=0x12d30\n[IOP] unhandled import netdev:14 version=0x101 pc=0x12d70\n[IOP] unhandled import modload:16 version=0x106 pc=0x12ef8\n[IOP] loaded IRX id=1 entry=0x12384 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "SDRDRV.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=6912 entry=65536 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=6912 entry=65536 relocations_complete=1\nmodule_id=1 start_result=0 instructions=74 threads=1 rpc_servers=0\n[IOP printf] SDR driver version 4.0.1 (C) SCEI\n\n[IOP printf]  Exit rsd_main \n\n[IOP] loaded IRX id=1 entry=0x10000 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "SIO2MAN.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=4096 entry=67124 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=4096 entry=67124 relocations_complete=1\nmodule_id=1 start_result=0 instructions=140 threads=1 rpc_servers=0\n[IOP] loaded IRX id=1 entry=0x10634 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "SMAP.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=13824 entry=75972 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=13824 entry=75972 relocations_complete=1\nmodule_id=1 start_result=0 instructions=146 threads=0 rpc_servers=0\n[IOP printf] SMAP (%s)\n\n[IOP printf] SMAP (%s)\n\n[IOP printf] Usage: smap [<option>] [thpri=<prio>] [thstack=<stack>] [<conf>]\n\n[IOP printf]   <option>:\n\n[IOP printf]     -verbose       display verbose messages\n\n[IOP printf]     -auto          auto nego enable            [default]\n\n[IOP printf]     -no_auto       fixed mode\n\n[IOP printf]     -strap         use pin-strap config\n\n[IOP printf]     -no_strap      do not use pin-strap config [default]\n\n[IOP] unhandled import modload:16 version=0x106 pc=0x12c70\n[IOP] loaded IRX id=1 entry=0x128c4 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "SPUCODEC.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=3072 entry=68080 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=3072 entry=68080 relocations_complete=1\nmodule_id=1 start_result=0 instructions=20 threads=0 rpc_servers=0\n[IOP] loaded IRX id=1 entry=0x109f0 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "STREAM.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=82176 entry=115944 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=82176 entry=115944 relocations_complete=1\nmodule_id=1 start_result=0 instructions=42 threads=1 rpc_servers=0\n[IOP printf]  Exit MultiStream V5 Thread Load \n\n[IOP] loaded IRX id=1 entry=0x1c4e8 base=0x10000 start=0\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "USBD.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=26368 entry=85188 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=26368 entry=85188 relocations_complete=1\nmodule_id=1 start_result=1 instructions=13229 threads=0 rpc_servers=0\n[IOP printf] USB Driver (%s)\n[IOP printf] \n\n[IOP] loaded IRX id=1 entry=0x14cc4 base=0x10000 start=1\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "USBKB.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=8704 entry=65536 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=8704 entry=65536 relocations_complete=1\nmodule_id=1 start_result=2 instructions=238 threads=1 rpc_servers=0\n[IOP printf] USB Keyboard Driver 1.03\n\n[IOP printf] Max Keyboards : %d\n\n[IOP printf] Debug level : %d\n\n[IOP] unhandled import usbd:4 version=0x101 pc=0x11ac4\n[IOP] loaded IRX id=1 entry=0x10000 base=0x10000 start=2\n",
+      "stderr": ""
+    }
+  },
+  {
+    "module": "USBMLOAD.IRX",
+    "load": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=13312 entry=65632 relocations_complete=1\n",
+      "stderr": ""
+    },
+    "init": {
+      "returncode": 0,
+      "stdout": "load_ok=1 error=0 base=65536 size=13312 entry=65632 relocations_complete=1\nmodule_id=1 start_result=2 instructions=116 threads=1 rpc_servers=0\n[IOP printf] ----- USB auto module loader %s -----\n\n[IOP] loaded IRX id=1 entry=0x10060 base=0x10000 start=2\n",
+      "stderr": ""
+    }
+  }
+]

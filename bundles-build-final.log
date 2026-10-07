@@ -1,0 +1,6 @@
+[  7%] Built target ps2_iop
+[ 13%] Built target glfw
+[ 15%] Built target raylib
+[ 28%] Built target ps2_runtime
+[ 28%] Linking CXX executable ps2EntryRunner
+[100%] Built target ps2EntryRunner

@@ -83,3 +83,24 @@ before an Android SDK/NDK build and actual S24 testing.
 The partial boot investigation consulted
 [PS2SDK SIFCMD startup](https://github.com/ps2dev/ps2sdk/blob/master/iop/system/sifcmd/src/sifcmd.c).
 Upstream PS2Recomp's license is included in `PS2Recomp-LICENSE.txt`.
+
+## Complete work checkpoint
+
+The remaining experiment scripts, configuration snapshots, inventories,
+constructor hints and previous startup reports are checked in alongside the
+current tooling. `README.txt` records the fuller private-checkpoint history;
+its references to bundled game files describe that local checkpoint.
+Use the reproduction instructions above for a fresh checkout.
+
+`restore_baseline.py` and `build_incremental_startup.py` need locally generated
+source snapshots and build caches. The stored TOML files retain their original
+experiment paths; `reproduce_corrected.py` regenerates configuration for the
+current machine. Older failed runs are retained as historical evidence and
+do not supersede the latest results above.
+
+Large analyzer/recompiler logs are preserved byte-for-byte inside
+[`history/historical-analysis-logs.tar.xz`](history/historical-analysis-logs.tar.xz).
+Smaller build, test and startup logs are ordinary files.
+[`upload-manifest.json`](upload-manifest.json) records this supplemental upload.
+Original game executables, IRX modules, game assets, regenerated game C++,
+compiled objects, native binaries and raw RAM dumps remain local.

@@ -1,0 +1,1 @@
+Clang 18 compiles the largest unity object; GCC-built remaining objects retained. No GCC PCH.

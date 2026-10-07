@@ -1,0 +1,1748 @@
+{
+  "archive_sha256": "623a8c4757d9db9dac1dbffc1d4beed6aee85bb42e35f9f1ab2dafdd82fea3a0",
+  "modules": [
+    {
+      "file": "CRI_ADXI.IRX",
+      "size": 253483,
+      "sha256": "e3b4a924b9c1e8301b83b6b394d54740844b7a77a27c2e7e6722fc666952149e",
+      "elf_type": "0xff80",
+      "entry": "0xbc",
+      "imports": [
+        {
+          "library": "libsd",
+          "version": "0x105",
+          "file_offset": "0x113b0",
+          "ordinals": [
+            4,
+            5,
+            18,
+            20,
+            26
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x113f4",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x11420",
+          "ordinals": [
+            5
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x11444",
+          "ordinals": [
+            14,
+            16,
+            17,
+            19,
+            22
+          ]
+        },
+        {
+          "library": "sifman",
+          "version": "0x101",
+          "file_offset": "0x11488",
+          "ordinals": [
+            5,
+            7,
+            29
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x114bc",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x114e0",
+          "ordinals": [
+            8,
+            12,
+            14,
+            19,
+            29,
+            30,
+            36
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x11534",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            20
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0x11578",
+          "ordinals": [
+            4,
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "library": "vblank",
+          "version": "0x101",
+          "file_offset": "0x115b4",
+          "ordinals": [
+            5
+          ]
+        }
+      ],
+      "exports": []
+    },
+    {
+      "file": "LECGLUSB.IRX",
+      "size": 25280,
+      "sha256": "27a76d12611826f4863f1aa228aede2ecd02b61fcb4bab7d4ab47219db083478",
+      "elf_type": "0xff80",
+      "entry": "0x0",
+      "imports": [
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0xe8",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x114",
+          "ordinals": [
+            14,
+            17,
+            19,
+            22
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x150",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x174",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x1a0",
+          "ordinals": [
+            4,
+            6,
+            20
+          ]
+        },
+        {
+          "library": "usbd",
+          "version": "0x101",
+          "file_offset": "0x1d4",
+          "ordinals": [
+            4,
+            6,
+            7,
+            8,
+            9,
+            11
+          ]
+        }
+      ],
+      "exports": []
+    },
+    {
+      "file": "LIBSD.IRX",
+      "size": 28573,
+      "sha256": "89e2322522f30fe5631c2e6c72ef82ac948377f5005331989165a5751297bc10",
+      "elf_type": "0xff80",
+      "entry": "0xb0",
+      "imports": [
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x47c0",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            17,
+            18,
+            23
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x4814",
+          "ordinals": [
+            5,
+            6
+          ]
+        },
+        {
+          "library": "sifman",
+          "version": "0x101",
+          "file_offset": "0x4840",
+          "ordinals": [
+            7,
+            8
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x486c",
+          "ordinals": [
+            17
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0x4890",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "libsd",
+          "version": "0x105",
+          "file_offset": "0xb0"
+        }
+      ]
+    },
+    {
+      "file": "MCMAN.IRX",
+      "size": 95517,
+      "sha256": "7ff6f7af1d410b8b8d382d868ddcb8a5c996b5f0d037df42919f0ce6433183d5",
+      "elf_type": "0xff80",
+      "entry": "0x178",
+      "imports": [
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x118b0",
+          "ordinals": [
+            6,
+            7
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x118dc",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "sio2man",
+          "version": "0x204",
+          "file_offset": "0x11908",
+          "ordinals": [
+            24,
+            25,
+            26,
+            57,
+            59
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x1194c",
+          "ordinals": [
+            12,
+            14,
+            20,
+            22,
+            23,
+            27,
+            29,
+            30
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x119a8",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x119cc",
+          "ordinals": [
+            33,
+            35,
+            39
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0x11a00",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "library": "modload",
+          "version": "0x106",
+          "file_offset": "0x11a44",
+          "ordinals": [
+            13
+          ]
+        },
+        {
+          "library": "ioman",
+          "version": "0x104",
+          "file_offset": "0x11a68",
+          "ordinals": [
+            20,
+            21
+          ]
+        },
+        {
+          "library": "secrman",
+          "version": "0x103",
+          "file_offset": "0x11a94",
+          "ordinals": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "library": "cdvdman",
+          "version": "0x101",
+          "file_offset": "0x11ac8",
+          "ordinals": [
+            24
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "mcman",
+          "version": "0x207",
+          "file_offset": "0xa0"
+        }
+      ]
+    },
+    {
+      "file": "MCSERV.IRX",
+      "size": 7417,
+      "sha256": "e2c86f0a108041f655a85b8d7c0b39edbf2a1e7c23037ecca481089a14be8bb2",
+      "elf_type": "0xff80",
+      "entry": "0x58",
+      "imports": [
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x1050",
+          "ordinals": [
+            6,
+            7
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x107c",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x10a8",
+          "ordinals": [
+            12,
+            14,
+            29,
+            36
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x10e4",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sifman",
+          "version": "0x101",
+          "file_offset": "0x1108",
+          "ordinals": [
+            5,
+            7,
+            8,
+            29
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x1144",
+          "ordinals": [
+            14,
+            17,
+            19,
+            22,
+            23,
+            24,
+            25
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x1198",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            14,
+            20,
+            22,
+            33
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0x11f4",
+          "ordinals": [
+            6,
+            8
+          ]
+        },
+        {
+          "library": "mcman",
+          "version": "0x207",
+          "file_offset": "0x1220",
+          "ordinals": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            21,
+            22,
+            23,
+            24,
+            26,
+            36,
+            37,
+            38,
+            39,
+            42,
+            45,
+            53
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "mcserv",
+          "version": "0x201",
+          "file_offset": "0xa0"
+        }
+      ]
+    },
+    {
+      "file": "MSIFRPC.IRX",
+      "size": 7377,
+      "sha256": "fc89785542b7df4a6cbba5ba8f5d1182f44c1750d18b0d5be70b10542f4a1e0d",
+      "elf_type": "0xff80",
+      "entry": "0x0",
+      "imports": [
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0x1120",
+          "ordinals": [
+            4,
+            5,
+            14
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x1154",
+          "ordinals": [
+            6
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x1178",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x11a4",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x11c8",
+          "ordinals": [
+            6,
+            10,
+            12,
+            13
+          ]
+        },
+        {
+          "library": "sifman",
+          "version": "0x101",
+          "file_offset": "0x1204",
+          "ordinals": [
+            7
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x1228",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            14,
+            20,
+            22,
+            24,
+            26,
+            33
+          ]
+        },
+        {
+          "library": "thmsgbx",
+          "version": "0x101",
+          "file_offset": "0x1294",
+          "ordinals": [
+            4,
+            7,
+            8
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "msifrpc",
+          "version": "0x101",
+          "file_offset": "0x10a0"
+        }
+      ]
+    },
+    {
+      "file": "PADMAN.IRX",
+      "size": 44917,
+      "sha256": "196044d9535e6d346ad5f2d1ea75be111d0cbe516fac5a7240a21b1a4f90fa4f",
+      "elf_type": "0xff80",
+      "entry": "0x3224",
+      "imports": [
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0x7bd0",
+          "ordinals": [
+            14
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x7bf4",
+          "ordinals": [
+            6
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x7c18",
+          "ordinals": [
+            4,
+            5,
+            6,
+            9,
+            17,
+            18
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x7c64",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sio2man",
+          "version": "0x203",
+          "file_offset": "0x7c88",
+          "ordinals": [
+            11,
+            46,
+            51,
+            52,
+            57,
+            58,
+            60
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x7cdc",
+          "ordinals": [
+            4,
+            5,
+            6,
+            8,
+            20,
+            22,
+            23
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0x7d30",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "library": "sifman",
+          "version": "0x101",
+          "file_offset": "0x7d7c",
+          "ordinals": [
+            5,
+            7,
+            8,
+            29
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x7db8",
+          "ordinals": [
+            14,
+            17,
+            19,
+            22
+          ]
+        },
+        {
+          "library": "vblank",
+          "version": "0x101",
+          "file_offset": "0x7df4",
+          "ordinals": [
+            8,
+            9
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x7e20",
+          "ordinals": [
+            8,
+            29,
+            36
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "padman",
+          "version": "0x203",
+          "file_offset": "0x7b60"
+        }
+      ]
+    },
+    {
+      "file": "PFS.IRX",
+      "size": 49129,
+      "sha256": "75ef0c372189aae3345fcc0f5d9898c4d5876ef154ba61186c87a36a9f5ae934",
+      "elf_type": "0xff80",
+      "entry": "0x2c98",
+      "imports": [
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x86a0",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x86c4",
+          "ordinals": [
+            8,
+            11,
+            12,
+            14,
+            19,
+            21,
+            22,
+            23,
+            27,
+            30,
+            32,
+            36
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0x8740",
+          "ordinals": [
+            4,
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x877c",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0x87a8",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "ioman",
+          "version": "0x104",
+          "file_offset": "0x87d4",
+          "ordinals": [
+            4,
+            5,
+            20,
+            21,
+            34
+          ]
+        },
+        {
+          "library": "cdvdman",
+          "version": "0x101",
+          "file_offset": "0x8818",
+          "ordinals": [
+            24
+          ]
+        }
+      ],
+      "exports": []
+    },
+    {
+      "file": "PPPOE.IRX",
+      "size": 17105,
+      "sha256": "09f2c4bd80de5036faafa77d44ea8f9524e249862cec8858768516b763f6b36b",
+      "elf_type": "0xff80",
+      "entry": "0x2384",
+      "imports": [
+        {
+          "library": "modem",
+          "version": "0x101",
+          "file_offset": "0x2d90",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "netdev",
+          "version": "0x101",
+          "file_offset": "0x2dbc",
+          "ordinals": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x2e28",
+          "ordinals": [
+            8,
+            15,
+            16,
+            17,
+            22,
+            29,
+            36
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x2e7c",
+          "ordinals": [
+            4,
+            5,
+            6,
+            8,
+            10,
+            35,
+            37,
+            39
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0x2ed8",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0x2f1c",
+          "ordinals": [
+            4,
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x2f58",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "modload",
+          "version": "0x106",
+          "file_offset": "0x2f84",
+          "ordinals": [
+            16
+          ]
+        }
+      ],
+      "exports": []
+    },
+    {
+      "file": "SDRDRV.IRX",
+      "size": 8089,
+      "sha256": "b49a26a7f1801689f84e7e4cc92a286eb7e0ba3c3d4fb7855c994e0d20e3afa2",
+      "elf_type": "0xff80",
+      "entry": "0x0",
+      "imports": [
+        {
+          "library": "libsd",
+          "version": "0x105",
+          "file_offset": "0xf80",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            31,
+            32,
+            33
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x106c",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x1098",
+          "ordinals": [
+            5,
+            6
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x10c4",
+          "ordinals": [
+            14,
+            15,
+            16,
+            17,
+            19,
+            22
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x1110",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x1134",
+          "ordinals": [
+            8,
+            29,
+            36
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x1168",
+          "ordinals": [
+            4,
+            6,
+            14,
+            20,
+            22,
+            24,
+            26,
+            28
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "sdrdrv",
+          "version": "0x101",
+          "file_offset": "0xf40"
+        }
+      ]
+    },
+    {
+      "file": "SIO2MAN.IRX",
+      "size": 6553,
+      "sha256": "1964b83bcc8c0cab9dfcf9b9637e0e313e69c23fd5c73408fe889ace91f13708",
+      "elf_type": "0xff80",
+      "entry": "0x634",
+      "imports": [
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0xdf0",
+          "ordinals": [
+            6
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0xe14",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            17,
+            18
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0xe60",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "dmacman",
+          "version": "0x102",
+          "file_offset": "0xe84",
+          "ordinals": [
+            28,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0xec8",
+          "ordinals": [
+            4,
+            6,
+            20
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0xefc",
+          "ordinals": [
+            4,
+            6,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0xf40",
+          "ordinals": [
+            4,
+            6,
+            8,
+            11
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0xf7c",
+          "ordinals": [
+            8,
+            29,
+            36
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "sio2man",
+          "version": "0x203",
+          "file_offset": "0xcd0"
+        }
+      ]
+    },
+    {
+      "file": "SMAP.IRX",
+      "size": 16833,
+      "sha256": "1f5117d5328ce4863f3143d27c9040ecebe08cb6cde00e82aa39ed75cc51f48a",
+      "elf_type": "0xff80",
+      "entry": "0x28c4",
+      "imports": [
+        {
+          "library": "netdev",
+          "version": "0x101",
+          "file_offset": "0x2b20",
+          "ordinals": [
+            4,
+            5,
+            8,
+            9,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "library": "dev9",
+          "version": "0x105",
+          "file_offset": "0x2b74",
+          "ordinals": [
+            4,
+            5,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x2bb8",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x2be4",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x2c08",
+          "ordinals": [
+            8,
+            16,
+            17,
+            22,
+            29,
+            36
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x2c54",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            14,
+            33,
+            35,
+            37,
+            39
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0x2cb8",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "library": "modload",
+          "version": "0x106",
+          "file_offset": "0x2cfc",
+          "ordinals": [
+            16
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x2d20",
+          "ordinals": [
+            6,
+            7
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "smap",
+          "version": "0x101",
+          "file_offset": "0x2af0"
+        }
+      ]
+    },
+    {
+      "file": "SPUCODEC.IRX",
+      "size": 4289,
+      "sha256": "41a7c6693e5042a4b37ed1c4ffb2baa3efd86f1f62d1818f72c37ea32f375355",
+      "elf_type": "0xff80",
+      "entry": "0x9f0",
+      "imports": [
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0xb20",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0xb4c",
+          "ordinals": [
+            6
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "spucodec",
+          "version": "0x101",
+          "file_offset": "0xae0"
+        }
+      ]
+    },
+    {
+      "file": "STREAM.IRX",
+      "size": 211440,
+      "sha256": "dce62ce44246c6d5c97341046c7ec46b5b6d90a202c09379da6f3eba2bd9ea24",
+      "elf_type": "0xff80",
+      "entry": "0xc4e8",
+      "imports": [
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0xa0",
+          "ordinals": [
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0xd4",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "ioman",
+          "version": "0x104",
+          "file_offset": "0x100",
+          "ordinals": [
+            4,
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x13c",
+          "ordinals": [
+            14,
+            15,
+            16,
+            17,
+            19,
+            22
+          ]
+        },
+        {
+          "library": "sifman",
+          "version": "0x101",
+          "file_offset": "0x188",
+          "ordinals": [
+            5,
+            7,
+            8,
+            29
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x1c4",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x1e8",
+          "ordinals": [
+            12,
+            14,
+            20,
+            23,
+            27,
+            29,
+            34
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x23c",
+          "ordinals": [
+            4,
+            6,
+            20,
+            33
+          ]
+        },
+        {
+          "library": "vblank",
+          "version": "0x101",
+          "file_offset": "0x278",
+          "ordinals": [
+            5
+          ]
+        },
+        {
+          "library": "cdvdman",
+          "version": "0x101",
+          "file_offset": "0x29c",
+          "ordinals": [
+            4,
+            6,
+            10,
+            11,
+            13,
+            37,
+            75
+          ]
+        },
+        {
+          "library": "libsd",
+          "version": "0x105",
+          "file_offset": "0x2f0",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            15,
+            17,
+            18,
+            19,
+            20,
+            23,
+            25,
+            26
+          ]
+        }
+      ],
+      "exports": []
+    },
+    {
+      "file": "USBD.IRX",
+      "size": 34969,
+      "sha256": "61821c2c182a5feaa931a7447426b097eec99b3b9d198e3a35b6f434e0960255",
+      "elf_type": "0xff80",
+      "entry": "0x4cc4",
+      "imports": [
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0x61b0",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x61dc",
+          "ordinals": [
+            6,
+            7
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x6208",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            17,
+            18
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x6254",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x6278",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            14,
+            33
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0x62c4",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "library": "thsemap",
+          "version": "0x101",
+          "file_offset": "0x6308",
+          "ordinals": [
+            4,
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x6344",
+          "ordinals": [
+            16,
+            17
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "usbd",
+          "version": "0x101",
+          "file_offset": "0xa0"
+        }
+      ]
+    },
+    {
+      "file": "USBKB.IRX",
+      "size": 12853,
+      "sha256": "e24393474b993dfbdfbe0f8bad63d53b36880f68cf3a796ac5e7f7e014fbdeac",
+      "elf_type": "0xff80",
+      "entry": "0x0",
+      "imports": [
+        {
+          "library": "usbd",
+          "version": "0x101",
+          "file_offset": "0x1b60",
+          "ordinals": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13
+          ]
+        },
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0x1bc4",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x1bf0",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "sifcmd",
+          "version": "0x101",
+          "file_offset": "0x1c1c",
+          "ordinals": [
+            14,
+            17,
+            19,
+            22,
+            24,
+            25
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x1c68",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x1c8c",
+          "ordinals": [
+            22,
+            36
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x1cb8",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            20
+          ]
+        }
+      ],
+      "exports": []
+    },
+    {
+      "file": "USBMLOAD.IRX",
+      "size": 14809,
+      "sha256": "aa2186a5072b3f7035395f9cf571af92c15dc4542eae3a954a83cc037f8c9df6",
+      "elf_type": "0xff80",
+      "entry": "0x60",
+      "imports": [
+        {
+          "library": "sysmem",
+          "version": "0x101",
+          "file_offset": "0x2000",
+          "ordinals": [
+            4,
+            5
+          ]
+        },
+        {
+          "library": "loadcore",
+          "version": "0x103",
+          "file_offset": "0x202c",
+          "ordinals": [
+            6,
+            7
+          ]
+        },
+        {
+          "library": "intrman",
+          "version": "0x102",
+          "file_offset": "0x2058",
+          "ordinals": [
+            17,
+            18
+          ]
+        },
+        {
+          "library": "stdio",
+          "version": "0x103",
+          "file_offset": "0x2084",
+          "ordinals": [
+            4
+          ]
+        },
+        {
+          "library": "thbase",
+          "version": "0x102",
+          "file_offset": "0x20a8",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10,
+            14
+          ]
+        },
+        {
+          "library": "thevent",
+          "version": "0x101",
+          "file_offset": "0x20ec",
+          "ordinals": [
+            4,
+            5,
+            6,
+            10
+          ]
+        },
+        {
+          "library": "sysclib",
+          "version": "0x103",
+          "file_offset": "0x2128",
+          "ordinals": [
+            22,
+            23,
+            27,
+            36
+          ]
+        },
+        {
+          "library": "modload",
+          "version": "0x106",
+          "file_offset": "0x2164",
+          "ordinals": [
+            7,
+            17,
+            20,
+            21
+          ]
+        },
+        {
+          "library": "ioman",
+          "version": "0x104",
+          "file_offset": "0x21a0",
+          "ordinals": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "library": "usbd",
+          "version": "0x101",
+          "file_offset": "0x21d4",
+          "ordinals": [
+            6,
+            14,
+            15
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "library": "usbmload",
+          "version": "0x102",
+          "file_offset": "0xa0"
+        }
+      ]
+    }
+  ],
+  "modules_executed": false
+}

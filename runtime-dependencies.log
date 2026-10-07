@@ -1,0 +1,8 @@
+Get:1 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble InRelease [256 kB]
+Get:2 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble-updates InRelease [126 kB]
+Get:3 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble-security InRelease [126 kB]
+Get:4 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble-backports InRelease [126 kB]
+Get:5 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/restricted amd64 Packages [117 kB]
+Get:6 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/universe amd64 Packages [19.3 MB]
+Get:6 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/universe amd64 Packages [19.3 MB]
+Get:6 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/universe amd64 Packages [19.3 MB]

@@ -1,0 +1,7 @@
+{
+  "returncode": 0,
+  "stdout": "Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)\nRegistered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)\nELF file loaded successfully. Entry point: 0x100008HEADLESS_START entry=0x100008 deadline_seconds=5 graphics_tested=false audio_tested=false\n[SifInitRpc] Initialized[SIF module] load-emulated id=1 ref=1 path=\"cdrom0:\\IRX\\SIO2MAN.IRX;1\"\n[SIF module] load-emulated id=2 ref=1 path=\"cdrom0:\\IRX\\PADMAN.IRX;1\"\n[SIF module] load-emulated id=3 ref=1 path=\"cdrom0:\\IRX\\LIBSD.IRX;1\"\n[SIF module] load-emulated id=4 ref=1 path=\"cdrom0:\\IRX\\STREAM.IRX;1\"\nIOP_STOP loaded_modules=4 threads=4 rpc_servers=3 instructions=621\nHEADLESS_STOP ee_cycles=1474737156 threads=1\nTHREAD id=1 pc=0x0 ra=0x0 sp=0x1fefb30 status=5 wait=0\n",
+  "stderr": "[ps2xIOP] [IOP] loaded IRX id=1 entry=0x10634 base=0x10000 start=0\n[ps2xIOP] [IOP] loaded IRX id=2 entry=0x14224 base=0x11000 start=0\n[ps2xIOP] [IOP printf] yet sif hasn't been init\n\n[ps2xIOP] [IOP] loaded IRX id=3 entry=0x1adb0 base=0x1ad00 start=0\n[ps2xIOP] [IOP printf]  Exit MultiStream V5 Thread Load \n\n[ps2xIOP] [IOP] loaded IRX id=4 entry=0x2cbe8 base=0x20700 start=0\n[memcpy] size clamp from 0x8f0e8e40 to 0x2000000\nBEFORE_DEADLINE id=1 pc=0x0 ra=0x0 status=5 wait=0\nHEADLESS_DEADLINE requesting stop\n",
+  "partial_data_present": true,
+  "timeout": false
+}

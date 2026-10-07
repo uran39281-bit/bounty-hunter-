@@ -1,0 +1,31 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008HEADLESS_START entry=0x100008 deadline_seconds=5 graphics_tested=false audio_tested=false
+[SifInitRpc] Initialized[SIF module] load-emulated id=1 ref=1 path="cdrom0:\IRX\SIO2MAN.IRX;1"
+[SIF module] load-emulated id=2 ref=1 path="cdrom0:\IRX\PADMAN.IRX;1"
+[SIF module] load-emulated id=3 ref=1 path="cdrom0:\IRX\LIBSD.IRX;1"
+[SIF module] load-emulated id=4 ref=1 path="cdrom0:\IRX\STREAM.IRX;1"
+[SIF module] load-emulated id=5 ref=1 path="cdrom0:\IRX\CRI_ADXI.IRX;1"
+IOP_STOP loaded_modules=5 threads=5 rpc_servers=3 instructions=717
+HEADLESS_STOP ee_cycles=27591995 threads=1
+THREAD id=1 pc=0x25b878 ra=0x254798 sp=0x1ffff40 status=0 wait=0
+
+STDERR
+[ps2xIOP] [IOP] loaded IRX id=1 entry=0x10634 base=0x10000 start=0
+[ps2xIOP] [IOP] loaded IRX id=2 entry=0x14224 base=0x11000 start=0
+[ps2xIOP] [IOP printf] yet sif hasn't been init
+
+[ps2xIOP] [IOP] loaded IRX id=3 entry=0x1adb0 base=0x1ad00 start=0
+[ps2xIOP] [IOP printf]  Exit MultiStream V5 Thread Load 
+
+[ps2xIOP] [IOP] loaded IRX id=4 entry=0x2cbe8 base=0x20700 start=0
+[ps2xIOP] [IOP printf] CRI ADX Driver Ver.8.01(%s %s)
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : Thread Priority=%d
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : SPU CORE Number=%d
+
+[ps2xIOP] [IOP] loaded IRX id=5 entry=0x348bc base=0x34800 start=0
+[ps2xIOP] [IOP printf] CRI ADX Driver : sceSdInit(SD_INIT_COLD) call.
+
+[guest-branch:missing-target] kind=IndirectCall op=JALR source=0x254790 target=0x25b878 pc=0x25b878 ra=0x254798 sp=0x1ffff40 gp=0x3c79f0 a0=0x3c102c a1=0x0 a2=0x4 a3=0x4 s0=0x25b878 s1=0x3c1028 v0=0x0 v1=0xffffffe0 a0Readable=yes a0[0]=0x0 a0[4]=0x0 a0[8]=0x0 a0[c]=0x1 s0Readable=yes s0[0]=0x3c030038 s0[4]=0x3c020038 s0[8]=0x246391d8 s0[c]=0x244291e8 recordReadable=no record[0]=0x0 record[4]=0x0 record[8]=0x0 record[c]=0x0 vtableReadable=no vtbl[0]=0x0 vtbl[4]=0x0 vtbl[8]=0x0 vtbl[c]=0x0 codeRegion=yes policy=0 trace=0x1902a8 -> 0x1983a0 -> 0x18f4a0 -> 0x1983e8 -> 0x243c18 -> 0x29e1c0 -> 0x24c0e0 -> 0x25c080 -> 0x29e1dc -> 0x1df1e0 -> 0x191890 -> 0x191fa8 -> 0x211118 -> 0x213a98 -> 0x20d9a8 -> 0x20d970 -> 0x213b50 -> 0x20e7d0 -> 0x2119c0 -> 0x213998 -> 0x20d468 -> 0x20ea30 -> 0x20e7d0 -> 0x2119c0 -> 0x213998 -> 0x20d468 -> 0x20ea30 -> 0x20e7d0 -> 0x2119c0 -> 0x213998 -> 0x20d468 -> 0x20ea30 -> 0x20e7d0 -> 0x211194 -> 0x1df3dc -> 0x2115d0 -> 0x1df580 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x213708 -> 0x191fa8 -> 0x197518 -> 0x1972f0 -> 0x29e1e4 -> 0x2500a8 -> 0x255cd8 -> 0x254770 -> 0x2548e0 -> 0x2119c0

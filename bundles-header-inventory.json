@@ -1,0 +1,1262 @@
+[
+  {
+    "path": "DATA/BUNDLES/A/A1_10.ZAP",
+    "bytes": 231216,
+    "header_hex": "efcdab89674523010700000000000000380b0000a90100002501000025010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x7",
+      "0x0",
+      "0xb38",
+      "0x1a9",
+      "0x125",
+      "0x125"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A1_20.ZAP",
+    "bytes": 50400,
+    "header_hex": "efcdab89674523010400000000000000700600002e0200004601000046010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4",
+      "0x0",
+      "0x670",
+      "0x22e",
+      "0x146",
+      "0x146"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A2_10.ZAP",
+    "bytes": 251824,
+    "header_hex": "efcdab89674523010700000000000000380b0000200200005601000056010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x7",
+      "0x0",
+      "0xb38",
+      "0x220",
+      "0x156",
+      "0x156"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A2_20.ZAP",
+    "bytes": 223584,
+    "header_hex": "efcdab89674523010c000000000000003013000089040000c9010000c9010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xc",
+      "0x0",
+      "0x1330",
+      "0x489",
+      "0x1c9",
+      "0x1c9"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A2_30.ZAP",
+    "bytes": 719552,
+    "header_hex": "efcdab89674523011d00000000000000482e0000ef0300003b0200003b020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x1d",
+      "0x0",
+      "0x2e48",
+      "0x3ef",
+      "0x23b",
+      "0x23b"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A2_40.ZAP",
+    "bytes": 59072,
+    "header_hex": "efcdab8967452301050000000000000008080000f90100005301000053010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x1f9",
+      "0x153",
+      "0x153"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A2_50.ZAP",
+    "bytes": 65024,
+    "header_hex": "efcdab8967452301050000000000000008080000140200007e0100007e010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x214",
+      "0x17e",
+      "0x17e"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A3_10.ZAP",
+    "bytes": 124224,
+    "header_hex": "efcdab89674523010600000000000000a0090000f9000000d0000000d0000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x6",
+      "0x0",
+      "0x9a0",
+      "0xf9",
+      "0xd0",
+      "0xd0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A3_20.ZAP",
+    "bytes": 65456,
+    "header_hex": "efcdab896745230104000000000000007006000083040000eb010000eb010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4",
+      "0x0",
+      "0x670",
+      "0x483",
+      "0x1eb",
+      "0x1eb"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A/A3_30.ZAP",
+    "bytes": 367280,
+    "header_hex": "efcdab89674523010c0000000000000030130000770200009601000096010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xc",
+      "0x0",
+      "0x1330",
+      "0x277",
+      "0x196",
+      "0x196"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A1.ZAP",
+    "bytes": 9195296,
+    "header_hex": "efcdab89674523010604000000000000a06906004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x406",
+      "0x0",
+      "0x669a0",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A2.ZAP",
+    "bytes": 10365280,
+    "header_hex": "efcdab8967452301e104000000000000a8c607004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4e1",
+      "0x0",
+      "0x7c6a8",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/A3.ZAP",
+    "bytes": 9754800,
+    "header_hex": "efcdab89674523012604000000000000a09c06004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x426",
+      "0x0",
+      "0x69ca0",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B1_10.ZAP",
+    "bytes": 52224,
+    "header_hex": "efcdab89674523011700000000000000b8240000ae0000008900000089000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x17",
+      "0x0",
+      "0x24b8",
+      "0xae",
+      "0x89",
+      "0x89"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B1_20A.ZAP",
+    "bytes": 265632,
+    "header_hex": "efcdab89674523010700000000000000380b0000c80100004101000041010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x7",
+      "0x0",
+      "0xb38",
+      "0x1c8",
+      "0x141",
+      "0x141"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B1_30.ZAP",
+    "bytes": 230784,
+    "header_hex": "efcdab89674523010c0000000000000030130000590200007201000072010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xc",
+      "0x0",
+      "0x1330",
+      "0x259",
+      "0x172",
+      "0x172"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B2_10.ZAP",
+    "bytes": 1537360,
+    "header_hex": "efcdab89674523011d00000000000000482e00003f0400005302000053020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x1d",
+      "0x0",
+      "0x2e48",
+      "0x43f",
+      "0x253",
+      "0x253"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B2_20.ZAP",
+    "bytes": 378864,
+    "header_hex": "efcdab89674523010e0000000000000060160000c2020000b5010000b5010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xe",
+      "0x0",
+      "0x1660",
+      "0x2c2",
+      "0x1b5",
+      "0x1b5"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B2_31.ZAP",
+    "bytes": 60512,
+    "header_hex": "efcdab89674523010400000000000000700600004e0100000701000007010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4",
+      "0x0",
+      "0x670",
+      "0x14e",
+      "0x107",
+      "0x107"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B2_32.ZAP",
+    "bytes": 380720,
+    "header_hex": "efcdab89674523010300000000000000d804000010010000e4000000e4000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x3",
+      "0x0",
+      "0x4d8",
+      "0x110",
+      "0xe4",
+      "0xe4"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B3_10.ZAP",
+    "bytes": 119552,
+    "header_hex": "efcdab89674523010600000000000000a009000003010000dc000000dc000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x6",
+      "0x0",
+      "0x9a0",
+      "0x103",
+      "0xdc",
+      "0xdc"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B3_20.ZAP",
+    "bytes": 1779120,
+    "header_hex": "efcdab89674523011300000000000000581e000033040000fc010000fc010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x13",
+      "0x0",
+      "0x1e58",
+      "0x433",
+      "0x1fc",
+      "0x1fc"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B/B3_30.ZAP",
+    "bytes": 9696,
+    "header_hex": "efcdab8967452301040000000000000070060000b3030000c5010000c5010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4",
+      "0x0",
+      "0x670",
+      "0x3b3",
+      "0x1c5",
+      "0x1c5"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B1.ZAP",
+    "bytes": 10784752,
+    "header_hex": "efcdab8967452301fa0400000000000080ee07004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4fa",
+      "0x0",
+      "0x7ee80",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B1B.ZAP",
+    "bytes": 10594416,
+    "header_hex": "efcdab89674523010d05000000000000c80c08004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x50d",
+      "0x0",
+      "0x80cc8",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B2.ZAP",
+    "bytes": 8347344,
+    "header_hex": "efcdab89674523018003000000000000109405004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x380",
+      "0x0",
+      "0x59410",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/B3.ZAP",
+    "bytes": 10234704,
+    "header_hex": "efcdab89674523011704000000000000b88406004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x417",
+      "0x0",
+      "0x684b8",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C1_10.ZAP",
+    "bytes": 212256,
+    "header_hex": "efcdab89674523010600000000000000a009000052010000fe000000fe000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x6",
+      "0x0",
+      "0x9a0",
+      "0x152",
+      "0xfe",
+      "0xfe"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C1_20.ZAP",
+    "bytes": 1151312,
+    "header_hex": "efcdab89674523011800000000000000502600009e020000be010000be010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x18",
+      "0x0",
+      "0x2650",
+      "0x29e",
+      "0x1be",
+      "0x1be"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C1_30.ZAP",
+    "bytes": 614544,
+    "header_hex": "efcdab89674523012f00000000000000f84a0000bb0300002c0200002c020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x2f",
+      "0x0",
+      "0x4af8",
+      "0x3bb",
+      "0x22c",
+      "0x22c"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C2_10.ZAP",
+    "bytes": 539072,
+    "header_hex": "efcdab89674523010600000000000000a00900001c0200006701000067010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x6",
+      "0x0",
+      "0x9a0",
+      "0x21c",
+      "0x167",
+      "0x167"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C2_31.ZAP",
+    "bytes": 305856,
+    "header_hex": "efcdab89674523011300000000000000581e000015030000d6010000d6010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x13",
+      "0x0",
+      "0x1e58",
+      "0x315",
+      "0x1d6",
+      "0x1d6"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C2_40.ZAP",
+    "bytes": 1443200,
+    "header_hex": "efcdab89674523012700000000000000383e0000840300000502000005020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x27",
+      "0x0",
+      "0x3e38",
+      "0x384",
+      "0x205",
+      "0x205"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C3_10.ZAP",
+    "bytes": 319888,
+    "header_hex": "efcdab89674523010600000000000000a009000041010000eb000000eb000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x6",
+      "0x0",
+      "0x9a0",
+      "0x141",
+      "0xeb",
+      "0xeb"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C3_20.ZAP",
+    "bytes": 156768,
+    "header_hex": "efcdab896745230105000000000000000808000092040000df010000df010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x492",
+      "0x1df",
+      "0x1df"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C/C3_30.ZAP",
+    "bytes": 49504,
+    "header_hex": "efcdab896745230115000000000000008821000033010000eb000000eb000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x15",
+      "0x0",
+      "0x2188",
+      "0x133",
+      "0xeb",
+      "0xeb"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C1.ZAP",
+    "bytes": 10360416,
+    "header_hex": "efcdab89674523013c04000000000000b0bf06004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x43c",
+      "0x0",
+      "0x6bfb0",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C2.ZAP",
+    "bytes": 9699216,
+    "header_hex": "efcdab89674523015b0400000000000018f106004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x45b",
+      "0x0",
+      "0x6f118",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/C3.ZAP",
+    "bytes": 10161968,
+    "header_hex": "efcdab8967452301ea03000000000000003d06004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x3ea",
+      "0x0",
+      "0x63d00",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D1_10.ZAP",
+    "bytes": 323200,
+    "header_hex": "efcdab89674523010d00000000000000c8140000e40100005b0100005b010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xd",
+      "0x0",
+      "0x14c8",
+      "0x1e4",
+      "0x15b",
+      "0x15b"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D1_20.ZAP",
+    "bytes": 212352,
+    "header_hex": "efcdab89674523010700000000000000380b0000040200006401000064010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x7",
+      "0x0",
+      "0xb38",
+      "0x204",
+      "0x164",
+      "0x164"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D2_10.ZAP",
+    "bytes": 422144,
+    "header_hex": "efcdab89674523010e0000000000000060160000890200008f0100008f010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xe",
+      "0x0",
+      "0x1660",
+      "0x289",
+      "0x18f",
+      "0x18f"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D2_20.ZAP",
+    "bytes": 129072,
+    "header_hex": "efcdab8967452301050000000000000008080000a7020000ab010000ab010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x2a7",
+      "0x1ab",
+      "0x1ab"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D2_30.ZAP",
+    "bytes": 289776,
+    "header_hex": "efcdab8967452301050000000000000008080000990500006303000063030000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x599",
+      "0x363",
+      "0x363"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D3_10.ZAP",
+    "bytes": 311072,
+    "header_hex": "efcdab89674523010f00000000000000f8170000ab0100003801000038010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xf",
+      "0x0",
+      "0x17f8",
+      "0x1ab",
+      "0x138",
+      "0x138"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D3_20.ZAP",
+    "bytes": 675392,
+    "header_hex": "efcdab89674523010e000000000000006016000084020000b4010000b4010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xe",
+      "0x0",
+      "0x1660",
+      "0x284",
+      "0x1b4",
+      "0x1b4"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D/D3_30.ZAP",
+    "bytes": 231792,
+    "header_hex": "efcdab89674523011f00000000000000783100009f0300002402000024020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x1f",
+      "0x0",
+      "0x3178",
+      "0x39f",
+      "0x224",
+      "0x224"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D1.ZAP",
+    "bytes": 8251488,
+    "header_hex": "efcdab8967452301090300000000000068d604004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x309",
+      "0x0",
+      "0x4d668",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D1B.ZAP",
+    "bytes": 7755584,
+    "header_hex": "efcdab89674523013803000000000000502105004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x338",
+      "0x0",
+      "0x52150",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D2.ZAP",
+    "bytes": 9446496,
+    "header_hex": "efcdab89674523018703000000000000389f05004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x387",
+      "0x0",
+      "0x59f38",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/D3.ZAP",
+    "bytes": 11580176,
+    "header_hex": "efcdab8967452301ff03000000000000785e06004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x3ff",
+      "0x0",
+      "0x65e78",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E1_10.ZAP",
+    "bytes": 238992,
+    "header_hex": "efcdab89674523010700000000000000380b0000c20100004301000043010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x7",
+      "0x0",
+      "0xb38",
+      "0x1c2",
+      "0x143",
+      "0x143"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E1_20.ZAP",
+    "bytes": 737680,
+    "header_hex": "efcdab89674523010e00000000000000601600004e0400001502000015020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xe",
+      "0x0",
+      "0x1660",
+      "0x44e",
+      "0x215",
+      "0x215"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E1_30.ZAP",
+    "bytes": 822848,
+    "header_hex": "efcdab89674523010f00000000000000f8170000070700000105000001050000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xf",
+      "0x0",
+      "0x17f8",
+      "0x707",
+      "0x501",
+      "0x501"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E2_10.ZAP",
+    "bytes": 309008,
+    "header_hex": "efcdab89674523010700000000000000380b0000ba0100003501000035010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x7",
+      "0x0",
+      "0xb38",
+      "0x1ba",
+      "0x135",
+      "0x135"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E2_20.ZAP",
+    "bytes": 718464,
+    "header_hex": "efcdab8967452301100000000000000090190000fb020000c8010000c8010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x10",
+      "0x0",
+      "0x1990",
+      "0x2fb",
+      "0x1c8",
+      "0x1c8"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E3_10.ZAP",
+    "bytes": 799360,
+    "header_hex": "efcdab8967452301160000000000000020230000ec050000ff030000ff030000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x16",
+      "0x0",
+      "0x2320",
+      "0x5ec",
+      "0x3ff",
+      "0x3ff"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E3_20.ZAP",
+    "bytes": 1015584,
+    "header_hex": "efcdab89674523010d00000000000000c8140000670600001104000011040000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xd",
+      "0x0",
+      "0x14c8",
+      "0x667",
+      "0x411",
+      "0x411"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E3_30.ZAP",
+    "bytes": 206992,
+    "header_hex": "efcdab896745230118000000000000005026000051020000ad010000ad010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x18",
+      "0x0",
+      "0x2650",
+      "0x251",
+      "0x1ad",
+      "0x1ad"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E/E3_40.ZAP",
+    "bytes": 370688,
+    "header_hex": "efcdab89674523010d00000000000000c8140000ce0100004301000043010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xd",
+      "0x0",
+      "0x14c8",
+      "0x1ce",
+      "0x143",
+      "0x143"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E1.ZAP",
+    "bytes": 10191552,
+    "header_hex": "efcdab8967452301560400000000000020e906004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x456",
+      "0x0",
+      "0x6e920",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E2.ZAP",
+    "bytes": 8331360,
+    "header_hex": "efcdab8967452301b60300000000000020ea05004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x3b6",
+      "0x0",
+      "0x5ea20",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/E3.ZAP",
+    "bytes": 10160272,
+    "header_hex": "efcdab8967452301450400000000000008ce06004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x445",
+      "0x0",
+      "0x6ce08",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F1_20.ZAP",
+    "bytes": 1475696,
+    "header_hex": "efcdab8967452301180000000000000050260000740100001801000018010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x18",
+      "0x0",
+      "0x2650",
+      "0x174",
+      "0x118",
+      "0x118"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F2_20.ZAP",
+    "bytes": 1007072,
+    "header_hex": "efcdab89674523011200000000000000c01c000085030000c2010000c2010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x12",
+      "0x0",
+      "0x1cc0",
+      "0x385",
+      "0x1c2",
+      "0x1c2"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F2_30.ZAP",
+    "bytes": 418064,
+    "header_hex": "efcdab89674523010a0000000000000000100000e00300001702000017020000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xa",
+      "0x0",
+      "0x1000",
+      "0x3e0",
+      "0x217",
+      "0x217"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F2_31.ZAP",
+    "bytes": 107456,
+    "header_hex": "efcdab8967452301040000000000000070060000dc0100004301000043010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4",
+      "0x0",
+      "0x670",
+      "0x1dc",
+      "0x143",
+      "0x143"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F3_10.ZAP",
+    "bytes": 13520,
+    "header_hex": "efcdab8967452301040000000000000070060000f1000000ce000000ce000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x4",
+      "0x0",
+      "0x670",
+      "0xf1",
+      "0xce",
+      "0xce"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F3_16.ZAP",
+    "bytes": 738320,
+    "header_hex": "efcdab89674523010c0000000000000030130000bc0200009501000095010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0xc",
+      "0x0",
+      "0x1330",
+      "0x2bc",
+      "0x195",
+      "0x195"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F3_20.ZAP",
+    "bytes": 68992,
+    "header_hex": "efcdab89674523010900000000000000680e0000c20200007601000076010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x9",
+      "0x0",
+      "0xe68",
+      "0x2c2",
+      "0x176",
+      "0x176"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F/F3_30.ZAP",
+    "bytes": 117632,
+    "header_hex": "efcdab8967452301180000000000000050260000410200008301000083010000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x18",
+      "0x0",
+      "0x2650",
+      "0x241",
+      "0x183",
+      "0x183"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F1.ZAP",
+    "bytes": 3064768,
+    "header_hex": "efcdab89674523013201000000000000c0e70100a0400000151d0000151d0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x132",
+      "0x0",
+      "0x1e7c0",
+      "0x40a0",
+      "0x1d15",
+      "0x1d15"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F2.ZAP",
+    "bytes": 7521728,
+    "header_hex": "efcdab89674523018802000000000000d00804004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x288",
+      "0x0",
+      "0x408d0",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F3.ZAP",
+    "bytes": 4971312,
+    "header_hex": "efcdab89674523012c02000000000000307603004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x22c",
+      "0x0",
+      "0x37630",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/F3B.ZAP",
+    "bytes": 5295824,
+    "header_hex": "efcdab89674523014202000000000000409903004e8100009a1e00009a1e0000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x242",
+      "0x0",
+      "0x39940",
+      "0x814e",
+      "0x1e9a",
+      "0x1e9a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECH1.ZAP",
+    "bytes": 1314336,
+    "header_hex": "efcdab8967452301050000000000000008080000a0000400a000040000000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x400a0",
+      "0x400a0",
+      "0x0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECH2.ZAP",
+    "bytes": 1314336,
+    "header_hex": "efcdab8967452301050000000000000008080000a0000400a000040000000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x400a0",
+      "0x400a0",
+      "0x0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECH3.ZAP",
+    "bytes": 1314336,
+    "header_hex": "efcdab8967452301050000000000000008080000a0000400a000040000000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x400a0",
+      "0x400a0",
+      "0x0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECH4.ZAP",
+    "bytes": 1314336,
+    "header_hex": "efcdab8967452301050000000000000008080000a0000400a000040000000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x400a0",
+      "0x400a0",
+      "0x0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECH5.ZAP",
+    "bytes": 1314336,
+    "header_hex": "efcdab8967452301050000000000000008080000a0000400a000040000000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x400a0",
+      "0x400a0",
+      "0x0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECH6.ZAP",
+    "bytes": 1314336,
+    "header_hex": "efcdab8967452301050000000000000008080000a0000400a000040000000000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x400a0",
+      "0x400a0",
+      "0x0"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FECOMMON.ZAP",
+    "bytes": 638048,
+    "header_hex": "efcdab89674523011400000000000000f01f0000785500000a2600000a260000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x14",
+      "0x0",
+      "0x1ff0",
+      "0x5578",
+      "0x260a",
+      "0x260a"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FESTART.ZAP",
+    "bytes": 187088,
+    "header_hex": "efcdab8967452301050000000000000008080000c004010056830000ea810000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x5",
+      "0x0",
+      "0x808",
+      "0x104c0",
+      "0x8356",
+      "0x81ea"
+    ]
+  },
+  {
+    "path": "DATA/BUNDLES/FRONTEND/FETEX.ZAP",
+    "bytes": 624016,
+    "header_hex": "efcdab89674523012b0000000000000098440000a42200004106000041060000",
+    "header_words_le": [
+      "0x89abcdef",
+      "0x1234567",
+      "0x2b",
+      "0x0",
+      "0x4498",
+      "0x22a4",
+      "0x641",
+      "0x641"
+    ]
+  }
+]

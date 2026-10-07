@@ -1,0 +1,39 @@
+-- sccache not found; continuing without compiler launcher
+-- Populating raylib
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspace/scratch/381ff731e209/ps2recomp/build-runtime/_deps/raylib-subbuild
+[ 11%] Performing update step for 'raylib-populate'
+-- Already at requested tag: 5.5
+[ 22%] No patch step for 'raylib-populate'
+[ 33%] No configure step for 'raylib-populate'
+[ 44%] No build step for 'raylib-populate'
+[ 55%] No install step for 'raylib-populate'
+[ 66%] No test step for 'raylib-populate'
+[ 77%] Completed 'raylib-populate'
+[100%] Built target raylib-populate
+CMake Warning (deprecated) at build-runtime/_deps/raylib-src/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+This warning is for project developers.  Use -Wno-author or -Wno-deprecated
+to suppress it.
+
+-- Testing if -Werror=pointer-arith can be used -- compiles
+-- Testing if -Werror=implicit-function-declaration can be used -- compiles
+-- Testing if -fno-strict-aliasing can be used -- compiles
+-- Using raylib's GLFW
+-- Including X11 support
+-- Audio Backend: miniaudio
+-- Building raylib static library
+-- Generated build type: Debug
+-- Compiling with the flags:
+--   PLATFORM=PLATFORM_DESKTOP
+--   GRAPHICS=GRAPHICS_API_OPENGL_33
+-- FFmpeg disabled; MPEG video decode falls back to stub frames
+-- Configuring done (0.6s)
+-- Generating done (2.2s)
+-- Build files have been written to: /workspace/scratch/381ff731e209/ps2recomp/build-runtime

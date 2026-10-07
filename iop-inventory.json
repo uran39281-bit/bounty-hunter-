@@ -1,0 +1,286 @@
+{
+  "file": "IOPRP254.IMG",
+  "size_bytes": 264449,
+  "sha256": "bc91fc6ce5f8afc30b9431688b0c02e90249600982401a419d971ec736326b64",
+  "entry_count": 18,
+  "elf_module_count": 15,
+  "modules": [
+    {
+      "name": "RESET",
+      "offset": 0,
+      "size_bytes": 0,
+      "extended_info_size": 8,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ROMDIR",
+      "offset": 0,
+      "size_bytes": 304,
+      "extended_info_size": 72,
+      "sha256": "0f7546d1090773aec27215ddbfe31c8113a0d575c77ecfe94ffff827c67dfee3"
+    },
+    {
+      "name": "EXTINFO",
+      "offset": 304,
+      "size_bytes": 560,
+      "extended_info_size": 0,
+      "sha256": "8cdf18506e1526f95b8a91c559e1cfd7d144193537e325dda4710381e965bfbe"
+    },
+    {
+      "name": "LOADCORE",
+      "offset": 864,
+      "size_bytes": 9849,
+      "extended_info_size": 32,
+      "sha256": "1db11cd71bcea819a1145f52cd46f048f600c08eb6e3ba397e916fa031ca5685",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 11
+      }
+    },
+    {
+      "name": "SIFCMD",
+      "offset": 10720,
+      "size_bytes": 10105,
+      "extended_info_size": 40,
+      "sha256": "c40e0ac2d27bb5bb4d052a3ee85710f1ceb2c82aa5216915b17abc1c37c068e3",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0xd0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 11
+      }
+    },
+    {
+      "name": "SIFMAN",
+      "offset": 20832,
+      "size_bytes": 5969,
+      "extended_info_size": 32,
+      "sha256": "360897b64e05ac99e8d929524627f65594ea9a59300716ad5dc6a7eeedd6c831",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 11
+      }
+    },
+    {
+      "name": "THREADMAN",
+      "offset": 26816,
+      "size_bytes": 39421,
+      "extended_info_size": 40,
+      "sha256": "58f7633ef23127925d079e844f01b06cfb88e3801d84503cb9b76f666411bbe3",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x10",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    },
+    {
+      "name": "IOMAN",
+      "offset": 66240,
+      "size_bytes": 12545,
+      "extended_info_size": 32,
+      "sha256": "aa528622f182fa5ba57bf01c41c08b6b6ab7d20e9f60bc726b9535d74d2c4593",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    },
+    {
+      "name": "MODLOAD",
+      "offset": 78800,
+      "size_bytes": 17997,
+      "extended_info_size": 36,
+      "sha256": "a3e82fb0deb32d8d9a3aec769ce94a806fd79ad73156d1a4f223cf9c2db6b356",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    },
+    {
+      "name": "FILEIO",
+      "offset": 96800,
+      "size_bytes": 17829,
+      "extended_info_size": 32,
+      "sha256": "f6a29d9f04d7b13090626616d5829b5816792ae5df0a4c24221bddc52bd26c2c",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 13
+      }
+    },
+    {
+      "name": "CDVDMAN",
+      "offset": 114640,
+      "size_bytes": 72389,
+      "extended_info_size": 28,
+      "sha256": "17223e865b57d80169719866d5fea5622992043d1dcad6e959e0ab26ce9bcef2",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 13
+      }
+    },
+    {
+      "name": "CDVDFSV",
+      "offset": 187040,
+      "size_bytes": 40661,
+      "extended_info_size": 32,
+      "sha256": "bba46bc27c14472e8e0b06397f5b909c6e32c92d17022dfc4ff0a767b5e272d4",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0xd8",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 13
+      }
+    },
+    {
+      "name": "LOADFILE",
+      "offset": 227712,
+      "size_bytes": 11617,
+      "extended_info_size": 32,
+      "sha256": "67ee7d0f91c312fedb7ccceb8826d7dba421dac879cb5e9714c3362499f58232",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    },
+    {
+      "name": "TIMEMANI",
+      "offset": 239344,
+      "size_bytes": 6069,
+      "extended_info_size": 32,
+      "sha256": "a6fdaf51accaad8b60d1d9f29a02d7478a2249777bc055f974b3d14741298649",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    },
+    {
+      "name": "ROMDRV",
+      "offset": 245424,
+      "size_bytes": 3881,
+      "extended_info_size": 32,
+      "sha256": "5c60a42a5991b97a117581ec4bab2a40d4c109e17de225b5a9578d1350a35e10",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 11
+      }
+    },
+    {
+      "name": "EESYNC",
+      "offset": 249312,
+      "size_bytes": 1545,
+      "extended_info_size": 24,
+      "sha256": "51f4169e9dae51298e5195c0f99e1d36b942f978b8cae0020db2180516e013e3",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 11
+      }
+    },
+    {
+      "name": "SYSCLIB",
+      "offset": 250864,
+      "size_bytes": 10205,
+      "extended_info_size": 32,
+      "sha256": "eff39d3572362e06f3d72ba480fdc4ddccb92698b91257184291fa804df6eb10",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    },
+    {
+      "name": "STDIO",
+      "offset": 261072,
+      "size_bytes": 3377,
+      "extended_info_size": 24,
+      "sha256": "22c3969adca466ec3c76d208b8ea0724d56963931e090e78b285fefab5d175cc",
+      "elf": {
+        "bits": 32,
+        "byte_order": "little",
+        "type": "0xff80",
+        "machine": 8,
+        "entry": "0x0",
+        "flags": "0x1",
+        "program_headers": 2,
+        "sections": 12
+      }
+    }
+  ],
+  "validation": "ROMDIR ranges and embedded ELF headers/tables validated; no module was executed"
+}

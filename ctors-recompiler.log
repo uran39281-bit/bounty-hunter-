@@ -1,0 +1,30 @@
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 114 functions, 0 symbols, 9 sections, 0 relocations
+[recompiler] recompiling 114 functions
+[recompiler] collected 1823 resumable entry point(s) across 88 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "bounty-hunter-native/ctor-output/ps2_recompiled_functions.h"
+[recompiler] generating function output with 8 worker(s)
+[recompiler] wrote individual function files to bounty-hunter-native/ctor-output/
+[recompiler] generated function registration file: "bounty-hunter-native/ctor-output/register_functions.cpp"
+[recompiler] generated stub header file: "bounty-hunter-native/ctor-output/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 114
+Symbols: 0, sections: 9, relocations: 0
+Functions processed: 114, recompiled: 114, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 1823
+Generated functions: 114
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: bounty-hunter-native/ctors-config.toml
+  [info] ghidra-map - Loaded 114 functions from Ghidra map
+  [info] elf - ELF entry point: 0x3a6be0
+  [info] elf - BSS range: 0x3c2500 - 0x47b280 (size 0xb8d80), gp=0x0
+======================================
+Recompilation completed successfully

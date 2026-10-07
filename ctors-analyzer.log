@@ -1,0 +1,627 @@
+PS2 ELF Analyzer
+----------------
+Input ELF: bounty-hunter-native/SLUS_204.20.ctors.elf
+Output TOML: bounty-hunter-native/ctors-config.toml
+
+SCE symbol DB: embedded
+
+Analyzing ELF file: bounty-hunter-native/SLUS_204.20.ctors.elf
+Extracted 95 functions
+Extracted 0 symbols
+Extracted 9 sections
+Extracted 0 relocations
+No SCE SDK symbols discovered from embedded database
+Entry point 0x100008 not mapped to an extracted function
+Function sub_003B2C00 has a hardware I/O signal
+Function sub_003B4EC0 has a hardware I/O signal
+Function sub_003B5100 has a hardware I/O signal
+Function sub_003B5260 has a hardware I/O signal
+Function sub_003B53B0 has a hardware I/O signal
+Function sub_003B54D0 has a hardware I/O signal
+Analyzing data usage patterns...
+Detected MMIO access at 3b4f08 -> 10000810
+Detected MMIO access at 3b4f14 -> 10000800
+Detected MMIO access at 3b4fac -> 10000810
+Detected MMIO access at 3b5180 -> 10000810
+Detected MMIO access at 3b52a8 -> 10000810
+Detected MMIO access at 3b5430 -> 10000810
+Detected MMIO access at 3b5540 -> 10000810
+Identifying potential patches...
+Analyzing control flow of functions...
+Detecting jump tables...
+Analyzing performance-critical paths...
+Found tight loop in function sub_003AD340 from 0x003ad3f4 to 0x003ad424 (size: 13 instructions)
+Found tight loop in function sub_003AD7A0 from 0x003ad844 to 0x003ad86c (size: 11 instructions)
+Found tight loop in function sub_003B17C0 from 0x003b186c to 0x003b188c (size: 9 instructions)
+Found tight loop in function sub_003B1C70 from 0x003b1cac to 0x003b1ce8 (size: 16 instructions)
+Found tight loop in function sub_003B5830 from 0x003b58e8 to 0x003b5904 (size: 8 instructions)
+Identifying recursive functions...
+Analyzing register usage patterns...
+  - Uses argument registers (a0-a3)
+Function sub_003A6C00 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003A6CE0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003A6E10 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003A6F10 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003A6FE0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AA420 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AA560 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AA5B0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AB740 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AB840 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AB900 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AB950 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003ABAC0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003ABB10 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003ABBC0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AC0D0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AC210 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AC660 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AC770 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AC7C0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AC800 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AC8A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AC8F0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AC940 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003ACB20 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003ACBE0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD030 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD0C0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AD120 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD1A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD340 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD490 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD7A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003AD950 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003AD9E0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B10C0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B11A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B12A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B13A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B1420 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B1480 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B14D0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B1510 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B15E0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B1670 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B16C0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B17C0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B18C0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B1A30 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B1AA0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B1B40 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+  - Uses argument registers (a0-a3)
+Function sub_003B1BF0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B1D20 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B28D0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B2A00 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B2A50 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B2AB0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+  - Uses argument registers (a0-a3)
+Function sub_003B2B80 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B2BB0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B2C00 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B4E70 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B4EC0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B5100 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B51A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B51E0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5220 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5260 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B52F0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5330 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5370 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B53B0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B5450 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5490 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B54D0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B5560 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B55A0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B55E0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B5650 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5690 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B56F0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5730 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5770 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B57B0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B57F0 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5830 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Function sub_003B5A00 allocates a stack frame
+  - Uses argument registers (a0-a3)
+Function sub_003B5A40 allocates a stack frame
+  - Uses argument registers (a0-a3)
+  - Sets return values (v0-v1)
+Analyzing function signatures...
+Function sub_003A6BE0 signature analysis:
+  - Uses approximately 25 parameter(s)
+Function sub_003A6C00 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003A6CE0 signature analysis:
+  - Uses approximately 1 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003A6E10 signature analysis:
+  - Uses approximately 1 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+Function sub_003A6F10 signature analysis:
+  - Uses approximately 1 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+Function sub_003A6FE0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AA420 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AA560 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AA5B0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AB740 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AB840 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+Function sub_003AB900 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+Function sub_003AB950 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003ABAC0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+Function sub_003ABB10 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003ABBC0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AC0D0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AC210 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AC660 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AC6E0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Returns a value
+Function sub_003AC770 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AC7C0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AC800 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AC8A0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AC8F0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AC940 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003ACB20 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003ACBE0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD030 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD0C0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AD120 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD1A0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD340 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD490 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD7A0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003AD8A0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Returns a value
+Function sub_003AD950 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003AD9E0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B10C0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B11A0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B12A0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B13A0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B1420 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B1480 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+Function sub_003B14D0 signature analysis:
+  - Uses approximately 1 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B1510 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B15E0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B1670 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B16C0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B17C0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B18C0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B1A30 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B1AA0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B1B40 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B1BD0 signature analysis:
+  - Uses approximately 4 parameter(s)
+Function sub_003B1BF0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B1C70 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Returns a value
+Function sub_003B1D20 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B28D0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B2A00 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B2A50 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B2AB0 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B2B60 signature analysis:
+  - Uses approximately 4 parameter(s)
+Function sub_003B2B80 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B2BB0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B2C00 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses floating point operations
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B4E70 signature analysis:
+  - Uses approximately 4 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B4EC0 signature analysis:
+  - Uses approximately 26 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B5100 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B51A0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B51E0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5220 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5260 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B52F0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5330 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5370 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B53B0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B5450 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5490 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B54D0 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B5560 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B55A0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B55E0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B5650 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5690 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B56F0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5730 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5770 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B57B0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B57F0 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5830 signature analysis:
+  - Uses approximately 25 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Function sub_003B5A00 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+Function sub_003B5A40 signature analysis:
+  - Uses approximately 3 parameter(s)
+  - Uses 64-bit operations
+  - Returns a value
+Optimizing patches...
+Analysis completed
+- 0 library functions to stub
+- 0 detected library functions without runtime handlers
+- skip output retained for compatibility; analyzer does not auto-skip functions
+- 0 potential patches identified
+- 0 jump tables detected
+Generated TOML configuration: bounty-hunter-native/ctors-config.toml
+
+Analysis complete
+TOML configuration has been written to: bounty-hunter-native/ctors-config.toml
+
+You can now use this configuration with PS2Recomp:
+  ps2recomp bounty-hunter-native/ctors-config.toml

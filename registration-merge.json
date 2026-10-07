@@ -1,0 +1,9 @@
+{
+  "source_sha256": "80ee861fad17614ee5cb76b6f83fa8510c6d21c1bd999e97d1fb190763bbe2f1",
+  "output_sha256": "8ed085111d48713229905cd5fe32dfe943f9b9f650c23bd8d15720d00f407eb6",
+  "mapping_count": 233144,
+  "ordered_mapping_preserved": true,
+  "appended_mapping_count": 1937,
+  "table_base": "0x100000",
+  "table_slot_count": 710337
+}

@@ -19,3 +19,20 @@ build*/
 DATA/
 PS2Recomp/
 test-vfs-reuse
+
+# Local diagnostic outputs and supplied disc material
+.headless-startup.*
+mc0/
+mc1/
+incremental-build/
+bounty-disc/
+runtime-build/
+iop-build/
+sysroot/
+apt-cache/
+SLUS_*
+SYSTEM.CNF
+CDROM.TXT
+CHEWIE/
+SOUND/
+VIDEO/

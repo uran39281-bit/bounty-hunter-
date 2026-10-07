@@ -1,0 +1,501 @@
+{
+  "date": "2026-10-07",
+  "base_commit": "5f020f0d119bdf28f91d27104fd8d3c32e6b057a",
+  "supplemental_files": [
+    {
+      "path": "README.txt",
+      "bytes": 12646,
+      "sha256": "86b7dc8ff84f680d86052ac6349cd0c6b12802cc6b895c42db6d25d2e475293a"
+    },
+    {
+      "path": "arm64-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline-source-manifest.json",
+      "bytes": 770317,
+      "sha256": "0e331f5d52bc881075b91e6b995b0ddc03b4eab5543ede1be2c3106646aba2eb"
+    },
+    {
+      "path": "build_incremental_startup.py",
+      "bytes": 9482,
+      "sha256": "b397e580b8dc792c66382c3aedf26fa07c039d257dea1afd64fa34198bf93559"
+    },
+    {
+      "path": "bundles-boot-probe-build.log",
+      "bytes": 340,
+      "sha256": "bc67f10146fc0a2155ee15f9d85e69311efc934484c1244ba4dffeae742aeac7"
+    },
+    {
+      "path": "bundles-build-final.log",
+      "bytes": 192,
+      "sha256": "f760e09a4b26f0ac4c91ad548de5fdc8e8485a3cc45fe7b068faddc94e2218bd"
+    },
+    {
+      "path": "bundles-build.log",
+      "bytes": 12692,
+      "sha256": "e7ccb832717e5d9a06813652396ca3f5cfcebe6ffedd699bcdf85b49c55667de"
+    },
+    {
+      "path": "bundles-clang-large-unit-build.log",
+      "bytes": 94,
+      "sha256": "1509d68b95c32f2300f2fa9da384b003886d1206ca0792ba1cb79e8e353ef232"
+    },
+    {
+      "path": "bundles-clang-unity_173_cxx.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bundles-clang-unity_222_cxx.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bundles-clang-unity_233_cxx.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bundles-configure-local.log",
+      "bytes": 2544,
+      "sha256": "9ad0a7425fa63aca1243e07a408eed482a719e80ea55cc810eb2e86efec8cf6c"
+    },
+    {
+      "path": "bundles-configure-null.log",
+      "bytes": 1567,
+      "sha256": "1c1275c7b3c33daa6add7d5fcd3bf29c120cce1a704b31365292ed5a1c0fbd45"
+    },
+    {
+      "path": "bundles-configure.log",
+      "bytes": 24807,
+      "sha256": "4090ed186b613bfcbd5999d7eaaa34cebe549139e41e8f6b637f465ce720e809"
+    },
+    {
+      "path": "bundles-header-inventory.json",
+      "bytes": 26324,
+      "sha256": "1cf3b22e3a2cb1ddc72b6ce621a86ecdfe041174e9c67f2f38334ceb6d149e3b"
+    },
+    {
+      "path": "bundles-headless-link.log",
+      "bytes": 133,
+      "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+    },
+    {
+      "path": "bundles-iop-build.log",
+      "bytes": 551,
+      "sha256": "572373937634464b9919f3eb3e93f11bc8990bd7e80b1c07d4acbf8ca40e1edc"
+    },
+    {
+      "path": "bundles-iop-configure.log",
+      "bytes": 405,
+      "sha256": "cbddc617d90c371b229328efbd32f903de7aa52f3e1d231b69c75b8e709c4f41"
+    },
+    {
+      "path": "bundles-iop-snapshot-build.log",
+      "bytes": 241,
+      "sha256": "281d77b18566ad80b3c8acc4c30e177b450d05562a967808d273c026b4f32669"
+    },
+    {
+      "path": "bundles-large-unit-build.log",
+      "bytes": 67,
+      "sha256": "42b6e6c7f89f19df07daf162fe3fd7d9d8adba110cc7397bdbabff5ce65df12e"
+    },
+    {
+      "path": "bundles-vfs-build.log",
+      "bytes": 331,
+      "sha256": "b2b2882668dc041f82dbeba5b2a6afdc8c599b9cfaa8c5ce1b5c3917f2eaa114"
+    },
+    {
+      "path": "bundles-vfs-test-build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bundles-xvfb.log",
+      "bytes": 583,
+      "sha256": "f8c201058e051010dba8f60a5de21c7496d44f402d5f0b8898227964c740b970"
+    },
+    {
+      "path": "cmake-configure.log",
+      "bytes": 4602,
+      "sha256": "6440261d8f6178e82c88a260a101373087d835c1ca4f076324216913a98d0b1d"
+    },
+    {
+      "path": "compact-registration-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "config.toml",
+      "bytes": 77009,
+      "sha256": "917bf9b9d9cfdffe4d286d7af41639e03a58c66e93d4e5894997447393217d5e"
+    },
+    {
+      "path": "constructor-callback-hints.json",
+      "bytes": 784,
+      "sha256": "a92abf2a734b7b604153afb27463b612275ecea6c62bd728d29a00b54b1e9069"
+    },
+    {
+      "path": "constructor-map.csv",
+      "bytes": 4070,
+      "sha256": "cc270e413ad50b7445a02c189752f1262784214e88410dcac52b32befd046e0f"
+    },
+    {
+      "path": "corrected-config.toml",
+      "bytes": 76940,
+      "sha256": "a95da5fb98bf7aebaeabbcd04a9d38b1763802ff356fb348765e6453df830dcb"
+    },
+    {
+      "path": "corrected-native-build.log",
+      "bytes": 1603,
+      "sha256": "d68c3f97a9ae2c39fd7b2f545c6bc5a06f55959900298c21dc80e4289c2c8006"
+    },
+    {
+      "path": "corrected-registration.json",
+      "bytes": 330,
+      "sha256": "bfbde70c5e4667d0aa91d8705d28be5095e125ebd12371738e10651106bb2994"
+    },
+    {
+      "path": "ctors-analyzer.log",
+      "bytes": 22747,
+      "sha256": "8dcd82c6cba455dcd353d73ad7b1f23589608dd6de24f32ce5f50bbb9ef8d6ae"
+    },
+    {
+      "path": "ctors-config.toml",
+      "bytes": 1235,
+      "sha256": "aa7b0c39895d591db3ba0b3dfed72307f5b1a9ac5de27047b7bfc9666c21fb90"
+    },
+    {
+      "path": "ctors-recompiler.log",
+      "bytes": 1473,
+      "sha256": "19a5031f9b716083eccf55af06735c9b978c1d883e9b41f5cb35520e758155ec"
+    },
+    {
+      "path": "data-inventory.json",
+      "bytes": 107614,
+      "sha256": "c53e04ded79cc49ff387bc390f32f49c828c0ba3fb614ef936a432272956ac34"
+    },
+    {
+      "path": "entry-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiment.json",
+      "bytes": 6344,
+      "sha256": "c9388ba6103c7812f9343b3939ba91bf5684a03910a8b894d4627c37a355309e"
+    },
+    {
+      "path": "game-build-before-simd-flags.log",
+      "bytes": 48681,
+      "sha256": "198a7f607183baa24380df5c01611ef18d91e083a80e9765e43d9885647e7d13"
+    },
+    {
+      "path": "game-build.log",
+      "bytes": 30069,
+      "sha256": "ccd509f4a8d35c3661caa6fa8a8f6a7d915cf6a638a6c9ba5045f722c9fa952b"
+    },
+    {
+      "path": "headless-boot-sifcmd-result.log",
+      "bytes": 2669,
+      "sha256": "d7b82b73fbbaff8985ab6a7b0c128c441f3d45a1401dd96e6561640af3d4ba95"
+    },
+    {
+      "path": "headless-bundles-precopy-result.json",
+      "bytes": 1947,
+      "sha256": "dc80b59d21d4be0b0ce34464e53a4b5dc5a4a1bda61611b322f9652c294de2a6"
+    },
+    {
+      "path": "headless-bundles-precopy-result.log",
+      "bytes": 1630,
+      "sha256": "84838bebfb8edd6d293f29ce437017740882ef8e17cbca87578a3fcf0aa82c70"
+    },
+    {
+      "path": "headless-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "headless-corrected-result.json",
+      "bytes": 1243,
+      "sha256": "ba12e8ead3b3968125ca7b0b018934f45f9c978b11839453f8a87e4adb5404bc"
+    },
+    {
+      "path": "headless-corrected-run.log",
+      "bytes": 1143,
+      "sha256": "7729f02e424dc98cd33f65425f212bc834498886b02c58a1eec3a6c34629fb9a"
+    },
+    {
+      "path": "headless-ctors-link.log",
+      "bytes": 120,
+      "sha256": "3a3b93330234aa7891a7953f1c5773cb48ac1365529d049a10023be188f67881"
+    },
+    {
+      "path": "headless-ctors-result.json",
+      "bytes": 1762,
+      "sha256": "127ffb0e667204d8f1c3b570918cc474934ac23f22d1908a5faf4a60e35c4cdc"
+    },
+    {
+      "path": "headless-ctors-run.log",
+      "bytes": 1690,
+      "sha256": "ff6481489e3bbf30a8568711a06fca331f1f9a99c041481e3615e740ec121422"
+    },
+    {
+      "path": "headless-final-result.json",
+      "bytes": 1786,
+      "sha256": "9c9e5d86118d25834a56bdafb92ecdc423e809f5a9e1a3a37601d831026f0bd3"
+    },
+    {
+      "path": "headless-final-run.log",
+      "bytes": 1670,
+      "sha256": "97431ebbd5bc46f6039cc8b16dbb815a67a5ed32b94ccd6b69dde1ab97dfd189"
+    },
+    {
+      "path": "headless-iop-snapshot-result.log",
+      "bytes": 3310,
+      "sha256": "73f40149dd9dea6ab57b6b72149b4d67bd4a427b510634fb5b7816216c140d16"
+    },
+    {
+      "path": "headless-link.log",
+      "bytes": 114,
+      "sha256": "0afc4571dfa6a0eb5c368f189ccc1376bf73c4b8c1ddabef82158dece8712f5b"
+    },
+    {
+      "path": "headless-no-data-comparison-result.json",
+      "bytes": 1819,
+      "sha256": "f816801632690263426484ecb406a448920b7ab1b9674022b1a8d005a5065fb0"
+    },
+    {
+      "path": "headless-no-data-comparison-run.log",
+      "bytes": 1662,
+      "sha256": "1a90f76d08f5325579549f2bd17b805b4b72f08c2989e21000ec99b57be7703d"
+    },
+    {
+      "path": "headless-observation-link.log",
+      "bytes": 154,
+      "sha256": "84f3dd6ca31761937924e15799b964fabd0654cb14b6d734f0253873736cd558"
+    },
+    {
+      "path": "headless-observed-result.json",
+      "bytes": 2972,
+      "sha256": "97147122b3ac380f6c5e94991c38287c1979594e945c7aabd4ccc0e8ae7a7a07"
+    },
+    {
+      "path": "headless-observed-run.log",
+      "bytes": 2857,
+      "sha256": "6a6f461ec368e50db4edcc350b9d9095d945f71bc25b082a0b61c728620bc8aa"
+    },
+    {
+      "path": "headless-partial-data-repeat-result.json",
+      "bytes": 1445,
+      "sha256": "441a9fd339b7f56495a1e4f20ec635eaab4667a9cf5e418072850769f55c1421"
+    },
+    {
+      "path": "headless-partial-data-repeat-run.log",
+      "bytes": 1302,
+      "sha256": "44f2d27bfaa512ecd419a36b0e4fe4cff70f8c865e5a4aca405887436a665e70"
+    },
+    {
+      "path": "headless-partial-data-result.json",
+      "bytes": 1522,
+      "sha256": "b8eee554d298678edebd2070a7d45865b87d7f5c306f42b3295d0726191f424b"
+    },
+    {
+      "path": "headless-partial-data-run.log",
+      "bytes": 1302,
+      "sha256": "44f2d27bfaa512ecd419a36b0e4fe4cff70f8c865e5a4aca405887436a665e70"
+    },
+    {
+      "path": "headless-result.json",
+      "bytes": 1756,
+      "sha256": "2d797e3e62e2e47861d946975362ff462abdb7ad6f9d980b7884e6e2c323409f"
+    },
+    {
+      "path": "headless-run.log",
+      "bytes": 1684,
+      "sha256": "48defb841a35b54042a10c4cdf2f244bdc9096ef312f11834cf05988538a875c"
+    },
+    {
+      "path": "headless-vfs-baseline-result.log",
+      "bytes": 2236,
+      "sha256": "4785147f0f623f6929da70d0ff2f9e31d837ffb3c063f77c5cfbe67cd482e47e"
+    },
+    {
+      "path": "headless-vfs-reuse-result.log",
+      "bytes": 2616,
+      "sha256": "580acb9ee964ccfc4c384b75c1dbe7c142b510d963a5bf2b2cf126003efc754c"
+    },
+    {
+      "path": "incremental-build-evidence.json",
+      "bytes": 169,
+      "sha256": "5c3cff5cf4a513a89b2de9d7b1b8824b2a2d21c54fb15144b37530c2529e1e54"
+    },
+    {
+      "path": "inspection.json",
+      "bytes": 7542,
+      "sha256": "e28b3b9c2313b0aaf8df6a98a6c5195a6095e3b32651350ecb9395af1da9fd6b"
+    },
+    {
+      "path": "iop-build.log",
+      "bytes": 2812,
+      "sha256": "822e2dd368b2af0f5360732750d6454b3494e34b565f3e7152341526ee868c4c"
+    },
+    {
+      "path": "iop-configure.log",
+      "bytes": 401,
+      "sha256": "555fd4d96f1eda88e58954cb245c553b18d12855a11e53ec60d828e8d9150a67"
+    },
+    {
+      "path": "iop-inventory.json",
+      "bytes": 7303,
+      "sha256": "380bf23209c765d078537eec5dd69d5102e9a3a3450fc0d615d8abd767083932"
+    },
+    {
+      "path": "iop-tests.log",
+      "bytes": 559,
+      "sha256": "0ee6be2f5d96ce652b5f1dd346baafb73ac44a7561d3e2017c5daa3817ec5f8f"
+    },
+    {
+      "path": "irx-inventory.json",
+      "bytes": 34991,
+      "sha256": "647c5b34b6290437c273e14f3ea7fcab8a6870285ef8497a442e5505f03328c1"
+    },
+    {
+      "path": "irx-probe-results.json",
+      "bytes": 9769,
+      "sha256": "8854e6e44c1a736b5d5e242f257905e68695eec39b6e74fb5ec423e33c4b9b79"
+    },
+    {
+      "path": "main-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-cache.log",
+      "bytes": 109,
+      "sha256": "0dfc6e324722de6a515665da2061a00b691a6951ca1194f0d6437f6c60aea84d"
+    },
+    {
+      "path": "recompiler-build.log",
+      "bytes": 14860,
+      "sha256": "a3625000e28c5ec3b97fc578b63da00f6580b1b5dd2275445f0d79742dedd9c1"
+    },
+    {
+      "path": "registration-compaction.json",
+      "bytes": 299,
+      "sha256": "9c149ef34cbb2a72a42197149da1ddbbe1863244eaaf287fb1fc58e6eb85ae42"
+    },
+    {
+      "path": "registration-compaction.log",
+      "bytes": 285,
+      "sha256": "bf9717dc725b7280d90f150ad980dcad35c29b26432f380621ab777270f96816"
+    },
+    {
+      "path": "registration-merge.json",
+      "bytes": 333,
+      "sha256": "c93f9ffee5ef40b08716c17943cf6ba29951b9e9fcb35057b3ede5ab5d0e202d"
+    },
+    {
+      "path": "reproduce.py",
+      "bytes": 1813,
+      "sha256": "392743427521af57457ce543958850b582fa19f134ce113934d256f3dc58a7c3"
+    },
+    {
+      "path": "restore_baseline.py",
+      "bytes": 1068,
+      "sha256": "544fc6db63ffa42ffe25e4054a81f085229022cf39d6b83f2db079dbeb8e8d62"
+    },
+    {
+      "path": "runtime-build.log",
+      "bytes": 9850,
+      "sha256": "220ac985b942256280fbdbfc0862e8a4b0b0caefb9e43d29dcac98941fb39386"
+    },
+    {
+      "path": "runtime-configure.log",
+      "bytes": 2485,
+      "sha256": "34e6646fc57b794e87ae8ca5417dc987cf542e500ab80f2738e94f0a9fc4f3be"
+    },
+    {
+      "path": "runtime-dependencies.log",
+      "bytes": 752,
+      "sha256": "5e7207e198965bac7053af0fdf567ec06616983094d06b221149a1e7853e815a"
+    },
+    {
+      "path": "runtime-reconfigure.log",
+      "bytes": 1760,
+      "sha256": "be9b280f2d4b018718a5f0df6777d2bfe9cb8ee1beb862f6616a8c8141cf13f2"
+    },
+    {
+      "path": "runtime-staging.log",
+      "bytes": 38,
+      "sha256": "ab0382f0d5dc746ad7869b7ba6f5321229e231b6e9dbb3d11dd775e9ce75b7c2"
+    },
+    {
+      "path": "split-config.toml",
+      "bytes": 56088,
+      "sha256": "4be49a4f9b3b60f90792088ef3662312685bf97d72385d0828cfe7429c3cb5ed"
+    },
+    {
+      "path": "startup-entry-hints.json",
+      "bytes": 9744,
+      "sha256": "25fe8656399f9c0f4f3d0c2b2a2cf02cc4551ba4d90cd18b890479f6d451a83a"
+    },
+    {
+      "path": "xvfb.log",
+      "bytes": 524,
+      "sha256": "e7449b19ff916ec41ecd222b2802a9789e565ab36d66e4bc50ac87b04398272d"
+    }
+  ],
+  "compressed_log_archive": {
+    "path": "history/historical-analysis-logs.tar.xz",
+    "bytes": 291876,
+    "sha256": "25f0896211fc3440bd982b83cee72b3ab357c81d4dab14e207992d1af781d7b7",
+    "members": [
+      {
+        "path": "analyzer.log",
+        "bytes": 3411257,
+        "sha256": "17fc4e3cc131fe31bf66f0479db883f69a3b4bb84f51acae45db26ca434f8cdc"
+      },
+      {
+        "path": "corrected-analyzer.log",
+        "bytes": 3680250,
+        "sha256": "069e9d639d5b654dcc29e2430dc279c8dc8a33b6bf806cb16dd4df8532e75128"
+      },
+      {
+        "path": "corrected-recompiler.log",
+        "bytes": 450465,
+        "sha256": "cde836c779a6a906a51a366357475aee90d2b586fd086c602a4e2fd183d49188"
+      },
+      {
+        "path": "recompiler.log",
+        "bytes": 1243313,
+        "sha256": "ae5c04b869197e4f5d9caa462da26c86aae23181a8544538993f6c00511724d9"
+      },
+      {
+        "path": "split-analyzer.log",
+        "bytes": 3546360,
+        "sha256": "4b7eb435c243afb656aff00f0145902e9978fce209982d463af1d75c8b400357"
+      },
+      {
+        "path": "split-recompiler.log",
+        "bytes": 449756,
+        "sha256": "22dd5cd37b8f9a65e3d43532f21e4504e40d3560b1f858d6ca45a9b8313e2766"
+      }
+    ]
+  },
+  "updated_files": [
+    "README.md",
+    ".gitignore"
+  ],
+  "excluded_categories": [
+    "Original game executable and analysis ELF copies",
+    "Supplied IRX and IOP module binaries",
+    "Game DATA, BUNDLES, CHEWIE, SOUND, VIDEO assets and archives",
+    "Recompiled game C++ in corrected-output, ctor-output and baseline-delta",
+    "Compiled objects, native executables and temporary linker outputs",
+    "Raw RAM snapshots and build caches"
+  ],
+  "latest_status": "Native x86-64 diagnostic passes the file-handle failure and waits for missing DTX RPC service; not playable and no Android APK."
+}

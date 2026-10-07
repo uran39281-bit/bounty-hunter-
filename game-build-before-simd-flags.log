@@ -1,0 +1,345 @@
+[  6%] Built target glfw
+[ 12%] Built target ps2_iop
+[ 14%] Built target raylib
+[ 28%] Built target ps2_runtime
+[ 28%] Building CXX object ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/cmake_pch.hxx.gch
+[ 29%] Building CXX object ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_243_cxx.cxx.o
+[ 29%] Building CXX object ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_242_cxx.cxx.o
+[ 29%] Building CXX object ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_241_cxx.cxx.o
+[ 30%] Building CXX object ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_240_cxx.cxx.o
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:39,
+                 from /workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/include/ps2_runtime_macros.h:12,
+                 from /workspace/scratch/381ff731e209/ps2recomp/build-runtime/ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/cmake_pch.hxx:5,
+                 from <command-line>:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h: In function ‘void sub_00354080_0x354080(uint8_t*, R5900Context*, PS2Runtime*)’:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+In file included from /workspace/scratch/381ff731e209/ps2recomp/build-runtime/ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_241_cxx.cxx:43:
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:793:194: note: called from here
+  793 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:793:194: note: called from here
+  793 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:797:124: note: called from here
+  797 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:797:124: note: called from here
+  797 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:801:144: note: called from here
+  801 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:801:144: note: called from here
+  801 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:805:239: note: called from here
+  805 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:805:239: note: called from here
+  805 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1459:194: note: called from here
+ 1459 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1459:194: note: called from here
+ 1459 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1463:124: note: called from here
+ 1463 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1463:124: note: called from here
+ 1463 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1467:144: note: called from here
+ 1467 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1467:144: note: called from here
+ 1467 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1471:239: note: called from here
+ 1471 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:1471:239: note: called from here
+ 1471 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2116:194: note: called from here
+ 2116 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2116:194: note: called from here
+ 2116 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2120:124: note: called from here
+ 2120 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2120:124: note: called from here
+ 2120 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2124:144: note: called from here
+ 2124 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2124:144: note: called from here
+ 2124 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2128:239: note: called from here
+ 2128 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2128:239: note: called from here
+ 2128 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2429:194: note: called from here
+ 2429 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2429:194: note: called from here
+ 2429 |     { __m128 res = _mm_max_ps(ctx->vu0_vf[0], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128i mask = _mm_set_epi32(-1, -1, -1, -1); ctx->vu0_vf[1] = _mm_blendv_ps(ctx->vu0_vf[1], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2433:124: note: called from here
+ 2433 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2433:124: note: called from here
+ 2433 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[2], ctx->vu0_vf[2]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[2] = PS2_VBLEND(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2437:144: note: called from here
+ 2437 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2437:144: note: called from here
+ 2437 |     { __m128 res = PS2_VADD(ctx->vu0_vf[2], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(1,1,1,1))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(0, 0, 0, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2441:239: note: called from here
+ 2441 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00354080_0x354080.cpp:2441:239: note: called from here
+ 2441 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[1], _mm_shuffle_ps(ctx->vu0_vf[2], ctx->vu0_vf[2], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, 0, 0, -1); ctx->vu0_vf[2] = _mm_blendv_ps(ctx->vu0_vf[2], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                  ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmake[3]: *** [ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/build.make:128: ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_241_cxx.cxx.o] Error 1
+gmake[3]: *** Waiting for unfinished jobs....
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:39,
+                 from /workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/include/ps2_runtime_macros.h:12,
+                 from /workspace/scratch/381ff731e209/ps2recomp/build-runtime/ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/cmake_pch.hxx:5,
+                 from <command-line>:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h: In function ‘void sub_00356810_0x356810(uint8_t*, R5900Context*, PS2Runtime*)’:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00356810_0x356810.cpp:1258:124: note: called from here
+ 1258 |     { __m128 res = PS2_VSUB(ctx->vu0_vf[4], ctx->vu0_vf[5]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[6] = PS2_VBLEND(ctx->vu0_vf[6], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00356810_0x356810.cpp:1258:124: note: called from here
+ 1258 |     { __m128 res = PS2_VSUB(ctx->vu0_vf[4], ctx->vu0_vf[5]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[6] = PS2_VBLEND(ctx->vu0_vf[6], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00356810_0x356810.cpp:1286:124: note: called from here
+ 1286 |     { __m128 res = PS2_VADD(ctx->vu0_vf[4], ctx->vu0_vf[5]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[6] = PS2_VBLEND(ctx->vu0_vf[6], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00356810_0x356810.cpp:1286:124: note: called from here
+ 1286 |     { __m128 res = PS2_VADD(ctx->vu0_vf[4], ctx->vu0_vf[5]); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[6] = PS2_VBLEND(ctx->vu0_vf[6], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                            ^~~~~~~~~~
+gmake[3]: *** [ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/build.make:112: ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_242_cxx.cxx.o] Error 1
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:39,
+                 from /workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/include/ps2_runtime_macros.h:12,
+                 from /workspace/scratch/381ff731e209/ps2recomp/build-runtime/ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/cmake_pch.hxx:5,
+                 from <command-line>:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h: In function ‘void sub_00351880_0x351880(uint8_t*, R5900Context*, PS2Runtime*)’:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+In file included from /workspace/scratch/381ff731e209/ps2recomp/build-runtime/ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_240_cxx.cxx:13:
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:460:241: note: called from here
+  460 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[7], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[9] = _mm_blendv_ps(ctx->vu0_vf[9], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                    ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:457:194: note: called from here
+  457 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[6], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:454:194: note: called from here
+  454 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[5], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(1,1,1,1))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:451:144: note: called from here
+  451 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[4], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(0,0,0,0))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:451:144: note: called from here
+  451 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[4], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(0,0,0,0))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:454:194: note: called from here
+  454 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[5], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(1,1,1,1))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:457:194: note: called from here
+  457 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[6], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:460:241: note: called from here
+  460 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[7], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[9] = _mm_blendv_ps(ctx->vu0_vf[9], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                    ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:867:241: note: called from here
+  867 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[7], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[9] = _mm_blendv_ps(ctx->vu0_vf[9], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                    ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:864:194: note: called from here
+  864 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[6], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:861:194: note: called from here
+  861 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[5], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(1,1,1,1))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:858:144: note: called from here
+  858 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[4], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(0,0,0,0))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:858:144: note: called from here
+  858 |     { __m128 res = PS2_VMUL(ctx->vu0_vf[4], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(0,0,0,0))); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:861:194: note: called from here
+  861 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[5], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(1,1,1,1))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:864:194: note: called from here
+  864 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[6], _mm_shuffle_ps(ctx->vu0_vf[8], ctx->vu0_vf[8], _MM_SHUFFLE(2,2,2,2))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); ctx->vu0_acc = _mm_blendv_ps(ctx->vu0_acc, res, _mm_castsi128_ps(_mm_set_epi32(-1, -1, -1, -1))); }
+      |                                                                                                                                                                                     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:204:1: error: inlining failed in call to ‘always_inline’ ‘__m128 _mm_blendv_ps(__m128, __m128, __m128)’: target specific option mismatch
+  204 | _mm_blendv_ps (__m128 __X, __m128 __Y, __m128 __M)
+      | ^~~~~~~~~~~~~
+/workspace/scratch/381ff731e209/ps2recomp/ps2xRuntime/src/runner/sub_00351880_0x351880.cpp:867:241: note: called from here
+  867 |     { __m128 mul_res = PS2_VMUL(ctx->vu0_vf[7], _mm_shuffle_ps(ctx->vu0_vf[0], ctx->vu0_vf[0], _MM_SHUFFLE(3,3,3,3))); __m128 res = PS2_VADD(ctx->vu0_acc, mul_res); __m128i mask = _mm_set_epi32(0, -1, -1, -1); ctx->vu0_vf[9] = _mm_blendv_ps(ctx->vu0_vf[9], res, _mm_castsi128_ps(mask)); }
+      |                                                                                                                                                                                                                                    ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmake[3]: *** [ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/build.make:144: ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/Unity/unity_240_cxx.cxx.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:285: ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:292: ps2xRuntime/CMakeFiles/ps2EntryRunner.dir/rule] Error 2
+gmake: *** [Makefile:216: ps2EntryRunner] Error 2
