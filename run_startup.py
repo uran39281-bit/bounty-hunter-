@@ -29,9 +29,12 @@ def main():
     parser.add_argument('--capture-frame', type=Path)
     parser.add_argument('--advance-cop0-count', action='store_true')
     parser.add_argument('--trace-boot-graphics', action='store_true')
+    parser.add_argument('--ee-va64', action='store_true')
+    parser.add_argument('--capture-on-present', action='store_true')
+    parser.add_argument('--dump-graphics-memory', action='store_true')
     args = parser.parse_args()
-    if not 1 <= args.seconds <= 60:
-        parser.error('--seconds must be 1..60')
+    if not 1 <= args.seconds <= 120:
+        parser.error('--seconds must be 1..120')
     if args.boot_cdvdfsv and not args.boot_sifcmd:
         parser.error('--boot-cdvdfsv requires --boot-sifcmd')
     env = os.environ.copy()
@@ -51,6 +54,19 @@ def main():
     env.pop('PS2X_CALLBACK_HEAP_STACKS', None)
     env.pop('PS2X_CAPTURE_FRAME', None)
     env.pop('PS2X_COP0_COUNT', None)
+    env.pop('PS2X_DUMP_GRAPHICS_MEMORY', None)
+    if args.dump_graphics_memory:
+        if not args.capture_frame or not args.trace_boot_graphics:
+            parser.error('--dump-graphics-memory requires --capture-frame and --trace-boot-graphics')
+        env['PS2X_DUMP_GRAPHICS_MEMORY'] = '1'
+    env.pop('PS2X_CAPTURE_ON_PRESENT', None)
+    if args.capture_on_present:
+        if not args.capture_frame:
+            parser.error('--capture-on-present requires --capture-frame')
+        env['PS2X_CAPTURE_ON_PRESENT'] = '1'
+    env.pop('PS2X_EE_VA64', None)
+    if args.ee_va64:
+        env['PS2X_EE_VA64'] = '1'
     env.pop('PS2X_BOOT_GRAPHICS_TRACE', None)
     if args.advance_cop0_count:
         env['PS2X_COP0_COUNT'] = '1'
@@ -100,6 +116,9 @@ def main():
     report = {'returncode': returncode, 'timeout': timed_out,
               'deadline_seconds': args.seconds,
               'cop0_count_enabled': args.advance_cop0_count,
+              'ee_va64_enabled': args.ee_va64,
+              'capture_on_native_display_copy': args.capture_on_present,
+              'graphics_memory_dump_enabled': args.dump_graphics_memory,
               'boot_graphics_trace_enabled': args.trace_boot_graphics,
               'captured_frame_exists': bool(args.capture_frame and args.capture_frame.is_file()),
               'stop_before_invalid_copy': args.stop_invalid_copy,

@@ -1,3 +1,14 @@
+LOGO FORMAT FIX — 7 October 2026
+The native run now formats start_01 through start_05 correctly. Its completed
+640x446 display copy contains a readable Star Wars Bounty Hunter title logo.
+The lower-left region is blank and menu/copyright text is not visible; the
+complete opening sequence and rendering correctness remain unverified.
+Added opt-in eight-byte va_list slots and full native display-copy capture.
+The mixed-type/opt-out regression and eighteen-file installer/patch reproduction
+pass. See distortion-result.json and README.md for current reproduction.
+No Android APK, sound/controller validation or S24 test.
+The following notes describe historical checkpoints.
+
 BOOT-SCREEN CAPTURE — 7 October 2026
 First actual game pixels captured: 640x446 Bounty Hunter logo/background and
 copyright text. Two 60-second runs reproduce a tiled, clipped and distorted

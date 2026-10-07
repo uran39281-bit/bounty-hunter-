@@ -9,16 +9,28 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 7 October 2026
 
-- **First real game frame captured:** a 640×446 Bounty Hunter logo/background
-  with copyright text, visibly tiled and distorted. Two 60-second runs reproduce
-  the result. This is not a verified correct title screen or Android build.
-- Fixed the runner's capture gate: GS history defaults to paused and must be
-  enabled before counting actual draws. The latest capture has 456 recent Draw
-  events; zero specialized fast-path counters did not imply zero GS work.
-- Added opt-in scheduler-cycle COP0 Count accounting with shared thread/IRQ
-  state, guest-write preservation and 32-bit wrap. The regression passes.
-  See `boot-screen-result.json` and `boot-screen-layout-60s.json`. Game pixels
-  are retained in the private project checkpoint and separate preview image.
+- **Readable title logo captured:** the native run now selects `start_01`
+  through `start_05`, giving five distinct background panels instead of the
+  repeated logo fragment. The 640×446 capture contains the readable Star Wars
+  Bounty Hunter logo. The lower-left region remains blank; a complete opening
+  sequence, menu text and correct rendering are still unverified.
+- Fixed an observed argument-layout mismatch: original callers save formatting
+  arguments eight bytes apart, while the runtime's `vsprintf` cursor advanced
+  four bytes. The fix is opt-in (`--ee-va64`); mixed-type and opt-out regressions pass.
+- Added capture after all 20 original GS display-copy strips complete
+  (`--capture-on-present`), so the preview is a completed native display copy
+  rather than an arbitrary point during drawing. No replacement game pixels,
+  draw packets, VBlank events or native instructions are supplied.
+- See `distortion-result.json`, `distortion-copy-60s.json` and
+  `distortion-native-observations.json`. A separate 120-second run reaches at
+  least 160 completed display copies with the same logo and no visible menu text
+  (`distortion-long-120s.json`). All eighteen modified runtime files
+  reproduce exactly from the pinned source through installers or the patch.
+  Game pixels and RAM/VRAM comparisons remain in the private checkpoint.
+
+Earlier real boot captures contained tiled/distorted logo fragments and
+copyright text. Enabled GS history and the opt-in shared COP0 Count made those
+captures possible; their timing and counter limitations still apply.
 
 Previous completed startup fixes and asset integration:
 
@@ -39,7 +51,7 @@ Previous completed startup fixes and asset integration:
   `MM_ANI_2.VFX` and `MM_ANI_4.VFX`. These loaded assets precede the new distorted logo capture.
 - CDVD file/sector, callback-stack and native-leaf regressions pass. All four
   upstream IOP suites pass with the new imports disabled and enabled.
-  Installers and the alternative patch reproduce sixteen runtime files exactly.
+  Installers and the alternative patch now reproduce eighteen runtime files exactly.
 
 The supplied DATA/BUNDLES/CHEWIE contains 661 files totaling 249,121,369 bytes.
 CHEWIE.zip passes CRC validation and adds all four supplied files (543,943 bytes).
@@ -95,6 +107,9 @@ python3 install_callback_heap_stacks.py /path/to/PS2Recomp
 python3 install_cop0_count.py /path/to/PS2Recomp
 python3 install_boot_graphics_trace.py /path/to/PS2Recomp
 python3 install_graphics_dma_trace.py /path/to/PS2Recomp
+python3 install_gs_batch_trace.py /path/to/PS2Recomp
+python3 install_ee_valist.py /path/to/PS2Recomp
+python3 install_present_capture.py /path/to/PS2Recomp
 python3 verify_runtime_probes.py /path/to/PS2Recomp
 python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --extra-assets /path/to/CHEWIE.zip --disc /path/to/disc
 ```
@@ -110,7 +125,7 @@ cmake -S /path/to/PS2Recomp -B /path/to/runtime-build -DCMAKE_C_COMPILER=clang -
 cmake --build /path/to/runtime-build --target ps2EntryRunner -j3
 python3 generate_leaf_entries.py original/SLUS_204.20 --entry 0x265780 --entry 0x29e7f0 --entry 0x301fa0 --entry 0x31b980 --generated-directory corrected-output
 python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build --leaf-entries leaf-output/observed_leaf_entries.cpp
-python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority --boot-cdvdfsv --cdvd-compat --separate-callback-stacks --advance-cop0-count --trace-boot-graphics --seconds 60 --capture-frame first-game-frame.ppm
+python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority --boot-cdvdfsv --cdvd-compat --separate-callback-stacks --advance-cop0-count --trace-boot-graphics --ee-va64 --capture-on-present --seconds 60 --capture-frame first-game-frame.ppm
 ```
 
 Omit `--reuse-file-descriptors` to reproduce the original invalid-copy failure.
@@ -154,9 +169,31 @@ GIF tags and draw-state metadata. They do not alter or replay game packets.
 The first preliminary clock report used incorrect graphics-buffer addresses;
 the shared-clock and later reports use the corrected original addresses.
 
-Next: correct the tiled/distorted logo and text in the real captured frame,
-then validate the opening screen sequence, missing assets, audio and controller
-input before an Android SDK/NDK build and S24 testing.
+`--ee-va64` makes `vsprintf` read eight-byte argument slots, matching the
+original executable's `SD` saves at `sp+0x840`, `sp+0x848` and `sp+0x850`
+(and a second caller at `sp+0x430`, `sp+0x438`, `sp+0x440`). The default
+four-byte cursor read an argument's upper padding as the next argument.
+The opt-in cursor also reads 64-bit integers and doubles from one full slot;
+the packed four-byte mode remains available. `test_ee_valist.cpp` checks both
+layouts, numbered names, signed values, strings, 64-bit values and doubles.
+Actual native format traces request `start_01` through `start_05` with the fix.
+
+`--capture-on-present` latches only after all 20 observed native GS display-copy
+strips complete, copying the original rendered surface to the display. It
+checks their original geometry and source coordinates; it neither draws
+additional pixels nor advances VBlank. A direct native-return hook was tested
+and did not fire because this generated build returns without the strict
+return-dispatch macro. `distortion-present-60s.json` records that failed
+capture experiment. The final installer observes the actual GS copy instead.
+Deadline captures without this flag can show a partially drawn frame.
+The runner accepts bounded runs of 1–120 seconds; the default remains five.
+With graphics tracing enabled, `.ctx0.ppm` and `.ctx1.ppm` are actual offscreen
+surfaces for diagnosis, not CRT captures. Add `--dump-graphics-memory` explicitly
+to retain private RAM/VRAM diagnostics; these and game pixels stay out of GitHub.
+
+Next: determine how the original front end draws text and input prompts,
+validate the opening screen sequence, and continue missing assets/audio/input
+work before an Android SDK/NDK build and S24 testing.
 
 Primary implementation references:
 

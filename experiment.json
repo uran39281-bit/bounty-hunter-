@@ -153,32 +153,33 @@
     "chewie_crc_validated": true,
     "chewie_archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224"
   },
-  "current_runtime_patches": "Previous opt-in startup fixes, shared COP0 Count, and read-only graphics diagnostics; sixteen modified runtime files reproduce exactly.",
+  "current_runtime_patches": "Previous startup fixes, opt-in native eight-byte va_list layout, shared COP0 Count, read-only graphics traces and completed GS display-copy capture; eighteen files reproduce exactly.",
   "current_native_compilers": "GCC 13 plus Clang 18 for four large unity objects; O0/SSE4.1/AVX2. Clang objects omit GCC PCH and native debug information.",
   "previous_dtx_wait": {
     "native_wait_pc": "0x2579a8",
     "native_wait_rpc_sid": "0x7d000000",
     "native_wait_description": "DTX_Init sceSifBindRpc retry; client server pointer remains unset; underlying runtime/IOP cause unresolved"
   },
-  "latest_execution_result": "boot-screen-layout-60s.json",
+  "latest_execution_result": "distortion-long-120s.json",
   "dtx_service_registered": true,
   "ee_worker_threads_created": 3,
   "first_game_frame_observed": true,
   "latest_graphics_activity": {
-    "fast_path_packed_packets": 0,
-    "fast_path_image_uploads": 0,
-    "recent_draws": 456,
     "real_frame_captured": true,
+    "completed_native_display_copy": true,
     "width": 640,
     "height": 446,
-    "correct_rendering_verified": false
+    "readable_title_logo": true,
+    "correct_rendering_verified": false,
+    "recent_draws": 60,
+    "completed_display_copies_logged_at_least": 160
   },
   "new_regressions_passed": [
     "SPU2 AutoDMA timing",
     "scratchpad receive data/wrap/completion",
     "EE priority zero"
   ],
-  "patch_source_files_reproduced": 16,
+  "patch_source_files_reproduced": 18,
   "latest_ee_threads": 1,
   "previous_cdvd_wait": {
     "native_wait_pc": "0x18afe8",
@@ -267,5 +268,65 @@
     "s24_tested": false,
     "audio_verified": false,
     "controls_verified": false
+  },
+  "logo_distortion_result": {
+    "date": "2026-10-07",
+    "request": "Correct repeated logo and check the boot screen first",
+    "original_elf_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+    "native_instructions_changed": false,
+    "actual_native_formatted_texture_names": [
+      "Data\\iface\\FrontEnd\\common\\ps2tex\\start_01",
+      "Data\\iface\\FrontEnd\\common\\ps2tex\\start_02",
+      "Data\\iface\\FrontEnd\\common\\ps2tex\\start_03",
+      "Data\\iface\\FrontEnd\\common\\ps2tex\\start_04",
+      "Data\\iface\\FrontEnd\\common\\ps2tex\\start_05"
+    ],
+    "five_distinct_names": true,
+    "va_list_slot_stride_bytes": 8,
+    "fix_default_enabled": false,
+    "baseline_report": "distortion-upload-60s.json",
+    "timed_fixed_report": "distortion-valist-60s.json",
+    "completed_copy_report": "distortion-copy-60s.json",
+    "real_completed_display_copy_captured": true,
+    "native_display_copy_strip_count": 20,
+    "display_fbp": 0,
+    "source_offscreen_fbp": 140,
+    "frame_width": 640,
+    "frame_height": 446,
+    "observed_content": "Readable Star Wars Bounty Hunter logo with five distinct background panels; lower-left region remains blank and menu/copyright text is not visible in this completed capture",
+    "complete_opening_sequence_verified": false,
+    "rendering_correctness_verified": false,
+    "audio_verified": false,
+    "controls_verified": false,
+    "android_apk_built": false,
+    "s24_tested": false,
+    "game_pixels_publicly_uploaded": false,
+    "limitations": [
+      "No complete title-screen reference comparison or device validation",
+      "The five original textured panels do not cover the lower-left region; its blank appearance alone does not prove a failed upload",
+      "The diagnostic deadline can interrupt native drawing; final capture uses the last full display copy",
+      "Coarse scheduler cycle timing, partial IOP boot, missing SOUND/VIDEO remain"
+    ],
+    "regressions_passed": [
+      "Opt-out four-byte cursor preserved",
+      "Five numbered names preserved",
+      "Mixed signed integer, string, 64-bit integer and double arguments",
+      "18 modified runtime files reproduced exactly by installers and alternative patch",
+      "Python syntax checks"
+    ],
+    "next_work": "Determine when and how the original front end draws its text/input prompts; validate boot sequence before Android work",
+    "frame_png": "Bounty-Hunter-Boot-Screen.png",
+    "frame_png_sha256": "cfafa3c98f07a4abb7eff671d7a66f6afc0c8a3e9091911ae7e95a41cb2aa305",
+    "completed_vs_timed_capture_same_pixels": false,
+    "distinct_rgb_colors": 50972,
+    "native_display_copy_completion_log": "distortion-copy-60s.log",
+    "longer_report": "distortion-long-120s.json",
+    "longer_run_seconds": 120,
+    "longer_run_returncode": 0,
+    "longer_run_timeout": false,
+    "completed_copy_count_logged_at_least": 160,
+    "longer_run_menu_text_visible": false,
+    "longer_run_has_real_presentation_frame": true,
+    "long_vs_60s_same_pixels": false
   }
 }

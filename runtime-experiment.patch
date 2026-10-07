@@ -425,8 +425,41 @@ index b32e44a..887fcdd 100644
      }
  
      void sceDmaReset(uint8_t *rdram, R5900Context *ctx, PS2Runtime *runtime)
+diff --git a/ps2xRuntime/src/lib/Kernel/Stubs/Helpers/Support.h b/ps2xRuntime/src/lib/Kernel/Stubs/Helpers/Support.h
+index b1bb6d8..37a6f35 100644
+--- a/ps2xRuntime/src/lib/Kernel/Stubs/Helpers/Support.h
++++ b/ps2xRuntime/src/lib/Kernel/Stubs/Helpers/Support.h
+@@ -1,3 +1,4 @@
++#include <cstdlib>
+ #include <algorithm>
+ #include <cctype>
+ 
+@@ -846,13 +847,22 @@ namespace
+         {
+             uint32_t value = 0;
+             (void)tryReadWordFromGuest(m_rdram, m_runtime, m_curr, value);
+-            m_curr += 4;
++            // BOUNTY_EE_VALIST: native callers use SD at eight-byte intervals.
++            m_curr += std::getenv("PS2X_EE_VA64") ? 8u : 4u;
+             return value;
+         }
+ 
+         uint64_t nextU64()
+         {
+             m_curr = (m_curr + 7u) & ~7u;
++            if (std::getenv("PS2X_EE_VA64"))
++            {
++                uint32_t low=0, high=0;
++                (void)tryReadWordFromGuest(m_rdram, m_runtime, m_curr, low);
++                (void)tryReadWordFromGuest(m_rdram, m_runtime, m_curr+4u, high);
++                m_curr += 8u;
++                return static_cast<uint64_t>(low) | (static_cast<uint64_t>(high)<<32u);
++            }
+             const uint64_t low = nextU32();
+             const uint64_t high = nextU32();
+             return low | (high << 32);
 diff --git a/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp b/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp
-index d467c4b..62737f5 100644
+index d467c4b..1cb6703 100644
 --- a/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp
 +++ b/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp
 @@ -1,3 +1,6 @@
@@ -462,6 +495,22 @@ index d467c4b..62737f5 100644
          size = sanitizeMemTransferSize(size, "memcpy");
  
          uint32_t copied = 0u;
+@@ -1150,6 +1172,15 @@ namespace ps2_stubs
+         if (format_addr != 0)
+         {
+             std::string rendered = formatPs2StringWithVaList(rdram, runtime, formatOwned.c_str(), va_list_addr);
++            // BOUNTY_EE_FORMAT_TRACE: bounded original formatting calls.
++            if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE"))
++            {
++                static thread_local uint32_t hit=0;
++                if (++hit<=64u)
++                    std::cerr << "BOOT_FORMAT hit=" << hit << " va64=" << bool(std::getenv("PS2X_EE_VA64"))
++                        << " format=" << sanitizeForLog(formatOwned)
++                        << " output=" << sanitizeForLog(rendered) << '\n';
++            }
+             if (rendered.size() >= kSafeVsprintfBytes)
+             {
+                 rendered.resize(kSafeVsprintfBytes - 1);
 diff --git a/ps2xRuntime/src/lib/Kernel/Stubs/SIF.cpp b/ps2xRuntime/src/lib/Kernel/Stubs/SIF.cpp
 index dc975ed..c64b038 100644
 --- a/ps2xRuntime/src/lib/Kernel/Stubs/SIF.cpp
@@ -539,6 +588,110 @@ index 5110ee2..bcf8797 100644
      }
  
      void DeleteThread(uint8_t *rdram, R5900Context *ctx, PS2Runtime *runtime)
+diff --git a/ps2xRuntime/src/lib/gs/gs_frontend.cpp b/ps2xRuntime/src/lib/gs/gs_frontend.cpp
+index 5658928..d7842e4 100644
+--- a/ps2xRuntime/src/lib/gs/gs_frontend.cpp
++++ b/ps2xRuntime/src/lib/gs/gs_frontend.cpp
+@@ -1,3 +1,5 @@
++#include <unordered_map>
++#include <cstdlib>
+ #include "runtime/gs/gs_frontend.h"
+ #include "runtime/gs/gs_cpu_backend.h"
+ #include "ps2_log.h"
+@@ -1391,6 +1393,16 @@ void GS::writeRegisterUnlocked(uint8_t regAddr, uint64_t value)
+             command.trxpos = m_trxpos;
+             command.trxreg = m_trxreg;
+             command.direction = m_trxdir;
++            // BOUNTY_GS_UPLOAD_TRACE: native upload destination and dimensions only.
++            if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE"))
++            {
++                static thread_local uint32_t hit = 0;
++                if (++hit <= 128u)
++                    std::cerr << "BOOT_GS_UPLOAD hit=" << hit << " direction=" << m_trxdir
++                        << " destination=" << m_bitbltbuf.dbp << ',' << unsigned(m_bitbltbuf.dbw) << ',' << unsigned(m_bitbltbuf.dpsm)
++                        << " origin=" << m_trxpos.dsax << ',' << m_trxpos.dsay
++                        << " size=" << m_trxreg.rrw << ',' << m_trxreg.rrh << '\n';
++            }
+             m_backend->BeginTransfer(command);
+         }
+         recordTransferDebugEventUnlocked();
+@@ -1412,6 +1424,11 @@ void GS::writeRegisterUnlocked(uint8_t regAddr, uint64_t value)
+         m_fogB = static_cast<uint8_t>((value >> 16) & 0xFFu);
+         break;
+     case GS_REG_TEXFLUSH:
++        if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE"))
++        {
++            static thread_local uint32_t hit = 0;
++            if (++hit <= 256u) std::cerr << "BOOT_GS_FLUSH hit=" << hit << '\n';
++        }
+         if (m_backend)
+             m_backend->TextureFlush();
+         break;
+@@ -1575,8 +1592,64 @@ void GS::vertexKick(bool drawing)
+     if (drawing && m_backend)
+     {
+         GSPrimitiveBatch batch = buildDrawBatch(needed);
++        // BOUNTY_GS_TEXTURE_TRACE: observe the original batch without changing it.
++        if (std::getenv("PS2X_BOOT_GRAPHICS_TRACE"))
++        {
++            static thread_local uint32_t all = 0, emitted = 0;
++            static thread_local std::unordered_map<uint32_t, uint32_t> textures;
++            const auto &c = batch.state.context;
++            const auto &a = batch.vertices[0];
++            const auto &b = batch.vertices[batch.vertexCount-1u];
++            const bool big = std::abs(b.x-a.x) >= 128.0f || std::abs(b.y-a.y) >= 128.0f;
++            const uint32_t key = (c.tex0.tbp0 << 6u) | c.tex0.psm;
++            const bool newTexture = batch.state.prim.tme && ++textures[key] <= 3u;
++            if (++all <= 16u || (newTexture && emitted++ < 96u) ||
++                (big && batch.state.prim.tme && c.frame.fbp != 0u && emitted++ < 96u))
++                std::cerr << "BOOT_GS_BATCH draw=" << all << " prim=" << unsigned(batch.state.prim.type)
++                    << " tme=" << batch.state.prim.tme << " fst=" << batch.state.prim.fst
++                    << " frame=" << c.frame.fbp << ',' << c.frame.fbw << ',' << unsigned(c.frame.psm)
++                    << " texture=" << c.tex0.tbp0 << ',' << unsigned(c.tex0.tbw) << ',' << unsigned(c.tex0.psm)
++                    << " dimensions=" << unsigned(c.tex0.tw) << ',' << unsigned(c.tex0.th)
++                    << " clamp=0x" << std::hex << c.clamp << std::dec
++                    << " xy=" << a.x << ',' << a.y << ',' << b.x << ',' << b.y
++                    << " offset=" << c.xyoffset.ofx << ',' << c.xyoffset.ofy
++                    << " uv=" << a.u << ',' << a.v << ',' << b.u << ',' << b.v
++                    << " stq=" << a.s << ',' << a.t << ',' << a.q << ',' << b.s << ',' << b.t << ',' << b.q << '\n';
++        }
+         updatePreferredDisplaySourceForDraw(batch);
+         m_backend->Submit(batch);
++        // BOUNTY_DISPLAY_COPY_CAPTURE: observe all 20 native display-copy strips.
++        // No guest state, VBlank, draw packet or rendered pixel is supplied here.
++        if (std::getenv("PS2X_CAPTURE_ON_PRESENT"))
++        {
++            static thread_local uint32_t nextX=0, completed=0;
++            const auto &c=batch.state.context;
++            const auto &a=batch.vertices[0];
++            const auto &b=batch.vertices[batch.vertexCount-1u];
++            const float x0=a.x-float(c.xyoffset.ofx)/16.0f;
++            const float x1=b.x-float(c.xyoffset.ofx)/16.0f;
++            const float y0=a.y-float(c.xyoffset.ofy)/16.0f;
++            const float y1=b.y-float(c.xyoffset.ofy)/16.0f;
++            const bool strip=batch.vertexCount==2u && batch.state.prim.type==6u &&
++                batch.state.prim.tme && batch.state.prim.fst &&
++                c.frame.fbp==0u && c.frame.fbw==10u && c.frame.psm==0u &&
++                c.tex0.tbp0==4480u && c.tex0.tbw==10u && c.tex0.psm==0u &&
++                x1-x0==32.0f && y0==0.0f && y1==448.0f &&
++                float(a.u)==x0*16.0f && float(b.u)==x1*16.0f && a.v==0u && b.v==7168u;
++            if (strip && x0==0.0f) nextX=0u;
++            if (strip && x0==float(nextX))
++            {
++                nextX+=32u;
++                if (nextX==640u)
++                {
++                    latchHostPresentationFrame();
++                    nextX=0u;
++                    if (++completed<=3u || completed%32u==0u)
++                        std::cerr << "BOOT_DISPLAY_COPY completed=" << completed << '\n';
++                }
++            }
++            else nextX=0u;
++        }
+         recordDrawDebugEventUnlocked(needed);
+     }
+ 
 diff --git a/ps2xRuntime/src/lib/ps2_memory.cpp b/ps2xRuntime/src/lib/ps2_memory.cpp
 index 37b6a4d..ea4f1bc 100644
 --- a/ps2xRuntime/src/lib/ps2_memory.cpp

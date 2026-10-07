@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
         return 2;
     }
     const int seconds = argc == 3 ? std::stoi(argv[2]) : 5;
-    if (seconds < 1 || seconds > 60) return 2;
+    if (seconds < 1 || seconds > 120) return 2;
     PS2Runtime runtime;
     runtime.setMissingFunctionPolicy(PS2Runtime::MissingFunctionPolicy::Stop);
     if (!runtime.memory().initialize() || !runtime.syncCoreSubsystems() ||
@@ -128,7 +128,8 @@ int main(int argc, char **argv) {
                   << std::dec << '\n';
     }
     if (recentDraws > 0 && std::getenv("PS2X_CAPTURE_FRAME")) {
-        runtime.gs().latchHostPresentationFrame();
+        if (!std::getenv("PS2X_CAPTURE_ON_PRESENT"))
+            runtime.gs().latchHostPresentationFrame();
         std::vector<uint8_t> pixels;
         uint32_t width=0, height=0;
         if (runtime.gs().copyLatchedHostPresentationFrame(pixels, width, height) &&
@@ -138,6 +139,33 @@ int main(int argc, char **argv) {
             for (size_t offset=0; offset<pixels.size(); offset+=4u)
                 file.write(reinterpret_cast<const char*>(pixels.data()+offset), 3);
             std::cout << "CAPTURED_GS_FRAME width=" << width << " height=" << height << '\n';
+            const auto presented = runtime.gs().getDebugSnapshot();
+            std::cout << "BOOT_GS_PRESENT display=" << presented.hostPresentationDisplayFbp
+                      << " source=" << presented.hostPresentationSourceFbp
+                      << " preferred=" << presented.hostPresentationUsedPreferred << '\n';
+        }
+    }
+    if (recentDraws > 0 && std::getenv("PS2X_CAPTURE_FRAME") && std::getenv("PS2X_BOOT_GRAPHICS_TRACE")) {
+        // Original game memory for private byte comparisons; never public source.
+        if (std::getenv("PS2X_DUMP_GRAPHICS_MEMORY")) {
+            const std::string capturePath=std::getenv("PS2X_CAPTURE_FRAME");
+            std::ofstream ram(capturePath+".ram",std::ios::binary);
+            ram.write(reinterpret_cast<const char*>(runtime.memory().getRDRAM()),PS2_RAM_SIZE);
+            std::ofstream vram(capturePath+".vram",std::ios::binary);
+            vram.write(reinterpret_cast<const char*>(runtime.memory().getGSVRAM()),PS2_GS_VRAM_SIZE);
+        }
+        // Diagnostic offscreen surfaces from actual native draws, not CRT presentation.
+        for (unsigned c=0; c<2; ++c) {
+            const auto &frame=graphics.ctx[c].frame;
+            if (frame.psm != 0 || frame.fbw == 0) continue;
+            std::ofstream file(std::string(std::getenv("PS2X_CAPTURE_FRAME"))+".ctx"+std::to_string(c)+".ppm", std::ios::binary);
+            file << "P6\n640 448\n255\n";
+            for (uint32_t y=0; y<448; ++y) for (uint32_t x=0; x<640; ++x) {
+                const uint32_t color=runtime.gs().ReadVram(frame.psm,frame.fbp*32u,frame.fbw,x,y);
+                const uint8_t rgb[]={uint8_t(color),uint8_t(color>>8),uint8_t(color>>16)};
+                file.write(reinterpret_cast<const char*>(rgb),3);
+            }
+            std::cout << "BOOT_OFFSCREEN_CAPTURE context=" << c << " fbp=" << frame.fbp << " fbw=" << frame.fbw << '\n';
         }
     }
     const auto iop = runtime.iopDebugSnapshot();

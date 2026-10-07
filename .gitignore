@@ -52,3 +52,11 @@ boot-screen-*.ppm
 boot-screen-*.png
 test-cop0-count
 Bounty-Hunter-Boot-Screen.png
+
+# Private distortion captures and game-memory diagnostics
+distortion-*.ppm*
+distortion-*.png
+*.ram
+*.vram
+*.r2t
+test-ee-valist

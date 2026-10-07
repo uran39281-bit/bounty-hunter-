@@ -1,0 +1,43 @@
+{
+  "original_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+  "native_observations": [
+    {
+      "address": "0x333cd8",
+      "mnemonic": "sd",
+      "operands": "$a2, 0x840($sp)"
+    },
+    {
+      "address": "0x333cdc",
+      "mnemonic": "sd",
+      "operands": "$a3, 0x848($sp)"
+    },
+    {
+      "address": "0x333ce0",
+      "mnemonic": "sd",
+      "operands": "$t0, 0x850($sp)"
+    },
+    {
+      "address": "0x1dec54",
+      "mnemonic": "sd",
+      "operands": "$a2, 0x430($sp)"
+    },
+    {
+      "address": "0x1dec58",
+      "mnemonic": "sd",
+      "operands": "$a3, 0x438($sp)"
+    },
+    {
+      "address": "0x1dec5c",
+      "mnemonic": "sd",
+      "operands": "$t0, 0x440($sp)"
+    },
+    {
+      "address": "0x349a0c",
+      "mnemonic": "jr",
+      "operands": "$ra"
+    }
+  ],
+  "unchanged_executable": true,
+  "va_list_slot_stride_bytes": 8,
+  "observation_only_no_native_instruction_patch": true
+}

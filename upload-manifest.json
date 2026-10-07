@@ -1437,5 +1437,160 @@
         "sha256": "6a1c7e966ab1fa86b7f591a297ad263ae2910a1a57c7c5f9495fe624491108fa"
       }
     ]
+  },
+  "distortion_checkpoint": {
+    "base_commit": "397c10aeecb46a51c6e136ec470604c01161d017",
+    "date": "2026-10-07",
+    "readable_title_logo": true,
+    "complete_opening_sequence_verified": false,
+    "runtime_source_files_reproduced": 18,
+    "game_pixels_and_memory_publicly_uploaded": false,
+    "files": [
+      {
+        "path": ".gitignore",
+        "bytes": 885,
+        "sha256": "1dc4f17bbc27f6a4498fe7a8ef1bd36b10b455ddc58e1b25c2f3da3f5d9db45b"
+      },
+      {
+        "path": "README.md",
+        "bytes": 13807,
+        "sha256": "6fe7ff3c6b7696dce6ef2b3bba320225124c5b4e3751d7d287f45298dc69cb58"
+      },
+      {
+        "path": "README.txt",
+        "bytes": 15526,
+        "sha256": "db3753d1dee60ba8556d6e51273684d663ac8b9df84803f794d5490f2f506680"
+      },
+      {
+        "path": "experiment.json",
+        "bytes": 14288,
+        "sha256": "19106bd1c6b19ea0009a55f81b4d176c1aeddee5516978cfcfc355261dae1ea2"
+      },
+      {
+        "path": "headless_startup.cpp",
+        "bytes": 10789,
+        "sha256": "0d137fb0585ef3fe40c9eee21422faca48474cac8d0d77641464493c0c4df9db"
+      },
+      {
+        "path": "run_startup.py",
+        "bytes": 7152,
+        "sha256": "8535abe5a4029c5ba0d9ffadd8fd260351a6e0e910235a27e633ba8b81890573"
+      },
+      {
+        "path": "runtime-experiment.patch",
+        "bytes": 40076,
+        "sha256": "d0d3555b5a794e5ebf23d734cca4f7e8e1b184e40d113f0db40bb7427a849202"
+      },
+      {
+        "path": "verify_runtime_probes.py",
+        "bytes": 4134,
+        "sha256": "bcaa664b86f656e5ecb9323e6e06d6302e1673870e36a070df0b03bb6d0f3808"
+      },
+      {
+        "path": "probe-installation-check.json",
+        "bytes": 3732,
+        "sha256": "b2b4dcd36a9d7768355b3f31cbfb54309003a9e46f3aec138b6179b267f2a821"
+      },
+      {
+        "path": "install_gs_batch_trace.py",
+        "bytes": 4017,
+        "sha256": "76d297852b797f698d3ed625376d9780433fc82f41b44a119e70164aa9ab5226"
+      },
+      {
+        "path": "install_ee_valist.py",
+        "bytes": 2810,
+        "sha256": "8adecefc6e1c92577174ccee9373d7d3df2d51902f301092c148dba22b469824"
+      },
+      {
+        "path": "install_present_capture.py",
+        "bytes": 2323,
+        "sha256": "9b2df39cacece42d7e53c27e18f050213ad271906089ba44fba28dc231113ee2"
+      },
+      {
+        "path": "test_ee_valist.cpp",
+        "bytes": 2019,
+        "sha256": "e8e8aa6c83f1324a43bc56af6841945fc283cace4878ea04b9dab5b3c5d2a643"
+      },
+      {
+        "path": "distortion-native-observations.json",
+        "bytes": 947,
+        "sha256": "931cd7a1ecbaf90d6734c9e294d9c5727a67feafcc5e9615d27af9989c778878"
+      },
+      {
+        "path": "distortion-result.json",
+        "bytes": 2893,
+        "sha256": "2539a25618c2514746eacd6b6f0bb32a86a096308ab76a82375ea007bf407e18"
+      },
+      {
+        "path": "distortion-valist-regression.log",
+        "bytes": 113,
+        "sha256": "5c79ec992d77b6a8f13f4cb270eb8534f36917dd10d61a26623c39ab3dac3039"
+      },
+      {
+        "path": "distortion-valist-build.log",
+        "bytes": 2043,
+        "sha256": "24cd94bfce4780c71768e0d38d0a346110f6ba1da6ba2e1f5cc638a3feaf69c1"
+      },
+      {
+        "path": "distortion-copy-build.log",
+        "bytes": 350,
+        "sha256": "d57b0c2082311429c1f84294c2ba519422167d6d7e7275818701c9eb9d94de87"
+      },
+      {
+        "path": "distortion-long-link.log",
+        "bytes": 133,
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "distortion-upload-60s.json",
+        "bytes": 54374,
+        "sha256": "01c6f3b7abe91d4db18b1123c223f4984b9efd92a878e8497b825c5e69e55a26"
+      },
+      {
+        "path": "distortion-upload-60s.log",
+        "bytes": 52980,
+        "sha256": "a8d69e91c4fc90aecbf8f1c0f6626266c323a33446a5eaf2bb0b8d872df3a956"
+      },
+      {
+        "path": "distortion-valist-60s.json",
+        "bytes": 69294,
+        "sha256": "48752a73af7e0f1563f235d8436b871ceeef4eadf2d8c431e25aa1b09ce5a252"
+      },
+      {
+        "path": "distortion-valist-60s.log",
+        "bytes": 67533,
+        "sha256": "c84cf22eeac46bbc4d6aa6d9d2d536875d440e160f0fe60231c76331d36fc997"
+      },
+      {
+        "path": "distortion-present-60s.json",
+        "bytes": 69193,
+        "sha256": "f97d16778c886fea61750729c18a0ced4a2baa72272b5e999236c1ce538010f8"
+      },
+      {
+        "path": "distortion-copy-60s.json",
+        "bytes": 69408,
+        "sha256": "de161c53a9c7ff912048a6370d80de822e733600994a77a03eba3d73269df72a"
+      },
+      {
+        "path": "distortion-copy-60s.log",
+        "bytes": 67560,
+        "sha256": "fa1c46ee6fadcb056744442cef5edc1f96374cb0551ef5265c394cf258103398"
+      },
+      {
+        "path": "distortion-long-120s.json",
+        "bytes": 71968,
+        "sha256": "eb97b0f133a821701853bacd165dc44370fd1f9d8d023887bbf393998061f652"
+      },
+      {
+        "path": "distortion-long-120s.log",
+        "bytes": 70039,
+        "sha256": "d3cde5063fe6dfdbf03a2889d1cb05d4831b85ca95c34f857a00dbbee4c9914c"
+      },
+      {
+        "path": "distortion-final-reproduction.log",
+        "bytes": 1106,
+        "sha256": "ece5458fcb675eb17c635c79741c221ed802469d4a3f9f64d49ed71f7253c4a6"
+      }
+    ]
   }
 }
