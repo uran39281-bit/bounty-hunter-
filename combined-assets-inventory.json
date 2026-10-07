@@ -1,8 +1,7 @@
 {
-  "files": 657,
-  "bytes": 248577426,
+  "files": 661,
+  "bytes": 249121369,
   "missing_known_folders": [
-    "CHEWIE",
     "SOUND",
     "VIDEO"
   ],
@@ -532,6 +531,26 @@
       "path": "DATA/BUNDLES/FRONTEND/FETEX.ZAP",
       "bytes": 624016,
       "sha256": "0925995fd24bc088aefc97b64487358903d1d60fb1f995cd3718b763ebf606be"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1010A.CSP",
+      "bytes": 226831,
+      "sha256": "e41b16df80690852fe17a804b663c687ee494e33ff9899e9617907c5ed54f187"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1010A.SYM",
+      "bytes": 49773,
+      "sha256": "d15686939b19fbf385bfd3d97fb95f2f1437c29c049c6be9372034c3231c0180"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1014A.CSP",
+      "bytes": 218486,
+      "sha256": "c93610a994c4c747876b1761c074b27d1e4003923254bd89e53cf38953387d58"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1014A.SYM",
+      "bytes": 48853,
+      "sha256": "ff2cd5dd63ccd576014b2ce334698cd5794b1ac8296f79388c54356956ce0682"
     },
     {
       "path": "DATA/ICONS/TANGO.ICO",

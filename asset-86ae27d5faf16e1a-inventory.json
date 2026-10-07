@@ -1,0 +1,40 @@
+{
+  "archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224",
+  "archive_bytes": 148495,
+  "crc_validated": true,
+  "files": 4,
+  "uncompressed_bytes": 543943,
+  "folders": {
+    "CHEWIE": {
+      "files": 4,
+      "bytes": 543943
+    }
+  },
+  "missing_top_level_folders": [
+    "SOUND",
+    "VIDEO"
+  ],
+  "complete_disc_assets": false,
+  "entries": [
+    {
+      "path": "DATA/CHEWIE/CS1010A.CSP",
+      "bytes": 226831,
+      "sha256": "e41b16df80690852fe17a804b663c687ee494e33ff9899e9617907c5ed54f187"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1010A.SYM",
+      "bytes": 49773,
+      "sha256": "d15686939b19fbf385bfd3d97fb95f2f1437c29c049c6be9372034c3231c0180"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1014A.CSP",
+      "bytes": 218486,
+      "sha256": "c93610a994c4c747876b1761c074b27d1e4003923254bd89e53cf38953387d58"
+    },
+    {
+      "path": "DATA/CHEWIE/CS1014A.SYM",
+      "bytes": 48853,
+      "sha256": "ff2cd5dd63ccd576014b2ce334698cd5794b1ac8296f79388c54356956ce0682"
+    }
+  ]
+}

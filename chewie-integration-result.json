@@ -1,0 +1,26 @@
+{
+  "archive": "CHEWIE.zip",
+  "crc_validated": true,
+  "files": 4,
+  "bytes": 543943,
+  "archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224",
+  "staged_at": "DATA/CHEWIE",
+  "combined_files": 661,
+  "combined_bytes": 249121369,
+  "remaining_missing_folders": [
+    "SOUND",
+    "VIDEO"
+  ],
+  "startup_report": "chewie-startup-result.json",
+  "startup_seconds": 20,
+  "returncode": 0,
+  "timeout": false,
+  "chewie_files_opened_by_game": [
+    "cdrom0:\\DATA\\CHEWIE\\CS1014A.SYM;1",
+    "cdrom0:\\DATA\\CHEWIE\\CS1014A.CSP;1"
+  ],
+  "frontend_bundle_open_observed": "FECOMMON.ZAP",
+  "first_game_frame_observed": false,
+  "android_apk_built": false,
+  "full_disc_completeness_verified": false
+}

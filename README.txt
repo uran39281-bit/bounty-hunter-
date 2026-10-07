@@ -1,3 +1,9 @@
+CHEWIE asset update — 7 October 2026
+Validated and staged all four CHEWIE files (543,943 bytes). Combined assets:
+661 files, 249,121,369 bytes. SOUND and VIDEO remain missing. A 20-second smoke test
+opens CS1014A.SYM, CS1014A.CSP and FECOMMON.ZAP with no exception; no visible
+frame or Android APK. The prior 60-second result remains historical evidence.
+
 LATEST CHECKPOINT — 7 October 2026
 CDVD SearchFile RPC 0x80000597 now registers through supplied CDVDFSV code.
 Implemented actual FSV read buffer/layer-zero search and separated callback

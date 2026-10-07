@@ -1143,5 +1143,71 @@
         "sha256": "25bbfc59e951eb66a8f94ff42d135bf1e3a804adcd13e51b1c0f2fd2f953ae21"
       }
     ]
+  },
+  "chewie_checkpoint": {
+    "base_commit": "f087706f8de13ce8eec4eed0c3bba21b4997a401",
+    "date": "2026-10-07",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 9292,
+        "sha256": "1c29b9c5a6d5bcd3e64429cdf52fe5ba245b6ec48a8cb0dec4a2cd12a49ea725"
+      },
+      {
+        "path": "README.txt",
+        "bytes": 14137,
+        "sha256": "ede9353a2bfed615a8f6f224ec602042a6f3c05ed43081717cec86e11fbe151c"
+      },
+      {
+        "path": "asset-86ae27d5faf16e1a-inventory.json",
+        "bytes": 1024,
+        "sha256": "e3b4cf15ca6ec6151eb5f7145d083f9cb6329995461e7a57d9bdc0533fcbaadc"
+      },
+      {
+        "path": "asset-integration-result.json",
+        "bytes": 1059,
+        "sha256": "dc11e315e4812048769cd8d8e875b6cc1c41e7ff764ae9adbf065f8448835e26"
+      },
+      {
+        "path": "chewie-integration-result.json",
+        "bytes": 729,
+        "sha256": "0bdadd397ee8af5d818e3a3ad3df94a873a2c3ce8c02c24a1d3d5193cb0e3eb1"
+      },
+      {
+        "path": "chewie-run.log",
+        "bytes": 673,
+        "sha256": "8fc5dc51f325496b6f2a4973e530176bcc0f5b6e32574fd453f1031e95327ad4"
+      },
+      {
+        "path": "chewie-staging.log",
+        "bytes": 1416,
+        "sha256": "dff7c07b0a63534e9d031e476c5b8baa7e2215e99010d3dff1476cf2e03ef298"
+      },
+      {
+        "path": "chewie-startup-result.json",
+        "bytes": 10894,
+        "sha256": "c453167b50dd15415782268c072b1de7b3d1a72ec26b25ee368bc0866d0375ba"
+      },
+      {
+        "path": "chewie-startup-result.log",
+        "bytes": 9937,
+        "sha256": "20c56c7687f25ec12cbc1030824927a1d615107ac575c5ce0e501a814a526cb0"
+      },
+      {
+        "path": "combined-assets-inventory.json",
+        "bytes": 121407,
+        "sha256": "cc7f7f158768d522202708a57a0265ebcfc7bead488fd4e3a6bdabb29a188602"
+      },
+      {
+        "path": "experiment.json",
+        "bytes": 8510,
+        "sha256": "dcf44091a308e36dfbad9361ae90b5ca86891875f34420a5941152c5a8e958d4"
+      },
+      {
+        "path": "stage_assets.py",
+        "bytes": 3189,
+        "sha256": "1d54455563d26200db5143c08c58ec66f32f3289565f74cb498816da565283cc"
+      }
+    ]
   }
 }

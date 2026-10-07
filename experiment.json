@@ -106,16 +106,16 @@
     "IRX.zip": "623a8c4757d9db9dac1dbffc1d4beed6aee85bb42e35f9f1ab2dafdd82fea3a0"
   },
   "data_assets_complete": false,
-  "data_files_received": 657,
-  "data_uncompressed_bytes": 248577426,
+  "data_files_received": 661,
+  "data_uncompressed_bytes": 249121369,
   "data_folders_received": [
     "ALLOCS",
     "ICONS",
     "IFACE",
-    "BUNDLES"
+    "BUNDLES",
+    "CHEWIE"
   ],
   "data_folders_missing": [
-    "CHEWIE",
     "SOUND",
     "VIDEO"
   ],
@@ -126,10 +126,9 @@
   "partial_data_underlying_failure_cause": "Controlled VFS descriptor reuse prevents the buffer-table corruption and invalid memcpy; historical baseline diagnostics retained.",
   "bundles_archive_sha256": "f0f7e049107e1b628789f052a8064f72e812088e5acb4ff1f3d8e74cb4e27c94",
   "latest_asset_integration": {
-    "files": 657,
-    "bytes": 248577426,
+    "files": 661,
+    "bytes": 249121369,
     "missing_known_folders": [
-      "CHEWIE",
       "SOUND",
       "VIDEO"
     ],
@@ -138,7 +137,7 @@
     "bundles_crc_validated": true,
     "bundles_files": 84,
     "bundles_bytes": 218929584,
-    "native_startup_result": "DTX/CDVD RPC services register; callback stacks separated and four native entries exposed; main-menu bundles and front-end render routines reached, no frame.",
+    "native_startup_result": "20-second post-CHEWIE smoke test opens CS1014A.SYM and CS1014A.CSP, then FECOMMON.ZAP; no exception or captured frame. Prior 60-second result remains separate.",
     "memory_copy_caller": "0x1de9b0 (copy return PC 0x1dea64)",
     "baseline_bad_source": "0xdd84c010",
     "baseline_bad_size": "0x8f0e8e40",
@@ -146,9 +145,13 @@
     "upstream_iop_suites_passed": 4,
     "vfs_reuse_regression_passed": true,
     "patch_installation_reproduced_exactly": true,
-    "latest_execution_result": "cdvd-front-end-60s.json",
+    "latest_execution_result": "chewie-startup-result.json",
     "android_apk_produced": false,
-    "title_screen_observed": false
+    "title_screen_observed": false,
+    "chewie_files": 4,
+    "chewie_bytes": 543943,
+    "chewie_crc_validated": true,
+    "chewie_archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224"
   },
   "current_runtime_patches": "Opt-in descriptor reuse, supplied SIFCMD/CDVDFSV partial boot, SPU2 cadence, real SPR receive, priority-zero EE workers, CDVD imports, allocated callback stacks, and read-only diagnostics; fourteen runtime source files reproduce exactly.",
   "current_native_compilers": "GCC 13 plus Clang 18 for four large unity objects; O0/SSE4.1/AVX2. Clang objects omit GCC PCH and native debug information.",
@@ -185,5 +188,31 @@
     "0x29e7f0",
     "0x301fa0",
     "0x31b980"
-  ]
+  ],
+  "chewie_asset_validation": {
+    "archive": "CHEWIE.zip",
+    "crc_validated": true,
+    "files": 4,
+    "bytes": 543943,
+    "archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224",
+    "staged_at": "DATA/CHEWIE",
+    "combined_files": 661,
+    "combined_bytes": 249121369,
+    "remaining_missing_folders": [
+      "SOUND",
+      "VIDEO"
+    ],
+    "startup_report": "chewie-startup-result.json",
+    "startup_seconds": 20,
+    "returncode": 0,
+    "timeout": false,
+    "chewie_files_opened_by_game": [
+      "cdrom0:\\DATA\\CHEWIE\\CS1014A.SYM;1",
+      "cdrom0:\\DATA\\CHEWIE\\CS1014A.CSP;1"
+    ],
+    "frontend_bundle_open_observed": "FECOMMON.ZAP",
+    "first_game_frame_observed": false,
+    "android_apk_built": false,
+    "full_disc_completeness_verified": false
+  }
 }

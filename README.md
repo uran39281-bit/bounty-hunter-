@@ -28,9 +28,14 @@ reports. Supply the original executable, IRX modules and game assets locally.
   upstream IOP suites pass with the new imports disabled and enabled.
   Installers and the alternative patch reproduce fourteen runtime files exactly.
 
-The supplied DATA/BUNDLES contains 657 files totaling 248,577,426 bytes.
+The supplied DATA/BUNDLES/CHEWIE contains 661 files totaling 249,121,369 bytes.
+CHEWIE.zip passes CRC validation and adds all four supplied files (543,943 bytes).
+A 20-second post-staging smoke test opens `CS1014A.SYM`, `CS1014A.CSP` and
+`FECOMMON.ZAP` without an exception; it captures no frame. See
+`chewie-integration-result.json` and `chewie-startup-result.json`. The 60-second
+result above predates this asset addition.
 `DATA/VIDEO/01TRAILR.SFD` is requested and missing; the game proceeds to the
-front end with the current fixes. CHEWIE, SOUND and VIDEO remain incomplete.
+front end with the current fixes. SOUND and VIDEO remain incomplete.
 Missing assets may cause later failures, and full-disc completeness is unverified.
 
 No visible title screen, sound output, controls, gameplay, FPS, Android binary
@@ -47,7 +52,7 @@ build; Clang is preferable for fresh builds because several generated
 functions are unusually large.
 
 1. Place `SLUS_204.20`, `SYSTEM.CNF`, `CDROM.TXT`, `IOPRP254.IMG` and `IRX.zip`
-   in `original/`. Keep the separately supplied DATA.zip and BUNDLES.zip local.
+   in `original/`. Keep the separately supplied DATA.zip, BUNDLES.zip and CHEWIE.zip local.
 2. Clone [PS2Recomp](https://github.com/ran-j/PS2Recomp) and check out
    `2c5fbb9389e11dd95693385969490c9e8e6f57b4`.
 3. Build its analyzer/recompiler, extract modules, and regenerate translation:
@@ -75,8 +80,11 @@ python3 install_ee_exit_probe.py /path/to/PS2Recomp
 python3 install_ee_return_probe.py /path/to/PS2Recomp
 python3 install_callback_heap_stacks.py /path/to/PS2Recomp
 python3 verify_runtime_probes.py /path/to/PS2Recomp
-python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --disc /path/to/disc
+python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --extra-assets /path/to/CHEWIE.zip --disc /path/to/disc
 ```
+
+Repeat `--extra-assets` for additional SOUND or VIDEO ZIP batches. The staging
+tool preserves their disc-relative paths and rejects differing existing files.
 
 4. Configure a fresh desktop runtime build. These x86 SIMD flags are not
    Android build flags:

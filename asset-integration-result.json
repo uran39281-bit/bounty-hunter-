@@ -1,8 +1,7 @@
 {
-  "files": 657,
-  "bytes": 248577426,
+  "files": 661,
+  "bytes": 249121369,
   "missing_known_folders": [
-    "CHEWIE",
     "SOUND",
     "VIDEO"
   ],
@@ -11,7 +10,7 @@
   "bundles_crc_validated": true,
   "bundles_files": 84,
   "bundles_bytes": 218929584,
-  "native_startup_result": "Descriptor reuse eliminates the captured invalid copy; game loads fonts/text and then waits for DTX RPC SID 0x7d000000. Optional supplied SIFCMD execution initializes SIF but does not remove this wait.",
+  "native_startup_result": "20-second post-CHEWIE smoke test opens CS1014A.SYM and CS1014A.CSP, then FECOMMON.ZAP; no exception or captured frame. Prior 60-second result remains separate.",
   "memory_copy_caller": "0x1de9b0 (copy return PC 0x1dea64)",
   "baseline_bad_source": "0xdd84c010",
   "baseline_bad_size": "0x8f0e8e40",
@@ -19,7 +18,11 @@
   "upstream_iop_suites_passed": 4,
   "vfs_reuse_regression_passed": true,
   "patch_installation_reproduced_exactly": true,
-  "latest_execution_result": "headless-iop-snapshot-result.json",
+  "latest_execution_result": "chewie-startup-result.json",
   "android_apk_produced": false,
-  "title_screen_observed": false
+  "title_screen_observed": false,
+  "chewie_files": 4,
+  "chewie_bytes": 543943,
+  "chewie_crc_validated": true,
+  "chewie_archive_sha256": "86ae27d5faf16e1a6360b5aaaf5a25724a5f116d5a46815d1c3353ccae8d6224"
 }

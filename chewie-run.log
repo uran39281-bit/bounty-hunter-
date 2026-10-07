@@ -1,0 +1,23 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "deadline_seconds": 20,
+  "captured_frame_exists": false,
+  "stop_before_invalid_copy": true,
+  "reuse_file_descriptors": true,
+  "partial_sifcmd_boot_probe": true,
+  "partial_cdvdfsv_boot_probe": true,
+  "cdvd_compat_enabled": true,
+  "callback_heap_stacks_enabled": true,
+  "iop_snapshot_enabled": true,
+  "spu2_adma_timing_enabled": true,
+  "iop_import_trace_enabled": true,
+  "scratchpad_receive_enabled": true,
+  "ee_thread_trace_enabled": true,
+  "ee_zero_priority_enabled": true,
+  "bundles_present": true,
+  "game_startup_validated": false,
+  "graphics_tested": false,
+  "audio_tested": false,
+  "android_tested": false
+}

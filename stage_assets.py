@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stage the two supplied archives and original inputs for startup diagnostics."""
+"""Stage supplied asset archives and original inputs for startup diagnostics."""
 import argparse
 import hashlib
 import json
@@ -12,6 +12,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data', type=Path, required=True)
     parser.add_argument('--bundles', type=Path, required=True)
+    parser.add_argument('--extra-assets', type=Path, action='append', default=[],
+                        help='Additional folder ZIP; repeat for CHEWIE, SOUND or VIDEO batches')
     parser.add_argument('--disc', type=Path, required=True)
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
@@ -34,7 +36,11 @@ def main():
         if boot.exists() and boot.read_bytes() != src.read_bytes():
             raise ValueError(f'Existing {module} boot module differs')
         shutil.copy2(src, boot)
-    for name, archive in [('data', args.data), ('bundles', args.bundles)]:
+    archives = [('data', args.data), ('bundles', args.bundles)]
+    for archive in args.extra_assets:
+        digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+        archives.append((f'asset-{digest[:16]}', archive))
+    for name, archive in archives:
         subprocess.run([sys.executable, str(root / 'inspect_data.py'), str(archive),
                         '--destination', str(args.disc / 'DATA'), '--report',
                         str(root / f'{name}-inventory.json')], check=True)
