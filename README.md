@@ -51,8 +51,8 @@ result predates this asset addition; new boot-screen runs include CHEWIE.
 front end with the current fixes. SOUND and VIDEO remain incomplete.
 Missing assets may cause later failures, and full-disc completeness is unverified.
 
-Correct title-screen rendering, sound output, controls, gameplay, FPS, Android binary
-or S24 test is established. Diagnostic exit zero only means the bounded runner
+Correct title-screen rendering, sound output, controls, gameplay, FPS, Android
+binaries and S24 testing remain unverified. Diagnostic exit zero only means the bounded runner
 returned. AutoDMA timing remains a coarse interrupt-cadence model; it does not
 implement SPU2 audio output or prove full hardware accuracy. CDVDFSV boot is
 still a partial IOP boot, and other DMA receive channels remain unimplemented.
