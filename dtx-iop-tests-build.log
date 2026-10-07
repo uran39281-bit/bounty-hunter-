@@ -1,0 +1,12 @@
+[  3%] Building CXX object CMakeFiles/ps2_iop.dir/src/emulator/core/iop_memory.cpp.o
+[  6%] Building CXX object CMakeFiles/ps2_iop.dir/src/emulator/iop_emulator.cpp.o
+[  9%] Linking CXX static library libps2_iop.a
+[ 75%] Built target ps2_iop
+[ 78%] Linking CXX executable ps2_iop_emulator_tests
+[ 81%] Linking CXX executable ps2_iop_compatibility_tests
+[ 84%] Linking CXX executable ps2_iop_import_tests
+[ 87%] Built target ps2_iop_import_tests
+[ 90%] Linking CXX executable ps2_iop_import_version_tests
+[ 93%] Built target ps2_iop_compatibility_tests
+[ 96%] Built target ps2_iop_emulator_tests
+[100%] Built target ps2_iop_import_version_tests

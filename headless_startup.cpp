@@ -2,6 +2,7 @@
 // No window, audio device, rendered frames, or simulated success responses.
 #include "ps2_runtime.h"
 #include "runtime/ee_scheduler.h"
+#include "runtime/gs/gs_frontend.h"
 #include "Kernel/Stubs/Audio.h"
 #include "Kernel/Stubs/MPEG.h"
 #include <chrono>
@@ -47,16 +48,30 @@ int main(int argc, char **argv) {
             runtime.requestStop();
         }
     });
+    int result = 0;
     try {
         runtime.eeScheduler().run();
     } catch (const std::exception &error) {
         std::cerr << "HEADLESS_EXCEPTION " << error.what() << '\n';
         timer.request_stop();
         runtime.requestStop();
-        return 1;
+        result = 1;
     }
     timer.request_stop();
     timer.join();
+    std::cout << "EE_REGISTERS s0=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[16]))
+              << " a0=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[4]))
+              << " gp=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[28])) << '\n';
+    const auto graphics = runtime.gs().getDebugSnapshot();
+    size_t recentDraws = 0;
+    for (const auto &event : runtime.gs().getDebugHistory())
+        if (event.kind == GSDebugEventKind::Draw) ++recentDraws;
+    std::cout << "GRAPHICS_ACTIVITY packed_packets=" << runtime.gs().nativePackedGIFPacketCount()
+              << " image_uploads=" << runtime.gs().nativeImageUploadCount()
+              << " recent_draws=" << recentDraws
+              << " presentation_frame=" << graphics.hasHostPresentationFrame
+              << " width=" << graphics.hostPresentationWidth
+              << " height=" << graphics.hostPresentationHeight << '\n';
     const auto iop = runtime.iopDebugSnapshot();
     for (const auto &row : iop.diagnostics)
         std::cout << "IOP_DIAGNOSTIC " << row << '\n';
@@ -72,5 +87,5 @@ int main(int argc, char **argv) {
                   << " status=" << int(thread.status) << " wait=" << int(thread.waitReason) << '\n';
     }
     // Exit zero means the diagnostic returned; it does not mean the game works.
-    return 0;
+    return result;
 }

@@ -1,0 +1,52 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008HEADLESS_START entry=0x100008 deadline_seconds=5 graphics_tested=false audio_tested=false
+[SifInitRpc] Initialized[SIF module] load-emulated id=2 ref=1 path="cdrom0:\IRX\SIO2MAN.IRX;1"
+[SIF module] load-emulated id=3 ref=1 path="cdrom0:\IRX\PADMAN.IRX;1"
+[SIF module] load-emulated id=4 ref=1 path="cdrom0:\IRX\LIBSD.IRX;1"
+[SIF module] load-emulated id=5 ref=1 path="cdrom0:\IRX\STREAM.IRX;1"
+[SIF module] load-emulated id=6 ref=1 path="cdrom0:\IRX\CRI_ADXI.IRX;1"
+[ps2xIOP] [IOP] loaded IRX id=1 entry=0x100d0 base=0x10000 start=0
+BOOT_SIFCMD handled=1 id=1 start=0
+VFS_OPEN fd=3 path=cdrom0:\CDROM.TXT;1
+VFS_CLOSE fd=3 result=0
+[ps2xIOP] [IOP] loaded IRX id=2 entry=0x13d34 base=0x13700 start=0
+[ps2xIOP] [IOP] loaded IRX id=3 entry=0x17924 base=0x14700 start=0
+[ps2xIOP] [IOP] loaded IRX id=4 entry=0x1e4b0 base=0x1e400 start=0
+[ps2xIOP] [IOP printf]  Exit MultiStream V5 Thread Load 
+
+[ps2xIOP] [IOP] loaded IRX id=5 entry=0x302e8 base=0x23e00 start=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\FONTDATA.TXT;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\IMPACT.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\IMPACT0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\ARIAL.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\ARIAL0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\AURABSH.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\AURABSH0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\COURIER.FBN;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\FONTS\COURIER0.R2T;1
+VFS_CLOSE fd=3 result=0
+VFS_OPEN fd=3 path=cdrom0:\DATA\IFACE\TEXTDATA.TBN;1
+VFS_CLOSE fd=3 result=0
+[ps2xIOP] [IOP printf] CRI ADX Driver Ver.8.01(%s %s)
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : Thread Priority=%d
+
+[ps2xIOP] [IOP printf] CRI ADX Driver : SPU CORE Number=%d
+
+[ps2xIOP] [IOP] loaded IRX id=6 entry=0x37fbc base=0x37f00 start=0
+[ps2xIOP] [IOP printf] CRI ADX Driver : sceSdInit(SD_INIT_COLD) call.
+
+Warning: Unimplemented PS2 stub called. name=sceDmaRecvN PC=0x283390, RA=0x283390, Stub# guess (from $v0)=0x1000d000
+  Args: $a0=0x1000d000, $a1=0x4037c0, $a2=0x400, $a3=0xffffffff
+HEADLESS_EXCEPTION Unimplemented PS2 stub called: sceDmaRecvN

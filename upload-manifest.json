@@ -497,5 +497,283 @@
     "Compiled objects, native executables and temporary linker outputs",
     "Raw RAM snapshots and build caches"
   ],
-  "latest_status": "Native x86-64 diagnostic passes the file-handle failure and waits for missing DTX RPC service; not playable and no Android APK."
+  "latest_status": "DTX service registers; three EE workers created; next wait RPC 0x80000597; no frame/APK",
+  "dtx_checkpoint": {
+    "base_commit": "b1c67ac9aa0e63bfb012a1bb2c74ccd47b21a442",
+    "files": [
+      {
+        "path": ".gitignore",
+        "sha256": "613f1e65c05f5e0a8c08ae36a1e8b6f50a82576bb9dba9258d1521d7403dec42"
+      },
+      {
+        "path": "README.md",
+        "sha256": "4e6ce3a80ed391a7caf3a32e4f91cf4c27aabb115c71c545e77b2268d2447be9"
+      },
+      {
+        "path": "README.txt",
+        "sha256": "1d781b290121a65d12e3bf98c4bea9d217a34b42b1c6c491337e8dddd2f16b65"
+      },
+      {
+        "path": "dtx-adma-build.log",
+        "sha256": "a4c95daf7951f933e766bc7e278d389561bea312945fcb646dffafd4a6fa7fce"
+      },
+      {
+        "path": "dtx-adma-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "dtx-adma-spr-startup-result.json",
+        "sha256": "41ddd0472b5e409401bf9a947debf2f4ce9ab37a407bcc69dcf64289bbb9654b"
+      },
+      {
+        "path": "dtx-adma-spr-startup-result.log",
+        "sha256": "8c0b8225189b7483268b6e01e92fdb6c8e3555a9fd5e94263e78a2e0f7747202"
+      },
+      {
+        "path": "dtx-adma-startup-result.json",
+        "sha256": "dbc353079df40657fc8b2db8bf42860b14b25dd7739b48056e64728b6cc3b1fd"
+      },
+      {
+        "path": "dtx-adma-startup-result.log",
+        "sha256": "08c9b03f7a16b27d3b08bc4241fbf01337765c790b36cbe3081454dcafc240d8"
+      },
+      {
+        "path": "dtx-adma-tests.log",
+        "sha256": "2549fe89da5501500311615450af80a265eaac1a0170d9bc3148779cdd6b9d2b"
+      },
+      {
+        "path": "dtx-dma-trace-baseline.json",
+        "sha256": "3efcdc90cf8f93afe155dcc5738fde7c4b377760a3cc9d743ced89da57192e54"
+      },
+      {
+        "path": "dtx-dma-trace-baseline.log",
+        "sha256": "471efa724098af68da9602416101146ce22af440493d6b7332ac4f1e19a2fa8d"
+      },
+      {
+        "path": "dtx-dma-trace-build.log",
+        "sha256": "77f4322d3d14b7d465bf5c5637e86bea0ef6f8b48468062cb7deb7e86a6e2357"
+      },
+      {
+        "path": "dtx-dma-trace-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "dtx-ee-priority-build.log",
+        "sha256": "009152792b390b5573bad7123ca36cf09d168affd0b198f1ae386e37eb03d064"
+      },
+      {
+        "path": "dtx-ee-priority-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "dtx-ee-thread-startup-result.json",
+        "sha256": "30e6cd148258b9fc2fb596bf192937b47f3349af22e020a36549f3a0748a59f6"
+      },
+      {
+        "path": "dtx-ee-thread-startup-result.log",
+        "sha256": "faeae6c51f805d5609c328829766b47d2f6759f0a2e9055b5d56dcfd017e89da"
+      },
+      {
+        "path": "dtx-ee-trace-build.log",
+        "sha256": "238a962a20a2695815c72c6467428ef726f6b1e7fb7a44c15e31ea7eec3a8275"
+      },
+      {
+        "path": "dtx-ee-trace-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "dtx-final-baseline.json",
+        "sha256": "d070336ce3b3e373d409305f74adeae177c96df42228d9d09cf3e2782632e2d8"
+      },
+      {
+        "path": "dtx-final-baseline.log",
+        "sha256": "93b7ea902dbc313cc24908bbd7bc62563ccfaa8ef0ad9649cec9d0a1d79e1c8f"
+      },
+      {
+        "path": "dtx-final-cadence-only.json",
+        "sha256": "18ff60193618522013a166bbc53585bd9e410b2e507d0db90416ea7bb9adf2be"
+      },
+      {
+        "path": "dtx-final-cadence-only.log",
+        "sha256": "fbcd352b6c9cdfe1bd39a9ba7fd32d2f8e16058010c218125a1e04a1b2e72ca2"
+      },
+      {
+        "path": "dtx-investigation-result.json",
+        "sha256": "84c1a76a4e64489eced1e61d082cd0cd53bd1c5832938a55ca6de2bea6131d1c"
+      },
+      {
+        "path": "dtx-iop-adma-enabled-tests.log",
+        "sha256": "ad17bd1801760f06cb9d3e7d74eb16213f90c5c20b6a55bf3b1a1363bd556ab0"
+      },
+      {
+        "path": "dtx-iop-probe-build.log",
+        "sha256": "4fd91ec79324dd36b042e3b73ef19734b140e9a87d90c9ced5e0a150a862bb1d"
+      },
+      {
+        "path": "dtx-iop-tests-build.log",
+        "sha256": "2b646d8290554f9a47483e263e175c560b63a0cda49501a37fd37fad39cc95c4"
+      },
+      {
+        "path": "dtx-iop-tests.log",
+        "sha256": "eabcb1d72d580e5bab6b04aadfc6d9b93c1d74254f3106e04a55f4890c516da3"
+      },
+      {
+        "path": "dtx-isolated-boot-baseline.log",
+        "sha256": "3565e4db2449a794d9d51d311f26ed03cd4e172c9cf5e678b16fea2c659eeb9d"
+      },
+      {
+        "path": "dtx-native-execution-baseline.json",
+        "sha256": "749a2cf50c213ed258c7d57503ddf33721cde15bde57e8359e6e5126f88899f0"
+      },
+      {
+        "path": "dtx-native-execution-baseline.log",
+        "sha256": "24cfaa0aad87b32dede3c90907b7841e4e29082f3d1ab60ab20e1424326f53fd"
+      },
+      {
+        "path": "dtx-native-import-trace.json",
+        "sha256": "805486911be178d125ef56c11c9ea2c9ff624b40a3de66b170cb4752b53737fc"
+      },
+      {
+        "path": "dtx-native-import-trace.log",
+        "sha256": "44c8abb0014016b3cfe2a69cc705504ac0dcd83aa505314aed4a92639945f7e8"
+      },
+      {
+        "path": "dtx-native-probe-build.log",
+        "sha256": "77f4322d3d14b7d465bf5c5637e86bea0ef6f8b48468062cb7deb7e86a6e2357"
+      },
+      {
+        "path": "dtx-native-probe-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "dtx-priority-startup-result.json",
+        "sha256": "e6890f878c10ae10d92beb3616afaa7d2e4cf0c9bd4dd712d783b6ccf927c1cf"
+      },
+      {
+        "path": "dtx-priority-startup-result.log",
+        "sha256": "f02d32e73e688a8d90afc36baae07c0f21d38a2c431c6e416eaf04f4c3ce8633"
+      },
+      {
+        "path": "dtx-priority-tests-build.log",
+        "sha256": "e6c128149fdbf588aa7932d4777ab5cfb02d083523d08b631958151fa50dd5e8"
+      },
+      {
+        "path": "dtx-priority-tests.log",
+        "sha256": "6faf486ee6e697cc8e99457cd1c904f2cc8cf247c526db17d1519f667895d841"
+      },
+      {
+        "path": "dtx-probe-reproduction.log",
+        "sha256": "b6d9dcd6ce855340cb4281bb0ef96e3f42147cc7b3be79050752b57a32eaee80"
+      },
+      {
+        "path": "dtx-spr-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "dtx-spr-runtime-build.log",
+        "sha256": "8c1ed7a9e486a50c3a100273764c8d30aa8356ed5371756f39610b0f5df25844"
+      },
+      {
+        "path": "dtx-spr-tests-build.log",
+        "sha256": "1a58b16cf592eac4373709c5ab984ab77f2e161780e185424986999a1a8eff38"
+      },
+      {
+        "path": "dtx-spr-tests.log",
+        "sha256": "f7ea36fdbf9c0ca91e770498949a6266dd08939eb2bb03ab293fd18c1900b8c7"
+      },
+      {
+        "path": "dtx-trace-build.log",
+        "sha256": "77f4322d3d14b7d465bf5c5637e86bea0ef6f8b48468062cb7deb7e86a6e2357"
+      },
+      {
+        "path": "dtx-trace-link.log",
+        "sha256": "dd48f4d3680f8972ecbb676bec2c00ce0dcc890511bee460d0672c4c2c0a9987"
+      },
+      {
+        "path": "experiment.json",
+        "sha256": "5123ef7f7faf4686d2e3a5b84571b34ee48c10701a29df03eca2eb14ebefa0f1"
+      },
+      {
+        "path": "headless_startup.cpp",
+        "sha256": "002dc623b61f179b07b4b38b380c7dfc91cbd47c1901da51d6975879cb82917c"
+      },
+      {
+        "path": "install_boot_sifcmd_probe.py",
+        "sha256": "0a48b0a0b51eb39e7c850f9eb16e083a664c1ca7a531c2b8c111625f5065184b"
+      },
+      {
+        "path": "install_ee_thread_probe.py",
+        "sha256": "786d192bcf8829da0b6de7495fba7fc18b617438a15076edf8d4033237604b0f"
+      },
+      {
+        "path": "install_ee_zero_priority.py",
+        "sha256": "22e6d34a19748f28955f42a321fba8507b31946597ff148535057636f5fbc658"
+      },
+      {
+        "path": "install_iop_execution_probe.py",
+        "sha256": "fd46bc79389b761a1cec938a613e1fd9b5671594d73d5de7709514575994e270"
+      },
+      {
+        "path": "install_iop_import_trace.py",
+        "sha256": "1cd1cebe1d2da40f54f9cd51e28127825fbf1978b593f39a2210dbc583dbd4d7"
+      },
+      {
+        "path": "install_iop_snapshot_probe.py",
+        "sha256": "b957fd2adb1fb3178f2ee86199e920c2458fb29f7d2d45adb6986c0c357e4df0"
+      },
+      {
+        "path": "install_memcpy_probe.py",
+        "sha256": "6a851e7b6185d10ba45d169491558b872bded1263f32e39e7cafb97175e80704"
+      },
+      {
+        "path": "install_scratchpad_receive.py",
+        "sha256": "079f93b68253ce89c74d0b7841b56d771c13f465a5afc76c0a2d1d612c49d9ca"
+      },
+      {
+        "path": "install_spu2_adma_timing.py",
+        "sha256": "04a486013fc99c68d13e88ed1f74b7678d127d21ee874080dac9b23691a229d4"
+      },
+      {
+        "path": "install_vfs_probe.py",
+        "sha256": "1178a29f87616a1db7721edb6cb3f13faa7df1db475f4e082375cbdb5deb7797"
+      },
+      {
+        "path": "link_headless.py",
+        "sha256": "ac07fb1814b5fa9becd0a0c68fcb03b0c99eda4a7684f95373ab128f14ce93b6"
+      },
+      {
+        "path": "probe-installation-check.json",
+        "sha256": "ec8f1af56f29ac72b6004c8348ed5b5ac15096ba29676f5837e86f2a5e4c6538"
+      },
+      {
+        "path": "probe_audio_boot.cpp",
+        "sha256": "1fac7563740e587a0ae25d1538370790ede371071e7ee18020977383b4ff6528"
+      },
+      {
+        "path": "run_startup.py",
+        "sha256": "2718b8b06fd99271a9d3265d4e4a4abe3cb7344274f1f60ab0c2ce1ea864acac"
+      },
+      {
+        "path": "runtime-experiment.patch",
+        "sha256": "2ebd5064a52d4200eb5e55a49d6930ddcb742ebfa0a518728e3d6f523a81d11d"
+      },
+      {
+        "path": "test_ee_zero_priority.cpp",
+        "sha256": "2ca9d2f9a82e95117ae58546a7bc01803a89f3e566680ae1689b81c41f8c9d4e"
+      },
+      {
+        "path": "test_scratchpad_receive.cpp",
+        "sha256": "c7d96bd4f1ca9cde3746a09517f27524d0af7591f68ef20d177a550ee8c767eb"
+      },
+      {
+        "path": "test_spu2_adma_timing.cpp",
+        "sha256": "f8ba80d6cc31e85efb255099982ee15801fc2b6415f42fb50b755dd85e9201be"
+      },
+      {
+        "path": "verify_runtime_probes.py",
+        "sha256": "a0819e0ca1ee5e5a2689e99e3fb495c909e337d9c226902e3ab70f8eb33e538e"
+      }
+    ],
+    "latest_status": "DTX service registers; three EE workers created; next wait RPC 0x80000597; no frame/APK"
+  }
 }

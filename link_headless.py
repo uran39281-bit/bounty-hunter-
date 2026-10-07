@@ -16,6 +16,8 @@ def main():
     parser.add_argument('repo', type=Path)
     parser.add_argument('build', type=Path)
     parser.add_argument('--constructors', action='store_true')
+    parser.add_argument('--source', type=Path, help='Alternative diagnostic or functional-test main')
+    parser.add_argument('--output', type=Path, help='Override executable output path')
     args = parser.parse_args()
     repo, build = args.repo.resolve(), args.build.resolve()
     root = Path(__file__).resolve().parent
@@ -25,6 +27,8 @@ def main():
     if '-o' not in tokens:
         parser.error('Unexpected link command')
     output = root / ('headless-startup-ctors' if args.constructors else 'headless-startup')
+    if args.output:
+        output = args.output.resolve()
     tokens[tokens.index('-o') + 1] = str(output)
     main_objects = []
     for unity in (objects / 'Unity').glob('*.cxx'):
@@ -84,7 +88,7 @@ def main():
                     '-I', str(repo / 'ps2xRuntime/src/lib'),
                     '-I', str(repo / 'ps2xRuntime/src/lib/Kernel'),
                     '-I', str(repo / 'ps2xIOP/include'),
-                    '-c', str(root / 'headless_startup.cpp'),
+                    '-c', str(args.source.resolve() if args.source else root / 'headless_startup.cpp'),
                     '-o', str(diagnostic)], check=True)
     tokens.insert(tokens.index('-o'), str(diagnostic))
     subprocess.run(tokens, cwd=runner, check=True)

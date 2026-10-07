@@ -1,0 +1,78 @@
+{
+  "goal": "Fix confirmed DTX runtime startup issues and attempt to reach first game frame",
+  "dtx_registration_passed": true,
+  "dtx_rpc_sid": "0x7d000000",
+  "confirmed_cause": "Premature SPU2 AutoDMA completions keep priority-39 audio worker ready and starve priority-49 RPC initialization thread.",
+  "corrections": [
+    {
+      "installer": "install_spu2_adma_timing.py",
+      "flag": "--adma-timing",
+      "scope": "Coarse AutoDMA write interrupt cadence based on 48kHz consumption; not SPU2 audio output"
+    },
+    {
+      "installer": "install_scratchpad_receive.py",
+      "flag": "--scratchpad-receive",
+      "scope": "Real normal receive through existing scratchpad DMA engine; SPR-from channel only"
+    },
+    {
+      "installer": "install_ee_zero_priority.py",
+      "flag": "--allow-zero-priority",
+      "scope": "Actual priority-zero EE threads; negative and >=128 priorities still rejected"
+    }
+  ],
+  "controlled_evidence": [
+    {
+      "report": "dtx-final-baseline.json",
+      "result": "No DTX server; 10126 premature audio DMA completions; audio worker remains ready"
+    },
+    {
+      "report": "dtx-final-cadence-only.json",
+      "result": "DTX registers; stops at former sceDmaRecvN stub"
+    },
+    {
+      "report": "dtx-ee-thread-startup-result.json",
+      "result": "SPR completes; three EE worker creations fail with priority zero (-403)"
+    },
+    {
+      "report": "dtx-priority-startup-result.json",
+      "result": "DTX registers and three real EE workers created; next wait SID 0x80000597"
+    }
+  ],
+  "latest_result": {
+    "ee_threads": 4,
+    "iop_modules": 6,
+    "iop_threads": 7,
+    "iop_rpc_servers": 4,
+    "next_wait_sid": "0x80000597",
+    "next_wait_pc": "0x18afe8 / 0x18b008",
+    "returncode": 0,
+    "timeout": false
+  },
+  "graphics_activity": {
+    "packed_packets": 0,
+    "image_uploads": 0,
+    "recent_draws": 0,
+    "presentation_frames": 0
+  },
+  "tests": {
+    "spu2_adma": "dtx-adma-tests.log",
+    "scratchpad_receive": "dtx-spr-tests.log",
+    "ee_priority_zero": "dtx-priority-tests.log",
+    "upstream_iop_baseline": "dtx-iop-tests.log",
+    "upstream_iop_cadence_enabled": "dtx-iop-adma-enabled-tests.log",
+    "reproducibility": "probe-installation-check.json"
+  },
+  "original_executable_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+  "original_executable_unchanged": true,
+  "runtime_patch_files": 12,
+  "first_game_frame_observed": false,
+  "audio_output_tested": false,
+  "android_apk_built": false,
+  "s24_tested": false,
+  "remaining_asset_gaps": [
+    "CHEWIE",
+    "SOUND",
+    "VIDEO"
+  ],
+  "next_step": "Trace required real IOP service for RPC SID 0x80000597, boot dependencies, and rerun with graphics counters."
+}

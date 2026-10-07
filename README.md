@@ -9,20 +9,33 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 7 October 2026
 
-- Integrated 84 BUNDLES files. Together with partial DATA, 657 files
-  (248,577,426 bytes) passed CRC/hash inventory checks.
-- Isolated the memory-copy failure to monotonically increasing file
-  descriptors: the game indexes a fixed buffer table using returned handles.
-- With lowest-free handle reuse enabled, font/text file loading passes the
-  previous failure and startup reaches the DTX RPC wait at `0x2579a8`.
-- Executing the supplied SIFCMD boot module initializes SIF and removes its
-  warning, but does not register the required DTX service `0x7d000000`.
-- The descriptor regression and all four upstream IOP suites pass. Patch
-  installers reproduce all eight changed runtime source files exactly.
+- The real `CRI_ADXI.IRX` module now registers DTX RPC service `0x7d000000`.
+  Native startup passes its previous wait at `0x2579a8`.
+- Streaming-audio DMA completed much too quickly and kept the priority-39
+  audio worker running ahead of the priority-49 RPC thread. The opt-in
+  AutoDMA completion cadence gives that RPC thread time to initialize.
+- Added scratchpad normal receive through the runtime's existing DMA engine.
+  Its regression verifies actual 16 KB data, wrapping and completion registers.
+- The game's three EE workers were rejected because they inherit priority 0
+  from the main thread. Opt-in support creates the real threads at that
+  priority, as used by PS2SDK's own thread initialization.
+- Latest bounded startup has four EE threads and four actual IOP RPC servers.
+  It reaches another `sceSifBindRpc` retry for SID `0x80000597`, around
+  `0x18afe8`/`0x18b008`. The first game frame is still blocked.
+- All three new regressions pass. All four upstream IOP suites pass with
+  AutoDMA timing disabled and enabled. Installers and the alternative patch
+  reproduce all twelve modified runtime source files exactly.
 
-No rendered frame, audio, controls, gameplay, FPS, Android binary or S24 test
-is established. Diagnostic exit zero only means the bounded runner returned.
-CHEWIE, SOUND and VIDEO are still missing. Complete disc assets are unverified.
+Earlier descriptor reuse and partial DATA/BUNDLES integration remain required:
+657 supplied files total 248,577,426 bytes. CHEWIE, SOUND and VIDEO are still
+missing; complete disc assets are unverified.
+
+The headless diagnostic reports zero packed graphics packets, image uploads,
+recent draws and presentation frames. No visible frame, sound output,
+controls, gameplay, FPS, Android binary or S24 test is established. Diagnostic
+exit zero only means the bounded runner returned. AutoDMA timing is a coarse
+interrupt-cadence model; it does not implement SPU2 audio output or prove full
+hardware accuracy. Other DMA receive channels remain unimplemented.
 
 ## Reproduce
 
@@ -48,6 +61,13 @@ python3 install_memcpy_probe.py /path/to/PS2Recomp
 python3 install_vfs_probe.py /path/to/PS2Recomp
 python3 install_boot_sifcmd_probe.py /path/to/PS2Recomp
 python3 install_iop_snapshot_probe.py /path/to/PS2Recomp
+python3 install_iop_execution_probe.py /path/to/PS2Recomp
+python3 install_iop_import_trace.py /path/to/PS2Recomp
+python3 install_spu2_adma_timing.py /path/to/PS2Recomp
+python3 install_scratchpad_receive.py /path/to/PS2Recomp
+python3 install_ee_thread_probe.py /path/to/PS2Recomp
+python3 install_ee_zero_priority.py /path/to/PS2Recomp
+python3 verify_runtime_probes.py /path/to/PS2Recomp
 python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip --disc /path/to/disc
 ```
 
@@ -58,13 +78,15 @@ python3 stage_assets.py --data /path/to/DATA.zip --bundles /path/to/BUNDLES.zip 
 cmake -S /path/to/PS2Recomp -B /path/to/runtime-build -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG="-O0 -msse4.1 -mavx2" -DPS2X_BUILD_RECOMP=OFF -DPS2X_BUILD_ANALYZER=OFF -DPS2X_BUILD_TEST=OFF -DPS2X_BUILD_STUDIO=OFF -DPS2X_ENABLE_DEBUG_UI=OFF -DPS2X_ENABLE_FFMPEG=OFF -DPS2X_ENABLE_AGRESSIVE_LOGS=OFF -DPS2X_ENABLE_IOP_RPC_TRACE=OFF
 cmake --build /path/to/runtime-build --target ps2EntryRunner -j3
 python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build
-python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop
+python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority
 ```
 
-Omit `--reuse-file-descriptors` to reproduce the original failure. The SIFCMD
-and snapshot flags are optional. SIFCMD execution is a partial boot probe.
-No RPC binding or successful audio initialization is forced. The original
-executable remains unchanged. `runtime-experiment.patch` is an alternative
+Omit `--reuse-file-descriptors` to reproduce the original invalid-copy failure.
+Omit `--adma-timing` to reproduce the DTX wait after descriptor reuse; with
+cadence alone, startup stops at the former `sceDmaRecvN` stub. SIFCMD execution
+is a partial boot probe. Trace flags only add diagnostics. Each compatibility
+change defaults off. RPC servers register through actual supplied IRX code.
+The original executable remains unchanged. `runtime-experiment.patch` is an alternative
 to the installers; apply one route, not both.
 
 For an interrupted GCC build, `compile_large_unit.py BUILD --compiler
@@ -73,34 +95,23 @@ It does not produce an Android binary. Finish the CMake build before linking.
 
 ## Evidence and next work
 
-See `asset-integration-result.json`, the baseline/reuse startup reports,
-`headless-iop-snapshot-result.json`, `precopy-analysis.json` and the test logs.
-Raw memory captures and game-derived binaries/generated C++ stay local.
-The immediate blocker is the missing DTX RPC registration. Faithful IOP boot,
-audio hardware behavior, asset completeness and visible rendering need work
-before an Android SDK/NDK build and actual S24 testing.
+See `dtx-investigation-result.json`, `dtx-final-baseline.json`,
+`dtx-final-cadence-only.json`, `dtx-ee-thread-startup-result.json`, and
+`dtx-priority-startup-result.json`. The `dtx-*-tests.log` files retain checks;
+`probe-installation-check.json` records reproducibility and source hashes.
+Earlier asset and invalid-copy evidence remains available.
 
-The partial boot investigation consulted
-[PS2SDK SIFCMD startup](https://github.com/ps2dev/ps2sdk/blob/master/iop/system/sifcmd/src/sifcmd.c).
+Next: trace the RPC bind for `0x80000597` and boot the required real IOP
+system service, then retry startup with graphics counters enabled. Faithful
+IOP boot, audio hardware, asset completeness and visible rendering still need
+work before an Android SDK/NDK build and actual S24 testing.
+
+Primary implementation references used in this investigation:
+
+- [PS2SDK LIBSD block DMA](https://github.com/ps2dev/ps2sdk/blob/master/iop/sound/libsd/src/block.c)
+- [PCSX2 SPU2 DMA](https://github.com/PCSX2/pcsx2/blob/master/pcsx2/SPU2/Dma.cpp)
+- [PS2SDK priority-zero thread creation](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/src/thread.c)
+- [Play! EE thread creation](https://github.com/jpd002/Play-/blob/master/Source/ee/PS2OS.cpp)
+- [PS2SDK SIFCMD startup](https://github.com/ps2dev/ps2sdk/blob/master/iop/system/sifcmd/src/sifcmd.c)
+
 Upstream PS2Recomp's license is included in `PS2Recomp-LICENSE.txt`.
-
-## Complete work checkpoint
-
-The remaining experiment scripts, configuration snapshots, inventories,
-constructor hints and previous startup reports are checked in alongside the
-current tooling. `README.txt` records the fuller private-checkpoint history;
-its references to bundled game files describe that local checkpoint.
-Use the reproduction instructions above for a fresh checkout.
-
-`restore_baseline.py` and `build_incremental_startup.py` need locally generated
-source snapshots and build caches. The stored TOML files retain their original
-experiment paths; `reproduce_corrected.py` regenerates configuration for the
-current machine. Older failed runs are retained as historical evidence and
-do not supersede the latest results above.
-
-Large analyzer/recompiler logs are preserved byte-for-byte inside
-[`history/historical-analysis-logs.tar.xz`](history/historical-analysis-logs.tar.xz).
-Smaller build, test and startup logs are ordinary files.
-[`upload-manifest.json`](upload-manifest.json) records this supplemental upload.
-Original game executables, IRX modules, game assets, regenerated game C++,
-compiled objects, native binaries and raw RAM dumps remain local.

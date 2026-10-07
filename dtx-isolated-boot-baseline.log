@@ -1,0 +1,98 @@
+MODULE name=SIFCMD.irx id=1 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+MODULE name=SIO2MAN.IRX id=2 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=SIO2MAN.IRX base=79616 size=4096
+IOP_THREAD id=1 pc=80580 entry=80540 state=6 waitId=1 priority=16 module=SIO2MAN.IRX import=none ra=80580 a0=1 a1=16725 v0=0
+MODULE name=PADMAN.IRX id=3 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=SIO2MAN.IRX base=79616 size=4096
+IOP_MODULE id=3 name=PADMAN.IRX base=83712 size=40192
+IOP_THREAD id=1 pc=80580 entry=80540 state=6 waitId=1 priority=16 module=SIO2MAN.IRX import=none ra=80580 a0=1 a1=16725 v0=0
+IOP_THREAD id=2 pc=114716 entry=114584 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114716 a0=123444 a1=2147483904 v0=0
+IOP_THREAD id=3 pc=114912 entry=114780 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114912 a0=123668 a1=2147483905 v0=0
+IOP_RPC_SID 2147483905
+IOP_RPC_SID 2147483904
+MODULE name=LIBSD.IRX id=4 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=SIO2MAN.IRX base=79616 size=4096
+IOP_MODULE id=3 name=PADMAN.IRX base=83712 size=40192
+IOP_MODULE id=4 name=LIBSD.IRX base=123904 size=23040
+IOP_THREAD id=1 pc=80580 entry=80540 state=6 waitId=1 priority=16 module=SIO2MAN.IRX import=none ra=80580 a0=1 a1=16725 v0=0
+IOP_THREAD id=2 pc=114716 entry=114584 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114716 a0=123444 a1=2147483904 v0=0
+IOP_THREAD id=3 pc=114912 entry=114780 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114912 a0=123668 a1=2147483905 v0=0
+IOP_RPC_SID 2147483905
+IOP_RPC_SID 2147483904
+MODULE name=STREAM.IRX id=5 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=SIO2MAN.IRX base=79616 size=4096
+IOP_MODULE id=3 name=PADMAN.IRX base=83712 size=40192
+IOP_MODULE id=4 name=LIBSD.IRX base=123904 size=23040
+IOP_MODULE id=5 name=STREAM.IRX base=146944 size=82176
+IOP_THREAD id=1 pc=80580 entry=80540 state=6 waitId=1 priority=16 module=SIO2MAN.IRX import=none ra=80580 a0=1 a1=16725 v0=0
+IOP_THREAD id=2 pc=114716 entry=114584 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114716 a0=123444 a1=2147483904 v0=0
+IOP_THREAD id=3 pc=114912 entry=114780 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114912 a0=123668 a1=2147483905 v0=0
+IOP_THREAD id=4 pc=171748 entry=171656 state=3 waitId=0 priority=30 module=STREAM.IRX import=none ra=171748 a0=1200212 a1=74565 v0=0
+IOP_RPC_SID 74565
+IOP_RPC_SID 2147483905
+IOP_RPC_SID 2147483904
+MODULE name=CRI_ADXI.IRX id=6 start=0
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=SIO2MAN.IRX base=79616 size=4096
+IOP_MODULE id=3 name=PADMAN.IRX base=83712 size=40192
+IOP_MODULE id=4 name=LIBSD.IRX base=123904 size=23040
+IOP_MODULE id=5 name=STREAM.IRX base=146944 size=82176
+IOP_MODULE id=6 name=CRI_ADXI.IRX base=229120 size=110848
+IOP_THREAD id=1 pc=80580 entry=80540 state=6 waitId=1 priority=16 module=SIO2MAN.IRX import=none ra=80580 a0=1 a1=16725 v0=0
+IOP_THREAD id=2 pc=114716 entry=114584 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114716 a0=123444 a1=2147483904 v0=0
+IOP_THREAD id=3 pc=114912 entry=114780 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114912 a0=123668 a1=2147483905 v0=0
+IOP_THREAD id=4 pc=171748 entry=171656 state=3 waitId=0 priority=30 module=STREAM.IRX import=none ra=171748 a0=1200212 a1=74565 v0=0
+IOP_THREAD id=5 pc=229300 entry=229244 state=4 waitId=0 priority=39 module=CRI_ADXI.IRX import=none ra=229300 a0=1 a1=234000 v0=0
+IOP_THREAD id=6 pc=230616 entry=230484 state=3 waitId=0 priority=49 module=CRI_ADXI.IRX import=none ra=230616 a0=1204472 a1=2097152000 v0=0
+IOP_THREAD id=7 pc=252360 entry=259888 state=1 waitId=0 priority=39 module=CRI_ADXI.IRX import=none ra=255236 a0=305570 a1=0 v0=145
+IOP_RPC_SID 74565
+IOP_RPC_SID 2097152000
+IOP_RPC_SID 2147483905
+IOP_RPC_SID 2147483904
+FINAL instructions=6626264
+IOP_SIF_INITIALIZED 1
+IOP_MODULE id=1 name=SIFCMD.irx base=65536 size=14080
+IOP_MODULE id=2 name=SIO2MAN.IRX base=79616 size=4096
+IOP_MODULE id=3 name=PADMAN.IRX base=83712 size=40192
+IOP_MODULE id=4 name=LIBSD.IRX base=123904 size=23040
+IOP_MODULE id=5 name=STREAM.IRX base=146944 size=82176
+IOP_MODULE id=6 name=CRI_ADXI.IRX base=229120 size=110848
+IOP_THREAD id=1 pc=80580 entry=80540 state=6 waitId=1 priority=16 module=SIO2MAN.IRX import=none ra=80580 a0=1 a1=16725 v0=0
+IOP_THREAD id=2 pc=114716 entry=114584 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114716 a0=123444 a1=2147483904 v0=0
+IOP_THREAD id=3 pc=114912 entry=114780 state=3 waitId=0 priority=46 module=PADMAN.IRX import=none ra=114912 a0=123668 a1=2147483905 v0=0
+IOP_THREAD id=4 pc=171748 entry=171656 state=3 waitId=0 priority=30 module=STREAM.IRX import=none ra=171748 a0=1200212 a1=74565 v0=0
+IOP_THREAD id=5 pc=229300 entry=229244 state=4 waitId=0 priority=39 module=CRI_ADXI.IRX import=none ra=229300 a0=1 a1=234000 v0=0
+IOP_THREAD id=6 pc=230616 entry=230484 state=3 waitId=0 priority=49 module=CRI_ADXI.IRX import=none ra=230616 a0=1204472 a1=2097152000 v0=0
+IOP_THREAD id=7 pc=252388 entry=259888 state=1 waitId=0 priority=39 module=CRI_ADXI.IRX import=none ra=255236 a0=305614 a1=0 v0=167
+IOP_RPC_SID 74565
+IOP_RPC_SID 2097152000
+IOP_RPC_SID 2147483905
+IOP_RPC_SID 2147483904
+[IOP] loaded IRX id=1 entry=0x100d0 base=0x10000 start=0
+[IOP] loaded IRX id=2 entry=0x13d34 base=0x13700 start=0
+[IOP] loaded IRX id=3 entry=0x17924 base=0x14700 start=0
+[IOP] loaded IRX id=4 entry=0x1e4b0 base=0x1e400 start=0
+[IOP printf]  Exit MultiStream V5 Thread Load 
+
+[IOP] loaded IRX id=5 entry=0x302e8 base=0x23e00 start=0
+[IOP printf] CRI ADX Driver Ver.8.01(%s %s)
+
+[IOP printf] CRI ADX Driver : Thread Priority=%d
+
+[IOP printf] CRI ADX Driver : SPU CORE Number=%d
+
+[IOP] loaded IRX id=6 entry=0x37fbc base=0x37f00 start=0
+[IOP printf] CRI ADX Driver : sceSdInit(SD_INIT_COLD) call.
+
+DTX_REGISTERED 1

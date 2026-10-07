@@ -17,6 +17,11 @@ def main():
     parser.add_argument('--trace-files', action='store_true')
     parser.add_argument('--boot-sifcmd', action='store_true')
     parser.add_argument('--inspect-iop', action='store_true')
+    parser.add_argument('--adma-timing', action='store_true')
+    parser.add_argument('--trace-iop-imports', action='store_true')
+    parser.add_argument('--scratchpad-receive', action='store_true')
+    parser.add_argument('--trace-ee-threads', action='store_true')
+    parser.add_argument('--allow-zero-priority', action='store_true')
     args = parser.parse_args()
     env = os.environ.copy()
     env.pop('PS2X_STOP_INVALID_MEMCPY', None)
@@ -25,6 +30,21 @@ def main():
     env.pop('PS2X_VFS_TRACE', None)
     env.pop('PS2X_LOAD_BOOT_SIFCMD', None)
     env.pop('PS2X_IOP_SNAPSHOT', None)
+    env.pop('PS2X_SPU2_ADMA_TIMING', None)
+    env.pop('PS2X_IOP_IMPORT_TRACE', None)
+    env.pop('PS2X_SPR_RECVN', None)
+    env.pop('PS2X_EE_THREAD_TRACE', None)
+    env.pop('PS2X_EE_ZERO_PRIORITY', None)
+    if args.allow_zero_priority:
+        env['PS2X_EE_ZERO_PRIORITY'] = '1'
+    if args.trace_ee_threads:
+        env['PS2X_EE_THREAD_TRACE'] = '1'
+    if args.adma_timing:
+        env['PS2X_SPU2_ADMA_TIMING'] = '1'
+    if args.trace_iop_imports:
+        env['PS2X_IOP_IMPORT_TRACE'] = '1'
+    if args.scratchpad_receive:
+        env['PS2X_SPR_RECVN'] = '1'
     if args.inspect_iop:
         env['PS2X_IOP_SNAPSHOT'] = '1'
     if args.boot_sifcmd:
@@ -51,6 +71,11 @@ def main():
               'reuse_file_descriptors': args.reuse_file_descriptors,
               'partial_sifcmd_boot_probe': args.boot_sifcmd,
               'iop_snapshot_enabled': args.inspect_iop,
+              'spu2_adma_timing_enabled': args.adma_timing,
+              'iop_import_trace_enabled': args.trace_iop_imports,
+              'scratchpad_receive_enabled': args.scratchpad_receive,
+              'ee_thread_trace_enabled': args.trace_ee_threads,
+              'ee_zero_priority_enabled': args.allow_zero_priority,
               'bundles_present': (args.disc / 'DATA/BUNDLES').is_dir(),
               'stdout': stdout, 'stderr': stderr,
               'game_startup_validated': False, 'graphics_tested': False,

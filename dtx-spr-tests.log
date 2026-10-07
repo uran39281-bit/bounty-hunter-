@@ -1,0 +1,1 @@
+PASS: real 16KB SPR copy, wrap, MADR/QWC/SADR/STR, completion IRQ, invalid-range and oversize rejection

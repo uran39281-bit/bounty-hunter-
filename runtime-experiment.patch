@@ -23,22 +23,142 @@ index 4977102..5f35d1c 100644
  
      private:
          struct Semaphore
+diff --git a/ps2xIOP/src/emulator/core/iop_memory.cpp b/ps2xIOP/src/emulator/core/iop_memory.cpp
+index 25e9b36..f0ff890 100644
+--- a/ps2xIOP/src/emulator/core/iop_memory.cpp
++++ b/ps2xIOP/src/emulator/core/iop_memory.cpp
+@@ -1,3 +1,4 @@
++#include <cstdlib>
+ #include "iop_memory.h"
+ 
+ #include <algorithm>
+@@ -269,9 +270,21 @@ namespace ps2x::iop::detail
+         const uint32_t wordsPerBlock = std::max<uint32_t>(blockControl & 0xFFFFu, 1u);
+         const uint32_t blockCount = std::max<uint32_t>(blockControl >> 16u, 1u);
+         const uint64_t transferWords = static_cast<uint64_t>(wordsPerBlock) * blockCount;
++        uint64_t completionDelay = std::max<uint64_t>(transferWords * 2u, 64u);
++        // BOUNTY_SPU2_ADMA_TIMING
++        // AutoDMA streams 16-bit stereo samples at 48 kHz. One 32-bit DMA
++        // word supplies one stereo frame: 36.864 MHz / 48 kHz = 768 cycles.
++        // Bus-copy timing alone continually refills the worker semaphore,
++        // preventing lower-priority RPC initialization from running.
++        // This models completion cadence only; it does not render audio.
++        const uint16_t admas = read16(0x1F9001B0u + (secondCore ? 0x400u : 0u));
++        const uint16_t coreBit = secondCore ? 2u : 1u;
++        if (std::getenv("PS2X_SPU2_ADMA_TIMING") && (value & 1u) != 0u &&
++            (admas & coreBit) != 0u)
++            completionDelay = transferWords * 768u;
+         m_dmaStart = DmaStart{
+             secondCore ? kDmaSpu1Irq : kDmaSpu0Irq,
+-            std::max<uint64_t>(transferWords * 2u, 64u),
++            completionDelay,
+         };
+     }
+ 
 diff --git a/ps2xIOP/src/emulator/iop_emulator.cpp b/ps2xIOP/src/emulator/iop_emulator.cpp
-index e5f63a9..08cef4b 100644
+index e5f63a9..9bdea56 100644
 --- a/ps2xIOP/src/emulator/iop_emulator.cpp
 +++ b/ps2xIOP/src/emulator/iop_emulator.cpp
-@@ -822,6 +822,18 @@ namespace ps2x::iop::detail
+@@ -1,3 +1,4 @@
++#include <cstdlib>
+ #include "iop_emulator.h"
+ #include "imports/iop_cdvd.h"
+ #include "core/iop_cpu.h"
+@@ -118,6 +119,8 @@ namespace ps2x::iop::detail
+             memory.reset();
+             kernel.reset();
+             modules.clear();
++            diagnosticCounts.clear();
++            diagnosticNotes.clear();
+             imports.reset();
+             rpc.reset();
+             cdvd.reset();
+@@ -176,8 +179,16 @@ namespace ps2x::iop::detail
+ 
+         void schedulePendingDma()
+         {
+-            if (const auto dma = memory.takeDmaStart())
++            if (const auto dma = memory.takeDmaStart()) {
+                 pendingDmaInterrupts[dma->irq] = totalCycles + dma->delayCycles;
++                if (std::getenv("PS2X_IOP_IMPORT_TRACE")) {
++                    const auto chcr = dma->irq == 0x24 ? 0x1f8010c8u : 0x1f801508u;
++                    ++diagnosticCounts["DMA_START irq=" + std::to_string(dma->irq) +
++                        " bcr=" + std::to_string(memory.read32(chcr - 4u)) +
++                        " chcr=" + std::to_string(memory.read32(chcr)) +
++                        " admas=" + std::to_string(memory.read16(dma->irq == 0x24 ? 0x1f9001b0u : 0x1f9005b0u))];
++                }
++            }
+         }
+ 
+         bool readRam(uint32_t address, void *destination, size_t size) const
+@@ -240,6 +251,13 @@ namespace ps2x::iop::detail
+         ImportDisposition dispatchImport(const IopImportCall &call, CpuState &cpu)
+         {
+             const uint32_t a0 = cpu.gpr[4];
++            // BOUNTY_IOP_IMPORT_TRACE
++            if (std::getenv("PS2X_IOP_IMPORT_TRACE")) {
++                ++diagnosticCounts["IMPORT " + call.library + ":" + std::to_string(call.ordinal)];
++                if (call.library == "thsemap" && call.ordinal == 4u)
++                    diagnosticNotes.push_back("SEMA_CREATE current=" + std::to_string(read32(a0 + 8u)) +
++                        " max=" + std::to_string(read32(a0 + 12u)));
++            }
+             auto setV0 = [&](uint32_t value)
+             {
+                 cpu.gpr[2] = value;
+@@ -501,8 +519,11 @@ namespace ps2x::iop::detail
+             }
+             try
+             {
+-                for (const int irq : completed)
++                for (const int irq : completed) {
++                    if (std::getenv("PS2X_IOP_IMPORT_TRACE"))
++                        ++diagnosticCounts["DMA_COMPLETED irq=" + std::to_string(irq)];
+                     (void)intrman.dispatchInterrupt(irq, *this);
++                }
+             }
+             catch (...)
+             {
+@@ -695,6 +716,8 @@ namespace ps2x::iop::detail
+         IopImportRegistry imports;
+         IopLoadcore loadcore;
+         std::map<int, Module> modules;
++        std::map<std::string, uint64_t> diagnosticCounts;
++        std::vector<std::string> diagnosticNotes;
+         std::map<int, uint64_t> pendingDmaInterrupts;
+         std::multimap<uint64_t, ScheduledGuestCallback> pendingGuestCallbacks;
+         uint32_t nextModuleId = 1;
+@@ -822,6 +845,38 @@ namespace ps2x::iop::detail
          return static_cast<uint32_t>(m_impl->kernel.threadCount());
      }
  
 +    void IopEmulator::appendDiagnosticRows(std::vector<std::string> &rows) const
 +    {
 +        rows.push_back("IOP_SIF_INITIALIZED " + std::to_string(m_impl->rpc.sifInitialized()));
-+        for (const auto &thread : m_impl->kernel.debugThreads())
++        // BOUNTY_IOP_EXECUTION_PROBE: snapshot only; execution is unchanged.
++        for (const auto &[id, module] : m_impl->modules)
++            rows.push_back("IOP_MODULE id=" + std::to_string(id) + " name=" + module.name +
++                " base=" + std::to_string(module.base) + " size=" + std::to_string(module.size));
++        for (const auto &thread : m_impl->kernel.debugThreads()) {
++            std::string owner = "unknown";
++            for (const auto &[id, module] : m_impl->modules)
++                if (thread.cpu.pc >= module.base && thread.cpu.pc - module.base < module.size)
++                    owner = module.name;
++            std::string importName = "none";
++            if (const auto call = m_impl->imports.decode(thread.cpu.pc))
++                importName = call->library + ":" + std::to_string(call->ordinal);
 +            rows.push_back("IOP_THREAD id=" + std::to_string(thread.id) +
 +                " pc=" + std::to_string(thread.cpu.pc) + " entry=" + std::to_string(thread.entry) +
 +                " state=" + std::to_string(static_cast<unsigned>(thread.state)) +
-+                " waitId=" + std::to_string(thread.waitId));
++                " waitId=" + std::to_string(thread.waitId) +
++                " priority=" + std::to_string(thread.priority) + " module=" + owner +
++                " import=" + importName + " ra=" + std::to_string(thread.cpu.gpr[31]) +
++                " a0=" + std::to_string(thread.cpu.gpr[4]) + " a1=" + std::to_string(thread.cpu.gpr[5]) +
++                " v0=" + std::to_string(thread.cpu.gpr[2]));
++        }
++        for (const auto &[key, count] : m_impl->diagnosticCounts)
++            rows.push_back("IOP_TRACE " + key + " count=" + std::to_string(count));
++        for (const auto &note : m_impl->diagnosticNotes)
++            rows.push_back("IOP_TRACE " + note);
 +        for (auto sid : m_impl->rpc.debugSids())
 +            rows.push_back("IOP_RPC_SID " + std::to_string(sid));
 +    }
@@ -93,6 +213,65 @@ index b498155..c575f66 100644
          if (!m_impl->lastError.empty())
          {
              snapshot.diagnostics.push_back(m_impl->lastError);
+diff --git a/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp b/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp
+index c5e31c4..a3e4596 100644
+--- a/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp
++++ b/ps2xRuntime/src/lib/Kernel/EeScheduler.cpp
+@@ -1,3 +1,4 @@
++#include <cstdlib>
+ #include "runtime/ee_scheduler.h"
+ 
+ #include "ps2_log.h"
+@@ -423,7 +424,10 @@ void EeScheduler::setupCurrentThread(uint32_t stack, uint32_t stackSize, uint32_
+ int EeScheduler::createThread(const EeThreadCreateParams &params)
+ {
+     assertExecutor();
+-    if (params.priority < 1 || params.priority >= kPriorityCount)
++    // BOUNTY_EE_ZERO_PRIORITY: PS2SDK creates an actual priority-zero EE thread.
++    // Keep baseline validation unless the compatibility experiment is enabled.
++    const int minimumPriority = std::getenv("PS2X_EE_ZERO_PRIORITY") ? 0 : 1;
++    if (params.priority < minimumPriority || params.priority >= kPriorityCount)
+     {
+         return KE_ILLEGAL_PRIORITY;
+     }
+diff --git a/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp b/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp
+index b32e44a..887fcdd 100644
+--- a/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp
++++ b/ps2xRuntime/src/lib/Kernel/Stubs/DMA.cpp
+@@ -167,7 +167,32 @@ namespace ps2_stubs
+ 
+     void sceDmaRecvN(uint8_t *rdram, R5900Context *ctx, PS2Runtime *runtime)
+     {
+-        TODO_NAMED("sceDmaRecvN", rdram, ctx, runtime);
++        // BOUNTY_SPR_RECVN: only the implemented scratchpad-from channel.
++        const uint32_t channel = resolveDmaChannelBase(rdram, getRegU32(ctx, 4));
++        if (!std::getenv("PS2X_SPR_RECVN") || channel != 0x1000D000u) {
++            TODO_NAMED("sceDmaRecvN", rdram, ctx, runtime);
++            return;
++        }
++        const uint32_t address = getRegU32(ctx, 5) & 0x7FFFFFF0u;
++        const uint32_t qwc = getRegU32(ctx, 6);
++        if (!runtime || qwc > 0xFFFFu) {
++            setReturnS32(ctx, -1);
++            return;
++        }
++        auto &memory = runtime->memory();
++        const uint32_t control = memory.readIORegister(channel);
++        uint32_t offset = 0u;
++        try { offset = memory.translateAddress(address); }
++        catch (const std::exception &) { setReturnS32(ctx, -1); return; }
++        if (offset > PS2_RAM_SIZE || qwc * 16u > PS2_RAM_SIZE - offset ||
++            (control & 0x100u) != 0u) {
++            setReturnS32(ctx, -1);
++            return;
++        }
++        memory.writeIORegister(channel + 0x10u, address);
++        memory.writeIORegister(channel + 0x20u, qwc);
++        memory.writeIORegister(channel, (control & ~0xDu) | 0x100u);
++        setReturnS32(ctx, 0);
+     }
+ 
+     void sceDmaReset(uint8_t *rdram, R5900Context *ctx, PS2Runtime *runtime)
 diff --git a/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp b/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp
 index d467c4b..62737f5 100644
 --- a/ps2xRuntime/src/lib/Kernel/Stubs/LibC.cpp
@@ -167,6 +346,32 @@ index dc975ed..0773c71 100644
          setReturnS32(ctx, 1);
      }
  
+diff --git a/ps2xRuntime/src/lib/Kernel/Syscalls/Thread.cpp b/ps2xRuntime/src/lib/Kernel/Syscalls/Thread.cpp
+index 5110ee2..bcf8797 100644
+--- a/ps2xRuntime/src/lib/Kernel/Syscalls/Thread.cpp
++++ b/ps2xRuntime/src/lib/Kernel/Syscalls/Thread.cpp
+@@ -1,4 +1,6 @@
+ #include "Common.h"
++#include <cstdlib>
++#include <iostream>
+ #include "Thread.h"
+ #include "runtime/ee_scheduler.h"
+ 
+@@ -230,7 +232,13 @@ namespace ps2_syscalls
+             param->initial_priority,
+             param->option,
+         };
+-        setReturnS32(ctx, scheduler(rdram, ctx, runtime).createThread(decoded));
++        // BOUNTY_EE_THREAD_PROBE: diagnostic only.
++        const int result = scheduler(rdram, ctx, runtime).createThread(decoded);
++        if (std::getenv("PS2X_EE_THREAD_TRACE"))
++            std::cerr << "EE_CREATE_THREAD entry=" << decoded.entry
++                      << " stack=" << decoded.stack << " size=" << decoded.stackSize
++                      << " priority=" << decoded.priority << " result=" << result << '\n';
++        setReturnS32(ctx, result);
+     }
+ 
+     void DeleteThread(uint8_t *rdram, R5900Context *ctx, PS2Runtime *runtime)
 diff --git a/ps2xRuntime/src/lib/ps2_vfs.cpp b/ps2xRuntime/src/lib/ps2_vfs.cpp
 index aff25e6..ea9b3aa 100644
 --- a/ps2xRuntime/src/lib/ps2_vfs.cpp

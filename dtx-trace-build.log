@@ -1,0 +1,3 @@
+[  0%] Building CXX object ps2xIOP/CMakeFiles/ps2_iop.dir/src/emulator/iop_emulator.cpp.o
+[ 14%] Linking CXX static library libps2_iop.a
+[100%] Built target ps2_iop

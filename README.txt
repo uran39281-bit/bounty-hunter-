@@ -1,3 +1,12 @@
+LATEST CHECKPOINT — 7 October 2026
+DTX RPC registration now passes using actual CRI_ADXI execution. Added opt-in
+SPU2 AutoDMA completion cadence, actual scratchpad DMA receive, and priority-0
+EE worker creation. Latest startup: four EE threads, four RPC services; next
+wait is sceSifBindRpc SID 0x80000597. No game frame, audio output or Android APK.
+All new regressions and upstream IOP suites pass. See README.md for current
+reproduction, flags, limitations and evidence. The following notes retain
+historical experiments and may describe blockers now resolved.
+
 STAR WARS: BOUNTY HUNTER - NATIVE CODE EXPERIMENT
 Date: 7 October 2026
 Requested target: Galaxy S24 / Android ARM64
