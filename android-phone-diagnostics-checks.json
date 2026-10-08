@@ -1,0 +1,10 @@
+{
+  "java_sdk34_compilation_passed": true,
+  "dex_compilation_passed": true,
+  "apk_static_verification_passed": true,
+  "native_runtime_identical_to_apk2": true,
+  "same_update_certificate": true,
+  "generated_source_files_verified_unchanged": 7945,
+  "device_log_export_tested": false,
+  "main_menu_fixed": false
+}

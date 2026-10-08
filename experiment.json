@@ -60,7 +60,7 @@
   "native_startup_playable": false,
   "graphics_tested": false,
   "audio_output_tested": false,
-  "s24_device_tested": false,
+  "s24_device_tested": true,
   "original_single_code_boundary_rejected": true,
   "constructor_code_region": [
     "0x3a6be0",
@@ -1256,5 +1256,9 @@
     "android_launch_tested": false,
     "full_playability_established": false,
     "signing_key_matches_previous": true
-  }
+  },
+  "android_main_menu_observed": true,
+  "android_main_menu_advancement_verified": false,
+  "android_diagnostics_apk_version": 3,
+  "android_diagnostics_device_verified": false
 }

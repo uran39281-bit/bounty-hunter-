@@ -17,6 +17,7 @@ def main():
     main_dir=repo/'android/app/src/main'
     java=main_dir/'java/com/ps2x/runner'
     shutil.copy2(root/'android-phone/BountyNativeActivity.java',java/'BountyNativeActivity.java')
+    shutil.copy2(root/'android-phone/PhoneDiagnostics.java',java/'PhoneDiagnostics.java')
     manifest=main_dir/'AndroidManifest.xml'
     text=manifest.read_text()
     if 'com.ps2x.runner.BountyNativeActivity' not in text:
@@ -77,8 +78,9 @@ namespace ps2_stubs
             fillPadStatus(outData, state, portState);''')
         pad.write_text(text)
     gradle=repo/'android/app/build.gradle'
-    text=gradle.read_text().replace('versionCode 1','versionCode 2').replace("versionName '0.1.0'","versionName '0.1.1'")
+    text=gradle.read_text().replace('versionCode 1','versionCode 3').replace('versionCode 2','versionCode 3')
+    text=text.replace("versionName '0.1.0'","versionName '0.1.2'").replace("versionName '0.1.1'","versionName '0.1.2'")
     gradle.write_text(text)
-    print('Installed queued touch events, Java controls, guest-delivery feedback and APK version 2')
+    print('Installed queued touch controls, phone log export and APK version 3')
 
 if __name__=='__main__': main()

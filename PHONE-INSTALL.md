@@ -1,18 +1,25 @@
-# Phone installation and first test
+# Phone installation and diagnostics
 
-## Controls update, APK version 2
+## Main-menu diagnostics, APK version 3
 
-Install `Bounty-Hunter-Controls-Fix.apk` as an update to preserve the imported
-game files. Open Bounty Hunter and tap Down, Up, then Cross on the warning.
-Buttons should light up while held. The caption identifies the last touch and
-whether the game received it. If it stays at `Game: waiting`, send a screenshot;
-the guest has not consumed that input. If it says `Game: received` but the
-warning stays, report that too: the next investigation is the game/menu path.
-This is a candidate fix; it has not yet been tested on the user's phone.
+Install `Bounty-Hunter-Diagnostics.apk` over the current app. Choose **Update**
+and keep the existing app installed so its imported files remain available.
+
+1. Open Bounty Hunter and reach the main menu.
+2. Tap **X**, wait about five seconds, then tap **Down** and **X** again.
+3. Tap **EXPORT LOGS** at the top right.
+4. Save `Bounty-Hunter-logs.txt` in **Downloads** using the phone file picker.
+5. Attach that text file in the chat.
+
+The latest APK 2 screenshot shows PLAY GAME selected with `Touch: X | Game: waiting`.
+That confirms the overlay saw the press but the primary guest pad read has not
+consumed it. APK 3 records its own runtime log plus touch serials and pad-read
+counts to identify the cause. It reuses the exact APK 2 native library and does
+not yet fix the blocked main menu. Device export still needs this phone test.
 
 ## First installation
 
-1. Download `Bounty-Hunter-ARM64.apk` to the phone and tap it to install.
+1. Download `Bounty-Hunter-Diagnostics.apk` to the phone and tap it to install.
 2. Open **Bounty Hunter**, then tap **Import game folder**.
 3. Choose `Download/Star Wars file`, or whichever folder contains the original
    `SLUS_204.20` and `IOPRP254.IMG` files and both `IRX` and `DATA` folders. Select the parent game
@@ -31,6 +38,6 @@ startup modules automatically from your original `IOPRP254.IMG` file.
 After a successful import, subsequent launches open the native runner directly.
 Menu touch buttons are Start, Cross, Circle and the four directions. The
 first build was tested by the user on an S24 and reaches the save warning,
-but the buttons do not respond. The queued-input update awaits phone validation.
+and APK 2 now reaches the original main menu. Input at PLAY GAME is still blocked.
 Full gameplay, sound,
 videos, background/resume and later screens remain unverified.

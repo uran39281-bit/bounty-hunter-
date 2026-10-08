@@ -1,12 +1,23 @@
 {
-  "reported_local_date": "2026-10-07",
+  "reported_local_date": "2026-10-08",
   "device": "user Galaxy S24 phone",
-  "apk_version_code": 1,
-  "import_and_boot": "user confirmed",
-  "observed_screen": "original continue-without-saving warning with YES selected",
-  "rendering": "warning text and original graphics visible in user screenshot",
-  "input": "user reports UP, DOWN and X do not respond",
+  "apk_version_code": 2,
+  "observed_screen": "original main menu with PLAY GAME selected",
+  "caption": "Touch: X | Game: waiting",
+  "input": "overlay detected X; primary guest pad read has not consumed the queued press",
+  "root_cause": "not established; phone runtime logs are needed",
+  "next_step": "APK 3 own-process log and input counter export",
   "full_playability_established": false,
-  "root_cause": "not yet established on device; render-frame touch sampling can lose down/up events",
-  "candidate_fix": "Independent Android popup controls queue touch edges until the primary guest scePadRead consumes them; show delivery feedback"
+  "previous_observation": {
+    "reported_local_date": "2026-10-07",
+    "device": "user Galaxy S24 phone",
+    "apk_version_code": 1,
+    "import_and_boot": "user confirmed",
+    "observed_screen": "original continue-without-saving warning with YES selected",
+    "rendering": "warning text and original graphics visible in user screenshot",
+    "input": "user reports UP, DOWN and X do not respond",
+    "full_playability_established": false,
+    "root_cause": "not yet established on device; render-frame touch sampling can lose down/up events",
+    "candidate_fix": "Independent Android popup controls queue touch edges until the primary guest scePadRead consumes them; show delivery feedback"
+  }
 }

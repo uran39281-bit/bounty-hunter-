@@ -51,7 +51,8 @@ def main():
         'native_activity_present': 'android.app.NativeActivity' in manifest,
         'native_library_configured': 'ps2EntryRunner' in manifest,
         'no_broad_storage_permissions': not any(x in manifest for x in
-            ('MANAGE_EXTERNAL_STORAGE', 'READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE'))}
+            ('MANAGE_EXTERNAL_STORAGE', 'READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE')),
+        'no_broad_log_permission': 'android.permission.READ_LOGS' not in manifest}
     elf = []
     entry_exported = False
     controller_exported = set()
@@ -59,6 +60,10 @@ def main():
     with zipfile.ZipFile(apk) as z, tempfile.TemporaryDirectory(prefix='bounty-apk-check-') as folder:
         members = z.namelist()
         checks['java_dex_present'] = any(x.startswith('classes') and x.endswith('.dex') for x in members)
+        if "versionCode='3'" in badging:
+            checks['phone_diagnostics_present'] = any(
+                b'Lcom/ps2x/runner/PhoneDiagnostics;' in z.read(x) and b'android.intent.action.CREATE_DOCUMENT' in z.read(x)
+                for x in members if x.startswith('classes') and x.endswith('.dex'))
         queued_controller = 'com.ps2x.runner.BountyNativeActivity' in manifest
         if queued_controller:
             checks['java_controller_extends_native_activity'] = any(

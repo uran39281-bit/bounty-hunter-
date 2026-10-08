@@ -4,9 +4,10 @@ An ARM64 debug APK has been built and signed. Static verification passes for
 its signature, launcher, AArch64 native library, exported NativeActivity entry,
 and 16 KB ELF/ZIP alignment. The phone importer also prepares original startup
 modules; host checks match the existing SIFCMD/CDVDFSV files byte for byte.
-The user installed APK version 1, imported their game files and reached the
-original save warning on their Galaxy S24. They report that Up, Down and Cross
-do not respond. Full gameplay is unverified.
+The user imported their files on Galaxy S24. APK 1 reached the original save
+warning; APK 2 reaches the original main menu. At PLAY GAME, the latest screenshot
+shows `Touch: X | Game: waiting`, so the queued press has not been consumed.
+The runtime reason is not yet established. Full gameplay is unverified.
 
 APK version 2 replaces frame-sampled menu touch input with a Java control view on its own transparent popup surface
 and a bounded queue of touch transitions. The primary guest pad read consumes
@@ -16,14 +17,30 @@ viewport. Pausing, losing focus and cancelling a touch clear held input.
 After a tap, `Touch: DOWN | Game: received` confirms guest delivery; `waiting`
 means the game has not polled that queued touch. Host queue checks pass for
 quick taps, repeated taps, held buttons, multi-touch, cancellation, overflow
-and concurrent UI/guest threads. This change still needs device validation.
+and concurrent UI/guest threads. The user reaches the main menu with this change, but advancing remains blocked.
 
 See `android-apk-build.json`, `android-apk-verification.json`,
 `android-boot-module-test.json` and `PHONE-INSTALL.md`.
 
+APK 3 adds a phone **Export logs** button. `PhoneDiagnostics.java` runs process-
+filtered logcat, retaining at most 2 MiB of characters, and records touch serials
+and primary pad-read counts. A snapshot is taken before the Android document
+picker pauses the activity; the selected text document is written on a worker
+thread. No READ_LOGS or broad storage permissions are requested. Android CTS
+confirms own-UID logs remain readable without READ_LOGS:
+https://android.googlesource.com/platform/cts/+/041c3806a93%5E%21/
+The exact native runtime remains unchanged; Java compilation, DEX and static APK
+checks pass. Log export on this S24 still needs the next phone test.
+
+`build_android_phone_update.py` compiles the four authored Java files against
+SDK 34, runs D8, compiles an APK-3 manifest with aapt and reuses the APK-2 library.
+It requires `--base-apk`, `--sdk`, `--keystore`, `--output` and a new
+`--work-directory`. Keep the same private signing key for updates. Results are in
+`android-phone-diagnostics-build.json` and `android-phone-diagnostics-verification.json`.
+
 ## Phone setup
 
-Install the separately supplied `Bounty-Hunter-ARM64.apk`, open **Bounty Hunter**
+Install the separately supplied `Bounty-Hunter-Diagnostics.apk`, open **Bounty Hunter**
 and tap **Import game folder**. Choose the parent game folder containing
 `SLUS_204.20`, `IOPRP254.IMG`, `IRX/` and `DATA/`. Unzip the original files first.
 The app copies the selected disc tree into its external app files directory,
@@ -99,7 +116,7 @@ The desktop native diagnostic renders the original title and readable save
 warning. Cross opens it, Down selects No and Up selects Yes. Exact captured
 palette/index comparisons pass. An isolated original-handler test confirms
 Cross requests the next screen while the warning ignores Left/Right/Circle/Start.
-These results do not establish Android behavior or the following screen.
+The phone now displays the main menu; its advancement and full gameplay remain unverified.
 
 ## Remaining validation
 

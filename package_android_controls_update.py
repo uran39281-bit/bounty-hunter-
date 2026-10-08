@@ -12,6 +12,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('base-apk','dex-directory','sdk','keystore','output','report'):
         parser.add_argument('--'+name,required=True,type=Path)
+    parser.add_argument('--manifest-apk',type=Path,
+        help='Optional aapt-compiled APK providing a replacement AndroidManifest.xml')
     args=parser.parse_args()
     build_tools=args.sdk/'build-tools/34.0.0'
     args.output.parent.mkdir(parents=True,exist_ok=True)
@@ -34,6 +36,11 @@ def main():
         members += [(i.filename,base.read(i),i.compress_type) for i in base.infolist()
                     if i.filename!=native and not (i.filename.startswith('classes') and i.filename.endswith('.dex'))]
         members += [('classes'+('' if i==0 else str(i+1))+'.dex',p.read_bytes(),zipfile.ZIP_DEFLATED) for i,p in enumerate(dex)]
+        if args.manifest_apk:
+            with zipfile.ZipFile(args.manifest_apk) as compiled:
+                new_manifest=compiled.read('AndroidManifest.xml')
+            members=[(name,new_manifest if name=='AndroidManifest.xml' else data,compression)
+                     for name,data,compression in members]
         for name,data,compression in members:
             info=zipfile.ZipInfo(name,date_time=(1981,1,1,1,1,0))
             info.compress_type=compression
@@ -49,7 +56,10 @@ def main():
         assert result.read(native)==native_data
         for i,p in enumerate(dex):
             assert result.read('classes'+('' if i==0 else str(i+1))+'.dex')==p.read_bytes()
-    report={'apk_built':True,'apk_version_code':2,'offline_build':True,
+    output_badging=subprocess.check_output([str(aapt),'dump','badging',str(args.output)],text=True)
+    import re
+    version=int(re.search(r"versionCode='(\d+)'",output_badging)[1])
+    report={'apk_built':True,'apk_version_code':version,'offline_build':True,
         'packaging':'successful Gradle/D8 output plus byte-identical compiled queued-input native runtime',
         'native_library_sha256':hashlib.sha256(native_data).hexdigest(),
         'apk_sha256':hashlib.sha256(args.output.read_bytes()).hexdigest(),

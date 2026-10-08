@@ -1,7 +1,7 @@
 # Bounty Hunter native recompile experiment
 
 Target: Galaxy S24 / Android ARM64. **The user confirms game import and boot to
-the original save warning on their phone. Menu input is blocked; full gameplay
+the original main menu on their phone. Advancing from PLAY GAME is blocked; full gameplay
 remains unverified.**
 
 The PS2 EE executable has been translated to native C++ and startup executes
@@ -11,6 +11,17 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 8 October 2026
 
+- APK version 2 gets past the save warning and displays the original main menu.
+  The latest screenshot shows PLAY GAME selected and `Touch: X | Game: waiting`.
+  The touch was detected; the guest has not consumed that queued press. The
+  reason is not yet established without the phone runtime log.
+- APK version 3 adds **Export logs** to the independent Android controls. It
+  records only its own process log and touch/pad counters in a bounded buffer.
+  The phone document picker saves a text report without a computer. The native
+  runtime is byte-identical to APK 2; this is a diagnostic update, not a game fix.
+  Java/DEX compilation, same-certificate signing, native entry and 16 KB alignment
+  checks pass. Device log capture remains unverified. See `PHONE-INSTALL.md` and
+  `android-phone-diagnostics-verification.json`.
 - The first APK reaches the readable original save warning on the user's S24.
   The user reports that Up, Down and Cross do not respond. See
   `phone-device-observation.json`; this confirms import/boot, not full gameplay.
@@ -18,12 +29,12 @@ reports. Supply the original executable, IRX modules and game assets locally.
   primary guest pad read consumes them. It preserves fast taps and draws/tests
   controls in one Java view, with `Game: received` or `waiting` feedback. Host
   tests pass for quick/repeated taps, held input, multi-touch, cancellation,
-  bounded overflow and concurrent threads. Phone validation remains pending.
+  bounded overflow and concurrent threads. The user now reaches the main menu; delivery there remains blocked.
 - Built and signed APK version 2 with the same certificate as version 1.
   Static verification passes for the Java NativeActivity subclass, independent
   popup controls, all three touch JNI methods, launcher, ARM64 library and
   16 KB ELF/ZIP alignment. All 7,945 staged generated game sources retain their
-  verified hashes. Install the controls update and check guest-delivery feedback.
+  verified hashes. APK 3 retains this native runtime and adds phone diagnostics.
 - Fixed a graphics upload boundary bug: a pending GIF IMAGE previously consumed
   the next VIF NOP/DIRECT commands as pixels. Continuations now consume only
   bytes inside explicit DIRECT/DIRECTHL payloads. Pixel bytes remain untouched.
