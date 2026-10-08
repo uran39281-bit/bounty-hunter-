@@ -1,0 +1,1 @@
+PASS: native sign extension, upper-register preservation, JR-before-delay-slot RA, zero register, unsupported-shape rejection

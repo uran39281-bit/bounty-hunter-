@@ -1,0 +1,11 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008NATIVE_FLOAT value=0 result=0 expected=0 pass=1
+NATIVE_FLOAT value=1 result=1 expected=1 pass=1
+NATIVE_FLOAT value=123 result=123 expected=123 pass=1
+NATIVE_FLOAT value=5000 result=5000 expected=5000 pass=1
+NATIVE_FLOAT value=30000 result=30000 expected=30000 pass=1
+NATIVE_CLOCK count=294000000 result=1000 expected=1000 pass=1
+NATIVE_CLOCK count=1470000000 result=5000 expected=5000 pass=1
+NATIVE_CLOCK count=2526839651 result=8594 expected=8594 pass=1
+PASS native timer conversions

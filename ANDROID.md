@@ -9,7 +9,7 @@ are wired in source and tested on the host through the runtime Pad API.
 Use the pinned PS2Recomp commit in README.md, regenerate/stage the original
 game translation, and install all runtime patches in that document. Apply the
 installers or `runtime-experiment.patch`, never both. Generate and verify the
-four observed native entries with the existing native-leaf workflow.
+seven observed native entries with the existing native-leaf workflow.
 
 The original game executable, generated game C++, disc assets and native-leaf
 output remain private. They are in the private project checkpoint or supplied
@@ -67,10 +67,11 @@ flags, native instructions, synthetic draw packets or success responses are
 injected to advance the menu. The diagnostic permits up to 600 seconds because
 the current unoptimized desktop runtime advances slowly.
 
-The latest event trace confirms the original menu handler receives scripted
-keys. It remains on menu ID `0x10f`, where the unchanged native handler returns
-zero immediately. Input delivery is observed; transition to an interactive
-menu and native text drawing remain unresolved.
+A longer native trace confirms the original five-second transition from menu
+`0x10f` to `0x110`. Cross then requests menu `0x35e`. Exact registrations for
+missing menu callbacks and an animation update are now staged privately.
+This is progress through the original menu state machine; the following screen renders with distorted graphics and text fragments.
+Correct rendering and usable on-device navigation are still unverified. See `title-result.json`.
 
 Next validation: resolve native menu event/text behavior, build the real
 ARM64 debug APK, install on S24, and test launch, text, button press/release and

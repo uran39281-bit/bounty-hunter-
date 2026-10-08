@@ -1,0 +1,6 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008GLYPH char=65 pc=0x101000 advance=10.65 stop=0
+GLYPH char=97 pc=0x101000 advance=8.25 stop=0
+GLYPH char=169 pc=0x101000 advance=10.875 stop=0
+STRING pc=0x101000 width=196 stop=0

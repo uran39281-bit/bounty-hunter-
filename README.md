@@ -7,29 +7,34 @@ on x86-64 Linux with PS2Recomp's compatibility runtime and interpreted IOP.
 This repository contains the experiment tooling, runtime patch and diagnostic
 reports. Supply the original executable, IRX modules and game assets locally.
 
-## Latest result — 7 October 2026
+## Latest result — 8 October 2026
 
-- Added Android touch controls for Start, Cross, Circle and directions, merging
-  touch presses with physical controller buttons. Host layout/press/release
-  tests exercise the actual runtime Pad API; the Android-only source passes a
-  host compiler syntax check. These checks do **not** prove Android operation.
-- A 300-second run with no input performs 379 reads on each controller port;
-  a separate 300-second scripted-input run delivers Start/Cross/Down/Circle
-  through that same API. Both return without an exception and capture only the
-  title logo. Menu text and working menu navigation remain unresolved.
-- A further 180-second trace confirms the original native menu handler receives
-  Start, Cross, Down and Circle. Its current menu ID remains `0x10f`; the
-  unchanged native handler returns zero immediately for that ID. The next
-  blocker is the title-to-menu transition/text path, not pad delivery. See
-  `frontend-events-fixed-180s.json` and `frontend-result.json`.
-- Added bounded native front-end/event traces, Android boot settings and
-  staging of the four exact observed native entries. Host presentation now
-  respects the opt-in completed native display-copy latch.
-- APK build preflight is blocked: Gradle, SDK platform 34, NDK
-  28.2.13676358 and SDK CMake 3.22.1 are missing. **No APK was produced.**
-  See `ANDROID.md`, `android-build-preflight.json` and `frontend-result.json`.
-  The current twenty changed runtime files reproduce exactly through the
-  installers and alternative patch (`frontend-installation-check.json`).
+- The original title timer works: a longer native run advances from screen
+  `0x10f` to `0x110` at 5.009 seconds. Cross then requests screen `0x35e`.
+  Earlier shorter runs did not establish that the transition was broken.
+- The first transition stops at an unregistered original entry `0x2df460`.
+  Registering its verified existing native body passes memory-card slot tests
+  and moves execution to missing callback `0x3265d0`. Its registration passes
+  all four eligibility flag cases. The next run reaches an animation update
+  at `0x1c4a80`; its verified original body is now registered too. Seven exact
+  native entries are staged, without editing original instructions or forcing
+  menu flags. See `observed-leaf-entries.json` and `title-result.json`.
+- A 300-second run with all seven entries reaches screen `0x35e`, renders
+  its animation and reaches the deadline without a missing-target stop. The
+  new image is distorted with duplicated/clipped elements; usable menu
+  navigation and correct rendering are not established.
+- Font metrics, copyright strings and original glyph calls are present.
+  Copyright layout measures 336 × 18. Native glyph routines return expected
+  advances at scale 0.6. The visible text failure remains in the rendering
+  path; a collapsed-layout explanation was not supported by measurement.
+- Added bounded native timer/glyph traces and a separate optimized host
+  diagnostic archive. Only host dispatch, memory, scheduler and GS units use
+  `-O2` without fast-math; original generated game objects and the baseline
+  runtime archive remain untouched. This is diagnostic tooling, not an APK.
+- Native timer, entry semantics and leaf checks pass. All twenty runtime files
+  reproduce exactly through installers and the alternative patch. The APK
+  build remains blocked by missing Gradle, SDK platform 34, NDK 28.2.13676358
+  and SDK CMake 3.22.1. **No APK or S24 validation.**
 
 The following logo result remains the latest visible rendering milestone:
 
@@ -149,7 +154,7 @@ tool preserves their disc-relative paths and rejects differing existing files.
 ```sh
 cmake -S /path/to/PS2Recomp -B /path/to/runtime-build -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS_DEBUG="-O0 -msse4.1 -mavx2" -DPS2X_BUILD_RECOMP=OFF -DPS2X_BUILD_ANALYZER=OFF -DPS2X_BUILD_TEST=OFF -DPS2X_BUILD_STUDIO=OFF -DPS2X_ENABLE_DEBUG_UI=OFF -DPS2X_ENABLE_FFMPEG=OFF -DPS2X_ENABLE_AGRESSIVE_LOGS=OFF -DPS2X_ENABLE_IOP_RPC_TRACE=OFF
 cmake --build /path/to/runtime-build --target ps2EntryRunner -j3
-python3 generate_leaf_entries.py original/SLUS_204.20 --entry 0x265780 --entry 0x29e7f0 --entry 0x301fa0 --entry 0x31b980 --generated-directory corrected-output
+python3 generate_leaf_entries.py original/SLUS_204.20 --entry 0x265780 --entry 0x29e7f0 --entry 0x301fa0 --entry 0x31b980 --entry 0x2df460 --entry 0x3265d0 --entry 0x1c4a80 --generated-directory corrected-output
 python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build --leaf-entries leaf-output/observed_leaf_entries.cpp
 python3 run_startup.py --runner ./headless-startup --disc /path/to/disc --report latest.json --reuse-file-descriptors --stop-invalid-copy --trace-files --boot-sifcmd --inspect-iop --trace-iop-imports --adma-timing --scratchpad-receive --trace-ee-threads --allow-zero-priority --boot-cdvdfsv --cdvd-compat --separate-callback-stacks --advance-cop0-count --trace-boot-graphics --ee-va64 --capture-on-present --seconds 60 --capture-frame first-game-frame.ppm
 ```
@@ -212,7 +217,7 @@ and did not fire because this generated build returns without the strict
 return-dispatch macro. `distortion-present-60s.json` records that failed
 capture experiment. The final installer observes the actual GS copy instead.
 Deadline captures without this flag can show a partially drawn frame.
-The runner accepts bounded runs of 1–120 seconds; the default remains five.
+The runner accepts bounded runs of 1–600 seconds; the default remains five.
 With graphics tracing enabled, `.ctx0.ppm` and `.ctx1.ppm` are actual offscreen
 surfaces for diagnosis, not CRT captures. Add `--dump-graphics-memory` explicitly
 to retain private RAM/VRAM diagnostics; these and game pixels stay out of GitHub.

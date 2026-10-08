@@ -1,0 +1,10 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008NATIVE_MENU_ENTRY port=0 result=0x1e01000 expected=0x1e01000 pass=1
+NATIVE_MENU_ENTRY port=1 result=0x1e01500 expected=0x1e01500 pass=1
+NATIVE_MENU_ENTRY port=2 result=0x0 expected=0x0 pass=1
+NATIVE_MENU_CALLBACK flags=0 result=0 enabled=165 pass=1
+NATIVE_MENU_CALLBACK flags=1 result=1 enabled=1 pass=1
+NATIVE_MENU_CALLBACK flags=2 result=1 enabled=1 pass=1
+NATIVE_MENU_CALLBACK flags=3 result=1 enabled=1 pass=1
+PASS original menu entries

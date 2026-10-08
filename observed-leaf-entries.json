@@ -2,6 +2,12 @@
   "original_executable_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
   "entries": [
     {
+      "address": "0x1c4a80",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_001C4990_0x1c4990.cpp",
+      "source_sha256": "25208c0a39753e436d8b4250313383afc33b9f6d6f60e63ae38be78962ffca9f"
+    },
+    {
       "address": "0x265780",
       "bytes": 8,
       "shape": "JR RA; ADDIU from zero"
@@ -11,6 +17,12 @@
       "shape": "Existing native instruction body with exposed entry label",
       "source_name": "sub_0029E710_0x29e710.cpp",
       "source_sha256": "1dc7deed93aa87d5966e15fde1bbb39aa78c159211777c95730a412a45abbaae"
+    },
+    {
+      "address": "0x2df460",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_002DF310_0x2df310.cpp",
+      "source_sha256": "fa66d8fc3685e3498d5db1123197e640156db6aa9b1730aa564bbff5a2663fb7"
     },
     {
       "address": "0x301fa0",
@@ -23,9 +35,15 @@
       "shape": "Existing native instruction body with exposed entry label",
       "source_name": "sub_0031B8D0_0x31b8d0.cpp",
       "source_sha256": "08ff6f0191c2cfb6ae35b642d58c1e916affe315c5932b476a0b12bf12dba34b"
+    },
+    {
+      "address": "0x3265d0",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_003265A0_0x3265a0.cpp",
+      "source_sha256": "773185a37117c7da677089cdf033912476867c5b03065f891a7491a865dd7712"
     }
   ],
   "instructions_changed": false,
-  "generated_native_source": "/workspace/scratch/9a77f29be937/bounty-status/work/bounty-hunter-native/leaf-output/observed_leaf_entries.cpp",
+  "generated_native_source": "leaf-output/observed_leaf_entries.cpp",
   "game_source_publicly_uploaded": false
 }

@@ -67,3 +67,16 @@ frontend-*.png
 headless-frontend-*
 test-menu-controls
 android-touch-host-check.o
+
+# Private title/menu capture and locally linked diagnostics
+title-*.ppm*
+title-*.png
+font-*.ppm*
+font-*.png
+headless-title-*
+headless-font-*
+headless-menu-*
+fast-diagnostic-runtime/
+test-native-timer
+test-native-menu-entry
+diagnose-native-glyph

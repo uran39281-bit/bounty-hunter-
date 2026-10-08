@@ -19,12 +19,19 @@ def main():
     parser.add_argument('--source', type=Path, help='Alternative diagnostic or functional-test main')
     parser.add_argument('--output', type=Path, help='Override executable output path')
     parser.add_argument('--leaf-entries', type=Path, help='Locally generated exact leaf translations')
+    parser.add_argument('--runtime-library', type=Path, help='Explicit separately built runtime archive for host diagnostics')
     args = parser.parse_args()
     repo, build = args.repo.resolve(), args.build.resolve()
     root = Path(__file__).resolve().parent
     runner = build / 'ps2xRuntime'
     objects = runner / 'CMakeFiles/ps2EntryRunner.dir'
     tokens = shlex.split((objects / 'link.txt').read_text())
+    if args.runtime_library:
+        replacement=args.runtime_library.resolve()
+        if not replacement.is_file(): parser.error('Runtime archive is unavailable')
+        indices=[i for i,t in enumerate(tokens) if Path(t).name=='libps2_runtime.a']
+        if len(indices)!=1: parser.error('Expected exactly one runtime archive')
+        tokens[indices[0]]=str(replacement)
     if '-o' not in tokens:
         parser.error('Unexpected link command')
     output = root / ('headless-startup-ctors' if args.constructors else 'headless-startup')

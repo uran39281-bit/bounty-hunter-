@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-08",
+  "original_executable_sha256": "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304",
+  "original_instructions_changed": false,
+  "forced_game_menu_flags": false,
+  "timed_title_transition_verified": true,
+  "cross_reaches_following_screen": true,
+  "native_entry_registrations": [
+    {
+      "address": "0x1c4a80",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_001C4990_0x1c4990.cpp",
+      "source_sha256": "25208c0a39753e436d8b4250313383afc33b9f6d6f60e63ae38be78962ffca9f"
+    },
+    {
+      "address": "0x265780",
+      "bytes": 8,
+      "shape": "JR RA; ADDIU from zero"
+    },
+    {
+      "address": "0x29e7f0",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_0029E710_0x29e710.cpp",
+      "source_sha256": "1dc7deed93aa87d5966e15fde1bbb39aa78c159211777c95730a412a45abbaae"
+    },
+    {
+      "address": "0x2df460",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_002DF310_0x2df310.cpp",
+      "source_sha256": "fa66d8fc3685e3498d5db1123197e640156db6aa9b1730aa564bbff5a2663fb7"
+    },
+    {
+      "address": "0x301fa0",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_00301F90_0x301f90.cpp",
+      "source_sha256": "81b336fbba3e8faa94c6cf6c2f89bd301d61ea14bff272b74ec0d600107ce8ed"
+    },
+    {
+      "address": "0x31b980",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_0031B8D0_0x31b8d0.cpp",
+      "source_sha256": "08ff6f0191c2cfb6ae35b642d58c1e916affe315c5932b476a0b12bf12dba34b"
+    },
+    {
+      "address": "0x3265d0",
+      "shape": "Existing native instruction body with exposed entry label",
+      "source_name": "sub_003265A0_0x3265a0.cpp",
+      "source_sha256": "773185a37117c7da677089cdf033912476867c5b03065f891a7491a865dd7712"
+    }
+  ],
+  "runs": [
+    {
+      "report": "title-trace-600s.json",
+      "deadline_seconds": 600,
+      "returncode": 0,
+      "timeout": false,
+      "observed_menu_ids": [
+        "0x0",
+        "0x10f",
+        "0x110",
+        "0x35e"
+      ],
+      "final_frontend_state": [
+        "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+      ],
+      "missing_native_targets": [
+        "0x2df460"
+      ],
+      "reached_deadline_without_missing_target": false,
+      "captured_frame_exists": true,
+      "native_font_draw_reached": false,
+      "native_glyph_geometry_reached": false,
+      "private_capture_sha256": "284b4bc6abc44049b0120f6321c8ae7d5bb63187aa24ea217bb543223f4ec2c5"
+    },
+    {
+      "report": "title-fixed-240s.json",
+      "deadline_seconds": 240,
+      "returncode": 0,
+      "timeout": false,
+      "observed_menu_ids": [
+        "0x0",
+        "0x10f",
+        "0x110",
+        "0x35e"
+      ],
+      "final_frontend_state": [
+        "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+      ],
+      "missing_native_targets": [
+        "0x3265d0"
+      ],
+      "reached_deadline_without_missing_target": false,
+      "captured_frame_exists": true,
+      "native_font_draw_reached": true,
+      "native_glyph_geometry_reached": false,
+      "private_capture_sha256": "284b4bc6abc44049b0120f6321c8ae7d5bb63187aa24ea217bb543223f4ec2c5"
+    },
+    {
+      "report": "title-six-entries-240s.json",
+      "deadline_seconds": 240,
+      "returncode": 0,
+      "timeout": false,
+      "observed_menu_ids": [
+        "0x0",
+        "0x10f",
+        "0x110",
+        "0x35e"
+      ],
+      "final_frontend_state": [
+        "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+      ],
+      "missing_native_targets": [
+        "0x1c4a80"
+      ],
+      "reached_deadline_without_missing_target": false,
+      "captured_frame_exists": true,
+      "native_font_draw_reached": true,
+      "native_glyph_geometry_reached": true,
+      "private_capture_sha256": "284b4bc6abc44049b0120f6321c8ae7d5bb63187aa24ea217bb543223f4ec2c5"
+    },
+    {
+      "report": "title-seven-entries-300s.json",
+      "deadline_seconds": 300,
+      "returncode": 0,
+      "timeout": false,
+      "observed_menu_ids": [
+        "0x0",
+        "0x10f",
+        "0x110",
+        "0x35e"
+      ],
+      "final_frontend_state": [
+        "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+      ],
+      "missing_native_targets": [],
+      "reached_deadline_without_missing_target": true,
+      "captured_frame_exists": true,
+      "native_font_draw_reached": true,
+      "native_glyph_geometry_reached": true,
+      "private_capture_sha256": "4938df3dfac926ffecfacff2327f9eeb9f9c3ba9a84bd460f2aec06f42c2198f"
+    }
+  ],
+  "checks": {
+    "title-timer-test.log": {
+      "pass": true
+    },
+    "title-leaf-test.log": {
+      "pass": true
+    },
+    "native-menu-entry-test.log": {
+      "pass": true
+    },
+    "title-verification.log": {
+      "pass": true
+    }
+  },
+  "font_evidence": {
+    "font_files_and_localized_text_loaded": true,
+    "original_copyright_layout_width": 336.0,
+    "original_copyright_layout_height": 18.0,
+    "native_glyph_path_reached": true,
+    "copyright_text_visible_on_title": false,
+    "latest_screen_has_distorted_text_fragments": true,
+    "text_rendering_correct": false,
+    "interpretation": "Font metrics and native glyph calls are present. The title copyright remains absent; the following screen has distorted text fragments. Rendering is not correct and is not explained by missing strings or collapsed layout."
+  },
+  "android": {
+    "checks": {
+      "java_available": true,
+      "gradle_available": false,
+      "sdk_platform_34": false,
+      "ndk_28_2": false,
+      "sdk_cmake_3_22_1": false
+    },
+    "missing": [
+      "gradle_available",
+      "sdk_platform_34",
+      "ndk_28_2",
+      "sdk_cmake_3_22_1"
+    ],
+    "native_entries_staged": true,
+    "apk_built": false,
+    "android_launch_tested": false,
+    "s24_tested": false,
+    "build_command": [
+      "gradle",
+      "assembleDebug",
+      "-Pps2xBootElf=/storage/emulated/0/Android/data/com.ps2x.runner/files/SLUS_204.20"
+    ],
+    "build_directory": "/workspace/scratch/9a77f29be937/bounty-status/PS2Recomp/android",
+    "required_device_files": "Original SLUS_204.20 and staged disc tree under app external files directory",
+    "build_blocked": "Required Android SDK/NDK/Gradle components are unavailable"
+  },
+  "following_screen_renders": true,
+  "menu_rendering_correct": false,
+  "playable": false,
+  "s24_tested": false,
+  "next_blockers": [
+    "Native text rendering",
+    "Android SDK/NDK/Gradle prerequisites"
+  ],
+  "latest_missing_native_targets": [],
+  "private_material_publicly_uploaded": false
+}

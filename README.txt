@@ -1,3 +1,15 @@
+TITLE TRANSITION WORK — 8 October 2026
+The original five-second timer advances screen 0x10f to 0x110. Cross then
+requests screen 0x35e. Registered verified original entries for memory-card
+slots, menu eligibility and animation; native slot/eligibility tests pass.
+A 300-second seven-entry run renders the following screen without a missing
+function stop. Its graphics and text fragments are distorted; menu rendering
+and navigation are not yet correct. Font metrics and glyph calls exist.
+All twenty runtime changes reproduce through installers and patch.
+Android build remains blocked by absent SDK/NDK/Gradle tools; no APK or S24 test.
+See title-result.json, ANDROID.md and README.md for current evidence.
+The following records describe historical checkpoints.
+
 MENU INPUT WORK — 7 October 2026
 Added Android menu touch controls, physical-controller merge, native event
 traces and private native-entry staging. Host Pad press/release tests pass.
