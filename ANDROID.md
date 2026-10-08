@@ -4,7 +4,19 @@ An ARM64 debug APK has been built and signed. Static verification passes for
 its signature, launcher, AArch64 native library, exported NativeActivity entry,
 and 16 KB ELF/ZIP alignment. The phone importer also prepares original startup
 modules; host checks match the existing SIFCMD/CDVDFSV files byte for byte.
-The APK has not been installed or launched on an S24. Full gameplay is unverified.
+The user installed APK version 1, imported their game files and reached the
+original save warning on their Galaxy S24. They report that Up, Down and Cross
+do not respond. Full gameplay is unverified.
+
+APK version 2 replaces frame-sampled menu touch input with a Java control view on its own transparent popup surface
+and a bounded queue of touch transitions. The primary guest pad read consumes
+each press/release in order, including quick taps completed before rendering.
+The same view draws controls and tests their hit areas in the fitted game
+viewport. Pausing, losing focus and cancelling a touch clear held input.
+After a tap, `Touch: DOWN | Game: received` confirms guest delivery; `waiting`
+means the game has not polled that queued touch. Host queue checks pass for
+quick taps, repeated taps, held buttons, multi-touch, cancellation, overflow
+and concurrent UI/guest threads. This change still needs device validation.
 
 See `android-apk-build.json`, `android-apk-verification.json`,
 `android-boot-module-test.json` and `PHONE-INSTALL.md`.
@@ -73,8 +85,9 @@ when present; `--signing-keystore` accepts an explicit private key path.
 
 ## Controls and rendering evidence
 
-The host UI merges touch/physical input through the existing mutex-backed Pad
-API. Start, Cross, Circle and four directions are visible touch buttons.
+The host UI snapshots physical input through the existing mutex-backed Pad
+API. The guest merges queued Android touch input when reading its primary pad.
+Start, Cross, Circle and four directions are visible touch buttons.
 This is a menu input implementation; further gameplay controls remain open.
 
 Android startup enables the same compatibility settings used by the native

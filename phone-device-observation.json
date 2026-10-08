@@ -1,0 +1,12 @@
+{
+  "reported_local_date": "2026-10-07",
+  "device": "user Galaxy S24 phone",
+  "apk_version_code": 1,
+  "import_and_boot": "user confirmed",
+  "observed_screen": "original continue-without-saving warning with YES selected",
+  "rendering": "warning text and original graphics visible in user screenshot",
+  "input": "user reports UP, DOWN and X do not respond",
+  "full_playability_established": false,
+  "root_cause": "not yet established on device; render-frame touch sampling can lose down/up events",
+  "candidate_fix": "Independent Android popup controls queue touch edges until the primary guest scePadRead consumes them; show delivery feedback"
+}

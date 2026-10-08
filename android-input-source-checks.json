@@ -1,0 +1,65 @@
+{
+  "upstream_revision": "2c5fbb9389e11dd95693385969490c9e8e6f57b4",
+  "upstream_public_blob_bytes_verified": 189,
+  "generated_game_sources_unchanged": true,
+  "host_queue_tests_passed": true,
+  "java_sdk34_compilation_passed": true,
+  "queue_installer_repeat_passed": true,
+  "device_fix_verified": false,
+  "authored_files": [
+    {
+      "path": "android_touch_queue.h",
+      "sha256": "e724a80cd90218384b66c131643f70388f629ba55df5216448771f4136aae352"
+    },
+    {
+      "path": "test_android_touch_queue.cpp",
+      "sha256": "03d4948d6b19eeda21dc56a8d6249b374611e4687fdd4095d8689c113f0cbfc4"
+    },
+    {
+      "path": "android-phone/BountyNativeActivity.java",
+      "sha256": "1af8fb046e8e313cb8b171b3c9889852b88910aa9d9bc574a71b062f136a4fa1"
+    },
+    {
+      "path": "install_android_input_fix.py",
+      "sha256": "dc61d5e9f2f790e2cfa823320d864d12747528a7e287bfc68ea3743120d64234"
+    },
+    {
+      "path": "stage_android_offline.py",
+      "sha256": "c498b1c321ccfb5938375d0945c2fea2756859e93b402a46c2de321ebadf3652"
+    },
+    {
+      "path": "verify_android_apk.py",
+      "sha256": "f297d945af805f1d655c82c6cad750e5791c0fd7bbed2fad36d2d350f7875016"
+    },
+    {
+      "path": "android-touch-queue-test.json",
+      "sha256": "f513e5553a86f2c1baf93217bf415fae53bf5c96e41ef902fc0cb49d16eba513"
+    },
+    {
+      "path": "phone-device-observation.json",
+      "sha256": "061806016cda873969e2ba9673c17d93dabe7a8a284f662802d4b8c722cba7d5"
+    },
+    {
+      "path": "experiment.json",
+      "sha256": "eb8de7afe0bf400844b3b9ad72d3bc8778d2eeb011102f00730b9763a7a6bff2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5ec78eb7f696251f36cd51631eff84eb43b093869cd40c40f649585e2ff36f81"
+    },
+    {
+      "path": "ANDROID.md",
+      "sha256": "b8fc8a6d7b6398ac617ae576c788cb7da6a0aa990e48c3d50b80e769bce84d1d"
+    },
+    {
+      "path": "PHONE-INSTALL.md",
+      "sha256": "3c13ae2dcc23f6911bd0f01631d0292302ceff4def0f60983db1c2f97098500c"
+    },
+    {
+      "path": "package_android_controls_update.py",
+      "sha256": "e2a9ec062010613d75ea4203e87d7e335f9111b4e5752528c97e9a51d7b01fce"
+    }
+  ],
+  "apk_static_verification_passed": true,
+  "native_build_succeeded": true
+}

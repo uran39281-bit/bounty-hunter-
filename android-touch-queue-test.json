@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "cases": ["quick down/up before guest read", "two queued taps", "held button", "multitouch release", "cancel pending input", "cancel delivered input", "bounded overflow", "concurrent UI and guest threads"],
+  "compiler": "host C++20 with -Wall -Wextra -Werror and pthread",
+  "device_fix_verified": false
+}

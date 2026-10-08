@@ -10,6 +10,27 @@ import tempfile
 from pathlib import Path
 import zipfile
 
+def dex_extends(data, descriptor, parent):
+    """Inspect class definitions rather than trusting a class name in a manifest."""
+    if data[:4] != b'dex\n':
+        raise ValueError('Unexpected DEX file')
+    word = lambda offset: struct.unpack_from('<I', data, offset)[0]
+    strings = []
+    for i in range(word(56)):
+        offset = word(word(60) + i*4)
+        while data[offset] & 0x80:
+            offset += 1
+        offset += 1
+        end = data.index(0, offset)
+        strings.append(data[offset:end].decode('utf-8', errors='replace'))
+    types = [strings[word(word(68)+i*4)] for i in range(word(64))]
+    for i in range(word(96)):
+        offset = word(100)+i*32
+        if types[word(offset)] == descriptor:
+            superclass = word(offset+8)
+            return superclass != 0xffffffff and types[superclass] == parent
+    return False
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('apk', type=Path)
@@ -33,10 +54,21 @@ def main():
             ('MANAGE_EXTERNAL_STORAGE', 'READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE'))}
     elf = []
     entry_exported = False
+    controller_exported = set()
     zip_aligned = True
     with zipfile.ZipFile(apk) as z, tempfile.TemporaryDirectory(prefix='bounty-apk-check-') as folder:
         members = z.namelist()
         checks['java_dex_present'] = any(x.startswith('classes') and x.endswith('.dex') for x in members)
+        queued_controller = 'com.ps2x.runner.BountyNativeActivity' in manifest
+        if queued_controller:
+            checks['java_controller_extends_native_activity'] = any(
+                dex_extends(z.read(x), 'Lcom/ps2x/runner/BountyNativeActivity;',
+                            'Landroid/app/NativeActivity;')
+                for x in members if x.startswith('classes') and x.endswith('.dex'))
+            checks['native_activity_present'] = checks['java_controller_extends_native_activity']
+            checks['java_touch_popup_present'] = any(
+                b'Landroid/widget/PopupWindow;' in z.read(x)
+                for x in members if x.startswith('classes') and x.endswith('.dex'))
         native = [x for x in members if x.startswith('lib/') and x.endswith('.so')]
         checks['arm64_only'] = bool(native) and all(x.startswith('lib/arm64-v8a/') for x in native)
         checks['runner_packaged'] = 'lib/arm64-v8a/libps2EntryRunner.so' in native
@@ -62,10 +94,16 @@ def main():
             symbols = subprocess.check_output([str(reader), '--dyn-syms', '--wide', str(path)], text=True)
             if any('ANativeActivity_onCreate' in line and 'UND' not in line for line in symbols.splitlines()):
                 entry_exported = True
+            for method in ('nativeTouch', 'nativeInputStatus', 'nativeCancelTouch'):
+                symbol = 'Java_com_ps2x_runner_BountyNativeActivity_'+method
+                if any(symbol in line and 'UND' not in line for line in symbols.splitlines()):
+                    controller_exported.add(method)
             elf.append({'name': member, 'machine': 'AArch64', 'bytes': len(data),
                 'sha256': hashlib.sha256(data).hexdigest(), 'load_segment_alignments': alignments,
                 'zip_data_offset': offset})
     checks['native_activity_entry_exported'] = entry_exported
+    if queued_controller:
+        checks['queued_touch_jni_methods_exported'] = len(controller_exported) == 3
     checks['native_zip_aligned_16kb'] = zip_aligned
     checks['native_elf_aligned_16kb'] = all(all(x >= 16384 for x in f['load_segment_alignments']) for f in elf)
     report = {'checks': checks, 'all_passed': all(checks.values()),

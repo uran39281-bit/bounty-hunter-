@@ -1,6 +1,8 @@
 # Bounty Hunter native recompile experiment
 
-Target: Galaxy S24 / Android ARM64. **ARM64 APK built and signed; S24 launch and gameplay remain unverified.**
+Target: Galaxy S24 / Android ARM64. **The user confirms game import and boot to
+the original save warning on their phone. Menu input is blocked; full gameplay
+remains unverified.**
 
 The PS2 EE executable has been translated to native C++ and startup executes
 on x86-64 Linux with PS2Recomp's compatibility runtime and interpreted IOP.
@@ -9,6 +11,19 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 8 October 2026
 
+- The first APK reaches the readable original save warning on the user's S24.
+  The user reports that Up, Down and Cross do not respond. See
+  `phone-device-observation.json`; this confirms import/boot, not full gameplay.
+- A candidate input update queues Android press/release events until an actual
+  primary guest pad read consumes them. It preserves fast taps and draws/tests
+  controls in one Java view, with `Game: received` or `waiting` feedback. Host
+  tests pass for quick/repeated taps, held input, multi-touch, cancellation,
+  bounded overflow and concurrent threads. Phone validation remains pending.
+- Built and signed APK version 2 with the same certificate as version 1.
+  Static verification passes for the Java NativeActivity subclass, independent
+  popup controls, all three touch JNI methods, launcher, ARM64 library and
+  16 KB ELF/ZIP alignment. All 7,945 staged generated game sources retain their
+  verified hashes. Install the controls update and check guest-delivery feedback.
 - Fixed a graphics upload boundary bug: a pending GIF IMAGE previously consumed
   the next VIF NOP/DIRECT commands as pixels. Continuations now consume only
   bytes inside explicit DIRECT/DIRECTHL payloads. Pixel bytes remain untouched.
@@ -44,7 +59,7 @@ reports. Supply the original executable, IRX modules and game assets locally.
 - Added a phone folder picker. It checks the original executable and IOP image,
   copies original disc files, and prepares the two startup modules automatically.
   Host extraction checks reproduce the existing module files byte for byte and
-  reject missing/wrong images. Device import and native launch are untested.
+  reject missing/wrong images. The user now confirms device import and launch.
 - Full native compilation reports a translated VU0 integer-register array-bounds
   warning (`vi[27]` against a 16-element array). Its effect on the boot/gameplay
   path is not established; no gameplay claim is made.

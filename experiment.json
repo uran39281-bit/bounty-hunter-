@@ -1117,10 +1117,9 @@
   },
   "latest_missing_native_targets": [],
   "next_blockers": [
-    "S24 install, game-folder import, native launch and touch validation",
-    "Execute the post-warning native transition",
-    "Review the translated VU0 vi[27] array-bounds compiler warning before claiming gameplay support",
-    "Full gameplay, sound, video and background/resume validation"
+    "Install APK version 2 and verify UP/DOWN/Cross press delivery on the phone",
+    "If touch reaches the guest but the warning remains, diagnose the original menu/game-thread path",
+    "Validate the post-warning screen and further sound/video/gameplay; full playability remains unverified"
   ],
   "android_apk_result": {
     "returncode": 0,
@@ -1212,5 +1211,50 @@
     "missing_image_rejected": true,
     "wrong_image_rejected": true,
     "android_execution_tested": false
+  },
+  "phone_device_observation": {
+    "reported_local_date": "2026-10-07",
+    "device": "user Galaxy S24 phone",
+    "apk_version_code": 1,
+    "import_and_boot": "user confirmed",
+    "observed_screen": "original continue-without-saving warning with YES selected",
+    "rendering": "warning text and original graphics visible in user screenshot",
+    "input": "user reports UP, DOWN and X do not respond",
+    "full_playability_established": false,
+    "root_cause": "not yet established on device; render-frame touch sampling can lose down/up events",
+    "candidate_fix": "Independent Android popup controls queue touch edges until the primary guest scePadRead consumes them; show delivery feedback"
+  },
+  "android_touch_fix": {
+    "apk_version_code": 2,
+    "queued_press_release": true,
+    "host_queue_tests_passed": true,
+    "device_fix_verified": false,
+    "files": [
+      "android_touch_queue.h",
+      "android-phone/BountyNativeActivity.java",
+      "install_android_input_fix.py",
+      "android-touch-queue-test.json"
+    ],
+    "independent_android_popup_controls": true,
+    "apk_static_verification_passed": true
+  },
+  "android_apk_latest": {
+    "apk_built": true,
+    "apk_version_code": 2,
+    "offline_build": true,
+    "packaging": "successful Gradle/D8 output plus byte-identical compiled queued-input native runtime",
+    "native_library_sha256": "139c5531cc495412a14500665731f25727bd4f00e8e82cd67651bf468dbe4f8f",
+    "apk_sha256": "13f0f2c8e3710734e737e04e0e2973110f754c8ceb7879ae9dc1f3590e649395",
+    "apk_size_bytes": 73212511,
+    "device_fix_verified": false,
+    "returncode": 0,
+    "abi": "arm64-v8a",
+    "native_build": "Gradle build successful in 9m 44s",
+    "generated_cpp_files": 7945,
+    "game_folder_importer": true,
+    "s24_tested": false,
+    "android_launch_tested": false,
+    "full_playability_established": false,
+    "signing_key_matches_previous": true
   }
 }

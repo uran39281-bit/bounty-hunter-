@@ -43,6 +43,7 @@ def main():
     if manifest['register_functions.cpp'] != '4461d9452c73d74b0e6878c15fff7a5848404aa2f37d699545b6ea7f57e294b3':
         p.error('Unexpected registration table')
     subprocess.run(['python3', str(root/'install_android_import.py'), str(target)], check=True)
+    subprocess.run(['python3', str(root/'install_android_input_fix.py'), str(target)], check=True)
     gradle = target/'android/app/build.gradle'
     text = gradle.read_text().replace("compileSdk 34", "compileSdk 34\n    buildToolsVersion '34.0.0'")
     text = text.replace('android {', '''def ps2xDebugKeystore = project.findProperty('ps2xDebugKeystore')
