@@ -13,10 +13,11 @@ import java.util.Arrays;
 /** Extract exact startup modules from the user's original IOP image. */
 final class BootModules {
     private static final String IMAGE_SHA = "bc91fc6ce5f8afc30b9431688b0c02e90249600982401a419d971ec736326b64";
-    private static final String[] NAMES = {"SIFCMD", "CDVDFSV"};
+    private static final String[] NAMES = {"SIFCMD", "CDVDFSV", "LOADFILE"};
     private static final String[] HASHES = {
         "c40e0ac2d27bb5bb4d052a3ee85710f1ceb2c82aa5216915b17abc1c37c068e3",
-        "bba46bc27c14472e8e0b06397f5b909c6e32c92d17022dfc4ff0a767b5e272d4"
+        "bba46bc27c14472e8e0b06397f5b909c6e32c92d17022dfc4ff0a767b5e272d4",
+        "67ee7d0f91c312fedb7ccceb8826d7dba421dac879cb5e9714c3362499f58232"
     };
 
     private static String sha(byte[] bytes) throws IOException {

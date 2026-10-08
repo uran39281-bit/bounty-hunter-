@@ -1,0 +1,10 @@
+{
+  "apk_built": true,
+  "apk_version_code": 5,
+  "offline_build": true,
+  "packaging": "successful Gradle/D8 output plus byte-identical compiled queued-input native runtime",
+  "native_library_sha256": "9d05cfe025e2a1bbcd69b37046745781eae906685b06f80f3ba6a80d2e645090",
+  "apk_sha256": "29c7ba443a3880fb7b22e4f55089026d3bfa697f85afda1d362006118c2f62d2",
+  "apk_size_bytes": 73220705,
+  "device_fix_verified": false
+}

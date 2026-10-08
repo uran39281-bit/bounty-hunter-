@@ -1,0 +1,17 @@
+{
+  "missing_service_reproduced_with_apk4_boot_order": true,
+  "original_LOADFILE_sha256": "67ee7d0f91c312fedb7ccceb8826d7dba421dac879cb5e9714c3362499f58232",
+  "original_LOADFILE_bytes": 11617,
+  "original_IRX_entry_executed": true,
+  "native_RPC_version_function": "0xff",
+  "native_RPC_version_word": "0x30343532",
+  "version_ascii": "2540",
+  "reset_removes_server": true,
+  "reload_restores_server": true,
+  "android_extraction_existing_import_migration": true,
+  "android_extraction_exact_bytes_all_three": true,
+  "repeat_and_damaged_module_repair": true,
+  "missing_wrong_and_changed_images_rejected": true,
+  "device_tested": false,
+  "full_playability_established": false
+}

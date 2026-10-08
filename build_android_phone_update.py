@@ -11,8 +11,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('base-apk','sdk','keystore','output','work-directory'):
         parser.add_argument('--'+name,required=True,type=Path)
-    parser.add_argument('--version-code',type=int,default=4)
-    parser.add_argument('--version-name',default='0.1.3')
+    parser.add_argument('--version-code',type=int,default=5)
+    parser.add_argument('--version-name',default='0.1.4')
     args=parser.parse_args()
     root=Path(__file__).resolve().parent
     work=args.work_directory.resolve()

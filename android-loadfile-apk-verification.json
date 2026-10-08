@@ -1,0 +1,64 @@
+{
+  "checks": {
+    "signature_valid": true,
+    "package_correct": true,
+    "importer_is_launcher": true,
+    "native_activity_present": true,
+    "native_library_configured": true,
+    "no_broad_storage_permissions": true,
+    "no_broad_log_permission": true,
+    "java_dex_present": true,
+    "phone_diagnostics_present": true,
+    "java_controller_extends_native_activity": true,
+    "java_touch_popup_present": true,
+    "arm64_only": true,
+    "runner_packaged": true,
+    "no_disc_assets_packaged": true,
+    "native_activity_entry_exported": true,
+    "queued_touch_jni_methods_exported": true,
+    "native_zip_aligned_16kb": true,
+    "native_elf_aligned_16kb": true
+  },
+  "all_passed": true,
+  "apk_sha256": "29c7ba443a3880fb7b22e4f55089026d3bfa697f85afda1d362006118c2f62d2",
+  "apk_size_bytes": 73220705,
+  "native_libraries": [
+    {
+      "name": "lib/arm64-v8a/libps2EntryRunner.so",
+      "machine": "AArch64",
+      "bytes": 73160544,
+      "sha256": "9d05cfe025e2a1bbcd69b37046745781eae906685b06f80f3ba6a80d2e645090",
+      "load_segment_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zip_data_offset": 16384
+    }
+  ],
+  "certificate_sha256": [
+    "cb130e76d5273fd07b2979ed7547e62fc020748b81f4106a44ddb2a8273ef789"
+  ],
+  "signing_verification": [
+    "Verifies",
+    "Verified using v1 scheme (JAR signing): false",
+    "Verified using v2 scheme (APK Signature Scheme v2): false",
+    "Verified using v3 scheme (APK Signature Scheme v3): true",
+    "Verified using v3.1 scheme (APK Signature Scheme v3.1): false",
+    "Verified using v4 scheme (APK Signature Scheme v4): false",
+    "Verified for SourceStamp: false",
+    "Number of signers: 1",
+    "Signer #1 certificate DN: C=US, O=Android, CN=Android Debug",
+    "Signer #1 certificate SHA-256 digest: cb130e76d5273fd07b2979ed7547e62fc020748b81f4106a44ddb2a8273ef789",
+    "Signer #1 certificate SHA-1 digest: e637183dcf72737ade7d47a5ccc15d793e0904ec",
+    "Signer #1 certificate MD5 digest: f802281a7f4833c29a81f0af280d5c6d",
+    "Signer #1 key algorithm: RSA",
+    "Signer #1 key size (bits): 2048",
+    "Signer #1 public key SHA-256 digest: 196d4070e88a0fa96ac13d4e2771e68886715357771689f2f07a7967fc58144f",
+    "Signer #1 public key SHA-1 digest: e5f3773c615867ee9dbc530ce448ca19653c565f",
+    "Signer #1 public key MD5 digest: fc2185c96d73e7d7eed3ec07f95598be"
+  ],
+  "device_launch_tested": false,
+  "s24_tested": false,
+  "full_playability_established": false
+}

@@ -25,5 +25,14 @@
     "last_read_count": 318,
     "no_reads_observed_for_ms": 50843,
     "root_cause_established": false
+  },
+  "apk4_log_observation": {
+    "last_pad_reads": 297,
+    "no_new_reads_observed_ms": 110986,
+    "guest_pc": "0x196bd8",
+    "waiting_for_RPC_SID": "0x80000006",
+    "missing_original_boot_service": "LOADFILE",
+    "phone_candidate": "APK 5",
+    "candidate_device_effect_verified": false
   }
 }

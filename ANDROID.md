@@ -7,7 +7,8 @@ modules; host checks match the existing SIFCMD/CDVDFSV files byte for byte.
 The user imported their files on Galaxy S24. APK 1 reached the original save
 warning; APK 2 reaches the original main menu. At PLAY GAME, the latest screenshot
 shows `Touch: X | Game: waiting`, so the queued press has not been consumed.
-The runtime reason is not yet established. Full gameplay is unverified.
+APK 4's new log locates the LOADFILE initialization retry; APK 5 restores
+the missing original startup service. Its phone effect and full gameplay are unverified.
 
 APK version 2 replaces frame-sampled menu touch input with a Java control view on its own transparent popup surface
 and a bounded queue of touch transitions. The primary guest pad read consumes
@@ -30,13 +31,41 @@ thread. No READ_LOGS or broad storage permissions are requested. Android CTS
 confirms own-UID logs remain readable without READ_LOGS:
 https://android.googlesource.com/platform/cts/+/041c3806a93%5E%21/
 The exact native runtime remains unchanged; Java compilation, DEX and static APK
-checks pass. Log export on this S24 still needs the next phone test.
+checks pass. Log export on this S24 is confirmed by the APK 3 and APK 4 captures.
 
 `build_android_phone_update.py` compiles the four authored Java files against
 SDK 34, runs D8, compiles an APK-3 manifest with aapt and reuses the APK-2 library.
 It requires `--base-apk`, `--sdk`, `--keystore`, `--output` and a new
 `--work-directory`. Keep the same private signing key for updates. Results are in
 `android-phone-diagnostics-build.json` and `android-phone-diagnostics-verification.json`.
+
+## Original LOADFILE startup service (APK 5)
+
+The APK 4 phone log remains at guest PC `0x196bd8`, inside the original
+LOADFILE bind retry for SID `0x80000006`. The app stops sampling the pad at
+read 297 for at least 110.986 seconds. Host redraws continue, while DMA/GIF
+counts remain unchanged. This is a guest service wait rather than evidence
+of a failed Android touch hit area. The SDK client uses this SID for LOADFILE:
+https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/src/loadfile.c
+
+The boot sequence supplied SIFCMD and CDVDFSV but omitted LOADFILE from the
+original IOP image. `install_loadfile_boot.py` now loads the original
+`BOOT/LOADFILE.IRX` after those modules in both IOP reset paths.
+`BootModules.java` extracts all three exact, hash-checked modules from the
+already imported `IOPRP254.IMG`; the launcher prepares them on a worker thread
+before opening NativeActivity. Existing imports migrate without uninstalling.
+No game function, menu flag or RPC success result is forced.
+
+The local regression reproduces the absent server with the prior boot order,
+executes the supplied original LOADFILE IRX, verifies its `0xff` version RPC
+returns the original `2540` response, then resets and reloads it. The Java
+extraction regression checks upgrade migration, exact bytes and invalid-image
+rejection. `probe_loadfile_boot.cpp` uses the pinned upstream
+`ps2xIOP/tests/iop_compat_test_support.h`; `test_loadfile_boot.py` accepts that
+header's directory, the pinned checkout, private module directory and a fresh
+work directory. The original IRX files remain private. APK 5's phone effect and
+full gameplay remain unverified. The log also confirms SOUND and VIDEO are
+absent in app storage; failed sound opens are separate observed asset gaps.
 
 ## Native stall trace (APK 4)
 
@@ -81,12 +110,12 @@ when reusing these objects. The APK retains the same package and signing key.
 
 ## Phone setup
 
-Install the separately supplied `Bounty-Hunter-Menu-Candidate.apk`, open **Bounty Hunter**
+Install the separately supplied `Bounty-Hunter-Startup-Fix.apk`, open **Bounty Hunter**
 and tap **Import game folder**. Choose the parent game folder containing
 `SLUS_204.20`, `IOPRP254.IMG`, `IRX/` and `DATA/`. Unzip the original files first.
 The app copies the selected disc tree into its external app files directory,
 checks the original executable/image SHA-256 values, and prepares `BOOT/SIFCMD.IRX`
-and `BOOT/CDVDFSV.IRX` directly from the original image. The extraction preserves
+and `BOOT/CDVDFSV.IRX`, plus `BOOT/LOADFILE.IRX`, directly from the original image. The extraction preserves
 module bytes. The selected source files remain in their original folder.
 
 The native package is `com.ps2x.runner`; the configured executable is

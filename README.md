@@ -11,11 +11,23 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 8 October 2026
 
+- APK 4's new phone log identifies the stable guest PC `0x196bd8` inside
+  LOADFILE initialization. It retries SIF RPC SID `0x80000006`, stops sampling
+  the pad at read 297 for at least 110.986 seconds, and submits no new DMA/GIF
+  work while the host continues redrawing. The boot sequence omitted LOADFILE.
+  A local test reproduces the absent service with SIFCMD/CDVDFSV alone; executing
+  the original LOADFILE IRX registers the service and answers its version RPC.
+  APK 5, `Bounty-Hunter-Startup-Fix.apk`, loads that original module at IOP reset
+  and prepares it automatically on existing imports. Its phone effect is unverified.
+  See `phone-menu-stall-apk4-analysis.json` and `loadfile-boot-regression.json`.
+- The APK 4 inventory also confirms SOUND and VIDEO were not imported.
+  Failed sound opens are observed; their effect beyond the diagnosed LOADFILE
+  loop remains unestablished. Original game code and menu state are unchanged in APK 5.
 - APK 3's exported phone log confirms Start and two X presses are consumed.
   Pad reads then slow sharply and stop at 318 for at least 50.843 seconds;
   later Down/Circle transitions stay queued. The capture has no missing-target
   or fatal guest-exception message. The blocked game PC is not exposed by APK 3.
-  See `phone-menu-stall-log-analysis.json`; the cause is still unestablished.
+  See `phone-menu-stall-log-analysis.json`; APK 4 later locates the LOADFILE retry.
 - APK 4 adds an independent native watcher for branch/render progress and the
   scheduler's published EE thread/wait snapshots, plus asset-open failures and
   imported DATA folder counts. It also corrects one generated VCALLMSR operand;

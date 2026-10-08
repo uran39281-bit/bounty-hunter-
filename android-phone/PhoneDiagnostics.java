@@ -16,7 +16,7 @@ final class PhoneDiagnostics {
     private volatile java.lang.Process logger;
 
     PhoneDiagnostics(File gameRoot) {
-        add("Bounty Hunter native trace APK 4 / 0.1.3");
+        add("Bounty Hunter native trace APK 5 / 0.1.4");
         add("Device=" + Build.MANUFACTURER + " " + Build.MODEL + " SDK=" + Build.VERSION.SDK_INT);
         Thread reader = new Thread(() -> {
             try {
@@ -64,7 +64,7 @@ final class PhoneDiagnostics {
 
     synchronized String snapshot() {
         StringBuilder result = new StringBuilder(characters+200);
-        result.append("Bounty Hunter APK 4 native progress diagnostics\n")
+        result.append("Bounty Hunter APK 5 native progress diagnostics\n")
               .append("This is the app's own process log plus input counters.\n")
               .append("Includes native progress, published EE thread state and file-open traces.\n\n");
         for (String line : lines) result.append(line);

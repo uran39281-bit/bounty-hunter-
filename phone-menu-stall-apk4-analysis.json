@@ -1,0 +1,36 @@
+{
+  "apk_version": 4,
+  "phone": "Galaxy S24 SM-S926U1 Android 16 SDK 36",
+  "log_sha256": "e64f46deebe390eaf0a00ffdb504ba52cc931c070847815e06aa10b498d21120",
+  "last_pad_reads": 297,
+  "last_consumed_serial": 9,
+  "export_last_press_serial": 27,
+  "no_new_pad_reads_observed_ms": 110986,
+  "stable_guest_pc": "0x196bd8",
+  "guest_return_address": "0x196b54",
+  "guest_operation": "SDK LOADFILE init retries sceSifBindRpc SID 0x80000006 while client.server is zero",
+  "local_reproduction": "SIFCMD + CDVDFSV boot has no LOADFILE server; loading original LOADFILE IRX registers it and answers version RPC 0xff",
+  "last_frames": 9834,
+  "stall_first_frames": 3179,
+  "last_dma_count": 636,
+  "last_gif_count": 2,
+  "guest_thread": "1 Running, no scheduler wait reason",
+  "assets": {
+    "SOUND_imported": false,
+    "VIDEO_imported": false,
+    "missing_sound_opens": [
+      "DATA/SOUND/SOUNDTBS.TXT",
+      "DATA/SOUND/UI/PS2_UI.FLO"
+    ],
+    "other_failed_opens": [
+      "FIREWIRE.TXT",
+      "PARAM.TXT",
+      "MM_ANI_2.VFX",
+      "MM_ANI_4.VFX"
+    ]
+  },
+  "distinction": "Host display frames continue; this does not establish that new game frames render. Controller sampling stops inside LOADFILE retry loop. Missing sound/video are separate observed gaps; this log does not prove their impact on gameplay.",
+  "next_candidate": "APK 5 loads exact original BOOT/LOADFILE.IRX at IOP reset and migrates existing imports automatically",
+  "device_fix_verified": false,
+  "source_reference": "https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/src/loadfile.c"
+}

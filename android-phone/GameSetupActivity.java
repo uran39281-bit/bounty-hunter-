@@ -33,11 +33,6 @@ public final class GameSetupActivity extends Activity {
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         File root = getExternalFilesDir(null);
-        if (root != null && new File(root, ".bounty-import-complete").isFile()
-                && new File(root, ELF).isFile()) {
-            startGame();
-            return;
-        }
         LinearLayout view = new LinearLayout(this);
         view.setOrientation(LinearLayout.VERTICAL);
         view.setGravity(Gravity.CENTER);
@@ -66,6 +61,8 @@ public final class GameSetupActivity extends Activity {
         });
         view.addView(choose);
         setContentView(view);
+        if (root != null && new File(root, ".bounty-import-complete").isFile()
+                && new File(root, ELF).isFile()) startGame();
     }
 
     @Override protected void onActivityResult(int request, int result, Intent data) {
@@ -102,8 +99,28 @@ public final class GameSetupActivity extends Activity {
     }
 
     private void startGame() {
-        startActivity(new Intent(this, NativeActivity.class));
-        finish();
+        importing = true;
+        choose.setEnabled(false);
+        status.setText("Preparing game startup files…");
+        new Thread(() -> {
+            try {
+                File root = getExternalFilesDir(null);
+                if (root == null) throw new IOException("Game storage is unavailable.");
+                BootModules.prepare(root);
+                runOnUiThread(() -> {
+                    importing = false;
+                    startActivity(new Intent(this, NativeActivity.class));
+                    finish();
+                });
+            } catch (Exception e) {
+                final String message = e.getMessage() == null ? "Could not prepare game startup files." : e.getMessage();
+                runOnUiThread(() -> {
+                    importing = false;
+                    choose.setEnabled(true);
+                    status.setText(message + "\n\nChoose the game folder to try again.");
+                });
+            }
+        }, "game-startup").start();
     }
 
     private static final class Entry {

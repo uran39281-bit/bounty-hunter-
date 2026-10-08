@@ -60,7 +60,7 @@ def main():
     with zipfile.ZipFile(apk) as z, tempfile.TemporaryDirectory(prefix='bounty-apk-check-') as folder:
         members = z.namelist()
         checks['java_dex_present'] = any(x.startswith('classes') and x.endswith('.dex') for x in members)
-        if "versionCode='3'" in badging or "versionCode='4'" in badging:
+        if any("versionCode='"+str(n)+"'" in badging for n in (3,4,5)):
             checks['phone_diagnostics_present'] = any(
                 b'Lcom/ps2x/runner/PhoneDiagnostics;' in z.read(x) and b'android.intent.action.CREATE_DOCUMENT' in z.read(x)
                 for x in members if x.startswith('classes') and x.endswith('.dex'))
