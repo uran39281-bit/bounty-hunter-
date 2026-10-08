@@ -24,11 +24,14 @@ import java.util.List;
 /** Phone-only import of a user-selected disc folder; no broad storage permission. */
 public final class GameSetupActivity extends Activity {
     private static final int PICK_GAME = 41;
+    private static final int EXPORT_LAST_LOG = 42;
     private static final String ELF = "SLUS_204.20";
     private static final String ELF_SHA = "51c56737105d1186f0b14155e39d8af67e63b12c4ac0543e1f0e178ccd6a4304";
     private TextView status;
     private Button choose;
+    private Button launch;
     private volatile boolean importing;
+    private String pendingLogExport;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -60,13 +63,64 @@ public final class GameSetupActivity extends Activity {
             startActivityForResult(pick, PICK_GAME);
         });
         view.addView(choose);
+        boolean installed = root != null && new File(root, ".bounty-import-complete").isFile()
+                && new File(root, ELF).isFile();
+        if (installed && RunLog.exists(root)) {
+            status.setText("The last game run has a saved log. Export it here, or start the game again.");
+            launch = new Button(this);
+            launch.setText("Start game");
+            launch.setOnClickListener(v -> { launch.setEnabled(false); startGame(); });
+            view.addView(launch, view.getChildCount() - 1);
+            Button logs = new Button(this);
+            logs.setText("Export last run log");
+            logs.setOnClickListener(v -> exportLastLog());
+            view.addView(logs, view.getChildCount() - 1);
+        }
         setContentView(view);
-        if (root != null && new File(root, ".bounty-import-complete").isFile()
-                && new File(root, ELF).isFile()) startGame();
+        if (installed && !RunLog.exists(root)) startGame();
+    }
+
+    private void exportLastLog() {
+        new Thread(() -> {
+            try {
+                String text = new RunLog(getExternalFilesDir(null)).snapshot();
+                runOnUiThread(() -> {
+                    pendingLogExport = text;
+                    Intent pick = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+                    pick.addCategory(Intent.CATEGORY_OPENABLE);
+                    pick.setType("text/plain");
+                    pick.putExtra(Intent.EXTRA_TITLE, "Bounty-Hunter-last-run.txt");
+                    try { startActivityForResult(pick, EXPORT_LAST_LOG); }
+                    catch (RuntimeException error) {
+                        pendingLogExport = null;
+                        Toast.makeText(this, "Could not open the save picker: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+            } catch (Exception error) {
+                runOnUiThread(() -> Toast.makeText(this, "Could not read the saved log: " + error.getMessage(), Toast.LENGTH_LONG).show());
+            }
+        }, "last-run-export").start();
     }
 
     @Override protected void onActivityResult(int request, int result, Intent data) {
         super.onActivityResult(request, result, data);
+        if (request == EXPORT_LAST_LOG) {
+            String text = pendingLogExport;
+            pendingLogExport = null;
+            if (result == RESULT_OK && data != null && data.getData() != null && text != null) {
+                Uri destination = data.getData();
+                new Thread(() -> {
+                    try (java.io.OutputStream out = getContentResolver().openOutputStream(destination, "wt")) {
+                        if (out == null) throw new IOException("The selected document is unavailable.");
+                        out.write(text.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                        runOnUiThread(() -> Toast.makeText(this, "Saved. Attach the text file in chat.", Toast.LENGTH_LONG).show());
+                    } catch (Exception error) {
+                        runOnUiThread(() -> Toast.makeText(this, "Could not export log: " + error.getMessage(), Toast.LENGTH_LONG).show());
+                    }
+                }, "last-run-save").start();
+            }
+            return;
+        }
         if (request != PICK_GAME || result != RESULT_OK || data == null || data.getData() == null) return;
         Uri tree = data.getData();
         importing = true;
@@ -87,6 +141,7 @@ public final class GameSetupActivity extends Activity {
                     importing = false;
                     getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                     choose.setEnabled(true);
+                    if (launch != null) launch.setEnabled(true);
                     status.setText(message + "\n\nChoose the game folder to try again.");
                 });
             }
@@ -117,6 +172,7 @@ public final class GameSetupActivity extends Activity {
                 runOnUiThread(() -> {
                     importing = false;
                     choose.setEnabled(true);
+                    if (launch != null) launch.setEnabled(true);
                     status.setText(message + "\n\nChoose the game folder to try again.");
                 });
             }

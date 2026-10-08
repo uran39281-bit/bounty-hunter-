@@ -1,8 +1,8 @@
 # Bounty Hunter native recompile experiment
 
 Target: Galaxy S24 / Android ARM64. **The user confirms game import and boot to
-the original main menu on their phone. Advancing from PLAY GAME is blocked; full gameplay
-remains unverified.**
+the original main menu and working Up/Down navigation on their phone.
+Selecting PLAY GAME now exits the app; full gameplay remains unverified.**
 
 The PS2 EE executable has been translated to native C++ and startup executes
 on x86-64 Linux with PS2Recomp's compatibility runtime and interpreted IOP.
@@ -11,6 +11,18 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 8 October 2026
 
+- The user confirms APK 5 restores Up/Down menu movement. Selecting PLAY GAME
+  now exits the app. The exit cause is unknown until a new phone log is captured.
+- APK 6, `Bounty-Hunter-Saved-Logs.apk`, persists bounded own-process logs and
+  native runner stop reasons. Reopening after an exit offers **Export last run log**.
+  It records caught exceptions, missing translated targets and normal game-thread
+  return without changing guest execution. It does not intercept fatal signals;
+  a hard process crash may leave only the last progress entries.
+- Host persistence/rotation tests and APK signing/alignment checks pass. APK 6
+  has not been tested on the phone and does not establish a gameplay crash fix.
+
+Previous findings:
+
 - APK 4's new phone log identifies the stable guest PC `0x196bd8` inside
   LOADFILE initialization. It retries SIF RPC SID `0x80000006`, stops sampling
   the pad at read 297 for at least 110.986 seconds, and submits no new DMA/GIF
@@ -18,7 +30,7 @@ reports. Supply the original executable, IRX modules and game assets locally.
   A local test reproduces the absent service with SIFCMD/CDVDFSV alone; executing
   the original LOADFILE IRX registers the service and answers its version RPC.
   APK 5, `Bounty-Hunter-Startup-Fix.apk`, loads that original module at IOP reset
-  and prepares it automatically on existing imports. Its phone effect is unverified.
+  and prepares it automatically on existing imports. The user now confirms restored menu movement; PLAY GAME exits.
   See `phone-menu-stall-apk4-analysis.json` and `loadfile-boot-regression.json`.
 - The APK 4 inventory also confirms SOUND and VIDEO were not imported.
   Failed sound opens are observed; their effect beyond the diagnosed LOADFILE

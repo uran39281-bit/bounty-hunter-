@@ -11,15 +11,15 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('base-apk','sdk','keystore','output','work-directory'):
         parser.add_argument('--'+name,required=True,type=Path)
-    parser.add_argument('--version-code',type=int,default=5)
-    parser.add_argument('--version-name',default='0.1.4')
+    parser.add_argument('--version-code',type=int,default=6)
+    parser.add_argument('--version-name',default='0.1.5')
     args=parser.parse_args()
     root=Path(__file__).resolve().parent
     work=args.work_directory.resolve()
     if work.exists(): parser.error('Work directory must be new')
     java=work/'java'; classes=work/'classes'; dex=work/'dex/1'
     for folder in (java,classes,dex): folder.mkdir(parents=True,exist_ok=True)
-    for name in ('GameSetupActivity.java','BootModules.java','BountyNativeActivity.java','PhoneDiagnostics.java'):
+    for name in ('GameSetupActivity.java','BootModules.java','BountyNativeActivity.java','PhoneDiagnostics.java','RunLog.java'):
         text=(root/'android-phone'/name).read_text()
         if name=='GameSetupActivity.java':
             text=text.replace('new Intent(this, NativeActivity.class)','new Intent(this, BountyNativeActivity.class)')

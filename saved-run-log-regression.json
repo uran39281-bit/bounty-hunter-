@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "checks": [
+    "reopen retains last line",
+    "two bounded rolling segments",
+    "oversize Unicode bounded",
+    "native stop reason export",
+    "native branch addresses retained",
+    "return preserves earlier stop reason",
+    "new run replaces old native status",
+    "unwritable native status fails safely"
+  ],
+  "phone_tested": false,
+  "gameplay_exit_cause_known": false
+}

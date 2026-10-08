@@ -60,10 +60,16 @@ def main():
     with zipfile.ZipFile(apk) as z, tempfile.TemporaryDirectory(prefix='bounty-apk-check-') as folder:
         members = z.namelist()
         checks['java_dex_present'] = any(x.startswith('classes') and x.endswith('.dex') for x in members)
-        if any("versionCode='"+str(n)+"'" in badging for n in (3,4,5)):
+        if any("versionCode='"+str(n)+"'" in badging for n in (3,4,5,6)):
             checks['phone_diagnostics_present'] = any(
                 b'Lcom/ps2x/runner/PhoneDiagnostics;' in z.read(x) and b'android.intent.action.CREATE_DOCUMENT' in z.read(x)
                 for x in members if x.startswith('classes') and x.endswith('.dex'))
+        if "versionCode='6'" in badging:
+            dex = b''.join(z.read(x) for x in members if x.startswith('classes') and x.endswith('.dex'))
+            checks['saved_log_export_present'] = b'Lcom/ps2x/runner/RunLog;' in dex and b'Export last run log' in dex
+            runner = z.read('lib/arm64-v8a/libps2EntryRunner.so')
+            checks['native_stop_capture_present'] = all(x in runner for x in
+                (b'.bounty-native-stop.txt', b'MISSING_TRANSLATED_TARGET', b'GAME_THREAD_RETURNED', b'UNKNOWN_EXCEPTION'))
         queued_controller = 'com.ps2x.runner.BountyNativeActivity' in manifest
         if queued_controller:
             checks['java_controller_extends_native_activity'] = any(

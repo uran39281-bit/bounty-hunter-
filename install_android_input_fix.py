@@ -18,6 +18,7 @@ def main():
     java=main_dir/'java/com/ps2x/runner'
     shutil.copy2(root/'android-phone/BountyNativeActivity.java',java/'BountyNativeActivity.java')
     shutil.copy2(root/'android-phone/PhoneDiagnostics.java',java/'PhoneDiagnostics.java')
+    shutil.copy2(root/'android-phone/RunLog.java',java/'RunLog.java')
     manifest=main_dir/'AndroidManifest.xml'
     text=manifest.read_text()
     if 'com.ps2x.runner.BountyNativeActivity' not in text:

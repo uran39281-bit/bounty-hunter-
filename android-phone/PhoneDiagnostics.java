@@ -14,9 +14,12 @@ final class PhoneDiagnostics {
     private int characters;
     private volatile boolean closed;
     private volatile java.lang.Process logger;
+    private RunLog saved;
 
     PhoneDiagnostics(File gameRoot) {
-        add("Bounty Hunter native trace APK 5 / 0.1.4");
+        try { saved = new RunLog(gameRoot); }
+        catch (java.io.IOException error) { add("Saved log unavailable: " + error); }
+        add("Bounty Hunter saved diagnostics APK 6 / 0.1.5 PID=" + android.os.Process.myPid());
         add("Device=" + Build.MANUFACTURER + " " + Build.MODEL + " SDK=" + Build.VERSION.SDK_INT);
         Thread reader = new Thread(() -> {
             try {
@@ -60,14 +63,25 @@ final class PhoneDiagnostics {
         if (line.length() > LIMIT) line = line.substring(line.length()-LIMIT);
         lines.addLast(line); characters += line.length();
         while (characters > LIMIT && lines.size() > 1) characters -= lines.removeFirst().length();
+        if (saved != null) {
+            try { saved.append(line); }
+            catch (java.io.IOException error) {
+                saved = null;
+                add("Could not save log: " + error);
+            }
+        }
     }
 
     synchronized String snapshot() {
         StringBuilder result = new StringBuilder(characters+200);
-        result.append("Bounty Hunter APK 5 native progress diagnostics\n")
+        result.append("Bounty Hunter APK 6 native progress diagnostics\n")
               .append("This is the app's own process log plus input counters.\n")
               .append("Includes native progress, published EE thread state and file-open traces.\n\n");
         for (String line : lines) result.append(line);
+        if (saved != null) {
+            try { result.append("\n").append(saved.snapshot()); }
+            catch (java.io.IOException error) { result.append("Saved log unavailable: ").append(error); }
+        }
         return result.toString();
     }
 

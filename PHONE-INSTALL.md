@@ -1,5 +1,21 @@
 # Phone installation and diagnostics
 
+## Saved logs after exit, APK version 6
+
+Install `Bounty-Hunter-Saved-Logs.apk` as an **Update** over the current app.
+Keep the app installed so its imported game files remain available.
+
+1. Open Bounty Hunter; tap **Start game** if the setup screen appears.
+2. Select **PLAY GAME** and press **X** to reproduce the exit.
+3. Reopen Bounty Hunter and tap **Export last run log** before starting again.
+4. Save `Bounty-Hunter-last-run.txt` in Downloads and attach it in chat.
+
+The user confirms APK 5 restores Up/Down navigation. PLAY GAME now exits.
+APK 6 saves logs across process exit and adds native stop status; it does not
+claim to fix the gameplay exit. The cause remains unknown. A hard native crash
+may leave progress entries without a precise stop reason.
+
+
 ## Original LOADFILE startup service, APK version 5
 
 Install `Bounty-Hunter-Startup-Fix.apk` as an **Update** over the existing app.
@@ -16,7 +32,7 @@ The APK 4 phone log locates a LOADFILE initialization retry at guest PC
 did not load that original module. The local regression reproduces the missing
 service, then executes the original IRX and verifies its version RPC and reset/reload.
 Extraction checks confirm exact bytes, repair and migration of an older import.
-The effect on this phone remains unverified; full gameplay is not established.
+The user confirms menu navigation works after this change; PLAY GAME exits. Full gameplay is not established.
 The imported SOUND and VIDEO folders are also absent in the APK 4 log.
 
 ## Native stall trace, APK version 4
@@ -46,7 +62,7 @@ ELF instructions remain unchanged; exactly one generated C++ operand is correcte
 
 ## First installation
 
-1. Download `Bounty-Hunter-Startup-Fix.apk` to the phone and tap it to install.
+1. Download `Bounty-Hunter-Saved-Logs.apk` to the phone and tap it to install.
 2. Open **Bounty Hunter**, then tap **Import game folder**.
 3. Choose `Download/Star Wars file`, or whichever folder contains the original
    `SLUS_204.20` and `IOPRP254.IMG` files and both `IRX` and `DATA` folders. Select the parent game
@@ -62,9 +78,9 @@ are skipped; their extracted contents are needed. The phone may need several
 gigabytes of free space for a complete disc copy. The importer prepares the three
 startup modules automatically from your original `IOPRP254.IMG` file.
 
-After a successful import, subsequent launches open the native runner directly.
+After a successful import, launches show the log export screen when a saved run exists.
 Menu touch buttons are Start, Cross, Circle and the four directions. The
 first build was tested by the user on an S24 and reaches the save warning,
-and APK 2 now reaches the original main menu. Input at PLAY GAME is still blocked.
+and APK 2 now reaches the original main menu. APK 5 restores Up/Down navigation; selecting PLAY GAME exits the app.
 Full gameplay, sound,
 videos, background/resume and later screens remain unverified.

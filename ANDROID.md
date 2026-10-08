@@ -8,7 +8,9 @@ The user imported their files on Galaxy S24. APK 1 reached the original save
 warning; APK 2 reaches the original main menu. At PLAY GAME, the latest screenshot
 shows `Touch: X | Game: waiting`, so the queued press has not been consumed.
 APK 4's new log locates the LOADFILE initialization retry; APK 5 restores
-the missing original startup service. Its phone effect and full gameplay are unverified.
+the missing original startup service. The user confirms APK 5 restores Up/Down navigation; PLAY GAME exits.
+APK 6 preserves last-run logs for export after reopening. Its phone behavior
+and full gameplay remain unverified.
 
 APK version 2 replaces frame-sampled menu touch input with a Java control view on its own transparent popup surface
 and a bounded queue of touch transitions. The primary guest pad read consumes

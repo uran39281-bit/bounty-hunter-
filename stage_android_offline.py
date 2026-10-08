@@ -48,12 +48,13 @@ def main():
     subprocess.run(['python3', str(root/'install_android_runtime_trace.py'), str(target)], check=True)
     subprocess.run(['python3', str(root/'install_vcallmsr_fix.py'), str(runner)], check=True)
     subprocess.run(['python3', str(root/'install_loadfile_boot.py'), str(target)], check=True)
+    subprocess.run(['python3', str(root/'install_android_exit_diagnostics.py'), str(target)], check=True)
     baseline_manifest=manifest
     manifest={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in runner.glob('*.cpp')}
     gradle = target/'android/app/build.gradle'
     text = gradle.read_text().replace("compileSdk 34", "compileSdk 34\n    buildToolsVersion '34.0.0'")
-    text = re.sub(r'versionCode \d+', 'versionCode 5', text)
-    text = re.sub(r"versionName '[^']*'", "versionName '0.1.4'", text)
+    text = re.sub(r'versionCode \d+', 'versionCode 6', text)
+    text = re.sub(r"versionName '[^']*'", "versionName '0.1.5'", text)
     text = text.replace('android {', '''def ps2xDebugKeystore = project.findProperty('ps2xDebugKeystore')
 android {
     signingConfigs {

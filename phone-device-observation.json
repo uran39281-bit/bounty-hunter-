@@ -6,7 +6,7 @@
   "caption": "Touch: X | Game: waiting",
   "input": "overlay detected X; primary guest pad read has not consumed the queued press",
   "root_cause": "not established; phone runtime logs are needed",
-  "next_step": "APK 4 independent native progress and EE wait-state trace",
+  "next_step": "APK 6: reproduce Play Game exit, reopen, export last run log",
   "full_playability_established": false,
   "previous_observation": {
     "reported_local_date": "2026-10-07",
@@ -34,5 +34,12 @@
     "missing_original_boot_service": "LOADFILE",
     "phone_candidate": "APK 5",
     "candidate_device_effect_verified": false
+  },
+  "apk5_user_observation": {
+    "reported_local_date": "2026-10-08",
+    "menu_up_down_works": true,
+    "play_game_result": "app exits when selected",
+    "exit_cause": "unknown pending APK 6 saved phone log",
+    "full_playability_established": false
   }
 }
