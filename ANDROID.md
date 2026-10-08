@@ -1,96 +1,97 @@
 # Bounty Hunter Android experiment
 
-No APK has been built or tested. The native diagnostic reaches the original
-title and following menu. A VIF IMAGE/DIRECT upload boundary fix passes pixel
-regressions and exact captured-upload comparison. The fixed native capture
-shows readable save-warning text; Cross opens it and Down selects No.
-Full menu navigation and on-device rendering are unverified. Touch controls are wired in
-source and tested on the host through the runtime Pad API.
+An ARM64 debug APK has been built and signed. Static verification passes for
+its signature, launcher, AArch64 native library, exported NativeActivity entry,
+and 16 KB ELF/ZIP alignment. The phone importer also prepares original startup
+modules; host checks match the existing SIFCMD/CDVDFSV files byte for byte.
+The APK has not been installed or launched on an S24. Full gameplay is unverified.
 
-## Prepare a dedicated checkout
+See `android-apk-build.json`, `android-apk-verification.json`,
+`android-boot-module-test.json` and `PHONE-INSTALL.md`.
 
-Use the pinned PS2Recomp commit in README.md, regenerate/stage the original
-game translation, and install all runtime patches in that document. Apply the
-installers or `runtime-experiment.patch`, never both. Generate and verify the
-seven observed native entries with the existing native-leaf workflow.
+## Phone setup
 
-The original game executable, generated game C++, disc assets and native-leaf
-output remain private. They are in the private project checkpoint or supplied
-asset archives; they are not included in the public source repository.
+Install the separately supplied `Bounty-Hunter-ARM64.apk`, open **Bounty Hunter**
+and tap **Import game folder**. Choose the parent game folder containing
+`SLUS_204.20`, `IOPRP254.IMG`, `IRX/` and `DATA/`. Unzip the original files first.
+The app copies the selected disc tree into its external app files directory,
+checks the original executable/image SHA-256 values, and prepares `BOOT/SIFCMD.IRX`
+and `BOOT/CDVDFSV.IRX` directly from the original image. The extraction preserves
+module bytes. The selected source files remain in their original folder.
 
-```sh
-python3 prepare_android_runtime.py /path/to/PS2Recomp --build
-```
+The native package is `com.ps2x.runner`; the configured executable is
+`/storage/emulated/0/Android/data/com.ps2x.runner/files/SLUS_204.20`.
+The importer uses Android's document-tree picker without broad storage
+permissions. After a complete import, subsequent app launches open the native
+runner directly. No original executable, IRX or disc assets are embedded in the
+APK. Startup does not require manually accessing `Android/data` from a file manager.
 
-This stages the verified observed entries at the end of the runner's source
-list and checks JDK/Gradle, Android SDK platform 34, NDK 28.2.13676358 and SDK
-CMake 3.22.1. Set `ANDROID_HOME` or `ANDROID_SDK_ROOT` to the SDK directory.
-It exits with failure and records the missing prerequisites when unavailable.
-With all prerequisites present it invokes the upstream debug APK build.
+## Offline ARM64 build
 
-The app uses the pinned upstream package `com.ps2x.runner`. The configured ELF
-is `/storage/emulated/0/Android/data/com.ps2x.runner/files/SLUS_204.20`.
-Preserve the staged disc layout alongside it, including `SYSTEM.CNF`,
-`CDROM.TXT`, `IOPRP254.IMG`, `IRX/` and `DATA/`. Keep original assets outside
-the APK. Staging an incomplete disc does not establish full game support.
+The public `Android build tools` GitHub Actions workflow prepares SDK platform
+34, build tools 34.0.0, NDK 28.2.13676358, CMake 3.22.1, Gradle 8.9, the AGP 8.6.1
+module cache, raylib 5.5 and sse2neon v1.9.1. Its fixture contains no game code.
+It uploads three toolchain parts with one archive SHA-256 manifest.
 
-## Controls and presentation
-
-The Android host UI samples touch points and the physical gamepad on its UI
-thread. It merges active-low button masks, then sends that state through the
-existing mutex-backed runtime Pad API. Start, Cross, Circle and the four
-directions are visible touch buttons. Physical stick values are retained.
-Shutdown clears the input override. This is a menu input implementation;
-additional gameplay controls have not been implemented or validated.
-
-The Android entry uses the same opt-in boot compatibility settings exercised
-by the diagnostic, stops on untranslated code, and registers the exact
-observed native entries. Its host frame upload retains the completed native
-GS display-copy latch instead of resampling partway through native drawing.
-Those changes still require an actual NDK build and device validation.
-
-## Host verification
+Download the three ZIP artifacts and verify their GitHub digests. Extract them
+with `unpack_android_tools.py`; its `--sdk-destination` option allows a separate
+SDK directory on hosts that truncate large executable files in a synced workspace.
 
 ```sh
-python3 verify_runtime_probes.py /path/to/PS2Recomp --report frontend-installation-check.json
-python3 link_headless.py /path/to/PS2Recomp /path/to/runtime-build --source test_menu_controls.cpp --output test-menu-controls
-./test-menu-controls
+python3 unpack_android_tools.py --destination /path/to/build-tools \
+  --sdk-destination /tmp/bounty-android-sdk \
+  android-tools-aa.zip android-tools-ab.zip android-tools-ac.zip
 ```
 
-The control regression checks landscape/portrait hit locations, blank surface,
-out-of-button touches, physical/touch combination, scripted pulse boundaries,
-and real `scePadRead` press/release delivery. A separate host compiler syntax
-check enables `__ANDROID__` for the Android control source against the pinned
-raylib headers; it is not an ARM64/NDK compile or Android link.
+Prepare a pinned PS2Recomp checkout at
+`2c5fbb9389e11dd95693385969490c9e8e6f57b4` using the complete private corrected
+translation and exact observed entries. Supply the original/generated sources
+from the private checkpoint; they are absent from public GitHub.
 
-`--trace-frontend` records bounded original front-end/pad/event calls.
-`--script-menu-input` explicitly enables test-only repeating button pulses
-after 128 real port-zero reads. Default runs send no scripted input. No game
-flags, native instructions, synthetic draw packets or success responses are
-injected to advance the menu. The diagnostic permits up to 600 seconds because
-the current unoptimized desktop runtime advances slowly.
+```sh
+python3 stage_runtime.py /path/to/prepared-repo \
+  --generated corrected-output --compact-registration
+python3 prepare_android_runtime.py /path/to/prepared-repo
+python3 stage_android_offline.py --prepared-repo /path/to/prepared-repo \
+  --destination /path/to/new-android-checkout \
+  --tools /path/to/build-tools/android-tools
+python3 build_android_offline.py --repo /path/to/new-android-checkout \
+  --tools /path/to/build-tools/android-tools --output /path/to/apk-output
+python3 verify_android_apk.py /path/to/apk-output/Bounty-Hunter-ARM64.apk \
+  --sdk /path/to/build-tools/android-tools/sdk --report apk-verification.json
+```
 
-A longer native trace confirms the original five-second transition from menu
-`0x10f` to `0x110`. Cross then requests menu `0x35e`. Exact registrations for
-missing menu callbacks and an animation update are now staged privately.
-The earlier following-screen capture had distorted graphics and text fragments
-(`title-result.json`). After the VIF fix, the save-warning capture has readable
-text, coherent borders and background, and a visible No selection after Down.
-This remains a desktop diagnostic; usable on-device navigation is unverified.
+The stager applies the twenty-file verified runtime patch to a fresh checkout,
+then copies all 7,945 corrected game/observed-entry C++ files and generated
+headers. It installs the phone importer, selects ARM64 only, supplies local
+FetchContent dependencies and uses `-O2 -g0 -DNDEBUG` without fast-math. Ninja
+compiles at most two units concurrently. Gradle runs offline. The original
+native instructions and generated source files are not rewritten by this setup.
+The private checkpoint retains this APK's debug signing key for future updates;
+keep it private. The builder automatically reuses `android-signing/debug.keystore`
+when present; `--signing-keystore` accepts an explicit private key path.
 
-The image upload fix is included in the runtime installers and patch, so a fresh
-Android build uses the corrected VIF boundary handling. It preserves commands
-between the image header and pixel DIRECT payload. See `menu-rendering-result.json`
-for regression and native-run evidence. Desktop vector-interpreter optimization
-is separate diagnostic build tooling; it does not establish Android performance.
+## Controls and rendering evidence
 
-The fixed 480-second run delivers all four directions and shows Yes after Up.
-`test_native_menu_navigation.cpp` restores the same captured No selection for
-each button. It verifies Up/Down selection changes, Cross's original screen
-request, and unchanged warning state for Left/Right/Circle/Start. These last
-buttons are ignored by this warning's original handler. The isolated test does
-not prove the subsequent screen or on-device touch behavior.
+The host UI merges touch/physical input through the existing mutex-backed Pad
+API. Start, Cross, Circle and four directions are visible touch buttons.
+This is a menu input implementation; further gameplay controls remain open.
 
-Next validation: execute the post-warning transition, build the real
-ARM64 debug APK, install on S24, and test launch, text, button press/release and
-background/resume. No device or APK validation has occurred here.
+Android startup enables the same compatibility settings used by the native
+Linux diagnostic, stops on untranslated code, and registers the seven exact
+observed native entries. Frame upload retains the completed native GS display
+copy. The VIF IMAGE/DIRECT fix preserves command boundaries and original pixels.
+
+The desktop native diagnostic renders the original title and readable save
+warning. Cross opens it, Down selects No and Up selects Yes. Exact captured
+palette/index comparisons pass. An isolated original-handler test confirms
+Cross requests the next screen while the warning ignores Left/Right/Circle/Start.
+These results do not establish Android behavior or the following screen.
+
+## Remaining validation
+
+Install on S24; check folder import, native launch, text, button press/release,
+background/resume and the post-warning transition. Full sound, video and gameplay
+remain unverified. The full native build reports an array-bounds warning in a
+translated VU0 path (`vi[27]` with a 16-element register array). Its runtime effect
+is not established and needs review before claiming gameplay support.

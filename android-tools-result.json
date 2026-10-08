@@ -1,0 +1,22 @@
+{
+  "format": 1,
+  "architecture": "arm64-v8a",
+  "host": "linux-x86_64",
+  "ndk": "28.2.13676358",
+  "sdk_platform": 34,
+  "build_tools": "34.0.0",
+  "cmake": "3.22.1",
+  "gradle": "8.9",
+  "android_gradle_plugin": "8.6.1",
+  "compiler_smoke_passed": true,
+  "game_inputs_included": false,
+  "archive_sha256": "178f44f88f528b0cc5016c9d5854fa9cc1670ffb7549a252f9654105a3ee455b",
+  "archive_size_bytes": 642781684,
+  "workflow_run_id": 37716723284,
+  "workflow_commit": "39fd9a922e11ad0fa23ab775b7d07a7767a846ca",
+  "workflow_conclusion": "success",
+  "downloaded_zip_digests_verified": true,
+  "source_directory_runtime_patch_files": 20,
+  "runtime_patch_files_match_verified_desktop_sources": true,
+  "generated_cpp_count": 7945
+}

@@ -31,11 +31,11 @@
   "inferred_code_end": "0x359880",
   "x86_64_startup_object_compiles": true,
   "arm64_startup_object_compiles": true,
-  "android_apk_built": false,
+  "android_apk_built": true,
   "game_executed": true,
-  "arm64_target": "aarch64-linux-gnu (compile only; not Android)",
+  "arm64_target": "aarch64-none-linux-android28 (full Android APK build)",
   "x86_64_startup_called_function_compiles": true,
-  "arm64_compiler": "Zig 0.16.0 C++ driver",
+  "arm64_compiler": "Android NDK 28.2.13676358 Clang 19.0.1",
   "full_game_linked": true,
   "original_payloads_preserved_in_analysis_copy": true,
   "sse2neon_commit": "92f6de174717aef09033ad21568d5bb9e5470404",
@@ -56,7 +56,7 @@
   "desktop_game_build_status": "linked; corrected native startup executed",
   "desktop_build_flags": "Debug/O0 with -msse4.1 -mavx2; FFmpeg/debug UI disabled",
   "ee_game_executed": true,
-  "full_game_linked_target": "x86-64 Linux desktop diagnostic; not Android",
+  "full_game_linked_target": "ARM64 Android APK and x86-64 Linux desktop diagnostic",
   "native_startup_playable": false,
   "graphics_tested": false,
   "audio_output_tested": false,
@@ -1117,8 +1117,100 @@
   },
   "latest_missing_native_targets": [],
   "next_blockers": [
-    "Execute post-warning native transition",
-    "Android SDK/NDK/Gradle prerequisites",
-    "ARM64 build and S24 validation"
-  ]
+    "S24 install, game-folder import, native launch and touch validation",
+    "Execute the post-warning native transition",
+    "Review the translated VU0 vi[27] array-bounds compiler warning before claiming gameplay support",
+    "Full gameplay, sound, video and background/resume validation"
+  ],
+  "android_apk_result": {
+    "returncode": 0,
+    "apk_built": true,
+    "elapsed_seconds": 8.68,
+    "abi": "arm64-v8a",
+    "offline_build": true,
+    "s24_tested": false,
+    "android_launch_tested": false,
+    "game_folder_importer": true,
+    "boot_elf": "SLUS_204.20",
+    "full_playability_established": false,
+    "apk_size_bytes": 73192045,
+    "apk_sha256": "8d462f1eb040031def197db961c038b8e617c368b564556eb14659439d1c5479",
+    "native_compilation_seconds": 593.36,
+    "generated_cpp_files": 7945,
+    "ndk": "28.2.13676358",
+    "compiler": "Android Clang 19.0.1",
+    "sdk_platform": 34,
+    "build_tools": "34.0.0",
+    "gradle": "8.9",
+    "android_gradle_plugin": "8.6.1",
+    "optimization": "-O2 -g0 -DNDEBUG; no fast-math",
+    "startup_modules_prepared_automatically": true
+  },
+  "android_apk_verification": {
+    "checks": {
+      "signature_valid": true,
+      "package_correct": true,
+      "importer_is_launcher": true,
+      "native_activity_present": true,
+      "native_library_configured": true,
+      "no_broad_storage_permissions": true,
+      "java_dex_present": true,
+      "arm64_only": true,
+      "runner_packaged": true,
+      "no_disc_assets_packaged": true,
+      "native_activity_entry_exported": true,
+      "native_zip_aligned_16kb": true,
+      "native_elf_aligned_16kb": true
+    },
+    "all_passed": true,
+    "apk_sha256": "8d462f1eb040031def197db961c038b8e617c368b564556eb14659439d1c5479",
+    "apk_size_bytes": 73192045,
+    "native_libraries": [
+      {
+        "name": "lib/arm64-v8a/libps2EntryRunner.so",
+        "machine": "AArch64",
+        "bytes": 73152240,
+        "sha256": "ff1613a40a8e8fdf603126ef7fbe8697bda922c9f128554c4d9315fa905ed85f",
+        "load_segment_alignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "zip_data_offset": 16384
+      }
+    ],
+    "certificate_sha256": [
+      "cb130e76d5273fd07b2979ed7547e62fc020748b81f4106a44ddb2a8273ef789"
+    ],
+    "signing_verification": [
+      "Verifies",
+      "Verified using v1 scheme (JAR signing): false",
+      "Verified using v2 scheme (APK Signature Scheme v2): true",
+      "Verified using v3 scheme (APK Signature Scheme v3): false",
+      "Verified using v3.1 scheme (APK Signature Scheme v3.1): false",
+      "Verified using v4 scheme (APK Signature Scheme v4): false",
+      "Verified for SourceStamp: false",
+      "Number of signers: 1",
+      "Signer #1 certificate DN: C=US, O=Android, CN=Android Debug",
+      "Signer #1 certificate SHA-256 digest: cb130e76d5273fd07b2979ed7547e62fc020748b81f4106a44ddb2a8273ef789",
+      "Signer #1 certificate SHA-1 digest: e637183dcf72737ade7d47a5ccc15d793e0904ec",
+      "Signer #1 certificate MD5 digest: f802281a7f4833c29a81f0af280d5c6d",
+      "Signer #1 key algorithm: RSA",
+      "Signer #1 key size (bits): 2048",
+      "Signer #1 public key SHA-256 digest: 196d4070e88a0fa96ac13d4e2771e68886715357771689f2f07a7967fc58144f",
+      "Signer #1 public key SHA-1 digest: e5f3773c615867ee9dbc530ce448ca19653c565f",
+      "Signer #1 public key MD5 digest: fc2185c96d73e7d7eed3ec07f95598be"
+    ],
+    "device_launch_tested": false,
+    "s24_tested": false,
+    "full_playability_established": false
+  },
+  "android_boot_module_test": {
+    "original_module_bytes_match": true,
+    "repeat_import_passed": true,
+    "damaged_module_repaired": true,
+    "missing_image_rejected": true,
+    "wrong_image_rejected": true,
+    "android_execution_tested": false
+  }
 }

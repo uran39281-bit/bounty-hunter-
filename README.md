@@ -1,6 +1,6 @@
 # Bounty Hunter native recompile experiment
 
-Target: Galaxy S24 / Android ARM64. **Not playable; no Android APK yet.**
+Target: Galaxy S24 / Android ARM64. **ARM64 APK built and signed; S24 launch and gameplay remain unverified.**
 
 The PS2 EE executable has been translated to native C++ and startup executes
 on x86-64 Linux with PS2Recomp's compatibility runtime and interpreted IOP.
@@ -36,8 +36,21 @@ reports. Supply the original executable, IRX modules and game assets locally.
   for each of seven buttons. Up/Down toggle it to Yes; Cross requests original
   screen `0x4f`; Left/Right/Circle/Start leave this warning's state unchanged.
   The subsequent screen and on-device touch behavior are not validated.
-- APK prerequisites remain unavailable: Gradle, SDK platform 34,
-  NDK 28.2.13676358 and SDK CMake 3.22.1. No APK was built.
+- Built the actual ARM64 Android APK with NDK 28.2.13676358, SDK 34, AGP
+  8.6.1 and Gradle 8.9. All 7,945 corrected game/observed-entry C++ files
+  compile and link with `-O2 -g0`, without fast-math. The APK is debug signed.
+- APK verification passes: signature, ARM64-only ELF, exported NativeActivity
+  entry, game-folder launcher and 16 KB ELF/ZIP native-library alignment.
+- Added a phone folder picker. It checks the original executable and IOP image,
+  copies original disc files, and prepares the two startup modules automatically.
+  Host extraction checks reproduce the existing module files byte for byte and
+  reject missing/wrong images. Device import and native launch are untested.
+- Full native compilation reports a translated VU0 integer-register array-bounds
+  warning (`vi[27]` against a 16-element array). Its effect on the boot/gameplay
+  path is not established; no gameplay claim is made.
+- See `android-apk-build.json`, `android-apk-verification.json` and
+  `PHONE-INSTALL.md`. Original game files, generated C++, APK and signing key
+  remain private; public GitHub contains the authored tooling and reports.
 
 ## Previous title/menu milestone
 
@@ -65,8 +78,8 @@ reports. Supply the original executable, IRX modules and game assets locally.
   runtime archive remain untouched. This is diagnostic tooling, not an APK.
 - Native timer, entry semantics and leaf checks pass. All twenty runtime files
   reproduce exactly through installers and the alternative patch. The APK
-  build remains blocked by missing Gradle, SDK platform 34, NDK 28.2.13676358
-  and SDK CMake 3.22.1. **No APK or S24 validation.**
+  build was still blocked at this earlier milestone by missing Gradle/SDK/NDK.
+  The newer ARM64 build above resolves that tooling blocker; S24 validation remains open.
 
 Earlier logo rendering milestone:
 
