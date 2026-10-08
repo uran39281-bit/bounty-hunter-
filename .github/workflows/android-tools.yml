@@ -1,0 +1,98 @@
+name: Android build tools
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/android-tools.yml
+      - cloud_android_tools.py
+permissions:
+  contents: read
+concurrency:
+  group: android-build-tools
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install exact Android tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdkmanager --install 'platforms;android-34' 'build-tools;34.0.0' 'ndk;28.2.13676358' 'cmake;3.22.1'
+      - name: Install Gradle and public source dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/bounty-tools/dependencies"
+          cd "$RUNNER_TEMP/bounty-tools"
+          curl --fail --location --silent --show-error https://services.gradle.org/distributions/gradle-8.9-bin.zip -o gradle.zip
+          curl --fail --location --silent --show-error https://services.gradle.org/distributions/gradle-8.9-bin.zip.sha256 -o gradle.sha256
+          printf '%s  gradle.zip\n' "$(cat gradle.sha256)" | sha256sum --check
+          unzip -q gradle.zip
+          git clone --depth 1 --branch 5.5 https://github.com/raysan5/raylib.git dependencies/raylib
+          git clone --depth 1 --branch v1.9.1 https://github.com/DLTcollab/sse2neon.git dependencies/sse2neon
+      - name: Warm Android dependencies with a build-tools fixture
+        shell: bash
+        run: |
+          set -euo pipefail
+          task_bootstrap="$RUNNER_TEMP/bounty-tools/bootstrap"
+          mkdir -p "$task_bootstrap/app/src/main" "$task_bootstrap/app/native"
+          cat > "$task_bootstrap/settings.gradle" <<'EOF'
+          pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
+          dependencyResolutionManagement { repositories { google(); mavenCentral() } }
+          rootProject.name = 'AndroidToolsBootstrap'
+          include ':app'
+          EOF
+          cat > "$task_bootstrap/build.gradle" <<'EOF'
+          plugins { id 'com.android.application' version '8.6.1' apply false }
+          EOF
+          cat > "$task_bootstrap/app/build.gradle" <<'EOF'
+          plugins { id 'com.android.application' }
+          android {
+            namespace 'org.bootstrap.tools'
+            compileSdk 34
+            buildToolsVersion '34.0.0'
+            ndkVersion '28.2.13676358'
+            defaultConfig {
+              applicationId 'org.bootstrap.tools'
+              minSdk 28
+              targetSdk 34
+              ndk { abiFilters 'arm64-v8a' }
+            }
+            externalNativeBuild { cmake { path 'native/CMakeLists.txt'; version '3.22.1' } }
+          }
+          EOF
+          cat > "$task_bootstrap/app/src/main/AndroidManifest.xml" <<'EOF'
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android"><application android:hasCode="false" android:label="Build tools fixture"/></manifest>
+          EOF
+          cat > "$task_bootstrap/app/native/CMakeLists.txt" <<'EOF'
+          cmake_minimum_required(VERSION 3.22.1)
+          project(AndroidToolsBootstrap C)
+          add_library(bootstrap SHARED bootstrap.c)
+          EOF
+          printf 'int bootstrap(void) { return 7; }\n' > "$task_bootstrap/app/native/bootstrap.c"
+          "$RUNNER_TEMP/bounty-tools/gradle-8.9/bin/gradle" --no-daemon -g "$RUNNER_TEMP/bounty-tools/gradle-cache" -p "$task_bootstrap" assembleDebug
+      - name: Package the toolchain and cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 cloud_android_tools.py --sdk "$ANDROID_HOME" --gradle "$RUNNER_TEMP/bounty-tools/gradle-8.9" --gradle-cache "$RUNNER_TEMP/bounty-tools/gradle-cache" --dependencies "$RUNNER_TEMP/bounty-tools/dependencies" --output "$RUNNER_TEMP/bounty-tools/export"
+          cat "$RUNNER_TEMP/bounty-tools/export/android-tools.json" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: android-arm64-tools
+          path: |
+            ${{ runner.temp }}/bounty-tools/export/android-tools.tar.xz
+            ${{ runner.temp }}/bounty-tools/export/android-tools.json
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
