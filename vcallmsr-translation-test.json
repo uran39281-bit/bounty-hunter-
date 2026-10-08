@@ -1,0 +1,20 @@
+{
+  "all_passed": true,
+  "baseline_reproduces_vi_array_bounds_failure": true,
+  "corrected_actual_wrapper_cases": 1536,
+  "real_r5900_context_layout": true,
+  "mocked_boundary": "Only VU0 microprogram start is recorded; no microprogram execution is tested",
+  "phone_stall_fix_verified": false,
+  "runs": {
+    "before": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "vcall-regression/before.cpp:37:48: runtime error: index 27 out of bounds for type 'short unsigned int [16]'"
+    },
+    "after": {
+      "returncode": 0,
+      "stdout": "PASS 1536 VCALLMSR wrapper cases",
+      "stderr": ""
+    }
+  }
+}

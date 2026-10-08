@@ -1,0 +1,84 @@
+{
+  "log_sha256": "1950fc22c0218779c3db8653d07ca66d86eb564c0b767573600d78b211657a6d",
+  "apk_version_code": 3,
+  "device": "samsung SM-S926U1",
+  "android_sdk": 36,
+  "own_process_log_capture_confirmed": true,
+  "initial_pad_polling_observed": true,
+  "consumed_touch_serials": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "last_pad_read_count": 318,
+  "last_consumed_serial": 6,
+  "last_observed_read_increase_uptime_ms": 294108257,
+  "export_uptime_ms": 294159100,
+  "no_new_pad_read_observed_for_ms": 50843,
+  "pending_touch_serials": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "touches": [
+    {
+      "uptime_ms": 294086455,
+      "buttons": "0x8",
+      "serial": 1
+    },
+    {
+      "uptime_ms": 294086488,
+      "buttons": "0x0",
+      "serial": 2
+    },
+    {
+      "uptime_ms": 294093305,
+      "buttons": "0x4000",
+      "serial": 3
+    },
+    {
+      "uptime_ms": 294093354,
+      "buttons": "0x0",
+      "serial": 4
+    },
+    {
+      "uptime_ms": 294095766,
+      "buttons": "0x4000",
+      "serial": 5
+    },
+    {
+      "uptime_ms": 294095807,
+      "buttons": "0x0",
+      "serial": 6
+    },
+    {
+      "uptime_ms": 294108447,
+      "buttons": "0x40",
+      "serial": 7
+    },
+    {
+      "uptime_ms": 294108645,
+      "buttons": "0x0",
+      "serial": 8
+    },
+    {
+      "uptime_ms": 294124098,
+      "buttons": "0x2000",
+      "serial": 9
+    },
+    {
+      "uptime_ms": 294124163,
+      "buttons": "0x0",
+      "serial": 10
+    }
+  ],
+  "missing_function_message_present": false,
+  "fatal_guest_exception_message_present": false,
+  "conclusion": "Touches reach the primary guest pad read initially; guest polling later slows then stops. The log does not expose the blocked PC or EE wait state.",
+  "root_cause_established": false,
+  "next_build": "Independent native watcher records branch progress, render frames and published EE thread/wait snapshots; VFS failures and app-folder file counts help identify asset waits."
+}

@@ -24,8 +24,8 @@ def main():
     aapt=build_tools/'aapt'
     manifest=subprocess.check_output([str(aapt),'dump','xmltree',str(args.base_apk),'AndroidManifest.xml'],text=True)
     badging=subprocess.check_output([str(aapt),'dump','badging',str(args.base_apk)],text=True)
-    if 'com.ps2x.runner.BountyNativeActivity' not in manifest or "versionCode='2'" not in badging:
-        raise ValueError('Base APK must already declare the version-2 queued-input activity')
+    if 'com.ps2x.runner.BountyNativeActivity' not in manifest:
+        raise ValueError('Base APK must already declare the queued-input activity')
     with zipfile.ZipFile(args.base_apk) as base, zipfile.ZipFile(unsigned,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as out:
         native='lib/arm64-v8a/libps2EntryRunner.so'
         native_data=base.read(native)

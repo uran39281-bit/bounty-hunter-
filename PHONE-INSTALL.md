@@ -1,25 +1,33 @@
 # Phone installation and diagnostics
 
-## Main-menu diagnostics, APK version 3
+## Native stall trace, APK version 4
 
-Install `Bounty-Hunter-Diagnostics.apk` over the current app. Choose **Update**
-and keep the existing app installed so its imported files remain available.
+Install `Bounty-Hunter-Menu-Candidate.apk` as an **Update** over the existing app
+so the imported game files stay available.
 
-1. Open Bounty Hunter and reach the main menu.
-2. Tap **X**, wait about five seconds, then tap **Down** and **X** again.
+1. Open Bounty Hunter and reach the screen where it stops.
+2. Tap **X** once and wait ten seconds.
 3. Tap **EXPORT LOGS** at the top right.
-4. Save `Bounty-Hunter-logs.txt` in **Downloads** using the phone file picker.
-5. Attach that text file in the chat.
+4. Save `Bounty-Hunter-logs.txt` in Downloads and attach it in the chat.
 
-The latest APK 2 screenshot shows PLAY GAME selected with `Touch: X | Game: waiting`.
-That confirms the overlay saw the press but the primary guest pad read has not
-consumed it. APK 3 records its own runtime log plus touch serials and pad-read
-counts to identify the cause. It reuses the exact APK 2 native library and does
-not yet fix the blocked main menu. Device export still needs this phone test.
+The APK 3 log confirms the game consumed Start and two X presses, then stopped
+reading its pad at count 318 for at least 50 seconds. Later Down/Circle events
+remained queued. There is no missing-function or fatal guest-exception message
+in that capture. These facts establish the input delivery path works initially;
+they do not establish the underlying cause of the stall.
+
+APK 4 adds an independent native progress watcher so its log includes the last
+game branch, render progress, published EE thread/wait state and asset-open
+failures even if the render or game thread stops. It also counts the imported
+SOUND, VIDEO and other DATA files. This candidate also corrects a verified VCALLMSR translation defect: it reads
+CMSAR0 instead of the out-of-bounds vi[27] element. The baseline wrapper fails
+under the bounds sanitizer; the corrected actual wrapper passes 1,536 address
+and return cases. The effect on the phone stall remains unverified. Original
+ELF instructions remain unchanged; exactly one generated C++ operand is corrected.
 
 ## First installation
 
-1. Download `Bounty-Hunter-Diagnostics.apk` to the phone and tap it to install.
+1. Download `Bounty-Hunter-Menu-Candidate.apk` to the phone and tap it to install.
 2. Open **Bounty Hunter**, then tap **Import game folder**.
 3. Choose `Download/Star Wars file`, or whichever folder contains the original
    `SLUS_204.20` and `IOPRP254.IMG` files and both `IRX` and `DATA` folders. Select the parent game

@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
+import java.io.File;
 
 /** Bounded, process-only log capture; no broad log/storage permissions. */
 final class PhoneDiagnostics {
@@ -14,8 +15,8 @@ final class PhoneDiagnostics {
     private volatile boolean closed;
     private volatile java.lang.Process logger;
 
-    PhoneDiagnostics() {
-        add("Bounty Hunter diagnostics APK 3 / 0.1.2");
+    PhoneDiagnostics(File gameRoot) {
+        add("Bounty Hunter native trace APK 4 / 0.1.3");
         add("Device=" + Build.MANUFACTURER + " " + Build.MODEL + " SDK=" + Build.VERSION.SDK_INT);
         Thread reader = new Thread(() -> {
             try {
@@ -24,6 +25,7 @@ final class PhoneDiagnostics {
                         .redirectErrorStream(true).start();
                 if (closed) { logger.destroy(); return; }
                 add("Own-process logcat capture started");
+                inventory(gameRoot);
                 try (BufferedReader stream = new BufferedReader(new InputStreamReader(logger.getInputStream()))) {
                     String line;
                     while (!closed && (line = stream.readLine()) != null) add(line);
@@ -35,6 +37,24 @@ final class PhoneDiagnostics {
         reader.start();
     }
 
+    private void inventory(File root) {
+        if (root == null) { add("GAME_FILES app directory unavailable"); return; }
+        for (String folder : new String[]{"DATA/SOUND", "DATA/VIDEO", "DATA/BUNDLES", "DATA/ALLOCS", "DATA/CHEWIE"}) {
+            File path = new File(root, folder);
+            long[] totals = new long[2];
+            countFiles(path, totals, 0);
+            add("GAME_FILES folder="+folder+" present="+path.isDirectory()+
+                    " files="+totals[0]+" bytes="+totals[1]);
+        }
+    }
+
+    private void countFiles(File path, long[] totals, int depth) {
+        if (depth > 12 || totals[0] >= 10000) return;
+        if (path.isFile()) { totals[0]++; totals[1] += path.length(); return; }
+        File[] children = path.listFiles();
+        if (children != null) for (File child : children) countFiles(child, totals, depth+1);
+    }
+
     synchronized void add(String text) {
         String line = "[uptime " + SystemClock.elapsedRealtime() + "] " + text + "\n";
         if (line.length() > LIMIT) line = line.substring(line.length()-LIMIT);
@@ -44,9 +64,9 @@ final class PhoneDiagnostics {
 
     synchronized String snapshot() {
         StringBuilder result = new StringBuilder(characters+200);
-        result.append("Bounty Hunter APK 3 diagnostics\n")
+        result.append("Bounty Hunter APK 4 native progress diagnostics\n")
               .append("This is the app's own process log plus input counters.\n")
-              .append("The game runtime is unchanged from APK 2.\n\n");
+              .append("Includes native progress, published EE thread state and file-open traces.\n\n");
         for (String line : lines) result.append(line);
         return result.toString();
     }

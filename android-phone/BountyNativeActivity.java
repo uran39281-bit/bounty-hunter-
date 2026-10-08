@@ -30,7 +30,7 @@ public final class BountyNativeActivity extends NativeActivity {
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
-        diagnostics = new PhoneDiagnostics();
+        diagnostics = new PhoneDiagnostics(getExternalFilesDir(null));
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN |
                             WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         controls = new Controls();

@@ -11,6 +11,20 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 8 October 2026
 
+- APK 3's exported phone log confirms Start and two X presses are consumed.
+  Pad reads then slow sharply and stop at 318 for at least 50.843 seconds;
+  later Down/Circle transitions stay queued. The capture has no missing-target
+  or fatal guest-exception message. The blocked game PC is not exposed by APK 3.
+  See `phone-menu-stall-log-analysis.json`; the cause is still unestablished.
+- APK 4 adds an independent native watcher for branch/render progress and the
+  scheduler's published EE thread/wait snapshots, plus asset-open failures and
+  imported DATA folder counts. It also corrects one generated VCALLMSR operand;
+  the other 7,944 generated sources and original ELF instructions stay unchanged.
+  The private native object cache allows future runtime edits to reuse the
+  compiled game. The actual corrected wrapper passes 1,536 address/return cases,
+  while the baseline reproduces the vi[27] bounds failure. This confirms the
+  translation defect; its role in the phone stall remains unverified. See
+  `vcallmsr-translation-test.json` and `vcallmsr-translation-fix.json`.
 - APK version 2 gets past the save warning and displays the original main menu.
   The latest screenshot shows PLAY GAME selected and `Touch: X | Game: waiting`.
   The touch was detected; the guest has not consumed that queued press. The
@@ -20,7 +34,7 @@ reports. Supply the original executable, IRX modules and game assets locally.
   The phone document picker saves a text report without a computer. The native
   runtime is byte-identical to APK 2; this is a diagnostic update, not a game fix.
   Java/DEX compilation, same-certificate signing, native entry and 16 KB alignment
-  checks pass. Device log capture remains unverified. See `PHONE-INSTALL.md` and
+  checks pass. The user successfully exported the APK 3 phone log. See `PHONE-INSTALL.md` and
   `android-phone-diagnostics-verification.json`.
 - The first APK reaches the readable original save warning on the user's S24.
   The user reports that Up, Down and Cross do not respond. See
@@ -71,9 +85,9 @@ reports. Supply the original executable, IRX modules and game assets locally.
   copies original disc files, and prepares the two startup modules automatically.
   Host extraction checks reproduce the existing module files byte for byte and
   reject missing/wrong images. The user now confirms device import and launch.
-- Full native compilation reports a translated VU0 integer-register array-bounds
-  warning (`vi[27]` against a 16-element array). Its effect on the boot/gameplay
-  path is not established; no gameplay claim is made.
+- Earlier native compilation reported a VCALLMSR array-bounds warning. APK 4
+  corrects that operand to CMSAR0; the link between this defect and the phone
+  stall still needs a device test. Full gameplay remains unverified.
 - See `android-apk-build.json`, `android-apk-verification.json` and
   `PHONE-INSTALL.md`. Original game files, generated C++, APK and signing key
   remain private; public GitHub contains the authored tooling and reports.

@@ -1,0 +1,15 @@
+{
+  "returncode": 0,
+  "apk_built": true,
+  "elapsed_seconds": 12.13,
+  "abi": "arm64-v8a",
+  "offline_build": true,
+  "s24_tested": false,
+  "android_launch_tested": false,
+  "game_folder_importer": true,
+  "boot_elf": "SLUS_204.20",
+  "full_playability_established": false,
+  "apk_path": "menu-native-fixed-output/Bounty-Hunter-ARM64.apk",
+  "apk_size_bytes": 146384717,
+  "apk_sha256": "a0f19bb92bc438dbf00b152774360cb50722d1529ee8162636167bc3b355fab1"
+}

@@ -1259,6 +1259,13 @@
   },
   "android_main_menu_observed": true,
   "android_main_menu_advancement_verified": false,
-  "android_diagnostics_apk_version": 3,
-  "android_diagnostics_device_verified": false
+  "android_diagnostics_apk_version": 4,
+  "android_diagnostics_device_verified": false,
+  "android_phone_log_capture_verified": true,
+  "android_menu_stall_pad_read_count": 318,
+  "android_menu_stall_minimum_observed_ms": 50843,
+  "android_native_trace_device_verified": false,
+  "android_vcallmsr_operand_corrected": true,
+  "android_vcallmsr_regression_cases": 1536,
+  "android_menu_candidate_device_verified": false
 }

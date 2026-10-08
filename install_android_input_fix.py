@@ -78,9 +78,10 @@ namespace ps2_stubs
             fillPadStatus(outData, state, portState);''')
         pad.write_text(text)
     gradle=repo/'android/app/build.gradle'
-    text=gradle.read_text().replace('versionCode 1','versionCode 3').replace('versionCode 2','versionCode 3')
-    text=text.replace("versionName '0.1.0'","versionName '0.1.2'").replace("versionName '0.1.1'","versionName '0.1.2'")
+    text=gradle.read_text()
+    for code in (1,2,3): text=text.replace('versionCode '+str(code),'versionCode 4')
+    for name in ('0.1.0','0.1.1','0.1.2'): text=text.replace("versionName '"+name+"'","versionName '0.1.3'")
     gradle.write_text(text)
-    print('Installed queued touch controls, phone log export and APK version 3')
+    print('Installed queued touch controls, phone log export and APK version 4')
 
 if __name__=='__main__': main()

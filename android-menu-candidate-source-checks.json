@@ -1,0 +1,13 @@
+{
+  "original_elf_modified": false,
+  "generated_cpp_count": 7945,
+  "unchanged_generated_cpp_count": 7944,
+  "corrected_generated_files": [
+    "sub_0018C160_0x18c160.cpp"
+  ],
+  "native_runtime_trace_syntax_passed": true,
+  "java_compile_passed": true,
+  "host_vcallmsr_regression_passed": true,
+  "phone_fix_verified": false,
+  "runtime_trace_device_verified": false
+}

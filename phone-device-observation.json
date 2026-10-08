@@ -6,7 +6,7 @@
   "caption": "Touch: X | Game: waiting",
   "input": "overlay detected X; primary guest pad read has not consumed the queued press",
   "root_cause": "not established; phone runtime logs are needed",
-  "next_step": "APK 3 own-process log and input counter export",
+  "next_step": "APK 4 independent native progress and EE wait-state trace",
   "full_playability_established": false,
   "previous_observation": {
     "reported_local_date": "2026-10-07",
@@ -19,5 +19,11 @@
     "full_playability_established": false,
     "root_cause": "not yet established on device; render-frame touch sampling can lose down/up events",
     "candidate_fix": "Independent Android popup controls queue touch edges until the primary guest scePadRead consumes them; show delivery feedback"
+  },
+  "apk3_log_observation": {
+    "start_and_cross_consumed": true,
+    "last_read_count": 318,
+    "no_reads_observed_for_ms": 50843,
+    "root_cause_established": false
   }
 }

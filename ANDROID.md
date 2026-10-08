@@ -38,9 +38,50 @@ It requires `--base-apk`, `--sdk`, `--keystore`, `--output` and a new
 `--work-directory`. Keep the same private signing key for updates. Results are in
 `android-phone-diagnostics-build.json` and `android-phone-diagnostics-verification.json`.
 
+## Native stall trace (APK 4)
+
+The candidate corrects the VCALLMSR wrapper to use the CMSAR0 control register
+already written by the preceding CTC2 instruction. PCSX2's COP2.cpp and the
+PS2Recomp PR 268 fix agree on this mapping:
+https://github.com/ran-j/PS2Recomp/pull/268
+https://github.com/PCSX2/pcsx2/blob/master/pcsx2/COP2.cpp
+The actual old wrapper fails a bounds sanitizer; the corrected wrapper passes
+1,536 cases over all 512 micro-address indices, masking, delay-slot calls,
+return PC and VI preservation. Only the VU0-start boundary is mocked; these
+checks do not run the microprogram or establish a device fix. Baseline generated
+sources are retained privately; the corrected derived wrapper is stored beside
+`vcallmsr-translation-fix.json`. There is exactly one generated-source change.
+
+APK 3 log capture works on the user's Android 16 S24. The game consumed serials
+1–6 (Start and two Cross presses/releases), then stopped polling at read 318 for
+at least 50.843 seconds. Later events 7–10 stayed queued. No missing-target or
+fatal guest-exception message appears in that capture; this is not proof that
+all game code is supported or a diagnosis of the stall.
+
+`install_android_runtime_trace.py` installs a one-second background watcher.
+It reads the existing atomic debug PC/RA, new atomic branch/frame counters and
+the scheduler's mutex-protected published snapshot. It does not read or modify
+live guest RAM from the watcher. `GAME_PROGRESS` and `EE_STATE` lines are written
+directly to Android logcat, independently of the host rendering loop. VFS,
+frontend, graphics and EE-return tracing are enabled; failed opens include errno.
+The Java collector also counts app-owned SOUND, VIDEO, BUNDLES, ALLOCS and CHEWIE.
+The latest capture remains private; the public analysis omits raw app process logs.
+
+Thread-status values: 0 Running, 1 Ready, 2 Waiting, 3 WaitingSuspended,
+4 Suspended, 5 Dormant. Wait reasons: 0 None, 1 Sleep, 2 Semaphore,
+3 EventFlag, 4 VSync, 5 External, 6 Mpeg. A frozen snapshot sequence with
+changing branches indicates execution within a translated function; frozen
+branches/frames and published wait states identify a different wait path.
+These observations require the next phone test and do not guarantee a fix.
+
+`save_android_link_cache.py` saves built native objects, static libraries,
+link command and compile metadata in a private archive. It contains translated
+game objects; keep it private. The current NDK and source revision must match
+when reusing these objects. The APK retains the same package and signing key.
+
 ## Phone setup
 
-Install the separately supplied `Bounty-Hunter-Diagnostics.apk`, open **Bounty Hunter**
+Install the separately supplied `Bounty-Hunter-Menu-Candidate.apk`, open **Bounty Hunter**
 and tap **Import game folder**. Choose the parent game folder containing
 `SLUS_204.20`, `IOPRP254.IMG`, `IRX/` and `DATA/`. Unzip the original files first.
 The app copies the selected disc tree into its external app files directory,
@@ -94,9 +135,10 @@ The stager applies the twenty-file verified runtime patch to a fresh checkout,
 then copies all 7,945 corrected game/observed-entry C++ files and generated
 headers. It installs the phone importer, selects ARM64 only, supplies local
 FetchContent dependencies and uses `-O2 -g0 -DNDEBUG` without fast-math. Ninja
-compiles at most two units concurrently. Gradle runs offline. The original
-native instructions and generated source files are not rewritten by this setup.
-The private checkpoint retains this APK's debug signing key for future updates;
+compiles at most two units concurrently. Gradle runs offline. The original ELF instructions remain unchanged. The stager corrects only the
+VCALLMSR CMSAR0 operand in one generated wrapper; baseline and final source
+hashes are recorded separately.
+The private checkpoint retains the debug signing key for future updates;
 keep it private. The builder automatically reuses `android-signing/debug.keystore`
 when present; `--signing-keystore` accepts an explicit private key path.
 
@@ -122,6 +164,5 @@ The phone now displays the main menu; its advancement and full gameplay remain u
 
 Install on S24; check folder import, native launch, text, button press/release,
 background/resume and the post-warning transition. Full sound, video and gameplay
-remain unverified. The full native build reports an array-bounds warning in a
-translated VU0 path (`vi[27]` with a 16-element register array). Its runtime effect
-is not established and needs review before claiming gameplay support.
+remain unverified. The earlier VCALLMSR vi[27] array-bounds defect is corrected in APK 4. Its
+role in the device stall remains unverified; full gameplay is not established.

@@ -44,6 +44,10 @@ def main():
         p.error('Unexpected registration table')
     subprocess.run(['python3', str(root/'install_android_import.py'), str(target)], check=True)
     subprocess.run(['python3', str(root/'install_android_input_fix.py'), str(target)], check=True)
+    subprocess.run(['python3', str(root/'install_android_runtime_trace.py'), str(target)], check=True)
+    subprocess.run(['python3', str(root/'install_vcallmsr_fix.py'), str(runner)], check=True)
+    baseline_manifest=manifest
+    manifest={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in runner.glob('*.cpp')}
     gradle = target/'android/app/build.gradle'
     text = gradle.read_text().replace("compileSdk 34", "compileSdk 34\n    buildToolsVersion '34.0.0'")
     text = text.replace('android {', '''def ps2xDebugKeystore = project.findProperty('ps2xDebugKeystore')
@@ -76,6 +80,8 @@ set(CMAKE_JOB_POOL_LINK bounty_link)''')
     (target.parent/'android-source-manifest.json').write_text(json.dumps({
         'upstream_revision': PIN, 'generated_cpp_count': len(generated),
         'generated_cpp_sha256': manifest, 'abi': 'arm64-v8a',
+        'generated_cpp_sha256_baseline': baseline_manifest,
+        'vcallmsr_cmsar0_operand_corrected': True,
         'optimization': '-O2 -g0 -DNDEBUG', 'fast_math': False,
         'phone_importer': True,
     }, indent=2)+'\n')

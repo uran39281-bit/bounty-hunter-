@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compile APK 3's phone diagnostics around the byte-identical APK 2 runtime."""
+"""Compile phone UI changes around a previously built queued-input runtime."""
 import argparse
 from pathlib import Path
 import shutil
@@ -11,6 +11,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('base-apk','sdk','keystore','output','work-directory'):
         parser.add_argument('--'+name,required=True,type=Path)
+    parser.add_argument('--version-code',type=int,default=4)
+    parser.add_argument('--version-name',default='0.1.3')
     args=parser.parse_args()
     root=Path(__file__).resolve().parent
     work=args.work_directory.resolve()
@@ -32,7 +34,8 @@ def main():
     ns='http://schemas.android.com/apk/res/android'; ET.register_namespace('android',ns)
     manifest=ET.fromstring(MANIFEST.replace('android.app.NativeActivity','com.ps2x.runner.BountyNativeActivity'))
     manifest.set('package','com.ps2x.runner')
-    manifest.set('{'+ns+'}versionCode','3'); manifest.set('{'+ns+'}versionName','0.1.2')
+    manifest.set('{'+ns+'}versionCode',str(args.version_code))
+    manifest.set('{'+ns+'}versionName',args.version_name)
     app=manifest.find('application')
     app.set('{'+ns+'}debuggable','true'); app.set('{'+ns+'}extractNativeLibs','false')
     uses=ET.Element('uses-sdk',{'{'+ns+'}minSdkVersion':'28','{'+ns+'}targetSdkVersion':'34'})

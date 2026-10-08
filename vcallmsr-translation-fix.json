@@ -1,0 +1,16 @@
+{
+  "operand_corrected": "CMSAR0 control register instead of vi[27]",
+  "original_elf_modified": false,
+  "changes": [
+    {
+      "file": "sub_0018C160_0x18c160.cpp",
+      "before_sha256": "1c4bb23d035750692687ccaa9facf34c4a0b01a409ac4dd6fc9876db4857e463",
+      "after_sha256": "03f7569e838ad533ae8d2691460e1272b06dc2cee25a35f4f72c5ece07048ded"
+    }
+  ],
+  "phone_stall_fix_verified": false,
+  "references": [
+    "https://github.com/PCSX2/pcsx2/blob/master/pcsx2/COP2.cpp",
+    "https://github.com/ran-j/PS2Recomp/pull/268"
+  ]
+}
