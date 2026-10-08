@@ -1,3 +1,18 @@
+VIF IMAGE BOUNDARY WORK — 8 October 2026
+Fixed a runtime bug that consumed VIF commands as image continuation pixels.
+The old runtime fails the pixel regression; the fixed runtime passes. An
+unchanged native upload now matches all 256 palette entries and 65,536 pixels.
+An isolated original font packet is readable through both GS and VIF paths.
+The fixed 360-second native capture shows readable save-warning text and
+coherent border/background. Cross opens the warning; Down selects No.
+No missing-target stop or reserved VU instructions occur. No Android APK;
+SDK/NDK/Gradle prerequisites remain absent. See menu-rendering-result.json.
+The 480-second run delivers all four directions and shows Yes after Up.
+Isolated captured-menu regression checks all seven original handlers:
+Up/Down toggle No to Yes; Cross requests screen 0x4f; Left/Right/Circle/Start
+leave this warning unchanged. Subsequent screen/device behavior is unverified.
+The following notes are historical checkpoints.
+
 TITLE TRANSITION WORK — 8 October 2026
 The original five-second timer advances screen 0x10f to 0x110. Cross then
 requests screen 0x35e. Registered verified original entries for memory-card

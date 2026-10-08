@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstring>
 int main(int argc,char **argv) {
-    if(argc!=3)return 2;
+    if(argc!=3 && argc!=4)return 2;
     PS2Runtime runtime;
     runtime.setMissingFunctionPolicy(PS2Runtime::MissingFunctionPolicy::Stop);
     if(!runtime.memory().initialize() || !runtime.syncCoreSubsystems() || !runtime.loadELF(argv[1]))return 1;
@@ -42,4 +42,13 @@ int main(int argc,char **argv) {
     ctx.r[9]=_mm_set_epi64x(0,-1);
     runtime.lookupFunction(ctx.pc)(ram,&ctx,&runtime);
     std::cout << "STRING pc=0x" << std::hex << ctx.pc << std::dec << " width=" << _mm_cvtsi128_si32(ctx.r[2]) << " stop=" << runtime.isStopRequested() << '\n';
+    for(uint32_t address: {0x452798u,0x4527a0u,0x4527acu,0x454918u,0x45491cu}) {
+        uint32_t value;std::memcpy(&value,ram+address,4);
+        std::cout << "PACKET_GLOBAL address=0x" << std::hex << address << " value=0x" << value << std::dec << '\n';
+    }
+    if(argc==4) {
+        std::ofstream dump(argv[3],std::ios::binary);
+        dump.write(reinterpret_cast<const char *>(ram),PS2_RAM_SIZE);
+        if(!dump)return 2;
+    }
 }

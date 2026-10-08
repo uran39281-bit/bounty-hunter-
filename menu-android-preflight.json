@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "java_available": true,
+    "gradle_available": false,
+    "sdk_platform_34": false,
+    "ndk_28_2": false,
+    "sdk_cmake_3_22_1": false
+  },
+  "missing": [
+    "gradle_available",
+    "sdk_platform_34",
+    "ndk_28_2",
+    "sdk_cmake_3_22_1"
+  ],
+  "native_entries_staged": true,
+  "apk_built": false,
+  "android_launch_tested": false,
+  "s24_tested": false,
+  "build_command": [
+    "gradle",
+    "assembleDebug",
+    "-Pps2xBootElf=/storage/emulated/0/Android/data/com.ps2x.runner/files/SLUS_204.20"
+  ],
+  "build_directory": "/workspace/scratch/9a77f29be937/bounty-status/PS2Recomp/android",
+  "required_device_files": "Original SLUS_204.20 and staged disc tree under app external files directory",
+  "build_blocked": "Required Android SDK/NDK/Gradle components are unavailable"
+}

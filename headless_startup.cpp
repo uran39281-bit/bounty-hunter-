@@ -112,6 +112,13 @@ int main(int argc, char **argv) {
               << " a0=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[4]))
               << " gp=" << static_cast<uint32_t>(_mm_cvtsi128_si32(runtime.cpu().r[28])) << '\n';
     const auto graphics = runtime.gs().getDebugSnapshot();
+    if (const char *prefix=std::getenv("PS2X_DUMP_VU_STATE")) {
+        std::ofstream code(std::string(prefix)+".vu1code",std::ios::binary);
+        code.write(reinterpret_cast<const char *>(runtime.memory().getVU1Code()),PS2_VU1_CODE_SIZE);
+        std::ofstream data(std::string(prefix)+".vu1data",std::ios::binary);
+        data.write(reinterpret_cast<const char *>(runtime.memory().getVU1Data()),PS2_VU1_DATA_SIZE);
+        std::cout<<"VU_STATE_DUMP code="<<bool(code)<<" data="<<bool(data)<<'\n';
+    }
     size_t recentDraws = 0;
     for (const auto &event : runtime.gs().getDebugHistory())
         if (event.kind == GSDebugEventKind::Draw) ++recentDraws;

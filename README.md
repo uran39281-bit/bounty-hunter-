@@ -9,6 +9,38 @@ reports. Supply the original executable, IRX modules and game assets locally.
 
 ## Latest result — 8 October 2026
 
+- Fixed a graphics upload boundary bug: a pending GIF IMAGE previously consumed
+  the next VIF NOP/DIRECT commands as pixels. Continuations now consume only
+  bytes inside explicit DIRECT/DIRECTHL payloads. Pixel bytes remain untouched.
+- The regression reproduces the defect on the old runtime and passes with the
+  fix: one stream, separate calls, multiple chunks, DIRECTHL, a partial initial
+  image, a full single packet, MARK and a following GS register packet.
+- Replaying an unchanged captured game upload now matches every palette entry
+  and all 65,536 texture indices. Before the fix, 256 palette entries and 7,469
+  texture indices differed. No original game instructions or menu flags changed.
+- An isolated original copyright draw packet is readable with the original atlas;
+  direct GS and VIF submissions produce identical pixels. This isolates the draw
+  path; normal asset loading and full-screen correctness require native capture.
+- The separate diagnostic archive now optimizes nine host runtime units,
+  including VIF and the vector interpreter, at `-O2` without fast-math. Original
+  generated game objects and the baseline runtime archive remain unchanged.
+- A fixed 360-second native run renders a readable original save warning,
+  coherent border/background and YES/NO controls. Cross opens the warning;
+  Down selects No. No missing-target stop or reserved VU instructions occur.
+  The previous comparable run had 57 reserved VU instruction reports.
+  See `menu-rendering-result.json`. Full-game and S24 validation remain open.
+- The fixed 480-second run delivers all four directions after the title;
+  Up changes the visible No selection to Yes. Both fixed runs reach their
+  deadlines without missing-target stops or reserved VU instructions.
+- An isolated original-handler regression restores the captured No selection
+  for each of seven buttons. Up/Down toggle it to Yes; Cross requests original
+  screen `0x4f`; Left/Right/Circle/Start leave this warning's state unchanged.
+  The subsequent screen and on-device touch behavior are not validated.
+- APK prerequisites remain unavailable: Gradle, SDK platform 34,
+  NDK 28.2.13676358 and SDK CMake 3.22.1. No APK was built.
+
+## Previous title/menu milestone
+
 - The original title timer works: a longer native run advances from screen
   `0x10f` to `0x110` at 5.009 seconds. Cross then requests screen `0x35e`.
   Earlier shorter runs did not establish that the transition was broken.
@@ -36,7 +68,7 @@ reports. Supply the original executable, IRX modules and game assets locally.
   build remains blocked by missing Gradle, SDK platform 34, NDK 28.2.13676358
   and SDK CMake 3.22.1. **No APK or S24 validation.**
 
-The following logo result remains the latest visible rendering milestone:
+Earlier logo rendering milestone:
 
 - **Readable title logo captured:** the native run now selects `start_01`
   through `start_05`, giving five distinct background panels instead of the
@@ -138,6 +170,8 @@ python3 install_boot_graphics_trace.py /path/to/PS2Recomp
 python3 install_frontend_trace.py /path/to/PS2Recomp
 python3 install_graphics_dma_trace.py /path/to/PS2Recomp
 python3 install_gs_batch_trace.py /path/to/PS2Recomp
+python3 install_gs_vertex_trace.py /path/to/PS2Recomp
+python3 install_vif_image_continuation.py /path/to/PS2Recomp
 python3 install_ee_valist.py /path/to/PS2Recomp
 python3 install_present_capture.py /path/to/PS2Recomp
 python3 install_android_touch.py /path/to/PS2Recomp

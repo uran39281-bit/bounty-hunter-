@@ -1,0 +1,54 @@
+{
+  "baseline_archive_unchanged": true,
+  "baseline_sha256": "fafaddb6620bd098e5db06bb671a302c0490cfadbfc9082b3e6498dd1bafb083",
+  "optimized_archive_sha256": "9cf2a492a6648b36239765c46bf035578a10fc246bfa5466702172146ed342ee",
+  "optimization": "-O2; no fast-math",
+  "native_game_objects_unchanged": true,
+  "units": [
+    {
+      "source": "gs_frontend.cpp",
+      "sha256": "a70b00f9962630d67d9f884372bab85b5c02a099ce49ec28a9fed5140270cef4",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "gs_cpu_backend.cpp",
+      "sha256": "3f0fea655726215f56d8c3c9cff8345a7d36a929fe3f845cc96346a247085fa9",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "ps2_memory.cpp",
+      "sha256": "01fe06572757efa29c56a12260f1bdd3593ebde995b03a2770aea0072bde2c71",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "ps2_runtime.cpp",
+      "sha256": "b6286cf65a573cb987e042281ff9dc160db1ed8bddd5c60328b734ec4f3e1b62",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "ps2_vif1_interpreter.cpp",
+      "sha256": "2afcc46f0ae791356dddd56bdec0ad11ede8c7df5dc1e4e78515accdaf3111f1",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "ps2_vu1_core.cpp",
+      "sha256": "2c19f489f0ed5c22c8dbb2712825dcd2004b0bd93644204c274b4c829003af59",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "ps2_vu1_upper.cpp",
+      "sha256": "d68f2d39cb354d49df418625457fbd3fff10067af6ca2aba6255c993959f9724",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "ps2_vu1_lower.cpp",
+      "sha256": "2c73d6da443e64dc68f76215285fcb0f17cbcad2765dac3d3752f1ea6738ad93",
+      "optimization": "-O2; no fast-math"
+    },
+    {
+      "source": "EeScheduler.cpp",
+      "sha256": "3d3c0c83cfd1b72266a7dc0c5f1a8cd21dc7e3155dd1877a0813faf65e6e1616",
+      "optimization": "-O2; no fast-math"
+    }
+  ]
+}

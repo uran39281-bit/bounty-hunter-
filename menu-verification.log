@@ -1,0 +1,26 @@
+Installed opt-in pre-copy probe
+Installed opt-in VFS tracing/reuse experiment
+Installed optional execution of supplied SIFCMD boot module
+Installed read-only IOP diagnostic rows
+Installed opt-in IOP execution snapshot
+Installed opt-in IOP import and DMA counters
+Installed opt-in SPU2 AutoDMA write completion cadence
+Installed opt-in scratchpad DMA receive
+Installed opt-in real CDVDFSV boot execution
+Installed opt-in EE thread diagnostic
+Installed opt-in priority-zero EE thread creation
+Installed opt-in CDVD FSV buffer and actual layer-zero file lookup
+Installed read-only EE exit trace
+Installed read-only EE zero-return trace
+Installed opt-in allocated callback stack separation
+Installed opt-in shared COP0 Count from scheduler cycles
+Installed read-only bounded boot graphics trace
+Installed bounded front-end trace
+Installed bounded read-only DMA/VIF metadata trace
+Installed bounded read-only GS batch metadata trace
+Installed bounded original GS vertex metadata trace
+Installed VIF IMAGE continuation within explicit DIRECT payloads
+Installed opt-in native eight-byte va_list slots and bounded format trace
+Installed opt-in host latch after complete native GS display-copy strips
+Installed Android boot settings, native presentation and menu controls; device validation pending
+PASS: 20 source files reproduced exactly by installers and patch

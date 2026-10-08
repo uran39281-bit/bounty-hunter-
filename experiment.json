@@ -648,5 +648,477 @@
     ],
     "latest_missing_native_targets": [],
     "private_material_publicly_uploaded": false
-  }
+  },
+  "menu_rendering_work": {
+    "date": "2026-10-08",
+    "original_instructions_changed": false,
+    "forced_menu_flags": false,
+    "runtime_fix": "Pending GIF IMAGE payload is consumed only within VIF DIRECT/DIRECTHL payloads. Intervening VIF NOP/MARK/DIRECT commands remain commands.",
+    "stream_coverage": "Complete DIRECT blocks across calls and multi-block GIF IMAGE continuations. Arbitrary byte fragmentation inside a DIRECT block is not implemented by this change.",
+    "host_menu_controls_pass": true,
+    "regression": {
+      "baseline_reproduces_pixel_corruption": true,
+      "fixed_cases_pass": true,
+      "cases": "PASS: one stream, separate DIRECT calls, multiple image chunks, DIRECTHL, partial initial image, full single packet, MARK and following GS register"
+    },
+    "captured_native_upload": {
+      "baseline": {
+        "palette_differences": 256,
+        "pixel_index_differences": 7469,
+        "pixel_count": 65536
+      },
+      "fixed": {
+        "palette_differences": 0,
+        "pixel_index_differences": 0,
+        "pixel_count": 65536
+      }
+    },
+    "font_replay_fixture": {
+      "readable_copyright_text": true,
+      "direct_and_vif_pixels_identical": true,
+      "private_pixels_sha256": "e4c7b27fefe496818b4738f107dc5a014569b8f36ef9be3df8a3c677435625e6",
+      "limitation": "Isolated packet replay with a separately loaded original atlas; does not establish normal asset loading or full-game rendering."
+    },
+    "runs": [
+      {
+        "report": "menu-vertices-480s.json",
+        "host_seconds": 480,
+        "returncode": null,
+        "timeout": true,
+        "menus": [
+          "0x0",
+          "0x10f",
+          "0x110",
+          "0x35e"
+        ],
+        "missing_targets": [],
+        "reached_deadline_without_missing_target": false,
+        "native_input_handler_calls": [
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Circle",
+            "native_event": "0x1b",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x110"
+          }
+        ],
+        "scripted_pad_pulses": [
+          "SCRIPTED_PAD_INPUT reads=128 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=136 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=160 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=168 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=192 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=200 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=224 buttons=0xdfff",
+          "SCRIPTED_PAD_INPUT reads=232 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=256 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=264 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=288 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=296 buttons=0xffff"
+        ],
+        "vector_reserved_instruction_reports": 31,
+        "captured_frame_exists": false,
+        "final_frontend_state": []
+      },
+      {
+        "report": "menu-vector-360s.json",
+        "host_seconds": 360,
+        "returncode": 0,
+        "timeout": false,
+        "menus": [
+          "0x35e",
+          "0x0",
+          "0x10f",
+          "0x110"
+        ],
+        "missing_targets": [],
+        "reached_deadline_without_missing_target": true,
+        "native_input_handler_calls": [
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Circle",
+            "native_event": "0x1b",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x110"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x35e"
+          }
+        ],
+        "scripted_pad_pulses": [
+          "SCRIPTED_PAD_INPUT reads=128 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=136 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=160 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=168 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=192 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=200 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=224 buttons=0xdfff",
+          "SCRIPTED_PAD_INPUT reads=232 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=256 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=264 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=288 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=296 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=320 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=328 buttons=0xffff"
+        ],
+        "vector_reserved_instruction_reports": 57,
+        "captured_frame_exists": true,
+        "final_frontend_state": [
+          "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+        ],
+        "private_frame_sha256": "4938df3dfac926ffecfacff2327f9eeb9f9c3ba9a84bd460f2aec06f42c2198f"
+      },
+      {
+        "report": "menu-boundary-360s.json",
+        "host_seconds": 360,
+        "returncode": 0,
+        "timeout": false,
+        "menus": [
+          "0x35e",
+          "0x0",
+          "0x10f",
+          "0x110"
+        ],
+        "missing_targets": [],
+        "reached_deadline_without_missing_target": true,
+        "native_input_handler_calls": [
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Circle",
+            "native_event": "0x1b",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x110"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x35e"
+          }
+        ],
+        "scripted_pad_pulses": [
+          "SCRIPTED_PAD_INPUT reads=128 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=136 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=160 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=168 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=192 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=200 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=224 buttons=0xdfff",
+          "SCRIPTED_PAD_INPUT reads=232 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=256 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=264 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=288 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=296 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=320 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=328 buttons=0xffff"
+        ],
+        "vector_reserved_instruction_reports": 0,
+        "captured_frame_exists": true,
+        "final_frontend_state": [
+          "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+        ],
+        "private_frame_sha256": "80d70517c47a8f9ce99f72088ac0e66bb66ae156c863ed6a8b915c446071568c"
+      },
+      {
+        "report": "menu-navigation-480s.json",
+        "host_seconds": 480,
+        "returncode": 0,
+        "timeout": false,
+        "menus": [
+          "0x35e",
+          "0x0",
+          "0x10f",
+          "0x110"
+        ],
+        "missing_targets": [],
+        "reached_deadline_without_missing_target": true,
+        "native_input_handler_calls": [
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Circle",
+            "native_event": "0x1b",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Start",
+            "native_event": "0x1e",
+            "menu_id": "0x10f"
+          },
+          {
+            "button": "Cross",
+            "native_event": "0x1c",
+            "menu_id": "0x110"
+          },
+          {
+            "button": "Down",
+            "native_event": "0x19",
+            "menu_id": "0x35e"
+          },
+          {
+            "button": "Up",
+            "native_event": "0x18",
+            "menu_id": "0x35e"
+          },
+          {
+            "button": "Left",
+            "native_event": "0x16",
+            "menu_id": "0x35e"
+          },
+          {
+            "button": "Right",
+            "native_event": "0x17",
+            "menu_id": "0x35e"
+          }
+        ],
+        "scripted_pad_pulses": [
+          "SCRIPTED_PAD_INPUT reads=128 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=136 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=160 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=168 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=192 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=200 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=224 buttons=0xdfff",
+          "SCRIPTED_PAD_INPUT reads=232 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=256 buttons=0xfff7",
+          "SCRIPTED_PAD_INPUT reads=264 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=288 buttons=0xbfff",
+          "SCRIPTED_PAD_INPUT reads=296 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=320 buttons=0xffbf",
+          "SCRIPTED_PAD_INPUT reads=328 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=336 buttons=0xffef",
+          "SCRIPTED_PAD_INPUT reads=344 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=352 buttons=0xff7f",
+          "SCRIPTED_PAD_INPUT reads=360 buttons=0xffff",
+          "SCRIPTED_PAD_INPUT reads=368 buttons=0xffdf"
+        ],
+        "vector_reserved_instruction_reports": 0,
+        "captured_frame_exists": true,
+        "final_frontend_state": [
+          "FRONTEND_STATE state=2 mode=3 menu_id=0x35e logical_buttons=0x1"
+        ],
+        "private_frame_sha256": "decf2595d7f895a5248e229adbe13d0fe439f1809eef4f02f625126bb4059e0f"
+      }
+    ],
+    "installer_and_patch_exact": true,
+    "native_control_delivery": {
+      "buttons_after_title": [
+        "Cross",
+        "Down",
+        "Left",
+        "Right",
+        "Up"
+      ],
+      "all_seven_delivered": false,
+      "limitation": "Handler delivery alone does not establish every navigation effect or on-device touch behavior."
+    },
+    "isolated_original_warning_controls": {
+      "pass": true,
+      "cases": [
+        {
+          "button": "Up",
+          "native_event": "0x18",
+          "original_menu": "0x35e",
+          "result": 0,
+          "changed_ram_bytes": 38,
+          "state_changes": 4,
+          "pass": true
+        },
+        {
+          "button": "Down",
+          "native_event": "0x19",
+          "original_menu": "0x35e",
+          "result": 0,
+          "changed_ram_bytes": 38,
+          "state_changes": 4,
+          "pass": true
+        },
+        {
+          "button": "Left",
+          "native_event": "0x16",
+          "original_menu": "0x35e",
+          "result": -2,
+          "changed_ram_bytes": 31,
+          "state_changes": 0,
+          "pass": true
+        },
+        {
+          "button": "Right",
+          "native_event": "0x17",
+          "original_menu": "0x35e",
+          "result": -2,
+          "changed_ram_bytes": 31,
+          "state_changes": 0,
+          "pass": true
+        },
+        {
+          "button": "Cross",
+          "native_event": "0x1c",
+          "original_menu": "0x35e",
+          "result": 0,
+          "changed_ram_bytes": 70,
+          "state_changes": 6,
+          "pass": true
+        },
+        {
+          "button": "Circle",
+          "native_event": "0x1b",
+          "original_menu": "0x35e",
+          "result": -2,
+          "changed_ram_bytes": 31,
+          "state_changes": 0,
+          "pass": true
+        },
+        {
+          "button": "Start",
+          "native_event": "0x1e",
+          "original_menu": "0x35e",
+          "result": -2,
+          "changed_ram_bytes": 31,
+          "state_changes": 0,
+          "pass": true
+        }
+      ],
+      "fixture": "menu-boundary-360s.ppm.ram",
+      "behavior": "Up/Down toggle the captured No selection to Yes. Cross requests original screen 0x4f and deactivates the warning. Left/Right/Circle/Start return -2 and leave menu state unchanged.",
+      "limitation": "Each case restores the same private capture and invokes the unchanged native handler. This does not exercise the subsequent screen or on-device touch input."
+    },
+    "android": {
+      "checks": {
+        "java_available": true,
+        "gradle_available": false,
+        "sdk_platform_34": false,
+        "ndk_28_2": false,
+        "sdk_cmake_3_22_1": false
+      },
+      "missing": [
+        "gradle_available",
+        "sdk_platform_34",
+        "ndk_28_2",
+        "sdk_cmake_3_22_1"
+      ],
+      "native_entries_staged": true,
+      "apk_built": false,
+      "android_launch_tested": false,
+      "s24_tested": false,
+      "build_command": [
+        "gradle",
+        "assembleDebug",
+        "-Pps2xBootElf=/storage/emulated/0/Android/data/com.ps2x.runner/files/SLUS_204.20"
+      ],
+      "build_directory": "/workspace/scratch/9a77f29be937/bounty-status/PS2Recomp/android",
+      "required_device_files": "Original SLUS_204.20 and staged disc tree under app external files directory",
+      "build_blocked": "Required Android SDK/NDK/Gradle components are unavailable"
+    },
+    "playable": false,
+    "on_device_controls_validated": false,
+    "native_rendering_visual_review": {
+      "capture": "menu-boundary-360s.ppm",
+      "size": [
+        640,
+        446
+      ],
+      "readable_warning_text": true,
+      "visible_controls": [
+        "YES",
+        "NO",
+        "Cross OK"
+      ],
+      "selected_option": "NO",
+      "comparison_capture": "menu-navigation-480s.ppm",
+      "comparison_selected_option": "YES",
+      "assessment": "Original save warning, border, text and background now render coherently. Cross opens the warning; Down selects No.",
+      "limitation": "Visual review of one original native menu. Full opening sequence, all screens, gameplay and on-device rendering are unverified."
+    },
+    "private_game_material_publicly_uploaded": false
+  },
+  "latest_missing_native_targets": [],
+  "next_blockers": [
+    "Execute post-warning native transition",
+    "Android SDK/NDK/Gradle prerequisites",
+    "ARM64 build and S24 validation"
+  ]
 }

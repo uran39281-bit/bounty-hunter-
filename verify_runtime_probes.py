@@ -15,7 +15,7 @@ INSTALLERS = [
     'install_iop_import_trace.py', 'install_spu2_adma_timing.py',
     'install_scratchpad_receive.py', 'install_boot_cdvdfsv_probe.py', 'install_ee_thread_probe.py',
     'install_ee_zero_priority.py', 'install_cdvd_imports.py', 'install_ee_exit_probe.py', 'install_ee_return_probe.py', 'install_callback_heap_stacks.py',
-    'install_cop0_count.py', 'install_boot_graphics_trace.py', 'install_frontend_trace.py', 'install_graphics_dma_trace.py', 'install_gs_batch_trace.py', 'install_ee_valist.py', 'install_present_capture.py', 'install_android_touch.py',
+    'install_cop0_count.py', 'install_boot_graphics_trace.py', 'install_frontend_trace.py', 'install_graphics_dma_trace.py', 'install_gs_batch_trace.py', 'install_gs_vertex_trace.py', 'install_vif_image_continuation.py', 'install_ee_valist.py', 'install_present_capture.py', 'install_android_touch.py',
 ]
 
 

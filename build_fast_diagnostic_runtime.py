@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Optimize host GS/memory/dispatch code in a separate diagnostic archive.
+"""Optimize host GS/memory/dispatch/vector code in a separate diagnostic archive.
 
 Use the existing verified compiler commands and exactly the same source/defines.
 Do not change native game objects, baseline archive, time accounting or game state.
@@ -18,9 +18,10 @@ def main():
     parser.add_argument('build',type=Path)
     args=parser.parse_args();build=args.build.resolve()
     root=Path(__file__).resolve().parent;work=root/'fast-diagnostic-runtime';work.mkdir(exist_ok=True)
-    names={'gs_frontend.cpp','gs_cpu_backend.cpp','ps2_memory.cpp','ps2_runtime.cpp','EeScheduler.cpp'}
+    names={'gs_frontend.cpp','gs_cpu_backend.cpp','ps2_memory.cpp','ps2_runtime.cpp','EeScheduler.cpp','ps2_vif1_interpreter.cpp',
+           'ps2_vu1_core.cpp','ps2_vu1_upper.cpp','ps2_vu1_lower.cpp'}
     units=[u for u in json.loads((build/'compile_commands.json').read_text()) if Path(u['file']).name in names]
-    if len(units)!=len(names):parser.error('Expected all five host runtime compile units')
+    if len(units)!=len(names):parser.error('Expected all nine host runtime compile units')
     records=[]
     def compile_unit(unit):
         command=shlex.split(unit['command']);source=Path(unit['file']);obj=work/(source.name+'.o')

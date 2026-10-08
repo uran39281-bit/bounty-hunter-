@@ -1,8 +1,11 @@
 # Bounty Hunter Android experiment
 
-No APK has been built or tested. The current native diagnostic reaches a
-readable title logo; menu text and navigation remain unresolved. Touch controls
-are wired in source and tested on the host through the runtime Pad API.
+No APK has been built or tested. The native diagnostic reaches the original
+title and following menu. A VIF IMAGE/DIRECT upload boundary fix passes pixel
+regressions and exact captured-upload comparison. The fixed native capture
+shows readable save-warning text; Cross opens it and Down selects No.
+Full menu navigation and on-device rendering are unverified. Touch controls are wired in
+source and tested on the host through the runtime Pad API.
 
 ## Prepare a dedicated checkout
 
@@ -70,9 +73,24 @@ the current unoptimized desktop runtime advances slowly.
 A longer native trace confirms the original five-second transition from menu
 `0x10f` to `0x110`. Cross then requests menu `0x35e`. Exact registrations for
 missing menu callbacks and an animation update are now staged privately.
-This is progress through the original menu state machine; the following screen renders with distorted graphics and text fragments.
-Correct rendering and usable on-device navigation are still unverified. See `title-result.json`.
+The earlier following-screen capture had distorted graphics and text fragments
+(`title-result.json`). After the VIF fix, the save-warning capture has readable
+text, coherent borders and background, and a visible No selection after Down.
+This remains a desktop diagnostic; usable on-device navigation is unverified.
 
-Next validation: resolve native menu event/text behavior, build the real
+The image upload fix is included in the runtime installers and patch, so a fresh
+Android build uses the corrected VIF boundary handling. It preserves commands
+between the image header and pixel DIRECT payload. See `menu-rendering-result.json`
+for regression and native-run evidence. Desktop vector-interpreter optimization
+is separate diagnostic build tooling; it does not establish Android performance.
+
+The fixed 480-second run delivers all four directions and shows Yes after Up.
+`test_native_menu_navigation.cpp` restores the same captured No selection for
+each button. It verifies Up/Down selection changes, Cross's original screen
+request, and unchanged warning state for Left/Right/Circle/Start. These last
+buttons are ignored by this warning's original handler. The isolated test does
+not prove the subsequent screen or on-device touch behavior.
+
+Next validation: execute the post-warning transition, build the real
 ARM64 debug APK, install on S24, and test launch, text, button press/release and
 background/resume. No device or APK validation has occurred here.

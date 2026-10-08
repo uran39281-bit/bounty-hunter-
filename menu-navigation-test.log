@@ -1,0 +1,36 @@
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008MENU_CHANGE button=Up address=0x638cf0 before=3 after=2
+MENU_CHANGE button=Up address=0x638cf4 before=2 after=3
+MENU_CHANGE button=Up address=0x639168 before=0 after=1
+MENU_CHANGE button=Up address=0x6392e8 before=1 after=0
+NATIVE_MENU_CAPTURE button=Up event=0x18 original_menu=0x35e return_pc=0x101000 result=0 changed_ram_bytes=38 state_changes=4 pass=1
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008MENU_CHANGE button=Down address=0x638cf0 before=3 after=2
+MENU_CHANGE button=Down address=0x638cf4 before=2 after=3
+MENU_CHANGE button=Down address=0x639168 before=0 after=1
+MENU_CHANGE button=Down address=0x6392e8 before=1 after=0
+NATIVE_MENU_CAPTURE button=Down event=0x19 original_menu=0x35e return_pc=0x101000 result=0 changed_ram_bytes=38 state_changes=4 pass=1
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008NATIVE_MENU_CAPTURE button=Left event=0x16 original_menu=0x35e return_pc=0x101000 result=-2 changed_ram_bytes=31 state_changes=0 pass=1
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008NATIVE_MENU_CAPTURE button=Right event=0x17 original_menu=0x35e return_pc=0x101000 result=-2 changed_ram_bytes=31 state_changes=0 pass=1
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008MENU_CHANGE button=Cross address=0x638d28 before=ff after=4f
+MENU_CHANGE button=Cross address=0x638d29 before=ff after=0
+MENU_CHANGE button=Cross address=0x638d2a before=ff after=0
+MENU_CHANGE button=Cross address=0x638d2b before=ff after=0
+MENU_CHANGE button=Cross address=0x638d2e before=0 after=1
+MENU_CHANGE button=Cross address=0x773500 before=1 after=0
+NATIVE_MENU_CAPTURE button=Cross event=0x1c original_menu=0x35e return_pc=0x101000 result=0 changed_ram_bytes=70 state_changes=6 pass=1
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008NATIVE_MENU_CAPTURE button=Circle event=0x1b original_menu=0x35e return_pc=0x101000 result=-2 changed_ram_bytes=31 state_changes=0 pass=1
+Loading segment: 0x100000 - 0x47b280 (filesz: 0x2c2500, memsz: 0x37b280)
+Registered code region: 100000 - 3c2500Loading segment: 0x70000000 - 0x70000390 (filesz: 0x4, memsz: 0x390)
+ELF file loaded successfully. Entry point: 0x100008NATIVE_MENU_CAPTURE button=Start event=0x1e original_menu=0x35e return_pc=0x101000 result=-2 changed_ram_bytes=31 state_changes=0 pass=1
+PASS original warning: Up/Down toggle No to Yes; Cross requests original screen 0x4f; Left/Right/Circle/Start leave state unchanged. Isolated capture regression, no device validation

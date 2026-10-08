@@ -80,3 +80,16 @@ fast-diagnostic-runtime/
 test-native-timer
 test-native-menu-entry
 diagnose-native-glyph
+
+# Private packet/VU captures and local diagnostic executables
+menu-*.ppm*
+menu-*.png
+font-*.pgm
+arial-*.png
+*.vu1code
+*.vu1data
+glyph-packet-diagnostic
+replay-native-font
+inspect-gs-font-texture
+test-vif-image-*
+diagnose-native-vif-*

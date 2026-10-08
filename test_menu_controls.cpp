@@ -13,6 +13,11 @@ int main() {
           menuScriptButtons(136)==0xffffu && menuScriptButtons(160)==0xbfffu &&
           menuScriptButtons(168)==0xffffu && menuScriptButtons(192)==0xffbfu &&
           menuScriptButtons(224)==0xdfffu,"script press/release boundaries");
+    check(menuScriptButtons(336)==0xffefu && menuScriptButtons(344)==0xffffu &&
+          menuScriptButtons(352)==0xff7fu && menuScriptButtons(368)==0xffdfu &&
+          menuScriptButtons(384)==0xdfffu && menuScriptButtons(400)==0xfff7u &&
+          menuScriptButtons(416)==0xbfffu && menuScriptButtons(432)==0xffbfu,
+          "complete native navigation script");
     // Exercise portrait and landscape layouts, both edges, release, and multi-touch.
     for (const auto dimensions : {std::array<float,2>{1920,1080},{1080,2340},{2340,1080}}) {
         for (const auto &b:bounty_touch::buttons)
