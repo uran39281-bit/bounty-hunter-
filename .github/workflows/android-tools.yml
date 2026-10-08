@@ -95,12 +95,29 @@ jobs:
           set -euo pipefail
           python3 cloud_android_tools.py --sdk "$ANDROID_HOME" --gradle "$RUNNER_TEMP/bounty-tools/gradle-8.9" --gradle-cache "$RUNNER_TEMP/bounty-tools/gradle-cache" --dependencies "$RUNNER_TEMP/bounty-tools/dependencies" --output "$RUNNER_TEMP/bounty-tools/export"
           cat "$RUNNER_TEMP/bounty-tools/export/android-tools.json" >> "$GITHUB_STEP_SUMMARY"
+          split -b 300M "$RUNNER_TEMP/bounty-tools/export/android-tools.tar.xz" "$RUNNER_TEMP/bounty-tools/export/android-tools.part."
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
-          name: android-arm64-tools
+          name: android-arm64-tools-aa
           path: |
-            ${{ runner.temp }}/bounty-tools/export/android-tools.tar.xz
+            ${{ runner.temp }}/bounty-tools/export/android-tools.part.aa
             ${{ runner.temp }}/bounty-tools/export/android-tools.json
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: android-arm64-tools-ab
+          path: |
+            ${{ runner.temp }}/bounty-tools/export/android-tools.part.ab
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: android-arm64-tools-ac
+          path: |
+            ${{ runner.temp }}/bounty-tools/export/android-tools.part.ac
           compression-level: 0
           retention-days: 1
           if-no-files-found: error
